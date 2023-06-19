@@ -1,0 +1,43 @@
+<?php
+
+return[
+
+    'donate' => 'Donate',
+    'testimonials' => 'Testimonials',
+    'quote_one' => 'Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem facilis lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem facilis.',
+    'name_one' => 'Jonathan Smith',
+    'jpb_title_one' => 'cici inc.',
+    'quote_two' => 'Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem facilis lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem facilis.',
+    'name_two' => 'Jonathan Smith',
+    'jpb_title_two' => 'cici inc.',
+    'quote_three' => 'Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem facilis lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui dolorem facilis.',
+    'name_three' => 'Jonathan Smith',
+    'jpb_title_three' => 'cici inc.',
+    'make_donation' => 'Make a Donation',
+    'now' => 'Now',
+    'donation_type' => 'Donation Type',
+    'yearly' => 'Yearly',
+    'monthly' => 'Monthly',
+    'weekly' => 'Weekly',
+    'daily' => 'Daily',
+    'donation_period' => 'Donation Period',
+    'six_months' => '6 Months',
+    'year' => 'year',
+    'two_years' => '2 years',
+    'continues' => 'continues',
+    'i_want_donate_for' => 'I Want to Donate for',
+    'educate_children' => 'Educate Children',
+    'child_camps' => 'Child Camps',
+    'clean_water_for_life' => 'Clean Water for Life',
+    'campaign_for_child' => 'Campaign for Child Poverty',
+    'KWD' => 'KWD',
+    'choose_donation_amount' => 'Choose the donation amount',
+    'or' => 'Or',
+    'enter_amount' => 'Enter Amount',
+    'donate_now' => 'Donate Now',
+    'please_raise_your_hand' => 'Please raise your hand',
+    'for_those_helpless_children' => 'for those helpless children who need it',
+    'become_fundraiser' => 'Become a Fundraiser',
+
+
+];

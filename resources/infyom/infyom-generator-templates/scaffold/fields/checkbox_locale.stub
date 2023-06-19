@@ -1,0 +1,10 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+<div class="form-group col-sm-6">
+    {!! Form::hidden('$FIELD_NAME$', 0, ['class' => 'form-check-input']) !!}
+    {!! Form::label('$FIELD_NAME$', __('models/$MODEL_NAME_PLURAL_CAMEL$.fields.$FIELD_NAME$').':') !!}
+    <label class="switch switch-icon switch-primary-outline-alt">
+   {!! Form::checkbox('$FIELD_NAME$', '$CHECKBOX_VALUE$', null, ['class' => 'switch-input']) !!}
+   <span class="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
+   <span class="switch-handle"></span>
+    </label>
+</div>

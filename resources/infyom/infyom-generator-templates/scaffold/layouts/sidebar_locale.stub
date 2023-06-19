@@ -1,0 +1,11 @@
+<div class="sidebar">
+        <nav class="sidebar-nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/home') }}"><i class="icon-speedometer"></i> {{ config('app.name') }} </a>
+                </li>
+
+                @include('layouts.menu')
+            </ul>
+        </nav>
+</div>

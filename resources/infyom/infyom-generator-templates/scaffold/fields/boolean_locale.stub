@@ -1,0 +1,10 @@
+<!-- 'Boolean FIELD_NAME_TITLE$ Field' checked by default -->
+<div class="form-group col-sm-6">
+    {!! Form::label('$FIELD_NAME$', __('models/$MODEL_NAME_PLURAL_CAMEL$.fields.$FIELD_NAME$').':') !!}
+    <label class="switch switch-icon switch-primary-outline-alt">
+   {!! Form::checkbox('$FIELD_NAME$', 1, true, array('class' => 'switch-input')) !!}
+   <!-- remove {, true} to make it unchecked by default -->
+   <span class="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
+   <span class="switch-handle"></span>
+    </label>
+</div>

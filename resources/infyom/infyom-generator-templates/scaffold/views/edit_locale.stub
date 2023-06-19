@@ -1,0 +1,42 @@
+@extends('admin.layouts.app')
+
+@section('content')
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url('/home') }}">@lang('dashboard.home')</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}">@lang('models/$MODEL_NAME_PLURAL_CAMEL$.plural')</a>
+                </li>
+                <li class="breadcrumb-item active">@lang('crud.edit')</li>
+        </ol>
+
+    <div class="container-fluid">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-sm-12">
+
+        @include('adminlte-templates::common.errors')
+
+        <div class="card">
+
+            {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'patch'$FILES$]) !!}
+
+            <div class="card-block">
+                <div class="row">
+                    @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+                </div>
+            </div>
+
+            <div class="card-footer">
+                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}" class="btn btn-default">
+                    @lang('crud.cancel')
+                 </a>
+            </div>
+
+            {!! Form::close() !!}
+
+        </div>
+    </div>
+                </div>
+            </div>
+        </div>
+@endsection
