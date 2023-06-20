@@ -235,7 +235,7 @@
         <li class="py-2">
             <a class="text-white" href="{{ route('admin.home') }}">
                 <i class="fa fa-user" aria-hidden="true"></i>
-                مرحبا {{ Auth::user()->name }}
+                مرحبا {{ Auth::user()->name[0] }}
             </a>
         </li>
         <span class="navbar-text">
@@ -248,11 +248,11 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{-- {{ route('logout') }} --}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a class="dropdown-item" href=" {{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
 
-                        <form id="logout-form" action="{{-- {{ route('logout') }} --}}" method="POST" class="d-none">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
                     </div>

@@ -46,6 +46,10 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::post('/register', 'Auth\RegisterController@register')->name('register');
     Route::post('/login', 'Auth\LoginController@signIn')->name('login');
+    // Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+    Route::post('/logout', 'Auth\LoginController@logout')->name('logout.post');
 
     Route::get('/sadaqa', 'SadaqahController@index')->name('sadaqa');
     Route::get('/zakah', 'ZakahController@index')->name('zakah');
