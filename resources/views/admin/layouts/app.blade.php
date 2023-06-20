@@ -61,7 +61,7 @@
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-  
+
 <div class="wrapper">
 
     <header class="main-header">
@@ -82,7 +82,7 @@
         <div class="navbar-custom-menu">
         <ul class="nav navbar-nav pull-left hidden-md-down">
                 <li class="ml-20 nav-item dropdown">
-                    <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                     aria-haspopup="true" aria-expanded="false">
                         <img src="{{ asset('images/favicon.png') }}" class="img-avatar" alt="admin@bootstrapmaster.com">
                       {{--  <span class="hidden-md-down">{{ Auth::user()->name }}</span>--}}
@@ -98,7 +98,7 @@
                             <i class="fa fa-lock"></i>
                             تسجيل خروج
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        <form id="logout-form" action="{{-- {{ route('logout') }} --}}" method="POST" class="d-none">
                             @csrf
                         </form>
                     </div>
@@ -117,12 +117,12 @@
 
     <footer class="main-footer">
         <div class="pull-left hidden-xs">
-          <b>الاصدار الاول</b> 
+          <b>الاصدار الاول</b>
         </div>
         <strong>الجمعية الخيرية الكويتية لخدمة القران الكريم وعلومه</strong> .
     </footer>
 
-</div> 
+</div>
 
 
 
@@ -168,7 +168,7 @@
     );
 </script>
 <script>
-$(document).ready(function() { 
+$(document).ready(function() {
  $.toast({
     heading: '',
     text: 'اهلا بك' ,
