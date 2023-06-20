@@ -179,11 +179,11 @@
 <!--                        <li class="py-2"><a class="text-white" href="{{ route('signIn') }}"><i class="fa fa-user" aria-hidden="true"></i>@lang('nav.sign_in')</a></li>-->
 <!--                    @else-->
 <!--                        @if(auth()->user())-->
-<!--                        <li class="py-2"><a class="text-white" href="{{ route('admin.home') }}"><i class="fa fa-user" aria-hidden="true"></i>مرحبا {{auth()->user()->name()}}</a></li>-->
+<!--                        <li class="py-2"><a class="text-white" href="{{ route('admin.home') }}"><i class="fa fa-user" aria-hidden="true"></i>مرحبا {{auth()->user()->name}}</a></li>-->
 <!--                        @endif-->
 <!--                        <span class="navbar-text">-->
                             <!-- Right Side Of Navbar -->
-<!--                            <ul class="navbar-nav ml-auto">-->
+<!--                            <ul class="ml-auto navbar-nav">-->
                             <!-- Authentication Links -->
 <!--                            @guest-->
 <!--                                <li class="nav-item">-->
@@ -201,13 +201,13 @@
 <!--                                    </a>-->
 
 <!--                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">-->
-<!--                                        <a class="dropdown-item" href="{{ route('logout') }}"-->
+{{-- <!--                                        <a class="dropdown-item" href="{{ route('logout') }}"--> --}}
 <!--                                        onclick="event.preventDefault();-->
 <!--                                                        document.getElementById('logout-form').submit();">-->
-<!--                                            {{ __('Logout') }}-->
+{{-- <!--                                            {{ __('Logout') }}--> --}}
 <!--                                        </a>-->
 
-<!--                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">-->
+{{-- <!--                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--> --}}
 <!--                                            @csrf-->
 <!--                                        </form>-->
 <!--                                    </div>-->
@@ -240,7 +240,7 @@
         </li>
         <span class="navbar-text">
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="ml-auto navbar-nav">
                 <!-- Authentication Links -->
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -248,11 +248,11 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a class="dropdown-item" href="{{-- {{ route('logout') }} --}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        <form id="logout-form" action="{{-- {{ route('logout') }} --}}" method="POST" class="d-none">
                             @csrf
                         </form>
                     </div>
@@ -272,14 +272,14 @@
                 </div>
                 <div class="col-md-6">
                     <ul class="menuzord-menu menuzord-top-menu pull-{{ $float }}">
-                        <li class="py-2"><a class="text-white" href="{{ route('donationMethods') }}">@lang('nav.donation_methods')</a> <span class="pipe text-white ml-7">| </span> </li>
+                        <li class="py-2"><a class="text-white" href="{{ route('donationMethods') }}">@lang('nav.donation_methods')</a> <span class="text-white pipe ml-7">| </span> </li>
                         <li class="py-2"><a class="text-white" href="{{ route('contactUs') }}">@lang('nav.call_us')</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="header-nav">
-            <div class="header-nav-wrapper bg-white">
+            <div class="bg-white header-nav-wrapper">
                 <div class="container menu-container">
                     <nav id="menuzord-right" class="menuzord default">
                         <a class="menuzord-brand pull-{{ $float }} flip xs-pull-center" href="{{ route('home') }}">
@@ -291,7 +291,7 @@
                                     <a href="{{ route($navSection->model) }}" {{ ($navSection->model == 'onlineService') ? 'target=_blank' : '' }}>{{ $navSection->name }}</a>
                                 </li>
                             @endforeach
-                            <li class="mr-90"><button data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" id="search" type="submit"><i class="fa fa-search"></i></button></li>
+                            <li class="mr-90"><button data-height="45px" class="m-0 btn btn-colored btn-theme-colored btn-xs font-14" id="search" type="submit"><i class="fa fa-search"></i></button></li>
                         </ul>
                     </nav>
                 </div>
@@ -314,7 +314,7 @@
     @yield('content')
 
     <footer id="footer" class="footer" data-bg-img="{{ asset('images/footer-bg.png') }}" data-bg-color="#073b56">
-        <div class="container pt-70 pb-40">
+        <div class="container pb-40 pt-70">
             <div class="row border-bottom-black">
                 <div class="col-sm-6 col-md-4">
                     <div class="widget dark">
@@ -356,7 +356,7 @@
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="widget dark">
-                        <ul class="styled-icons icon-sm icon-bordered icon-circled clearfix">
+                        <ul class="clearfix styled-icons icon-sm icon-bordered icon-circled">
                             <li>
                                 <a href="https://www.facebook.com/7offath/"><i class="fa fa-facebook"></i></a>
                             </li>
@@ -371,12 +371,12 @@
                             </li>
                         </ul>
 
-                        <h5 class="widget-title mb-10 mt-10">@lang('footer.subscribe_us')</h5>
+                        <h5 class="mt-10 mb-10 widget-title">@lang('footer.subscribe_us')</h5>
                         <form id="mailchimp-subscription-form-footer" class="newsletter-form1">
                             <div class="input-group">
                                 <input type="email" value="" name="EMAIL" placeholder="@lang('footer.add_your_email_here')" class="form-control input-lg font-16" data-height="45px" id="mce-EMAIL-footer" style="height: 45px;" />
                                 <span class="input-group-btn">
-                                <button data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14 custom-btn" type="submit">@lang('footer.subscribe')</button>
+                                <button data-height="45px" class="m-0 btn btn-colored btn-theme-colored btn-xs font-14 custom-btn" type="submit">@lang('footer.subscribe')</button>
                             </span>
                             </div>
                         </form>
@@ -388,8 +388,8 @@
         <div class="footer-bottom" data-bg-color="#054563">
             <div class="container pt-15 pb-15">
                 <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p class="font-12 text-black-777 m-0 sm-text-center text-white">@lang('footer.copyright', ['year' => '2023']) <a href="https://www.websutility.com">@lang('footer.webs_utility')</a></p>
+                    <div class="text-center col-md-12">
+                        <p class="m-0 text-white font-12 text-black-777 sm-text-center">@lang('footer.copyright', ['year' => '2023']) <a href="https://www.websutility.com">@lang('footer.webs_utility')</a></p>
                     </div>
                 </div>
             </div>

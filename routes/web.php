@@ -23,7 +23,7 @@ use App\Http\Controllers\LangController;
 use App\Http\Controllers\Admin\KafarahController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,16 +37,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('migrate', function (){
-    \Artisan::call('migrate', ['--force' => true]);
-});
+// Route::get('migrate', function (){
+//     \Artisan::call('migrate', ['--force' => true]);
+// });
 // Auth::routes();
-Route::middleware('web')->namespace('App\Http\Controllers')->group(function (){
+Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/', 'HomeController@index')->name('home');
-     Route::post('/register',  'Auth\RegisterController@register')->name('register');
-     Route::post('/login', 'Auth\LoginController@login')->name('login'); 
-     
+    Route::post('/register', 'Auth\RegisterController@register')->name('register');
+    Route::post('/login', 'Auth\LoginController@signIn')->name('login');
+
     Route::get('/sadaqa', 'SadaqahController@index')->name('sadaqa');
     Route::get('/zakah', 'ZakahController@index')->name('zakah');
 
@@ -58,9 +58,9 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function (){
 
     Route::get('/waqf', 'WaqfController@index')->name('waqf');
     Route::get('/waqf/{waqf}', 'WaqfController@show')->name('waqf.show');
-    
- Route::get('/kafarah', [KafarahController::class, 'index'])->name('admin.kafarah.index');
-// Route::get('/kafarah/{kafarah}', [KafarahController::class, 'edit'])->name('admin.kafarah.edit');
+
+    Route::get('/kafarah', [KafarahController::class, 'index'])->name('admin.kafarah.index');
+    // Route::get('/kafarah/{kafarah}', [KafarahController::class, 'edit'])->name('admin.kafarah.edit');
     //  Route::get('admin//kafarah', 'kafarahController@index')->name('kafarah');
     // Route::get('/kafarah/{kafarah}', 'kafarahController@show')->name('kafarah.show');
 
@@ -83,7 +83,7 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function (){
 
     Route::get('/news', 'NewsController@index')->name('news');
     Route::get('/news/{article}', 'NewsController@show')->name('news.details');
-  
+
 
 });
 
@@ -130,8 +130,7 @@ Route::get('lang/{lang}', [LangController::class, 'update'])->name('updateLang')
 
 // Auth::routes();
 
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function (){
-    
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -181,8 +180,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function (){
     Route::get('Kafarah-page', [KafarahController::class, 'KafarahDetails'])->name('KafarahPage.edit');
     Route::patch('Kafarah-page', [KafarahController::class, 'KafarahDetailsUpdate'])->name('KafarahPage.update');
     Route::post('Kafarah/status/{Kafarah}', [KafarahController::class, 'changeStatus'])->name('Kafarah.status');
-    Route::post('Kafarah/homepage/{Kafarah}', [KafarahController::class, 'homepageUpdate'])->name('Kafarah.homepage'); 
-    
+    Route::post('Kafarah/homepage/{Kafarah}', [KafarahController::class, 'homepageUpdate'])->name('Kafarah.homepage');
+
     // RELIEF
     Route::resource('reliefs', ReliefController::class)->except(['show', 'destroy']);
     Route::get('relief-page', [ReliefController::class, 'reliefsDetails'])->name('reliefsPage.edit');
@@ -221,4 +220,3 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function (){
 Route::fallback(function () {
     return view('errors.404');
 });
-
