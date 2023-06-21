@@ -29,6 +29,20 @@ class LoginController extends Controller
         return $this->login($request);
     }
 
+
+    /***
+     *
+     *
+     *
+     *
+     */
+    protected function attemptLogin(Request $request)
+{
+    return $this->guard()->attempt(
+        $this->credentials($request), $request->filled('remember')
+    );
+}
+
     /**
      * Log the user out of the application.
      *

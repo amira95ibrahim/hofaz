@@ -7,7 +7,7 @@
 @section('content')
 
 
-   
+
     <!-- Start main-content -->
     <div class="main-content">
         <!-- Section: inner-header -->
@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-md-7">
                         <form name="reg-form" class="register-form" method="POST" action="{{ route('register') }}">
-                        
+
                             @csrf
                             <div class="icon-box mb-0 p-0">
                                 {{--                            <a href="#" class="icon icon-bordered icon-rounded icon-sm pull-left mb-0 mr-10">--}}
@@ -48,10 +48,11 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label>@lang('signIn.name')</label>
-                                    
-                                    <input id="name" name="name" type="text" class="form-control @error('name') is-invalid @enderror"  require>
+
+                                    <input id="name" name="name" type="text" class="form-control
+                                     @error('name') is-invalid @enderror"  require>
                                     @error('name')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback text-danger" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
@@ -60,20 +61,20 @@
                                     <label>@lang('signIn.email_address')</label>
                                     <input name="email" class="form-control" type="email">
                                     @error('email')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback text-danger" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                      @enderror
                                 </div>
                             </div>
-                           
-                            
+
+
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="form_choose_password">@lang('signIn.choose_password')</label>
                                     <input id="password" name="password" class="form-control"  type="password">
                                     @error('password')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback text-danger" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
@@ -93,7 +94,7 @@
                         <h4 class="text-gray mt-0 pt-5"> @lang('signIn.login')</h4>
                         <hr>
                         {{--                    <p>Lorem ipsum dolor sit amet, consectetur elit.</p>--}}
-                        <form name="login-form" class="clearfix" method="post" action="{{ route('login') }}">
+                      {{--  <form name="login-form" class="clearfix" method="post" action="{{ route('login') }}">
                               @csrf
                             <div class="row">
                                 <div class="form-group col-md-12">
@@ -105,7 +106,7 @@
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="form_password">@lang('signIn.password')</label>
-                                    <input id="password" name="password" class="form-control" type="passwoed">
+                                    <input id="password" name="password" class="form-control" type="password">
                                 </div>
                             </div>
                             <div class="checkbox pull-left mt-15">
@@ -129,7 +130,50 @@
                                 <a class="btn btn-dark btn-lg btn-block no-border" href="#"
                                    data-bg-color="#00acee"> @lang('signIn.login_with_twitter')</a>
                             </div>
+                        </form> --}}
+                        <form name="login-form" class="clearfix" method="post" action="{{ route('login') }}">
+                            @csrf
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="form_username_email">@lang('signIn.username_email')</label>
+                                    <input id="email" name="email" class="form-control" type="text">
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback text-danger" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="form_password">@lang('signIn.password')</label>
+                                    <input id="password" name="password" class="form-control" type="password">
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback text-danger" role="alert">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="checkbox pull-left mt-15">
+                                <label for="remember">
+                                    @lang('signIn.remember_me')
+                                    <input class="mr-5" id="remember" name="remember" type="checkbox">
+                                </label>
+                            </div>
+
+                            <div class="form-group pull-right mt-10">
+                                <button type="submit" class="btn btn-dark btn-theme-colored btn-sm"> @lang('signIn.login')</button>
+                            </div>
+                            <div class="clear pt-10">
+                                <a class="text-theme-colored font-weight-600 font-12 mr-10 pt-5" href="#"> @lang('signIn.forgot_your_password')</a>
+                            </div>
+                            <div class="clear text-center pt-10">
+                                <a class="btn btn-dark btn-lg btn-block no-border mt-15 mb-15" href="#" data-bg-color="#3b5998"> @lang('signIn.login_with_facebook')</a>
+                                <a class="btn btn-dark btn-lg btn-block no-border" href="#" data-bg-color="#00acee"> @lang('signIn.login_with_twitter')</a>
+                            </div>
                         </form>
+
                     </div>
                 </div>
             </div>

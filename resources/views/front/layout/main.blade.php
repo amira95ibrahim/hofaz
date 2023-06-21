@@ -224,7 +224,7 @@
 <!--                        </li>-->
 <!--                    </ul>-->
 <ul class="menuzord-menu menuzord-top-menu">
-  <!--dd(auth()->user()) -->
+
     @guest
       <li class="py-2">
             <a class="text-white" href="{{ route('signIn') }}">
@@ -232,30 +232,32 @@
             </a>
         </li>
     @else
-        <li class="py-2">
-            <a class="text-white" href="{{ route('admin.home') }}">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                مرحبا {{ Auth::user()->name[0] }}
+    <li class="py-2">
+        <a class="text-white" href="">
+
+            <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <i class="fa fa-user" aria-hidden="true"></i>  {{ Auth::user()->name }}
             </a>
-        </li>
+            <div class="dropdown-menu dropdown @if(app()->getLocale() == 'ar') text-right @endif" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href=" {{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    @lang('nav.Logout')
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </a>
+    </li>
         <span class="navbar-text">
             <!-- Right Side Of Navbar -->
             <ul class="ml-auto navbar-nav">
                 <!-- Authentication Links -->
+
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                    </a>
 
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href=" {{ route('logout') }} " onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
+
                 </li>
             </ul>
         </span>

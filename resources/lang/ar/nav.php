@@ -14,6 +14,7 @@ return [
     'online_service' => 'حسابي الخيري',
     'about_us' => 'من نحن',
     'sign_in' => 'تسجيل دخول',
+    'Logout' => 'تسجيل خروج',
     'donation_methods' => 'طرق التبرع',
     'call_us' => 'تواصل معنا',
     'teams' => 'فرق تطوعية',
