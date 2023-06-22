@@ -499,6 +499,34 @@
         }
     });
 </script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script>
+   window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1633079553786059',
+    cookie     : true,
+    xfbml      : true,
+    version    : 'v10.0'
+  });
+};
+function loginWithFacebook() {
+  FB.login(function(response) {
+    if (response.authResponse) {
+      // User is logged in and authorized your app
+      // Get user details and token
+      var userID = response.authResponse.userID;
+      var accessToken = response.authResponse.accessToken;
+      FB.api('/me', function(response) {
+        console.log('Successful login for: ' + response.name);
+        // Add your code to handle successful login
+      });
+    } else {
+      console.log('User cancelled login or did not fully authorize.');
+    }
+  }, {scope: 'email'});
+}
+
+</script>
 @stack('scripts')
 </body>
 </html>

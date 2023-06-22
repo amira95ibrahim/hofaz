@@ -169,8 +169,10 @@
                                 <a class="text-theme-colored font-weight-600 font-12 mr-10 pt-5" href="#"> @lang('signIn.forgot_your_password')</a>
                             </div>
                             <div class="clear text-center pt-10">
-                                <a class="btn btn-dark btn-lg btn-block no-border mt-15 mb-15" href="#" data-bg-color="#3b5998"> @lang('signIn.login_with_facebook')</a>
-                                <a class="btn btn-dark btn-lg btn-block no-border" href="#" data-bg-color="#00acee"> @lang('signIn.login_with_twitter')</a>
+                                <a class="btn btn-dark btn-lg btn-block no-border mt-15 mb-15" href="#" data-bg-color="#3b5998" onClick="loginWithFacebook()">
+                                    @lang('signIn.login_with_facebook')
+                                </a>
+                                 <a class="btn btn-dark btn-lg btn-block no-border" href="#" data-bg-color="#00acee"> @lang('signIn.login_with_twitter')</a>
                             </div>
                         </form>
 
