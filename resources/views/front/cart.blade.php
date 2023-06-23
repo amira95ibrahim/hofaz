@@ -440,6 +440,9 @@
 @section('content')
     <!-- Start main-content -->
     <div class="main-content">
+        @if(session()->has('error'))
+            <p class="alert alert-danger">{{ session()->get('error') }}</p>
+        @endif
         <!-- Section: inner-header -->
         <section class="inner-header divider layer-overlay overlay-dark-8"
                  data-bg-img="{{ asset('images/bg/bg2.jpg') }}">
@@ -508,6 +511,7 @@
 @endsection
 
 @push('scripts')
+
     <script>
         // Remove Items From Cart
         $('a.remove').click(function(){

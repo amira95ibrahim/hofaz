@@ -125,7 +125,9 @@
                         <div class="wrapper">
                             <div class="bg-grey br-20">
                                 <div id="unknownTab" class="tab-content active clearfix">
-                                    <form action="" method="POST">
+                                    <form action="{{ route('make-payment') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" value="{{ number_format(Cart::getTotal()) }}" name="amount">
                                         <div class="col-sm-12 text-center">
                                             <p>باختيار فاعل خير.. لن نستطيع أن نرسل لك رسائل نصية أو بريداً أو تقارير حول المشروع</p>
                                         </div>
@@ -136,12 +138,16 @@
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <label class="">رقم الهاتف<small>(اختياري)</small></label>
-                                                    <input type="number" class="form-control" name="amount">
+                                                    <input type="number" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number">
+                                                    @error('phone_number')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-12 text-center mt-20">
                                             <h3 class="font-weight-bold text-black-333 pr-0">
+
                                                 مبلع التبرع:
                                                 <span class="text-theme-colored font-weight-700">{{ number_format(Cart::getTotal()) }} د.ك</span>
                                             </h3>
@@ -173,8 +179,8 @@
                                         </div>
                                         <div class="col-md-12 text-center mt-10">
                                             <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
-                                            <a href="{{ route('signIn') }}" type="submit"
-                                               class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+                                            <button type="submit"
+                                               class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</button>
                                         </div>
 
                                     </form>

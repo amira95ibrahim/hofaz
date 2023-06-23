@@ -94,7 +94,7 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/news', 'NewsController@index')->name('news');
     Route::get('/news/{article}', 'NewsController@show')->name('news.details');
 
-    Route::get('payment/index', 'MyFatoorahController@index');
+    Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment')->middleware('auth');
 });
 
 

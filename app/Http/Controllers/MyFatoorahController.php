@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Donation;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use MyFatoorah\Library\PaymentMyfatoorahApiV2;
 
 class MyFatoorahController extends Controller {
@@ -24,42 +27,53 @@ class MyFatoorahController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index(Request $request) {
+        $request->validate([
+            'phone_number' => 'nullable|max:11'
+        ]);
+
+        $donation = Donation::create([
+            'donor_id'  => Auth::id(),
+            'amount'    => $request->amount,
+            'payment_method' => 'visa',
+            'status' =>'INITIATED'
+        ]);
+
         try {
             $paymentMethodId = 0; // 0 for MyFatoorah invoice or 1 for Knet in test mode
 
-            $curlData = $this->getPayLoadData();
+            $curlData = $this->getPayLoadData($request->all(), $donation->id);
             $data     = $this->mfObj->getInvoiceURL($curlData, $paymentMethodId);
 
             $response = ['IsSuccess' => 'true', 'Message' => 'Invoice created successfully.', 'Data' => $data];
         } catch (\Exception $e) {
             $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
         }
-        return response()->json($response);
+        return redirect()->to($response['Data']['invoiceURL']);
     }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------
 
     /**
-     * 
+     *
      * @param int|string $orderId
      * @return array
      */
-    private function getPayLoadData($orderId = null) {
+    private function getPayLoadData($data, $orderId = null) {
         $callbackURL = route('myfatoorah.callback');
 
         return [
-            'CustomerName'       => 'FName LName',
-            'InvoiceValue'       => '10',
+            'CustomerName'       => Auth::user()->name,
+            'InvoiceValue'       => $data['amount'],
             'DisplayCurrencyIso' => 'KWD',
-            'CustomerEmail'      => 'test@test.com',
+            'CustomerEmail'      => Auth::user()->email,
             'CallBackUrl'        => $callbackURL,
             'ErrorUrl'           => $callbackURL,
             'MobileCountryCode'  => '+965',
-            'CustomerMobile'     => '12345678',
+            'CustomerMobile'     => $data['phone_number'],
             'Language'           => 'en',
             'CustomerReference'  => $orderId,
-            'SourceInfo'         => 'Laravel ' . app()::VERSION . ' - MyFatoorah Package ' . MYFATOORAH_LARAVEL_PACKAGE_VERSION
+            'SourceInfo'         => 'Hofaz ' . app()::VERSION . ' - MyFatoorah Package ' . MYFATOORAH_LARAVEL_PACKAGE_VERSION
         ];
     }
 
@@ -67,27 +81,35 @@ class MyFatoorahController extends Controller {
 
     /**
      * Get MyFatoorah payment information
-     * 
-     * @return \Illuminate\Http\Response
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function callback() {
+
         try {
             $paymentId = request('paymentId');
             $data      = $this->mfObj->getPaymentStatus($paymentId, 'PaymentId');
-
+            $donation = Donation::find($data->CustomerReference);
             if ($data->InvoiceStatus == 'Paid') {
-                $msg = 'Invoice is paid.';
+                $donation->notes = 'Invoice is paid.';
+                $donation->payment_status = 'CAPTURED';
+                $donation->save();
+                return redirect()->route('home')->with('success', 'تم التبرع بنجاح. جزاك الله خيرا');
             } else if ($data->InvoiceStatus == 'Failed') {
-                $msg = 'Invoice is not paid due to ' . $data->InvoiceError;
-            } else if ($data->InvoiceStatus == 'Expired') {
-                $msg = 'Invoice is expired.';
+                $donation->notes = 'Invoice is not paid due to ' . $data->InvoiceError;
+                $donation->payment_status = 'FAILED';
+                $donation->save();
+                return redirect()->route('home')->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
+            } else {
+                $donation->notes = 'Invoice is expired.';
+                $donation->payment_status = 'DECLINED';
+                $donation->save();
+                return redirect()->route('home')->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
             }
 
-            $response = ['IsSuccess' => 'true', 'Message' => $msg, 'Data' => $data];
         } catch (\Exception $e) {
-            $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
+            return redirect()->route('home')->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
         }
-        return response()->json($response);
     }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------

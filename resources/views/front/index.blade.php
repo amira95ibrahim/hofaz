@@ -14,6 +14,8 @@
     </style>
 @endpush
 
+
+
 @section('content')
     <div class="main-content">
         <!-- slider -->
@@ -34,6 +36,9 @@
         <!-- kafalat -->
         <section>
             <div class="container pb-sm-50">
+                @if(session()->has('success'))
+                    <p class="alert alert-success">{{ session()->get('success') }}</p>
+                @endif
                 <div class="row">
                     <div class="col-md-12">
                         <div class="owl-carousel-3col" data-dots="false" data-nav="true">

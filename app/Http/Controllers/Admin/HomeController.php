@@ -26,6 +26,6 @@ class HomeController extends Controller
     {
         $x=5;
         return view('admin.home', compact('x'));
-        
+
     }
 }
