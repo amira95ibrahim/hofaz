@@ -1,4 +1,4 @@
- <?php
+<?php
 
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\HomeController;

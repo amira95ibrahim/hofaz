@@ -30,7 +30,7 @@
 #27 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #28 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #29 {main}
-"} 
+"}
 [2023-06-22 21:52:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -61,7 +61,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:52:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -92,7 +92,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:53:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -123,7 +123,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:53:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -154,7 +154,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:54:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -185,7 +185,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:54:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -216,7 +216,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:55:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -247,7 +247,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:55:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -278,7 +278,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:56:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -309,7 +309,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:56:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -340,7 +340,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:57:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -371,7 +371,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:57:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -402,7 +402,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:57:31] production.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\\View\\Compilers\\Compiler->__construct()
@@ -433,7 +433,7 @@
 #25 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
-"} 
+"}
 [2023-06-22 21:57:31] production.ERROR: Uncaught InvalidArgumentException: Please provide a valid cache path. in /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36
 Stack trace:
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/ViewServiceProvider.php(88): Illuminate\View\Compilers\Compiler->__construct()
@@ -451,7 +451,7 @@ Stack trace:
 #5 /home/amira/Alexa Kweet/Hofa at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/View/Compilers/Compiler.php:36)
 [stacktrace]
 #0 {main}
-"} 
+"}
 [2023-06-23 19:43:08] demo.ERROR: Class "Intervention\Image\ImageServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Intervention\\Image\\ImageServiceProvider\" not found at F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Intervention\\\\Im...')
@@ -465,7 +465,7 @@ Stack trace:
 #8 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #9 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #10 {main}
-"} 
+"}
 [2023-06-23 19:43:34] demo.ERROR: Class "Intervention\Image\ImageServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Intervention\\Image\\ImageServiceProvider\" not found at F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Intervention\\\\Im...')
@@ -479,7 +479,7 @@ Stack trace:
 #8 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #9 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #10 {main}
-"} 
+"}
 [2023-06-23 19:43:35] demo.ERROR: Class "Intervention\Image\ImageServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Intervention\\Image\\ImageServiceProvider\" not found at F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Intervention\\\\Im...')
@@ -493,7 +493,7 @@ Stack trace:
 #8 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #9 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #10 {main}
-"} 
+"}
 [2023-06-23 19:43:35] demo.ERROR: Class "Intervention\Image\ImageServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Intervention\\Image\\ImageServiceProvider\" not found at F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Intervention\\\\Im...')
@@ -507,7 +507,7 @@ Stack trace:
 #8 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #9 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #10 {main}
-"} 
+"}
 [2023-06-23 19:43:35] demo.ERROR: Class "Intervention\Image\ImageServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Intervention\\Image\\ImageServiceProvider\" not found at F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Intervention\\\\Im...')
@@ -521,7 +521,7 @@ Stack trace:
 #8 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #9 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #10 {main}
-"} 
+"}
 [2023-06-23 19:43:35] demo.ERROR: Class "Intervention\Image\ImageServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Intervention\\Image\\ImageServiceProvider\" not found at F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Intervention\\\\Im...')
@@ -535,7 +535,7 @@ Stack trace:
 #8 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #9 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #10 {main}
-"} 
+"}
 [2023-06-23 19:43:36] demo.ERROR: Class "Intervention\Image\ImageServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Intervention\\Image\\ImageServiceProvider\" not found at F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Intervention\\\\Im...')
@@ -549,7 +549,7 @@ Stack trace:
 #8 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #9 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #10 {main}
-"} 
+"}
 [2023-06-23 19:43:36] demo.ERROR: Class "Intervention\Image\ImageServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Intervention\\Image\\ImageServiceProvider\" not found at F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Intervention\\\\Im...')
@@ -563,7 +563,7 @@ Stack trace:
 #8 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #9 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #10 {main}
-"} 
+"}
 [2023-06-23 19:43:36] demo.ERROR: Class "Intervention\Image\ImageServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Intervention\\Image\\ImageServiceProvider\" not found at F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php:208)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Intervention\\\\Im...')
@@ -577,7 +577,7 @@ Stack trace:
 #8 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #9 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #10 {main}
-"} 
+"}
 [2023-06-23 19:57:03] demo.ERROR: syntax error, unexpected token "return" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"return\" at F:\\laravel_projects\\real\\hofaz\\app\\Http\\Controllers\\Admin\\HomeController.php:28)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('F:\\\\laravel_proj...')
@@ -617,7 +617,7 @@ Stack trace:
 #34 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #35 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #36 {main}
-"} 
+"}
 [2023-06-23 20:08:08] demo.ERROR: Add [donor_id] to fillable property to allow mass assignment on [App\Models\Donation]. {"userId":1,"exception":"[object] (Illuminate\\Database\\Eloquent\\MassAssignmentException(code: 0): Add [donor_id] to fillable property to allow mass assignment on [App\\Models\\Donation]. at F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php:433)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(212): Illuminate\\Database\\Eloquent\\Model->fill(Array)
@@ -678,7 +678,7 @@ Stack trace:
 #55 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #56 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #57 {main}
-"} 
+"}
 [2023-06-23 20:08:33] demo.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`hofath`.`donations`, CONSTRAINT `donations_donor_id_foreign` FOREIGN KEY (`donor_id`) REFERENCES `donors` (`id`)) (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (1, 100, INITIATED, 2023-06-23 20:08:33, 2023-06-23 20:08:33)) {"userId":1,"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`hofath`.`donations`, CONSTRAINT `donations_donor_id_foreign` FOREIGN KEY (`donor_id`) REFERENCES `donors` (`id`)) (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (1, 100, INITIATED, 2023-06-23 20:08:33, 2023-06-23 20:08:33)) at F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:712)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback('insert into `do...', Array, Object(Closure))
@@ -891,7 +891,7 @@ Stack trace:
 #66 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #67 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #68 {main}
-"} 
+"}
 [2023-06-23 20:10:25] demo.ERROR: Attempt to read property "Date" on array {"userId":1,"exception":"[object] (ErrorException(code: 0): Attempt to read property \"Date\" on array at F:\\laravel_projects\\real\\hofaz\\app\\Http\\Controllers\\MyFatoorahController.php:49)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\app\\Http\\Controllers\\MyFatoorahController.php(49): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Attempt to read...', 'F:\\\\laravel_proj...', 49)
@@ -945,7 +945,7 @@ Stack trace:
 #48 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #49 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #50 {main}
-"} 
+"}
 [2023-06-23 20:10:35] demo.ERROR: Undefined array key "Date" {"userId":1,"exception":"[object] (ErrorException(code: 0): Undefined array key \"Date\" at F:\\laravel_projects\\real\\hofaz\\app\\Http\\Controllers\\MyFatoorahController.php:49)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\app\\Http\\Controllers\\MyFatoorahController.php(49): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined array...', 'F:\\\\laravel_proj...', 49)
@@ -999,7 +999,7 @@ Stack trace:
 #48 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #49 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #50 {main}
-"} 
+"}
 [2023-06-23 20:19:04] demo.ERROR: Cannot use object of type stdClass as array {"exception":"[object] (Error(code: 0): Cannot use object of type stdClass as array at F:\\laravel_projects\\real\\hofaz\\app\\Http\\Controllers\\MyFatoorahController.php:89)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\MyFatoorahController->callback()
@@ -1035,7 +1035,7 @@ Stack trace:
 #30 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #31 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #32 {main}
-"} 
+"}
 [2023-06-23 20:19:21] demo.ERROR: Cannot use object of type stdClass as array {"exception":"[object] (Error(code: 0): Cannot use object of type stdClass as array at F:\\laravel_projects\\real\\hofaz\\app\\Http\\Controllers\\MyFatoorahController.php:89)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\MyFatoorahController->callback()
@@ -1071,7 +1071,7 @@ Stack trace:
 #30 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #31 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #32 {main}
-"} 
+"}
 [2023-06-23 20:22:07] demo.ERROR: Undefined array key "Data" {"userId":1,"exception":"[object] (ErrorException(code: 0): Undefined array key \"Data\" at F:\\laravel_projects\\real\\hofaz\\app\\Http\\Controllers\\MyFatoorahController.php:49)
 [stacktrace]
 #0 F:\\laravel_projects\\real\\hofaz\\app\\Http\\Controllers\\MyFatoorahController.php(49): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined array...', 'F:\\\\laravel_proj...', 49)
@@ -1125,7 +1125,7 @@ Stack trace:
 #48 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #49 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #50 {main}
-"} 
+"}
 [2023-06-23 20:24:19] demo.ERROR: Cannot use object of type Illuminate\Support\ViewErrorBag as array (View: F:\laravel_projects\real\hofaz\resources\views\front\payment.blade.php) {"view":{"view":"F:\\laravel_projects\\real\\hofaz\\resources\\views/front/payment.blade.php","data":{"lang":"<pre class=sf-dump id=sf-dump-1850336911 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"2 characters\">ar</span>\"
 </pre><script>Sfdump(\"sf-dump-1850336911\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
 ","direction":"<pre class=sf-dump id=sf-dump-1696764633 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"4 characters\">-rtl</span>\"
@@ -1261,7 +1261,7 @@ Stack trace:
 #53 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #54 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #55 {main}
-"} 
+"}
 [2023-06-23 20:37:59] demo.ERROR: syntax error, unexpected token "endif", expecting end of file (View: F:\laravel_projects\real\hofaz\resources\views\front\index.blade.php) {"view":{"view":"F:\\laravel_projects\\real\\hofaz\\resources\\views/front/index.blade.php","data":{"lang":"<pre class=sf-dump id=sf-dump-2057884915 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"2 characters\">ar</span>\"
 </pre><script>Sfdump(\"sf-dump-2057884915\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
 ","direction":"<pre class=sf-dump id=sf-dump-2025008696 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"4 characters\">-rtl</span>\"
@@ -1813,7 +1813,7 @@ Stack trace:
 #52 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #53 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #54 {main}
-"} 
+"}
 [2023-06-23 20:38:26] demo.ERROR: syntax error, unexpected token "endif", expecting end of file (View: F:\laravel_projects\real\hofaz\resources\views\front\index.blade.php) {"view":{"view":"F:\\laravel_projects\\real\\hofaz\\resources\\views/front/index.blade.php","data":{"lang":"<pre class=sf-dump id=sf-dump-1891377649 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"2 characters\">ar</span>\"
 </pre><script>Sfdump(\"sf-dump-1891377649\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
 ","direction":"<pre class=sf-dump id=sf-dump-1900114064 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"4 characters\">-rtl</span>\"
@@ -2365,7 +2365,7 @@ Stack trace:
 #52 F:\\laravel_projects\\real\\hofaz\\public\\index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #53 F:\\laravel_projects\\real\\hofaz\\server.php(21): require_once('F:\\\\laravel_proj...')
 #54 {main}
-"} 
+"}
 [2023-06-23 21:07:39] production.ERROR: SQLSTATE[HY000]: General error: 1364 Field 'model' doesn't have a default value (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (2, 5, INITIATED, 2023-06-23 21:07:38, 2023-06-23 21:07:38)) {"userId":2,"exception":"[object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1364 Field 'model' doesn't have a default value (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (2, 5, INITIATED, 2023-06-23 21:07:38, 2023-06-23 21:07:38)) at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
@@ -2578,7 +2578,7 @@ Stack trace:
 #66 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #67 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #68 {main}
-"} 
+"}
 [2023-06-23 21:11:35] production.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`alexa_hofath`.`donations`, CONSTRAINT `donations_donor_id_foreign` FOREIGN KEY (`donor_id`) REFERENCES `donors` (`id`)) (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (2, 5, INITIATED, 2023-06-23 21:11:35, 2023-06-23 21:11:35)) {"userId":2,"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`alexa_hofath`.`donations`, CONSTRAINT `donations_donor_id_foreign` FOREIGN KEY (`donor_id`) REFERENCES `donors` (`id`)) (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (2, 5, INITIATED, 2023-06-23 21:11:35, 2023-06-23 21:11:35)) at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
@@ -2791,7 +2791,7 @@ Stack trace:
 #66 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #67 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #68 {main}
-"} 
+"}
 [2023-06-23 21:18:40] production.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`alexa_hofath`.`donations`, CONSTRAINT `donations_donor_id_foreign` FOREIGN KEY (`donor_id`) REFERENCES `donors` (`id`)) (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (2, 5, INITIATED, 2023-06-23 21:18:40, 2023-06-23 21:18:40)) {"userId":2,"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`alexa_hofath`.`donations`, CONSTRAINT `donations_donor_id_foreign` FOREIGN KEY (`donor_id`) REFERENCES `donors` (`id`)) (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (2, 5, INITIATED, 2023-06-23 21:18:40, 2023-06-23 21:18:40)) at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
@@ -3004,7 +3004,7 @@ Stack trace:
 #66 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #67 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #68 {main}
-"} 
+"}
 [2023-06-24 14:57:26] production.ERROR: syntax error, unexpected '}', expecting ')' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}', expecting ')' at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:102)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -3034,7 +3034,7 @@ Stack trace:
 #24 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #26 {main}
-"} 
+"}
 [2023-06-24 14:57:52] production.ERROR: syntax error, unexpected '}' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '}' at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:102)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -3064,7 +3064,7 @@ Stack trace:
 #24 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #26 {main}
-"} 
+"}
 [2023-06-24 15:52:46] production.ERROR: syntax error, unexpected end of file {"exception":"[object] (ParseError(code: 0): syntax error, unexpected end of file at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:240)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -3096,7 +3096,7 @@ Stack trace:
 #26 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #27 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #28 {main}
-"} 
+"}
 [2023-06-24 15:52:47] production.ERROR: syntax error, unexpected end of file {"exception":"[object] (ParseError(code: 0): syntax error, unexpected end of file at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:240)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -3126,7 +3126,7 @@ Stack trace:
 #24 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #26 {main}
-"} 
+"}
 [2023-06-24 15:52:55] production.ERROR: syntax error, unexpected end of file {"exception":"[object] (ParseError(code: 0): syntax error, unexpected end of file at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:240)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -3158,7 +3158,7 @@ Stack trace:
 #26 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #27 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #28 {main}
-"} 
+"}
 [2023-06-24 15:53:02] production.ERROR: syntax error, unexpected end of file {"exception":"[object] (ParseError(code: 0): syntax error, unexpected end of file at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:240)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -3188,7 +3188,7 @@ Stack trace:
 #24 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #26 {main}
-"} 
+"}
 [2023-06-24 15:53:02] production.ERROR: syntax error, unexpected end of file {"exception":"[object] (ParseError(code: 0): syntax error, unexpected end of file at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:240)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
@@ -3218,7 +3218,7 @@ Stack trace:
 #24 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #26 {main}
-"} 
+"}
 [2023-06-24 15:53:59] production.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'donor_id' cannot be null (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (?, ?, INITIATED, 2023-06-24 15:53:59, 2023-06-24 15:53:59)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'donor_id' cannot be null (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (?, ?, INITIATED, 2023-06-24 15:53:59, 2023-06-24 15:53:59)) at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
@@ -3425,7 +3425,7 @@ Stack trace:
 #64 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #65 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #66 {main}
-"} 
+"}
 [2023-06-24 15:55:53] production.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'amount' cannot be null (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (1, ?, INITIATED, 2023-06-24 15:55:53, 2023-06-24 15:55:53)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'amount' cannot be null (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (1, ?, INITIATED, 2023-06-24 15:55:53, 2023-06-24 15:55:53)) at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
@@ -3632,7 +3632,7 @@ Stack trace:
 #64 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #65 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #66 {main}
-"} 
+"}
 [2023-06-24 16:00:53] production.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'amount' cannot be null (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (1, ?, INITIATED, 2023-06-24 16:00:53, 2023-06-24 16:00:53)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'amount' cannot be null (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (1, ?, INITIATED, 2023-06-24 16:00:53, 2023-06-24 16:00:53)) at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
@@ -3839,7 +3839,7 @@ Stack trace:
 #64 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #65 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #66 {main}
-"} 
+"}
 [2023-06-24 16:00:59] production.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'amount' cannot be null (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (1, ?, INITIATED, 2023-06-24 16:00:59, 2023-06-24 16:00:59)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'amount' cannot be null (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (1, ?, INITIATED, 2023-06-24 16:00:59, 2023-06-24 16:00:59)) at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
@@ -4046,7 +4046,7 @@ Stack trace:
 #64 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #65 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #66 {main}
-"} 
+"}
 [2023-06-24 16:01:20] production.ERROR: Undefined index: Data {"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:101)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(101): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -4098,7 +4098,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-24 18:48:36] production.ERROR: Undefined index: Data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:101)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(101): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -4150,7 +4150,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-24 18:53:35] production.ERROR: Undefined index: Data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:101)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(101): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -4202,7 +4202,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-24 21:04:36] production.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'donor_id' cannot be null (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (?, 0, INITIATED, 2023-06-24 21:04:36, 2023-06-24 21:04:36)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'donor_id' cannot be null (SQL: insert into `donations` (`donor_id`, `amount`, `status`, `updated_at`, `created_at`) values (?, 0, INITIATED, 2023-06-24 21:04:36, 2023-06-24 21:04:36)) at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
@@ -4409,7 +4409,7 @@ Stack trace:
 #64 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #65 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #66 {main}
-"} 
+"}
 [2023-06-24 21:05:42] production.ERROR: Too few arguments to function App\Http\Controllers\MyFatoorahController::getPayLoadData(), 2 passed in /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php on line 45 and exactly 3 expected {"exception":"[object] (ArgumentCountError(code: 0): Too few arguments to function App\\Http\\Controllers\\MyFatoorahController::getPayLoadData(), 2 passed in /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php on line 45 and exactly 3 expected at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:111)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(45): App\\Http\\Controllers\\MyFatoorahController->getPayLoadData()
@@ -4461,7 +4461,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-25 11:07:58] production.ERROR: Too few arguments to function App\Http\Controllers\MyFatoorahController::getPayLoadData(), 2 passed in /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php on line 45 and exactly 3 expected {"exception":"[object] (ArgumentCountError(code: 0): Too few arguments to function App\\Http\\Controllers\\MyFatoorahController::getPayLoadData(), 2 passed in /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php on line 45 and exactly 3 expected at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:111)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(45): App\\Http\\Controllers\\MyFatoorahController->getPayLoadData()
@@ -4513,7 +4513,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-25 13:06:50] production.ERROR: Too few arguments to function App\Http\Controllers\MyFatoorahController::getPayLoadData(), 2 passed in /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php on line 45 and exactly 3 expected {"exception":"[object] (ArgumentCountError(code: 0): Too few arguments to function App\\Http\\Controllers\\MyFatoorahController::getPayLoadData(), 2 passed in /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php on line 45 and exactly 3 expected at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:111)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(45): App\\Http\\Controllers\\MyFatoorahController->getPayLoadData()
@@ -4565,7 +4565,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-25 13:12:37] production.ERROR: Too few arguments to function App\Http\Controllers\MyFatoorahController::getPayLoadData(), 2 passed in /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php on line 45 and exactly 3 expected {"exception":"[object] (ArgumentCountError(code: 0): Too few arguments to function App\\Http\\Controllers\\MyFatoorahController::getPayLoadData(), 2 passed in /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php on line 45 and exactly 3 expected at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:111)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(45): App\\Http\\Controllers\\MyFatoorahController->getPayLoadData()
@@ -4617,7 +4617,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:24:33] production.ERROR: Too few arguments to function App\Http\Controllers\MyFatoorahController::getPayLoadData(), 2 passed in /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php on line 45 and exactly 3 expected {"userId":2,"exception":"[object] (ArgumentCountError(code: 0): Too few arguments to function App\\Http\\Controllers\\MyFatoorahController::getPayLoadData(), 2 passed in /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php on line 45 and exactly 3 expected at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:111)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(45): App\\Http\\Controllers\\MyFatoorahController->getPayLoadData()
@@ -4669,7 +4669,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:25:09] production.ERROR: Undefined index: Data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:52)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(52): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -4721,7 +4721,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:34:11] production.ERROR: Undefined index: Data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:154)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(154): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -4773,7 +4773,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:35:10] production.ERROR: Undefined index: Data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:154)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(154): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -4825,7 +4825,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:35:18] production.ERROR: Undefined index: Data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:154)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(154): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -4877,7 +4877,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:35:39] production.ERROR: Undefined index: Data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:154)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(154): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -4929,7 +4929,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:38:24] production.ERROR: Undefined index: date {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: date at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:154)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(154): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -4981,7 +4981,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:38:35] production.ERROR: Undefined index: data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:154)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(154): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -5033,7 +5033,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:41:44] production.ERROR: Trying to access array offset on value of type null {"userId":2,"exception":"[object] (ErrorException(code: 0): Trying to access array offset on value of type null at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:154)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(154): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -5085,7 +5085,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:44:10] production.ERROR: Undefined index: Data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:154)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(154): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -5137,7 +5137,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:49:37] production.ERROR: Undefined index: Data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:163)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(163): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -5189,7 +5189,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 04:49:42] production.ERROR: Undefined index: Data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:163)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(163): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -5241,7 +5241,7 @@ Stack trace:
 #46 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #47 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #48 {main}
-"} 
+"}
 [2023-06-26 05:06:44] production.ERROR: Undefined index: Data {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined index: Data at /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php:163)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/app/Http/Controllers/MyFatoorahController.php(163): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError()
@@ -5295,7 +5295,7 @@ Stack trace:
 #48 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #49 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #50 {main}
-"} 
+"}
 [2023-06-26 09:01:48] production.ERROR: syntax error, unexpected ''test_mode'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected ''test_mode'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' at /home/amira/Alexa Kweet/Hofath/hofaz/config/myfatoorah.php:16)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
@@ -5304,7 +5304,7 @@ Stack trace:
 #3 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #5 {main}
-"} 
+"}
 [2023-06-26 09:01:58] production.ERROR: syntax error, unexpected ''test_mode'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected ''test_mode'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' at /home/amira/Alexa Kweet/Hofath/hofaz/config/myfatoorah.php:16)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
@@ -5313,7 +5313,7 @@ Stack trace:
 #3 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #5 {main}
-"} 
+"}
 [2023-06-26 09:01:58] production.ERROR: syntax error, unexpected ''test_mode'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' {"exception":"[object] (ParseError(code: 0): syntax error, unexpected ''test_mode'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' at /home/amira/Alexa Kweet/Hofath/hofaz/config/myfatoorah.php:16)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles()
@@ -5322,7 +5322,7 @@ Stack trace:
 #3 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
 #4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #5 {main}
-"} 
+"}
 [2023-06-26 16:30:29] production.ERROR: Internal GD font () not available. Use only 1-5. {"exception":"[object] (Intervention\\Image\\Exception\\NotSupportedException(code: 0): Internal GD font () not available. Use only 1-5. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/intervention/image/src/Intervention/Image/Gd/Font.php:31)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/intervention/image/src/Intervention/Image/Gd/Font.php(46): Intervention\\Image\\Gd\\Font->getInternalFont()
@@ -5380,7 +5380,7 @@ Stack trace:
 #52 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #53 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #54 {main}
-"} 
+"}
 [2023-06-26 18:01:30] production.ERROR: Target class [App\Http\Controllers\Admin\HomeController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [App\\Http\\Controllers\\Admin\\HomeController] does not exist. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -5455,7 +5455,7 @@ Stack trace:
 #32 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #34 {main}
-"} 
+"}
 [2023-06-26 18:01:32] production.ERROR: Target class [App\Http\Controllers\Admin\HomeController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [App\\Http\\Controllers\\Admin\\HomeController] does not exist. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -5530,7 +5530,7 @@ Stack trace:
 #32 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #34 {main}
-"} 
+"}
 [2023-06-26 18:02:44] production.ERROR: Target class [App\Http\Controllers\Admin\HomeController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [App\\Http\\Controllers\\Admin\\HomeController] does not exist. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -5605,7 +5605,7 @@ Stack trace:
 #32 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #34 {main}
-"} 
+"}
 [2023-06-26 18:02:47] production.ERROR: Target class [App\Http\Controllers\Admin\HomeController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [App\\Http\\Controllers\\Admin\\HomeController] does not exist. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -5680,7 +5680,7 @@ Stack trace:
 #32 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #34 {main}
-"} 
+"}
 [2023-06-26 18:05:39] production.ERROR: Target class [App\Http\Controllers\Admin\HomeController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [App\\Http\\Controllers\\Admin\\HomeController] does not exist. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -5755,7 +5755,7 @@ Stack trace:
 #32 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #34 {main}
-"} 
+"}
 [2023-06-26 18:17:51] production.ERROR: Target class [App\Http\Controllers\Admin\HomeController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [App\\Http\\Controllers\\Admin\\HomeController] does not exist. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -5830,7 +5830,7 @@ Stack trace:
 #32 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #34 {main}
-"} 
+"}
 [2023-06-26 18:17:53] production.ERROR: Target class [App\Http\Controllers\Admin\HomeController] does not exist. {"exception":"[object] (Illuminate\\Contracts\\Container\\BindingResolutionException(code: 0): Target class [App\\Http\\Controllers\\Admin\\HomeController] does not exist. at /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php:879)
 [stacktrace]
 #0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(758): Illuminate\\Container\\Container->build()
@@ -5905,4 +5905,154 @@ Stack trace:
 #32 /home/amira/Alexa Kweet/Hofath/hofaz/public/index.php(52): Illuminate\\Foundation\\Http\\Kernel->handle()
 #33 /home/amira/Alexa Kweet/Hofath/hofaz/server.php(21): require_once('/home/amira/Ale...')
 #34 {main}
-"} 
+"}
+[2023-06-26 18:48:52] production.ERROR: syntax error, unexpected '<<' (T_SL) {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '<<' (T_SL) at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:81)
+[stacktrace]
+#0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
+#1 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(382): Illuminate\\Routing\\Router->loadRoutes()
+#2 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(163): Illuminate\\Routing\\Router->group()
+#3 /home/amira/Alexa Kweet/Hofath/hofaz/app/Providers/RouteServiceProvider.php(48): Illuminate\\Routing\\RouteRegistrar->group()
+#4 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->App\\Providers\\{closure}()
+#5 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#7 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#8 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#9 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(120): Illuminate\\Container\\Container->call()
+#10 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(45): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#11 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#12 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#14 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#15 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#16 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(119): Illuminate\\Container\\Container->call()
+#17 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(927): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#18 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\\Foundation\\Application->bootProvider()
+#19 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
+#20 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk()
+#21 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#22 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#23 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith()
+#24 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#26 {main}
+"}
+[2023-06-26 18:48:52] production.ERROR: syntax error, unexpected '<<' (T_SL) {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '<<' (T_SL) at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:81)
+[stacktrace]
+#0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
+#1 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(382): Illuminate\\Routing\\Router->loadRoutes()
+#2 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(163): Illuminate\\Routing\\Router->group()
+#3 /home/amira/Alexa Kweet/Hofath/hofaz/app/Providers/RouteServiceProvider.php(48): Illuminate\\Routing\\RouteRegistrar->group()
+#4 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->App\\Providers\\{closure}()
+#5 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#7 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#8 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#9 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(120): Illuminate\\Container\\Container->call()
+#10 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(45): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#11 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#12 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#14 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#15 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#16 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(119): Illuminate\\Container\\Container->call()
+#17 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(927): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#18 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\\Foundation\\Application->bootProvider()
+#19 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
+#20 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk()
+#21 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#22 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#23 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith()
+#24 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#26 {main}
+"}
+[2023-06-26 18:48:54] production.ERROR: syntax error, unexpected '<<' (T_SL) {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '<<' (T_SL) at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:81)
+[stacktrace]
+#0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
+#1 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(382): Illuminate\\Routing\\Router->loadRoutes()
+#2 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(163): Illuminate\\Routing\\Router->group()
+#3 /home/amira/Alexa Kweet/Hofath/hofaz/app/Providers/RouteServiceProvider.php(48): Illuminate\\Routing\\RouteRegistrar->group()
+#4 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->App\\Providers\\{closure}()
+#5 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#7 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#8 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#9 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(120): Illuminate\\Container\\Container->call()
+#10 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(45): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#11 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#12 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#14 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#15 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#16 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(119): Illuminate\\Container\\Container->call()
+#17 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(927): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#18 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\\Foundation\\Application->bootProvider()
+#19 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
+#20 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk()
+#21 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#22 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#23 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith()
+#24 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#26 {main}
+"}
+[2023-06-26 18:49:52] production.ERROR: syntax error, unexpected '<<' (T_SL) {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '<<' (T_SL) at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:81)
+[stacktrace]
+#0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
+#1 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(382): Illuminate\\Routing\\Router->loadRoutes()
+#2 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(163): Illuminate\\Routing\\Router->group()
+#3 /home/amira/Alexa Kweet/Hofath/hofaz/app/Providers/RouteServiceProvider.php(48): Illuminate\\Routing\\RouteRegistrar->group()
+#4 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->App\\Providers\\{closure}()
+#5 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#7 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#8 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#9 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(120): Illuminate\\Container\\Container->call()
+#10 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(45): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#11 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#12 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#14 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#15 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#16 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(119): Illuminate\\Container\\Container->call()
+#17 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(927): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#18 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\\Foundation\\Application->bootProvider()
+#19 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
+#20 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk()
+#21 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#22 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#23 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith()
+#24 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#26 {main}
+"}
+[2023-06-26 18:49:52] production.ERROR: syntax error, unexpected '<<' (T_SL) {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '<<' (T_SL) at /home/amira/Alexa Kweet/Hofath/hofaz/routes/web.php:81)
+[stacktrace]
+#0 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
+#1 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/Router.php(382): Illuminate\\Routing\\Router->loadRoutes()
+#2 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(163): Illuminate\\Routing\\Router->group()
+#3 /home/amira/Alexa Kweet/Hofath/hofaz/app/Providers/RouteServiceProvider.php(48): Illuminate\\Routing\\RouteRegistrar->group()
+#4 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->App\\Providers\\{closure}()
+#5 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#7 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#8 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#9 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(120): Illuminate\\Container\\Container->call()
+#10 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(45): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#11 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#12 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#14 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#15 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#16 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(119): Illuminate\\Container\\Container->call()
+#17 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(927): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#18 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(905): Illuminate\\Foundation\\Application->bootProvider()
+#19 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
+#20 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk()
+#21 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#22 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#23 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith()
+#24 /home/amira/Alexa Kweet/Hofath/hofaz/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#26 {main}
+"}
