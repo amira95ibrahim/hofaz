@@ -22,26 +22,26 @@ class GiftController extends BaseController
     public function generate()
     {
 
-        $image = Image::make(public_path('images/photo.jpg'));
+        $image = Image::make(public_path('images/no-results.png'));
 
-        $image->text('John Doe', 100, 50, function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
-            $font->size(24);
+        $image->text('amira ', 100, 100, function ($font) {
+            // $font->file(public_path('fonts/arial.ttf'));
+            $font->size(32);
             $font->color('#000000');
         });
 
-        $image->text('project name', 100, 100, function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
-            $font->size(24);
-            $font->color('#000000');
-        });
+        // $image->text('project name', 100, 100, function ($font) {
+        //     $font->file(public_path('fonts/arial.ttf'));
+        //     $font->size(24);
+        //     $font->color('#000000');
+        // });
 
-        $image->text('sender', 200, 200, function ($font) {
-            $font->file(public_path('fonts/arial.ttf'));
-            $font->size(24);
-            $font->color('#000000');
-        });
+        // $image->text('sender', 200, 200, function ($font) {
+        //     $font->file(public_path('fonts/arial.ttf'));
+        //     $font->size(24);
+        //     $font->color('#000000');
+        // });
 
-        $image->save('path/to/new/image.jpg');
+        $image->save(public_path('images/no-results-updated.png'));
     }
 }

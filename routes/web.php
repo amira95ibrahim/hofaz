@@ -78,6 +78,7 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/project/{project}', 'ProjectController@show')->name('project.show');
 
     Route::get('/gift', 'GiftController@index')->name('gift');
+    Route::get('/gift/generate', 'GiftController@generate')->name('generate');
     Route::get('/donation', 'DonationController@index')->name('donation');
     Route::get('/search/{string}', 'SearchController@index')->name('search');
 

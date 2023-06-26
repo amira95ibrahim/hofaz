@@ -84,6 +84,7 @@
         </section>
 
         <section>
+            <form action="" method="POST">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 text-center">
@@ -113,7 +114,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="bg-grey p-3">
-                            <form action="" method="POST">
+
                                 <div class="form-group">
                                     <label>@lang('gift.sender_name')</label>
                                     <input type="text" class="form-control br-20" name="sender"
