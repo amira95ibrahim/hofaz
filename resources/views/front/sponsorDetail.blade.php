@@ -53,7 +53,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <form action="" method="POST">
+                            <form action="{{route('PeriodicDonation')}}" method="POST">
                                 <div class="row vertical-align-middle">
                                     <div class="col-sm-8 ml-100">
                                         <div class="form-group">
@@ -126,7 +126,7 @@
                                             class="ri-shopping-cart-line btn-icon"></i> @lang('sadaqa.add_to_cart')
                                     </button>
 
-                                    <button type="button" class="btn custom-btn-success mr-5"><i
+                                    <button type="submit" class="btn custom-btn-success mr-5"><i
                                             class="ri-bank-card-line btn-icon"></i> @lang('sadaqa.deduction')
                                     </button>
                                 </div>

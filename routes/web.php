@@ -94,7 +94,10 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/news', 'NewsController@index')->name('news');
     Route::get('/news/{article}', 'NewsController@show')->name('news.details');
 
-    Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment')->middleware('auth');
+    Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment');
+    Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed')->middleware(('auth'));
+    Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation')->middleware(('auth'));
+
 });
 
 
