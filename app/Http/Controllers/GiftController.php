@@ -8,14 +8,9 @@ use App\Models\SendGift;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Intervention\Image\Facades\Image;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\GiftCreatedNotification;
-=======
-use I18N_Arabic;
 
-
->>>>>>> 7aa89734d9dd8486ec629eb83e76dc60f4f28484
 
 
 class GiftController extends BaseController
