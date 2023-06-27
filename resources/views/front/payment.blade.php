@@ -106,28 +106,33 @@
     <div class="main-content">
         <!-- Section: Blog -->
         <section>
-            <div id="tabs-container">
-                <div class="tabs">
-                    <input type="radio" id="radio-1" name="tabs" checked />
-{{--                    <label class="tab" for="radio-1">Upcoming<span class="notification">2</span></label>--}}
-                    <label class="tab" for="radio-1" onclick="openTab(event, 'unknownTab')">فاعل خير</label>
-                    <input type="radio" id="radio-2" name="tabs" />
-                    <label class="tab" for="radio-2" onclick="openTab(event, 'signinTab')">تسجيل الدخول</label>
-                    <input type="radio" id="radio-3" name="tabs" />
-                    <label class="tab" for="radio-3" onclick="openTab(event, 'registerTab')">انشاء حساب</label>
-                    <span class="glider"></span>
+            <form action="{{ route('make-payment') }}" method="POST">
+                @csrf
+                <input type="hidden" value="{{ number_format(Cart::getTotal()) }}" name="amount">
+                <div id="tabs-container">
+                    <div class="tabs">
+                        <input type="radio" id="radio-1" name="donor_type" value="unknown" checked />
+                        <label class="tab" for="radio-1" onclick="openTab(event, 'unknownTab')">فاعل خير</label>
+                        @auth
+                            <input type="radio" id="radio-2" name="donor_type" value="logged"/>
+                            <label class="tab" for="radio-2" onclick="openTab(event, 'loggedTab')">{{ \Illuminate\Support\Facades\Auth::user()->name }}</label>
+                        @else
+                            <input type="radio" id="radio-2" name="donor_type" value="login"/>
+                            <label class="tab" for="radio-2" onclick="openTab(event, 'signinTab')">تسجيل الدخول</label>
+                            <input type="radio" id="radio-3" name="donor_type" value="signup"/>
+                            <label class="tab" for="radio-3" onclick="openTab(event, 'registerTab')">انشاء حساب</label>
+                        @endauth
+                        <span class="glider"></span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="container pt-70 pb-70">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="wrapper">
-                            <div class="bg-grey br-20">
-                                <div id="unknownTab" class="tab-content active clearfix">
-                                    <form action="{{ route('make-payment') }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" value="{{ number_format(Cart::getTotal()) }}" name="amount">
+                <div class="container pt-70 pb-70">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="wrapper">
+                                <div class="bg-grey br-20">
+                                    <div id="unknownTab" class="tab-content active clearfix">
+
                                         <div class="col-sm-12 text-center">
                                             <p>باختيار فاعل خير.. لن نستطيع أن نرسل لك رسائل نصية أو بريداً أو تقارير حول المشروع</p>
                                         </div>
@@ -140,7 +145,7 @@
                                                     <label class="">رقم الهاتف<small>(اختياري)</small></label>
                                                     <input type="number" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number">
                                                     @error('phone_number')
-                                                        <span class="text-danger">{{ $message }}</span>
+                                                    <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                             </div>
@@ -148,7 +153,7 @@
                                         <div class="col-sm-12 text-center mt-20">
                                             <h3 class="font-weight-bold text-black-333 pr-0">
 
-                                                مبلع التبرع:
+                                                مبلغ التبرع:
                                                 <span class="text-theme-colored font-weight-700">{{ number_format(Cart::getTotal()) }} د.ك</span>
                                             </h3>
                                         </div>
@@ -161,15 +166,7 @@
                                                         <label class="plan basic-plan" for="basic">
                                                             <input checked type="radio" name="plan" id="basic"/>
                                                             <div class="plan-content">
-                                                                <img loading="lazy" src="{{ asset('images/Visa-Master.png') }}"
-                                                                     alt=""/>
-                                                            </div>
-                                                        </label>
-
-                                                        <label class="plan complete-plan" for="complete">
-                                                            <input type="radio" id="complete" name="plan"/>
-                                                            <div class="plan-content">
-                                                                <img loading="lazy" src="{{ asset('images/knet.png') }}"
+                                                                <img loading="lazy" src="{{ asset('images/myfatoorah.jpeg') }}"
                                                                      alt=""/>
                                                             </div>
                                                         </label>
@@ -180,126 +177,144 @@
                                         <div class="col-md-12 text-center mt-10">
                                             <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
                                             <button type="submit"
-                                               class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</button>
+                                                    class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">
+                                                @lang('iftar.donate_now')</button>
                                         </div>
 
-                                    </form>
-                                </div>
+                                    </div>
 
-                                <div id="signinTab" class="tab-content clearfix" style="display: none">
-                                    <form action="" method="POST" autocomplete="off">
-                                        <div class="col-sm-6">
-                                            <label>البريد الإلكتروني</label>
-                                            <input type="email" autocomplete="none" class="form-control" name="email" />
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <label>كلمة المرور</label>
-                                            <input type="password" autocomplete="none" class="form-control" name="password" />
-                                        </div>
-                                        <div class="col-sm-12 text-center mt-20">
-                                            <h3 class="font-weight-bold text-black-333 pr-0">
-                                                مبلع التبرع:
-                                                <span class="text-theme-colored font-weight-700">300,000 د.ك</span>
-                                            </h3>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <div class="col-md-6">
-                                                    <label class="mt-2">@lang('iftar.payment_method')</label>
-                                                    <div class="plans">
-                                                        <div style="clear: both;"></div>
-                                                        <label class="plan basic-plan" for="basic">
-                                                            <input checked type="radio" name="plan" id="basic"/>
-                                                            <div class="plan-content">
-                                                                <img loading="lazy" src="{{ asset('images/Visa-Master.png') }}"
-                                                                     alt=""/>
-                                                            </div>
-                                                        </label>
+                                    @auth
+                                        <div id="loggedTab" class="tab-content clearfix" style="display: none">
+                                            <div class="col-sm-12 text-center mt-20">
+                                                <h3 class="font-weight-bold text-black-333 pr-0">
+                                                    مبلغ التبرع:
+                                                    <span class="text-theme-colored font-weight-700">{{ number_format(Cart::getTotal()) }} د.ك</span>
+                                                </h3>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <div class="col-md-6">
+                                                        <label class="mt-2">@lang('iftar.payment_method')</label>
+                                                        <div class="plans">
+                                                            <div style="clear: both;"></div>
+                                                            <label class="plan basic-plan" for="basic">
+                                                                <input checked type="radio" name="plan" id="basic"/>
+                                                                <div class="plan-content">
+                                                                    <img loading="lazy" src="{{ asset('images/myfatoorah.jpeg') }}"
+                                                                         alt=""/>
+                                                                </div>
+                                                            </label>
 
-                                                        <label class="plan complete-plan" for="complete">
-                                                            <input type="radio" id="complete" name="plan"/>
-                                                            <div class="plan-content">
-                                                                <img loading="lazy" src="{{ asset('images/knet.png') }}"
-                                                                     alt=""/>
-                                                            </div>
-                                                        </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-md-12 text-center mt-10">
+                                                <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
+                                                <button type="submit"
+                                                        class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">
+                                                    @lang('iftar.donate_now')</button>
+                                            </div>
                                         </div>
-                                        <div class="col-md-12 text-center mt-10">
-                                            <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
-                                            <a href="{{ route('signIn') }}" type="submit"
-                                               class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div id="registerTab" class="tab-content clearfix" style="display: none">
-                                    <form action="" method="POST" autocomplete="off">
-                                        <div class="col-sm-6">
-                                            <label>الاسم</label>
-                                            <input type="text" autocomplete="none" class="form-control" name="name" />
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <label>رقم الهاتف</label>
-                                            <input type="number" autocomplete="none" class="form-control" name="phone" />
-                                        </div>
-                                        <div class="col-sm-12 mt-10">
-                                            <label>البريد الالكتروني</label>
-                                            <input type="email" autocomplete="none" class="form-control" name="email" />
-                                        </div>
-                                        <div class="col-sm-6 mt-10">
-                                            <label>كلمة المرور</label>
-                                            <input type="password" autocomplete="none" class="form-control" name="password" />
-                                        </div>
-                                        <div class="col-sm-6 mt-10">
-                                            <label>تأكيد كلمة المرور</label>
-                                            <input type="password" autocomplete="none" class="form-control" name="confirm_password" />
-                                        </div>
-                                        <div class="col-sm-12 text-center mt-20">
-                                            <h3 class="font-weight-bold text-black-333 pr-0">
-                                                مبلع التبرع:
-                                                <span class="text-theme-colored font-weight-700">300,000 د.ك</span>
-                                            </h3>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <div class="col-md-6">
-                                                    <label class="mt-2">@lang('iftar.payment_method')</label>
-                                                    <div class="plans">
-                                                        <div style="clear: both;"></div>
-                                                        <label class="plan basic-plan" for="basic">
-                                                            <input checked type="radio" name="plan" id="basic"/>
-                                                            <div class="plan-content">
-                                                                <img loading="lazy" src="{{ asset('images/Visa-Master.png') }}"
-                                                                     alt=""/>
-                                                            </div>
-                                                        </label>
-
-                                                        <label class="plan complete-plan" for="complete">
-                                                            <input type="radio" id="complete" name="plan"/>
-                                                            <div class="plan-content">
-                                                                <img loading="lazy" src="{{ asset('images/knet.png') }}"
-                                                                     alt=""/>
-                                                            </div>
-                                                        </label>
+                                    @else
+                                        <div id="signinTab" class="tab-content clearfix" style="display: none">
+                                            <div class="col-sm-6">
+                                                <label>البريد الإلكتروني</label>
+                                                <input type="email" autocomplete="none" class="form-control" name="email" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label>كلمة المرور</label>
+                                                <input type="password" autocomplete="none" class="form-control" name="password" />
+                                            </div>
+                                            <div class="col-sm-12 text-center mt-20">
+                                                <h3 class="font-weight-bold text-black-333 pr-0">
+                                                    مبلغ التبرع:
+                                                    <span class="text-theme-colored font-weight-700">{{ number_format(Cart::getTotal()) }} د.ك</span>
+                                                </h3>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <div class="col-md-6">
+                                                        <label class="mt-2">@lang('iftar.payment_method')</label>
+                                                        <div class="plans">
+                                                            <div style="clear: both;"></div>
+                                                            <label class="plan basic-plan" for="basic">
+                                                                <input checked type="radio" name="plan" id="basic"/>
+                                                                <div class="plan-content">
+                                                                    <img loading="lazy" src="{{ asset('images/myfatoorah.jpeg') }}"
+                                                                         alt=""/>
+                                                                </div>
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-md-12 text-center mt-10">
+                                                <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
+                                                <a href="{{ route('signIn') }}" type="submit"
+                                                   class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+                                            </div>
                                         </div>
-                                        <div class="col-md-12 text-center mt-10">
-                                            <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
-                                            <a href="{{ route('signIn') }}" type="submit"
-                                               class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+
+                                        <div id="registerTab" class="tab-content clearfix" style="display: none">
+                                            <div class="col-sm-6">
+                                                <label>الاسم</label>
+                                                <input type="text" autocomplete="none" class="form-control" name="name" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label>رقم الهاتف</label>
+                                                <input type="number" autocomplete="none" class="form-control" name="phone" />
+                                            </div>
+                                            <div class="col-sm-12 mt-10">
+                                                <label>البريد الالكتروني</label>
+                                                <input type="email" autocomplete="none" class="form-control" name="email" />
+                                            </div>
+                                            <div class="col-sm-6 mt-10">
+                                                <label>كلمة المرور</label>
+                                                <input type="password" autocomplete="none" class="form-control" name="password" />
+                                            </div>
+                                            <div class="col-sm-6 mt-10">
+                                                <label>تأكيد كلمة المرور</label>
+                                                <input type="password" autocomplete="none" class="form-control" name="confirm_password" />
+                                            </div>
+                                            <div class="col-sm-12 text-center mt-20">
+                                                <h3 class="font-weight-bold text-black-333 pr-0">
+                                                    مبلغ التبرع:
+                                                    <span class="text-theme-colored font-weight-700">{{ number_format(Cart::getTotal()) }} د.ك</span>
+                                                </h3>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <div class="col-md-6">
+                                                        <label class="mt-2">@lang('iftar.payment_method')</label>
+                                                        <div class="plans">
+                                                            <div style="clear: both;"></div>
+                                                            <label class="plan basic-plan" for="basic">
+                                                                <input checked type="radio" name="plan" id="basic"/>
+                                                                <div class="plan-content">
+                                                                    <img loading="lazy" src="{{ asset('images/myfatoorah.jpeg') }}"
+                                                                         alt=""/>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 text-center mt-10">
+                                                <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
+                                                <button type="submit"
+                                                        class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">
+                                                    @lang('iftar.donate_now')</button>
+                                            </div>
                                         </div>
-                                    </form>
+                                    @endauth
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
+
         </section>
     </div>
     <!-- end main-content -->

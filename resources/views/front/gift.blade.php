@@ -70,9 +70,10 @@
                                         </div>
                                         <div class="card-body text-center">
                                             <h4>{{ $gift->giftable->name }}</h4>
+
                                             <input type="text" name="donate" class="form-control br-20"
                                                 value="{{ $gift->giftable->initial_amount }}">
-                                            {{--                                                <input type="text" name="donate" class="form-control br-20" value="10"> --}}
+                                            {{--        <input type="text" name="donate" class="form-control br-20" value="10"> --}}
                                             <button type="button" id="{{ $gift->id }}"
                                                 class="btn btn-default mt-1 btn-xl btn-theme-colored btn-flat mr-5 selectProject">@lang('gift.donate_your_gift')</button>
                                             <button type="button" style="display: none"
@@ -91,6 +92,7 @@
         <section>
             <form action="{{ route('generate') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="project_name"  value="{{ $gift->giftable->name }}">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 text-center">

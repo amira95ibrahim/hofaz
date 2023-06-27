@@ -22,18 +22,19 @@
         </span>
     </a>
     <ul class="treeview-menu">
-        <li> 
+        <li>
             <a class="nav-link {{ Request::is('admin/sadaqat*') ? 'active' : '' }}"
                 href="{{ route('admin.sadaqat.index') }}">
                 <i class="fa fa-list"></i> اوجه الصدقات</a>
             </a>
         </li>
-        <li> 
+        <li>
          <a class="nav-link {{ Request::is('admin/sadaqat*') ? 'active' : '' }}"
             href="{{ route('admin.sadaqahPage.edit') }}">
+
             <i class="fa fa-edit" aria-hidden="true"></i> وصف الصدقة
         </a>
- 
+
         </li>
     </ul>
 
@@ -48,13 +49,13 @@
         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i> </span>
     </a>
     <ul class="treeview-menu">
-        <li> 
+        <li>
             <a class="nav-link" href="{{ route('admin.zakat.index') }}">
                 <i class="fa fa-list"></i> اوجه الذكاه
             </a>
         </li>
-        <li> 
-        
+        <li>
+
             <a class="nav-link" href="{{ route('admin.zakahPage.edit') }}">
                 <i class="fa fa-sticky-note-o" aria-hidden="true"></i> وصف الذكاة
             </a>
@@ -103,7 +104,7 @@
                 </span>
     </a>
     <ul class="treeview-menu">
-        <li> 
+        <li>
             <a href="{{ route('admin.projects.index') }}">
             <i class="fa fa-circle-o"></i>عرض المشاريع
             </a></li>
@@ -120,12 +121,12 @@
         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i> </span>
     </a>
     <ul class="treeview-menu">
-        <li> 
+        <li>
             <a class="nav-link" href="{{ route('admin.waqf.index') }}">
                 <i class="fa fa-wrench"></i> وقف</a>
         </li>
-        <li> 
-        
+        <li>
+
             <a class="nav-link" href="{{ route('admin.waqfPage.edit') }}">
                 <i class="fa fa-edit"></i> وصف الوقف</a>
 
@@ -142,13 +143,16 @@
         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i> </span>
     </a>
     <ul class="treeview-menu">
-        <li> 
-        <a class="nav-link {{ Request::is('admin/kafarah*') ? 'active' : '' }}" href="{{ route('admin.kafarah.index') }}"  >
-                <i class="fa fa-list"></i> اوجه الكفارة</a>
+        <li>
+
+        <a class="nav-link {{ Request::is('admin/sadaqat*') ? 'active' : '' }}"
+                href="{{ route('admin.sadaqat.index') }}">
+
+                <i class="fa fa-list"></i>  اوجه الكفارة</a>
         </li>
-          <li> 
-        
-            
+          <li>
+
+
         </li>
     </ul>
 
@@ -164,7 +168,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.reliefs.index') }}">
                 <i class="fa fa-wrench"></i> إغاثة</a>
-                
+
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.reliefsPage.edit') }}">
@@ -180,7 +184,7 @@
        href="{{ route('admin.gifts.create') }}">
         <i class="fa fa-gift"></i>
         <span>هدية</span>
-        
+
     </a>
 </li>
 
@@ -269,7 +273,7 @@
 </li>
 <!-------------------------------------------->
 
-                      
-                            
-                       
+
+
+
         

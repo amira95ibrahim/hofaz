@@ -2,30 +2,24 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Achievement;
+use App\Models\HomepageSlider;
+use App\Models\News;
+use App\Models\Project;
+use App\Models\Publication;
+use App\Models\Relief;
+use App\Models\Waqf;
+use App\Http\Controllers\BaseController;
 
-class HomeController extends Controller
-{
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        // $this->middleware('auth');
-    }
+class HomeController extends BaseController{
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $x=5;
-        return view('admin.home', compact('x'));
+    public function index(){
 
+        $publications = Publication::active()->homepage()->get();
+        $news = News::active()->homepage()->limit(3)->get();
+        // $achievements = Achievement::get();
+        $sliders = HomepageSlider::active()->get();
+
+        return view('front.index', compact('publications', 'news', 'achievements', 'sliders'));
     }
 }
