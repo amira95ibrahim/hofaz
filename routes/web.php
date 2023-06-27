@@ -1,4 +1,4 @@
- <?php
+<?php
 
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\HomeController;
@@ -78,6 +78,7 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/project/{project}', 'ProjectController@show')->name('project.show');
 
     Route::get('/gift', 'GiftController@index')->name('gift');
+    Route::post('/gift/generate', 'GiftController@generate')->name('generate');
     Route::get('/donation', 'DonationController@index')->name('donation');
     Route::get('/search/{string}', 'SearchController@index')->name('search');
 
@@ -94,7 +95,10 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/news', 'NewsController@index')->name('news');
     Route::get('/news/{article}', 'NewsController@show')->name('news.details');
 
-    Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment')->middleware('auth');
+    Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment');
+    Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed')->middleware(('auth'));
+    Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation')->middleware(('auth'));
+
 });
 
 

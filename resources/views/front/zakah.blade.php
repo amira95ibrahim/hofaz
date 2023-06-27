@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="p-30 bg-grey br-20 clearfix">
                         <div class="col-md-6">
-                            <form action="" method="POST">
+                            <form action="{{route('PeriodicDonation')}}" method="POST">
                                 <select class="form-control mb-15 br-20 product_data">
                                     @foreach($zakat as $zakah)
                                         <option value="{{ $zakah->id }}" id="name_{{ $zakah->id }}">{{ $zakah->name }}</option>
@@ -99,7 +99,7 @@
                                     <button type="button" class="btn custom-btn-success mr-5 addToCart" data-identifier=""><i
                                                 class="ri-shopping-cart-line btn-icon"></i> @lang('zakah.add_to_cart')
                                     </button>
-                                    <button type="button" class="btn custom-btn-success mr-5"><i
+                                    <button type="submit" class="btn custom-btn-success mr-5"><i
                                                 class="ri-bank-card-line btn-icon"></i> @lang('zakah.deduction')
                                     </button>
                                 </div>
