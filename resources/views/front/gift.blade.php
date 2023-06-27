@@ -69,9 +69,10 @@
                                         </div>
                                         <div class="card-body text-center">
                                             <h4>{{ $gift->giftable->name }}</h4>
+
                                             <input type="text" name="donate" class="form-control br-20"
                                                 value="{{ $gift->giftable->initial_amount }}">
-                                            {{--                                                <input type="text" name="donate" class="form-control br-20" value="10"> --}}
+                                            {{--        <input type="text" name="donate" class="form-control br-20" value="10"> --}}
                                             <button type="button" id="{{ $gift->id }}"
                                                 class="btn btn-default mt-1 btn-xl btn-theme-colored btn-flat mr-5 selectProject">@lang('gift.donate_your_gift')</button>
                                             <button type="button" style="display: none"
@@ -90,23 +91,24 @@
         <section>
             <form action="{{ route('generate') }}" method="POST">
                 @csrf
+                <input type="hidden" name="project_name"  value="{{ $gift->giftable->name }}">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <label>
-                                <input type="radio" name="card" value="images/causes/card1.jpg">
+                                <input type="radio" name="card" value="card1">
                                 <img src="{{ asset('images/causes/card1.jpg') }}">
                             </label>
                         </div>
                         <div class="col-md-4 text-center">
                             <label>
-                                <input type="radio" name="card" value="images/causes/card2.jpg">
+                                <input type="radio" name="card" value="card2">
                                 <img src="{{ asset('images/causes/card2.jpg') }}">
                             </label>
                         </div>
                         <div class="col-md-4 text-center">
                             <label>
-                                <input type="radio" name="card" value="images/causes/card2.jpg">
+                                <input type="radio" name="card" value="card3">
                                 <img src="{{ asset('images/causes/card3.jpg') }}">
                                 @if ($errors->has('card'))
                                     <span class="text-danger">{{ $errors->first('card') }}</span>

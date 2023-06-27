@@ -24,11 +24,12 @@ class GiftRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'sender' => 'required|string|max:255',
-            // 'consignee' => 'required|string|max:255',
-            // 'email' => 'required|email|max:255',
-            // 'phone' => 'required|numeric|min:20',
-            // 'card' => 'required|string|max:255',
+            'sender' => 'required|string|max:255',
+            'consignee' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|numeric|min:20',
+            'card' => 'required|string|max:255',
+            'project_name'=>'required'
         ];
     }
 }

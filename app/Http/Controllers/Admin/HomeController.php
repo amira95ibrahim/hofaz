@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Achievement;
 use App\Models\HomepageSlider;
@@ -9,6 +9,7 @@ use App\Models\Project;
 use App\Models\Publication;
 use App\Models\Relief;
 use App\Models\Waqf;
+use App\Http\Controllers\BaseController;
 
 class HomeController extends BaseController{
 
