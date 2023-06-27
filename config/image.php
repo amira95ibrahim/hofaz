@@ -15,6 +15,6 @@ return [
     |
     */
 
-    'driver' => 'gd'
-
+    'driver' => 'gd',
+    // 'font' => storage_path('app/fonts/static/Cairo-Bold.ttf'),
 ];

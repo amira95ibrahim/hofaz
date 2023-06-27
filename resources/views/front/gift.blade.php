@@ -56,6 +56,7 @@
 
         <section>
             <div class="container">
+
                 <div class="row">
                     <div class="col-md-12">
                         <h3>@lang('gift.choose_gift')</h3>
@@ -89,7 +90,7 @@
         </section>
 
         <section>
-            <form action="{{ route('generate') }}" method="POST">
+            <form action="{{ route('generate') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="project_name"  value="{{ $gift->giftable->name }}">
                 <div class="container">
@@ -110,13 +111,14 @@
                             <label>
                                 <input type="radio" name="card" value="card3">
                                 <img src="{{ asset('images/causes/card3.jpg') }}">
-                                @if ($errors->has('card'))
-                                    <span class="text-danger">{{ $errors->first('card') }}</span>
-                                @endif
                             </label>
                         </div>
                     </div>
+                    @if ($errors->has('card'))
+                        <span class="text-danger">{{ $errors->first('card') }}</span>
+                    @endif
                 </div>
+
         </section>
 
         <section>
@@ -163,6 +165,7 @@
 
                             <input type="hidden" name="gift">
                             <input type="hidden" name="amount">
+                            <input type="hidden" name="project_name" value="{{ $gift->giftable->name }}">
 
                             <button type="submit"
                                 class="btn btn-dark mt-1 btn-xl btn-theme-colored btn-flat mr-5 w-100">@lang('gift.preview')</button>
@@ -209,6 +212,16 @@
 
             $(this).hide();
             $(this).next().show();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var savedPhotoUrl = '{{ session('savedPhotoUrl') }}';
+            if (savedPhotoUrl) {
+                var newWindow = window.open(savedPhotoUrl, '_blank');
+                newWindow.focus();
+            }
         });
     </script>
 @endpush

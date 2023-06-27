@@ -27,9 +27,19 @@ class GiftRequest extends FormRequest
             'sender' => 'required|string|max:255',
             'consignee' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone' => 'required|numeric|min:20',
+            'phone' => 'required|max:20|regex:/^[^<>]+$/',
             'card' => 'required|string|max:255',
-            'project_name'=>'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'required' => trans('validation.required'),
+            'string' => trans('validation.string'),
+            'max' => trans('validation.max'),
+            'regex' => trans('validation.regex'),
+            'email' => trans('validation.email'),
         ];
     }
 }
