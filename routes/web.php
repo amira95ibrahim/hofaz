@@ -23,6 +23,7 @@ use App\Http\Controllers\LangController;
 use App\Http\Controllers\Admin\KafarahController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ElkherController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -108,9 +109,12 @@ Route::get('/iftar', function () {
     return view('front.iftar');
 })->name('iftar');
 
-Route::get('/online-service', function () {
-    return view('front.onlineService');
-})->name('onlineService');
+// Route::get('/online-service', function () {
+//     return view('front.elkher');
+// })->name('onlineService')->middleware('auth');
+
+Route::get('/online-service', [ElkherController::class, 'index'])->name('onlineService')->middleware('auth');
+
 
 Route::get('/about-us', function () {
     return view('front.aboutUs');
@@ -244,6 +248,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-Route::get('/elkher', function () {
-    return view('front.elkher');
-});
+
