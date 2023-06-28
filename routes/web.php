@@ -153,7 +153,7 @@ Route::get('lang/{lang}', [LangController::class, 'update'])->name('updateLang')
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
-
+    // Route::get('/', 'HomeController@index')->name('home');
     // COUNTRIES
     Route::resource('countries', CountryController::class)->except('show');
 

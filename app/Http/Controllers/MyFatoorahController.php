@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Donation;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use MyFatoorah\Library\PaymentMyfatoorahApiV2;
 
 class MyFatoorahController extends Controller {
@@ -28,13 +30,65 @@ class MyFatoorahController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-        $request->validate([
-            'phone_number' => 'nullable|max:11'
-        ]);
+        $payment_data = [];
+        $payment_data['amount'] = $request->amount;
+        if ($request->donor_type == 'logged') {
+            $payment_data['name']           = Auth::user()->name;
+            $payment_data['email']          = Auth::user()->email;
+            $payment_data['phone_number']   = Auth::user()->phone_number;
+            $payment_data['user_id']        = Auth::id();
+        }
+        else if ($request->donor_type == 'login') {
+            $request->validate([
+                'email' => 'required|email|unique:users',
+                'password' => 'required'
+            ]);
+
+            $credentials = $request->only('email', 'password');
+            if (Auth::attempt($credentials)) {
+                $payment_data['name']           = Auth::user()->name;
+                $payment_data['email']          = Auth::user()->email;
+                $payment_data['phone_number']   = Auth::user()->phone_number;
+                $payment_data['user_id']        = Auth::id();
+            } else {
+                return redirect()->back()->with('error', 'الايميل او كلمة السر خطأ');
+            }
+        }
+        else if ($request->donor_type == 'signup') {
+            $request->validate([
+                'email'         => 'required|email|unique:users',
+                'name'          => 'required|string',
+                'password'      => 'required|confirmed',
+                'phone_number'  => 'required'
+            ]);
+            $user = User::create([
+                'name'          => $request->name,
+                'email'         => $request->email,
+                'phone_number'  => $request->phone_number,
+                'password'      => Hash::make($request->password)
+            ]);
+            if (Auth::attempt([$user->email, $user->password])) {
+                $payment_data['name']           = $user->name;
+                $payment_data['email']          = $user->phone_number;
+                $payment_data['phone_number']   = $user->phone_numebr;
+                $payment_data['user_id']        = $user->id;
+            }
+
+        }
+        else {
+            $request->validate([
+                'phone_number' => 'nullable|max:11'
+            ]);
+            $payment_data['name']           = 'فاعل خير';
+            $payment_data['email']          = 'example@gmail.com';
+            $payment_data['phone_number']   = $request->phone_number;
+            $payment_data['user_id']        = 0;
+        }
+
 
         $donation = Donation::create([
-            'donor_id'  => Auth::id()??0,
-            'amount'    => $request->amount,
+            'donor_id'  => $payment_data['user_id'],
+            'amount'    => $payment_data['amount'],
             'payment_method' => 'visa',
             'status' =>'INITIATED'
         ]);
@@ -42,13 +96,14 @@ class MyFatoorahController extends Controller {
         try {
             $paymentMethodId = 0; // 0 for MyFatoorah invoice or 1 for Knet in test mode
 
-            $curlData = $this->getPayLoadData($request->all(), $donation->id);
+            $curlData = $this->getPayLoadData($payment_data, $donation->id);
             $data     = $this->mfObj->getInvoiceURL($curlData, $paymentMethodId);
 
             $response = ['IsSuccess' => 'true', 'Message' => 'Invoice created successfully.', 'Data' => $data];
         } catch (\Exception $e) {
             $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
         }
+        dd($response);
         return redirect()->to($response['Data']['invoiceURL']);
     }
 
@@ -56,7 +111,7 @@ class MyFatoorahController extends Controller {
         $callbackURL = route('myfatoorah.callback');
 
         return [
-            'CustomerName'       => Auth::user()->name??'',
+            'CustomerName'       => $data['name'],
             'InvoiceValue'       => $data['amount'],
             'DisplayCurrencyIso' => 'KWD',
             'CustomerEmail'      => Auth::user()->email??'',
@@ -88,12 +143,14 @@ class MyFatoorahController extends Controller {
                 $donation->payment_status = 'CAPTURED';
                 $donation->save();
                 return redirect()->route('home')->with('success', 'تم التبرع بنجاح. جزاك الله خيرا');
-            } else if ($data->InvoiceStatus == 'Failed') {
+            }
+            else if ($data->InvoiceStatus == 'Failed') {
                 $donation->notes = 'Invoice is not paid due to ' . $data->InvoiceError;
                 $donation->payment_status = 'FAILED';
                 $donation->save();
                 return redirect()->route('home')->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
-            } else {
+            }
+            else {
                 $donation->notes = 'Invoice is expired.';
                 $donation->payment_status = 'DECLINED';
                 $donation->save();
