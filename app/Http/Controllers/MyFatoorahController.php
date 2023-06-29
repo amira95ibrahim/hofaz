@@ -216,8 +216,8 @@ public function createPeriodicDonation(Request $request)
         $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
         // Handle the exception, maybe log it or show an error message to the user
     }
-return 'hi';
-    // return redirect()->to($response['Data']['invoiceURL']);
+// return 'hi';
+    return redirect()->to($response['Data']['invoiceURL']);
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------
