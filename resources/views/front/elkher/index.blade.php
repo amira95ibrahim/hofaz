@@ -40,7 +40,7 @@
                           <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                           </div>
-                          <a href="{{route('elkherkafalat')}}" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblOrfCount">0</span><span class="pp"> مكفول / مساهمات كفالات </span>  <i class="fas fa-arrow-circle-right"></i></a>
+                          <a href="{{route('elkherkafalat')}}" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblOrfCount">0</span><span class="pp"> مكفول / مساهمات كفالات </span>  <i class="fa fa-arrow-circle-left"></i></a>
                         </div>
                       </div>
                       <!-- ./col -->
@@ -55,7 +55,7 @@
                           <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                           </div>
-                          <a href="{{route('elkhertabraat')}}" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblOrfCount"></span><span class="pp"> المزيد</span>  <i class="fas fa-arrow-circle-right"></i></a>
+                          <a href="{{route('elkhertabraat')}}" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblOrfCount"></span><span class="pp"> المزيد</span>  <i class="fa fa-arrow-circle-left"></i></a>
                         </div>
                       </div>
                       <!-- ./col -->
@@ -72,7 +72,7 @@
                           <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                           </div>
-                          <a href="{{route('elkhermasert')}}" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblOrfCount"></span><span class="pp"> المزيد</span>  <i class="fas fa-arrow-circle-right"></i></a>
+                          <a href="{{route('elkhermasert')}}" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblOrfCount"></span><span class="pp"> المزيد</span>  <i class="fa fa-arrow-circle-left"></i></a>
                         </div>
                       </div>
                     </div>
@@ -89,7 +89,7 @@
                           <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                           </div>
-                          <a href="{{route('elkherarshef')}}" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblOrfCount"></span><span class="pp"> المزيد</span>  <i class="fas fa-arrow-circle-right"></i></a>
+                          <a href="{{route('elkherarshef')}}" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblOrfCount"></span><span class="pp"> المزيد</span>  <i class="fa fa-arrow-circle-left"></i></a>
                         </div>
                       </div>
                       <!-- ./col -->
@@ -105,7 +105,7 @@
                             <i class="ion ion-pie-graph"></i>
                           </div>
                           <a href="{{route('elkherwakfyat')}}" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblWaqCount">0</span>
-                            <span class="pp">وقفية / مساهمات الوقفيات</span>  <i class="fas fa-arrow-circle-right"></i></a>
+                            <span class="pp">وقفية / مساهمات الوقفيات</span>  <i class="fa fa-arrow-circle-left"></i></a>
                         </div>
                       </div>
                       <!-- ./col -->
@@ -120,7 +120,7 @@
                           <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                           </div>
-                          <a href="{{route('elkhermashroat')}}" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblOrfCount">0</span><span class="pp"> مشروع </span>  <i class="fas fa-arrow-circle-right"></i></a>
+                          <a href="{{route('elkhermashroat')}}" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblOrfCount">0</span><span class="pp"> مشروع </span>  <i class="fa fa-arrow-circle-left"></i></a>
                         </div>
                       </div>
                       <!-- ./col -->
