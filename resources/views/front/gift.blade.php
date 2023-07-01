@@ -70,7 +70,9 @@
                                         </div>
                                         <div class="card-body text-center">
                                             <h4>{{ $gift->giftable->name }}</h4>
-
+                                            <form   id="gift-form" action="{{ route('generate') }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                <input type="hidden" name="project_name"  value="{{ $gift->giftable->name }}">
                                             <input type="text" name="donate" class="form-control br-20"
                                                 value="{{ $gift->giftable->initial_amount }}">
                                             {{--        <input type="text" name="donate" class="form-control br-20" value="10"> --}}
@@ -90,9 +92,7 @@
         </section>
 
         <section>
-            <form action="{{ route('generate') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <input type="hidden" name="project_name"  value="{{ $gift->giftable->name }}">
+
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 text-center">
@@ -167,7 +167,7 @@
                             <input type="hidden" name="amount">
                             <input type="hidden" name="project_name" value="{{ $gift->giftable->name }}">
 
-                            <button type="submit"
+                            <button type="submit" onclick="openGiftCreatedPopup();"
                                 class="btn btn-dark mt-1 btn-xl btn-theme-colored btn-flat mr-5 w-100">@lang('gift.preview')</button>
                             </form>
                         </div>
@@ -224,4 +224,73 @@
             // }
         });
     </script>
+    <script>
+        function openGiftCreatedPopup() {
+            window.open('/gift-created-popup', 'Gift Created', 'width=450,height=650');
+        }
+
+    // document.getElementById('gift-form').addEventListener('submit', async (event) => {
+    //     event.preventDefault(); // Prevent the default form submission
+
+    //     const form = event.target;
+    //     const formData = new FormData(form);
+
+    //     try {
+    //         const response = await fetch('{{ route("generate") }}', {
+    //             method: 'POST',
+    //             body: formData,
+    //             headers: {
+    //                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
+    //             },
+    //         });
+
+    //         if (response.ok) {
+    //             openGiftCreatedPopup();
+    //         } else {
+    //             // Handle any errors returned by the server
+    //             const data = await response.json();
+    //             console.error('Error:', data);
+    //         }
+    //     } catch (error) {
+    //         // Handle any network or fetch errors
+    //         console.error('Fetch Error:', error);
+    //     }
+    // });
+
+    document.getElementById('gift-form').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent the default form submission
+
+    const form = event.target;
+
+    // Check if the form is valid
+    // if (!form.checkValidity()) {
+    //     form.reportValidity(); // Show validation error messages
+    //     return;
+    // }
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch('{{ route("generate") }}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+        });
+
+        if (response.ok) {
+            openGiftCreatedPopup();
+        } else {
+            // Handle any errors returned by the server
+            const data = await response.json();
+            console.error('Error:', data);
+        }
+    } catch (error) {
+        // Handle any network or fetch errors
+        console.error('Fetch Error:', error);
+    }
+});
+</script>
+
 @endpush

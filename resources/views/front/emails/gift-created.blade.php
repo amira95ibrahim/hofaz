@@ -6,30 +6,27 @@
 
     .text-overlay {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
     }
-
 
     .text-consignee {
         color: rgb(0,102,133);
         font-size: 45px;
         position: absolute;
-        top: -190px;
-        left: -21px;
+        top: 5%;
+        left: 5%;
         white-space: nowrap;
         font-weight: bolder;
         overflow-wrap: break-word;
     }
 
-
     .text-project {
         color: rgb(0,102,133);
         font-size: 45px;
         position: absolute;
-        top: 225px;
-        left:-50px;
+        top: 45%;
+        left: 5%;
         text-align: center;
         white-space: nowrap;
         font-weight: bolder;
@@ -40,18 +37,18 @@
         color: rgb(0,102,133);
         font-size: 45px;
         position: absolute;
-        top: 390px;
-        left:-25px;
+        top: 85%;
+        left: 5%;
         white-space: nowrap;
         font-weight: bolder;
         overflow-wrap: break-word;
     }
 </style>
 
-
 <div class="image-container">
-    <img src="{{asset('images/card/'.$consignee . '.jpg')}}" alt="Image">
-    <div class="text-overlay">
+    <img src="{{asset('images/card/'.$consignee . '.jpg')}}" alt="Image" width="450px">
+    {{-- <img src="{{ $imageUrl }}" alt="Generated Image" width="450px"> --}}
+    <div class="text-overlay">{{ $imageUrl }}
         <p class="text-sender">{{$senderName}}</p>
         <p class="text-project">{{$project_name}}</p>
         <p class="text-consignee">{{$consignee}}</p>

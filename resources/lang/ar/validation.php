@@ -51,6 +51,7 @@ return [
     'exists' => 'الحقل :attribute لاغٍ',
     'file' => 'الـ :attribute يجب أن يكون من ملفا.',
     'filled' => 'الحقل :attribute إجباري',
+    'number'=>'اختر هديتك',
     'gt' => [
         'array' => 'الـ :attribute يجب ان يحتوي علي اكثر من :value عناصر/عنصر.',
         'file' => 'الـ :attribute يجب ان يكون اكبر من :value كيلو بايت.',

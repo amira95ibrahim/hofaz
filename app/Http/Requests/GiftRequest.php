@@ -29,6 +29,7 @@ class GiftRequest extends FormRequest
             'email' => 'required|email|max:255',
             'phone' => 'required|max:20|regex:/^[^<>]+$/',
             'card' => 'required|string|max:255',
+            'donate'=>'required|number',
         ];
     }
 
@@ -40,6 +41,7 @@ class GiftRequest extends FormRequest
             'max' => trans('validation.max'),
             'regex' => trans('validation.regex'),
             'email' => trans('validation.email'),
+           'number'=>trans('validation.number'),
         ];
     }
 }

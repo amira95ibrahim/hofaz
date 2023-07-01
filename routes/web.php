@@ -80,6 +80,8 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/gift', 'GiftController@index')->name('gift');
     Route::post('/gift/generate', 'GiftController@generate')->name('generate');
+    Route::get('/gift-created-popup', 'GiftController@showGiftCreatedPopup')->name('gift-created-popup');
+
     Route::get('/donation', 'DonationController@index')->name('donation');
     Route::get('/search/{string}', 'SearchController@index')->name('search');
 
@@ -111,13 +113,13 @@ Route::get('/iftar', function () {
 
 
 
-Route::get('/online-service', [ElkherController::class, 'index'])->name('onlineService')->middleware('auth');
-Route::get('/elkher_kafalat', [ElkherController::class, 'elkher_kafalat'])->name('elkherkafalat')->middleware('auth');
-Route::get('/elkher_tabraat', [ElkherController::class, 'elkher_tabraat'])->name('elkhertabraat')->middleware('auth');
-Route::get('/elkher_masert', [ElkherController::class, 'elkher_masert'])->name('elkhermasert')->middleware('auth');
-Route::get('/elkher_arshef', [ElkherController::class, 'elkher_arshef'])->name('elkherarshef')->middleware('auth');
-Route::get('/elkher_wakfyat', [ElkherController::class, 'elkher_wakfyat'])->name('elkherwakfyat')->middleware('auth');
-Route::get('/elkher_mashroat', [ElkherController::class, 'elkher_mashroat'])->name('elkhermashroat')->middleware('auth');
+Route::get('/online-service', [ElkherController::class, 'index'])->name('onlineService')->middleware('frontend.auth');
+Route::get('/elkher_kafalat', [ElkherController::class, 'elkher_kafalat'])->name('elkherkafalat')->middleware('frontend.auth');
+Route::get('/elkher_tabraat', [ElkherController::class, 'elkher_tabraat'])->name('elkhertabraat')->middleware('frontend.auth');
+Route::get('/elkher_masert', [ElkherController::class, 'elkher_masert'])->name('elkhermasert')->middleware('frontend.auth');
+Route::get('/elkher_arshef', [ElkherController::class, 'elkher_arshef'])->name('elkherarshef')->middleware('frontend.auth');
+Route::get('/elkher_wakfyat', [ElkherController::class, 'elkher_wakfyat'])->name('elkherwakfyat')->middleware('frontend.auth');
+Route::get('/elkher_mashroat', [ElkherController::class, 'elkher_mashroat'])->name('elkhermashroat')->middleware('frontend.auth');
 
 
 

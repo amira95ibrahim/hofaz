@@ -157,7 +157,14 @@ class GiftController extends BaseController
             'phone' => $phone,
             'card' => $imageName, // Save the image file name to the 'card' field
         ]);
+  // Save the modified image
+  $imageName = $consignee . '.jpg';
+  $imagePath = asset('images/card/' . $imageName);
+  $image->save($imagePath);
 
+  // Store the generated image URL in a session
+  $imageUrl = asset('images/card/' . $imageName);
+  session(['imageUrl' => $imageUrl]);
         session(['savedPhotoUrl' => $savedPhotoUrl]);
 
         $emailData = [
@@ -173,15 +180,27 @@ class GiftController extends BaseController
         ];
 
         Notification::route('mail', $email)->notify(new GiftCreatedNotification($giftData, $photoPath));
-
-        return   view('front.emails.gift-created', [
-            // 'giftData' => $request,
+        session([
             'senderName' => $sender,
             'consignee' => $consignee,
             'photoPath' => $photoPath,
             'project_name' =>$project_name,
         ]);
-        // return redirect()->back();
+
+        // Redirect to a new window to display the saved photo
+        return redirect()->back();
     }
+
+    public function showGiftCreatedPopup()
+{
+    $senderName = session('senderName');
+    $consignee = session('consignee');
+    $photoPath = session('photoPath');
+    $project_name = session('project_name');
+    $imageUrl = session('photoPath');
+
+    return view('front.emails.gift-created', compact('senderName', 'consignee', 'photoPath', 'project_name', 'imageUrl'));
+    // return view('front.emails.gift-created', compact('senderName', 'consignee', 'photoPath', 'project_name'));
+}
 
  }
