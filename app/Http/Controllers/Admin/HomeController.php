@@ -17,9 +17,9 @@ class HomeController extends BaseController{
 
         $publications = Publication::active()->homepage()->get();
         $news = News::active()->homepage()->limit(3)->get();
-        // $achievements = Achievement::get();
+        $achievements = Achievement::get();
         $sliders = HomepageSlider::active()->get();
-
-        return view('front.index', compact('publications', 'news', 'achievements', 'sliders'));
+        $Donations=14;
+        return view('admin.home', compact('publications','Donations', 'news', 'achievements', 'sliders'));
     }
 }

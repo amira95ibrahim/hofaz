@@ -627,17 +627,22 @@
                         <strong style="font-family: Arial;"> <span id="ctl00_ContentPlaceHolder1_lbltime">40</span></strong>
                          دقيقة
 
-                         </div>
+                   </div>
+
+
+
+
                     <div class="row margin-top-10">
                         <!-- BEGIN DASHBOARD STATS -->
                         <div class="container-fluid">
                             <!-- Small boxes (Stat box) -->
-                            <div class="row" style="text-align: left">
+                            <div class="row " style="text-align: left">
+
                               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" >
                                 <!-- small box -->
                                 <div class="small-box bg_inffo">
                                   <div class="inner">
-                                    <h4>KD</h4><h2>0</h2>
+                                    <h4>KD</h4><h2>{{$kfalatys}}</h2>
 
                                     <h5>كفالاتى</h5>
                                   </div>
@@ -652,7 +657,7 @@
                                 <!-- small box -->
                                 <div class="small-box bg_semon">
                                   <div class="inner">
-                                    <h4>KD</h4><h2>0</h2>
+                                    <h4>KD</h4><h2>{{$tabratys}}</h2>
 
                                     <h5>تبرعاتى</h5>
                                   </div>
@@ -667,9 +672,10 @@
                                 <!-- small box -->
                                 <div class="small-box bg_azraa">
                                   <div class="inner">
-                                    <h4>KD</h4><h2>0</h2>
 
-                                    <h5>مسيرة الخير</h5>
+                                    <h2>مسيرة </h2>
+
+                                    <h2>الخير</h2>
 
                                   </div>
                                   <div class="icon">
@@ -678,14 +684,15 @@
                                   <a href="#" class="small-box-footer"><span id="ctl00_ContentPlaceHolder1_lblOrfCount"></span><span class="pp"> المزيد</span>  <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                               </div>
-                              <!-- ./col -->
+                            </div>
+                            <div class="row " style="text-align: left">
                               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" >
                                 <!-- small box -->
                                 <div class="small-box bg_azraa">
                                   <div class="inner">
-                                    <h4>KD</h4><h2>0</h2>
+                                    <h2>ارشيف</h2>
 
-                                    <h5>ارشيف تقاريري</h5>
+                                    <h2> تقاريري</h2>
 
                                   </div>
                                   <div class="icon">
@@ -699,9 +706,9 @@
                                 <!-- small box -->
                                 <div class="small-box bg_move">
                                   <div class="inner">
-                                    <h4>KD</h4><h2>0</h2>
+                                    <h4>KD</h4><h2>{{$wakfyats}}</h2>
 
-                                    <h5>وقفاتى</h5>
+                                    <h5>وقفياتى</h5>
                                   </div>
                                   <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
@@ -715,7 +722,7 @@
                                 <!-- small box -->
                                 <div class="small-box bg_orange">
                                   <div class="inner">
-                                    <h4>KD</h4><h2>0</h2>
+                                    <h4>KD</h4><h2>{{$mashroatys}}</h2>
 
                                     <h5>مشروعاتى</h5>
                                   </div>
