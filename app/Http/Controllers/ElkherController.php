@@ -28,7 +28,42 @@ class ElkherController extends Controller
         ->where('model_id', 4)
         ->sum('amount');
 
-        return view('front.elkher' , compact('kfalatys','tabratys','wakfyats','mashroatys'));
+        return view('front.elkher.index' , compact('kfalatys','tabratys','wakfyats','mashroatys'));
 
+    }
+
+    public function elkher_kafalat (){
+
+         return view('front.elkher.kafalat' );
+        //  return view('front.elkher.kafalat' , compact('kfalatys'));
+    }
+
+    public function elkher_tabraat (){
+
+        // return view('front.elkher.tabraat' , compact('tabratys'));
+        return view('front.elkher.tabraat' );
+    }
+
+    public function elkher_masert (){
+
+        // return view('front.elkher.masert_elkher' , compact('maserts'));
+        return view('front.elkher.masert_elkher');
+    }
+
+    public function elkher_arshef (){
+
+        // return view('front.elkher.arshef_takarer' , compact('takarers'));
+        return view('front.elkher.arshef_takarer');
+    }
+
+    public function elkher_wakfyat(){
+
+        // return view('front.elkher.wakfyat' , compact('wakfyats'));
+        return view('front.elkher.wakfyat' );
+    }
+    public function elkher_mashroat (){
+
+        //  return view('front.elkher.mashroat' , compact('mashroats'));
+        return view('front.elkher.mashroat' );
     }
 }
