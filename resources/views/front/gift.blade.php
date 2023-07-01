@@ -217,11 +217,11 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var savedPhotoUrl = '{{ session('savedPhotoUrl') }}';
-            if (savedPhotoUrl) {
-                var newWindow = window.open(savedPhotoUrl, '_blank');
-                newWindow.focus();
-            }
+            // var savedPhotoUrl = '{{ session('savedPhotoUrl') }}';
+            // if (savedPhotoUrl) {
+            //     var newWindow = window.open(savedPhotoUrl, '_blank');
+            //     newWindow.focus();
+            // }
         });
     </script>
 @endpush

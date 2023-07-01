@@ -11,12 +11,13 @@
         transform: translate(-50%, -50%);
     }
 
+
     .text-consignee {
-        color: black;
+        color: rgb(0,102,133);
         font-size: 45px;
         position: absolute;
-        top: -260px;
-        right: 180px;
+        top: -190px;
+        left: -21px;
         white-space: nowrap;
         font-weight: bolder;
         overflow-wrap: break-word;
@@ -24,10 +25,11 @@
 
 
     .text-project {
-        color: black;
+        color: rgb(0,102,133);
         font-size: 45px;
         position: absolute;
         top: 225px;
+        left:-50px;
         text-align: center;
         white-space: nowrap;
         font-weight: bolder;
@@ -35,11 +37,11 @@
     }
 
     .text-sender {
-        color: black;
+        color: rgb(0,102,133);
         font-size: 45px;
         position: absolute;
-        top: 320px;
-        right: 155px;
+        top: 390px;
+        left:-25px;
         white-space: nowrap;
         font-weight: bolder;
         overflow-wrap: break-word;
