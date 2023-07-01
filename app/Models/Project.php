@@ -56,7 +56,8 @@ class Project extends Model
         'show_remaining',
         'active',
         'homepage',
-        'image'
+        'image',
+        'category_id'
     ];
 
     /**
@@ -100,7 +101,8 @@ class Project extends Model
         'image' => 'nullable|file|max:255',
         'deleted_at' => 'nullable',
         'created_at' => 'nullable',
-        'updated_at' => 'nullable'
+        'updated_at' => 'nullable',
+        'category_id' => 'required|exists:categories,id|integer',
     ];
 
     /**
@@ -109,6 +111,11 @@ class Project extends Model
     public function country(): BelongsTo
     {
         return $this->belongsTo(Country::class);
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 
     /**

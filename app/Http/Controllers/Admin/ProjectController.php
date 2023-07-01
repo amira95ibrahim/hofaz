@@ -6,6 +6,7 @@ use App\DataTables\Admin\ProjectDataTable;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Admin\CreateProjectRequest;
 use App\Http\Requests\Admin\UpdateProjectRequest;
+use App\Models\Category;
 use App\Models\Project;
 use App\Models\SitePagesDetail;
 use Flash;
@@ -34,7 +35,8 @@ class ProjectController extends AppBaseController
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $categories = Category::select('id', 'name_' . app()->getLocale())->get();
+        return view('admin.projects.create', compact('categories'));
     }
 
     /**
@@ -65,6 +67,7 @@ class ProjectController extends AppBaseController
                 'country_id' => $country,
                 'image' => 'storage/' . $path,
                 'active' => $request->active,
+                'category_id' => $request->category_id,
             ]);
         }
 
@@ -106,13 +109,15 @@ class ProjectController extends AppBaseController
         /** @var Project $project */
         $project = Project::find($id);
 
+         $categories = Category::select('id', 'name_' . app()->getLocale())->get();
+
         if (empty($project)) {
             Flash::error(__('messages.not_found', ['model' => __('models/projects.singular')]));
 
             return redirect(route('admin.projects.index'));
         }
 
-        return view('admin.projects.edit')->with('project', $project);
+        return view('admin.projects.edit')->with('project', $project)->with('categories', $categories);
     }
 
     /**
