@@ -40,6 +40,35 @@
 
 </li>
 
+
+<!---------------------- categories -------------------->
+
+<li class='treeview '>
+    <a href="#">
+    <i class="fa fa-smile-o" aria-hidden="true"></i>  <span>الاقسام</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+    </a>
+    <ul class="treeview-menu">
+        <li>
+            <a class="nav-link {{ Request::is('admin/categories*') ? 'active' : '' }}"
+                href="{{ route('admin.categories.index') }}">
+                <i class="fa fa-list"></i>  الاقسام</a>
+            </a>
+        </li>
+        <li>
+         {{-- <a class="nav-link {{ Request::is('admin/sadaqat*') ? 'active' : '' }}"
+            href="{{ route('admin.sadaqahPage.edit') }}">
+
+            <i class="fa fa-edit" aria-hidden="true"></i> وصف الصدقة
+        </a> --}}
+
+        </li>
+    </ul>
+
+</li>
+
 <!---------------------- zakah -------------------->
 
 

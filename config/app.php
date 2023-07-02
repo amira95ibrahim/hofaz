@@ -167,6 +167,8 @@ return [
          * Package Service Providers...
          */
 
+         Laravel\Socialite\SocialiteServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -236,7 +238,8 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
         'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
 
     ],

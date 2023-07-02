@@ -15,15 +15,18 @@ use App\Http\Controllers\Admin\NavSectionController;
 use App\Http\Controllers\Admin\PublicationController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\AchievementController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\SubscriberController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\HomepageSliderController;
 use App\Http\Controllers\LangController;
 use App\Http\Controllers\Admin\KafarahController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ElkherController;
+use App\Http\Controllers\FacebookController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -51,11 +54,40 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
     Route::post('/logout', 'Auth\LoginController@logout')->name('logout.post');
 
-    Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 
-    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-    Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+    // ============================ login with facebook =================================================================
+
+
+    // Route::get('login/facebook', [LoginController::class, 'redirectToFacebookProvider'])->name('login.facebook');
+    // Route::post('login/facebook/callback', [LoginController::class, 'handleFacebookProviderCallback'])->name('login.facebook.callback');
+
+    // Route::controller(FacebookController::class)->group(function(){
+    //     Route::get('auth/facebook', 'redirectToFacebook')->name('auth.facebook');
+    //     Route::get('auth/facebook/callback', 'handleFacebookCallback');
+    // });
+
+    Route::get('auth/facebook', 'FacebookController@redirectToFacebook')->name('auth.facebook');
+    Route::get('auth/facebook/callback', 'FacebookController@handleFacebookCallback');
+
+
+
+    // ============================== End login with facebook ================================================================
+
+
+    // Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    // Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+
+    // Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    // Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+
+    // ================================== Start Forget Password ===================================================================================
+
+    Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+    Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+    Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+    Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+// ===================================== End Forget Password ===================================================================================
 
 
     Route::get('/sadaqa', 'SadaqahController@index')->name('sadaqa');
@@ -101,7 +133,6 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment');
     Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed')->middleware(('auth'));
     Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation')->middleware(('auth'));
-
 });
 
 
@@ -246,6 +277,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('homepageSliders', HomepageSliderController::class)->except('show');
     Route::post('homepageSliders/status/{homepageSlider}', [HomepageSliderController::class, 'changeStatus'])->name('homepageSliders.status');
 
+    Route::resource('categories', CategoryController::class)->except('show');
+    Route::post('categories/status/{category}', [CategoryController::class, 'changeStatus'])->name('categories.status');
 });
 
 
@@ -254,11 +287,6 @@ Route::fallback(function () {
 });
 
 Auth
-::routes();
+    ::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
-
-

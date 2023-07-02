@@ -35,7 +35,7 @@ class ProjectController extends AppBaseController
      */
     public function create()
     {
-        $categories = Category::select('id', 'name_' . app()->getLocale())->get();
+        $categories = Category::Active()->select('id', 'name_' . app()->getLocale())->get();
         return view('admin.projects.create', compact('categories'));
     }
 
@@ -109,7 +109,7 @@ class ProjectController extends AppBaseController
         /** @var Project $project */
         $project = Project::find($id);
 
-         $categories = Category::select('id', 'name_' . app()->getLocale())->get();
+         $categories = Category::Active()->select('id', 'name_' . app()->getLocale())->get();
 
         if (empty($project)) {
             Flash::error(__('messages.not_found', ['model' => __('models/projects.singular')]));

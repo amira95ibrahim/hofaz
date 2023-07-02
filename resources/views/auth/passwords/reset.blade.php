@@ -43,7 +43,7 @@
                 @lang('auth.reset_password.title')
             </p>
 
-            <form action="{{ route('password.update') }}" method="POST">
+            <form action="{{ route('reset.password.post') }}" method="POST">
                 @csrf
 
                 <input type="hidden" name="token" value="{{ $token }}">

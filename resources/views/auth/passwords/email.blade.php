@@ -50,7 +50,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('password.email') }}" method="post">
+            <form action="{{ route('forget.password.post') }}" method="post">
                 @csrf
 
                 <div class="input-group mb-3">
