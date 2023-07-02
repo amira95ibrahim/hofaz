@@ -154,6 +154,8 @@ class SadaqahController extends AppBaseController
         return redirect(route('admin.sadaqat.index'));
     }
 
+
+    
     public function sadaqahDetails(){
         $sadaqahDetails = SitePagesDetail::sadaqahPage()->first();
 

@@ -145,8 +145,8 @@
     <ul class="treeview-menu">
         <li>
 
-        <a class="nav-link {{ Request::is('admin/sadaqat*') ? 'active' : '' }}"
-                href="{{ route('admin.sadaqat.index') }}">
+        <a class="nav-link {{ Request::is('admin/kafarah*') ? 'active' : '' }}"
+                href="{{ route('admin.kafarah.index') }}">
 
                 <i class="fa fa-list"></i>  اوجه الكفارة</a>
         </li>
@@ -276,4 +276,3 @@
 
 
 
-        

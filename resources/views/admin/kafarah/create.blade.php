@@ -4,7 +4,7 @@
 
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ url('/home') }}">الرئيسية</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('admin.sadaqat.index') }}">اوجه الصدقات</a>
+        <li class="breadcrumb-item"><a href="{{ route('admin.Kafarah.index') }}">اوجه الصدقات</a>
         </li>
         <li class="breadcrumb-item active">إضافة وجه صدقة جديد</li>
     </ol>
@@ -15,17 +15,17 @@
                 <div class="col-sm-12">
                     @include('adminlte-templates::common.errors')
                     <div class="card">
-                        {!! Form::open(['route' => 'admin.sadaqat.store']) !!}
+                        {!! Form::open(['route' => 'admin.Kafarah.store']) !!}
 
                         <div class="card-block">
                             <div class="row">
-                                @include('admin.sadaqat.fields')
+                                @include('admin.Kafarah.fields')
                             </div>
                         </div>
 
                         <div class="card-footer">
                             {!! Form::submit('حفظ', ['class' => 'btn btn-primary']) !!}
-                            <a href="{{ route('admin.sadaqat.index') }}" class="btn btn-default">
+                            <a href="{{ route('admin.Kafarah.index') }}" class="btn btn-default">
                                 رجوع
                             </a>
                         </div>

@@ -112,7 +112,7 @@ Route::get('/iftar', function () {
 })->name('iftar');
 
 
-
+//elhesab elkhairy
 Route::get('/online-service', [ElkherController::class, 'index'])->name('onlineService')->middleware('frontend.auth');
 Route::get('/elkher_kafalat', [ElkherController::class, 'elkher_kafalat'])->name('elkherkafalat')->middleware('frontend.auth');
 Route::get('/elkher_tabraat', [ElkherController::class, 'elkher_tabraat'])->name('elkhertabraat')->middleware('frontend.auth');
@@ -247,6 +247,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::post('homepageSliders/status/{homepageSlider}', [HomepageSliderController::class, 'changeStatus'])->name('homepageSliders.status');
 
 });
+
+
 Route::fallback(function () {
     return view('errors.404');
 });

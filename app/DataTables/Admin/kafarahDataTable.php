@@ -23,22 +23,11 @@ class kafarahDataTable extends DataTable
             ->editColumn('active', function ($q){
                 return ($q->active) ? '<span class="tag tag-success">نشط </span>' : '<span class="tag tag-warning">غير نشط </span>';
             })
-            ->rawColumns(['action', 'active', 'homepage'])
-            ->editColumn('country_id', function($q) {
-                return $q->country->name;
-            })
-            ->editColumn('cost', function($q) {
-                return number_format($q->cost) . ' د.ك';
-            })
-            ->editColumn('paid', function($q) {
-                return number_format($q->paid) . ' د.ك';
-            })
-            ->editColumn('homepage', function ($q){
-                $homepage = ($q->homepage) ? 'checked=""' : '' ;
-                return '<label class="switch switch-text switch-success-outline-alt"><input type="checkbox" data-id="' . $q->id . '" class="switch-input homepage"' . $homepage . '><span class="switch-label" data-on="نعم" data-off="لا"></span><span class="switch-handle"></span></label>';
-            });
+            ->rawColumns(['action', 'active']);
+
     }
 
+ 
     /**
      * Get query source of dataTable.
      *
@@ -101,13 +90,9 @@ class kafarahDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            //            'name_en' => new Column(['title' => "الاسم بالانجليزية", 'data' => 'name_en']),
             'name_ar' => new Column(['title' => "الاسم بالعربية", 'data' => 'name_ar']),
-            'country_id' => new Column(['title' => "الدولة", 'data' => 'country_id']),
-            'cost' => new Column(['title' => "قيمة المشروع", 'data' => 'cost']),
-            'paid' => new Column(['title' => "المحصل من المشروع", 'data' => 'paid']),
-            'active' => new Column(['title' => "الحالة", 'data' => 'active']),
-            'homepage' => new Column(['title' => 'الصفحة الرئيسية', 'data' => 'homepage']),
+            'name_en' => new Column(['title' => "الاسم بالانجليزية", 'data' => 'name_en']),
+            'active' => new Column(['title' => "الحالة", 'data' => 'active'])
         ];
     }
 

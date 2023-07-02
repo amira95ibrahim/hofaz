@@ -14,6 +14,7 @@ class SadaqahController extends BaseController
         $sadaqahPage = SitePagesDetail::SadaqahPage()->first();
 
         return view('front.sadaqa', compact('sadaqahPage', 'sadaqat'));
+        
     }
 
 }

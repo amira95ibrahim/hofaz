@@ -73,6 +73,7 @@ class Sadaqah extends Model
     {
         return $query->where('active', true);
     }
+    
 
 
 }

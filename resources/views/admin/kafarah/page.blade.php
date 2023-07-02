@@ -3,7 +3,7 @@
 @section('content')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ url('/home') }}">الرئيسية</a></li>
-        <li class="breadcrumb-item active">تعديل وصف الصدقة</li>
+        <li class="breadcrumb-item active">تعديل وصف الكفارة</li>
     </ol>
 
     <div class="container-fluid">
@@ -21,7 +21,7 @@
 
                     <div class="card">
 
-                        {!! Form::model($sadaqahDetails, ['route' => ['admin.sadaqahPage.update', $sadaqahDetails->id], 'method' => 'patch', 'enctype' => 'multipart/form-data']) !!}
+                        {!! Form::model($kafarahDetails, ['route' => ['admin.kafarahPage.update', $kafarahDetails->id], 'method' => 'patch', 'enctype' => 'multipart/form-data']) !!}
 
                         <div class="card-block">
                             <div class="row">
@@ -50,7 +50,7 @@
                                 </div>
 
                                 <div class="form-group col-sm-6">
-                                    @include('admin.components.imageInput', ['image' => asset($sadaqahDetails->image)])
+                                    @include('admin.components.imageInput', ['image' => asset($kafarahDetails->image)])
                                 </div>
 
                             </div>
