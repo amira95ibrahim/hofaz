@@ -174,8 +174,14 @@ class GiftController extends BaseController
 
         Notification::route('mail', $email)->notify(new GiftCreatedNotification($giftData, $photoPath));
 
-
-        return redirect()->back();
+        return   view('front.emails.gift-created', [
+            // 'giftData' => $request,
+            'senderName' => $sender,
+            'consignee' => $consignee,
+            'photoPath' => $photoPath,
+            'project_name' =>$project_name,
+        ]);
+        // return redirect()->back();
     }
 
-}
+ }

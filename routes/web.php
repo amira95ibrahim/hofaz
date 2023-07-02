@@ -157,10 +157,10 @@ Route::get('/teams', function () {
 Route::get('lang/{lang}', [LangController::class, 'update'])->name('updateLang');
 
 // Auth::routes();
-
+Route::get('/admin', [HomeController::class, 'index'])->name('admin.home');
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
-    Route::get('/', [HomeController::class, 'index'])->name('home');
+    // Route::get('/', [HomeController::class, 'index'])->name('home');
     // Route::get('/', 'HomeController@index')->name('home');
     // COUNTRIES
     Route::resource('countries', CountryController::class)->except('show');
@@ -249,7 +249,8 @@ Route::fallback(function () {
     return view('errors.404');
 });
 
-Auth::routes();
+Auth
+::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

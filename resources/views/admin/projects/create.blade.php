@@ -18,7 +18,7 @@
                     <div class="row">
                         @include('admin.projects.fields')
                     </div>
-
+                    
                     {!! Form::submit('حفظ', ['class' => 'btn btn-primary']) !!}
                     <a href="{{ route('admin.projects.index') }}" class="btn btn-default">
                         رجوع

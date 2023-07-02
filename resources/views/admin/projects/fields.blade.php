@@ -95,6 +95,15 @@
                             <span class="switch-handle"></span>
                         </label>
                     </div>
+
+                    <div class="form-group col-sm-12">
+                        <label for="exampleFormControlSelect1">اختر القسم</label>
+                        <select name="category_id" class="form-control" id="exampleFormControlSelect1">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}" {{isset($project) && $project->category_id == $category->id ? 'selected' : ''}}>{{ $category->{'name_'.app()->getLocale()} }}</option>
+                            @endforeach
+                        </select>
+                      </div>
                 </div>
             </div>
         </div>
@@ -147,10 +156,10 @@
                             {!! Form::checkbox('active', '1', null, ['class' => 'switch-input']) !!}
                             <span class="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>
                             <span class="switch-handle"></span>
-                            
+
                         </label>
                     </div>
-                    
+
                       <!-- home page Field -->
                     <div class="form-group col-sm-6">
                         {!! Form::hidden('homepage', 0, ['class' => 'form-check-input']) !!}
@@ -159,9 +168,10 @@
                         <!--    {!! Form::checkbox('homepage', '1', null, ['class' => 'switch-input']) !!}-->
                         <!--    <span class="switch-label" data-on="&#xf00c" data-off="&#xf00d"></span>-->
                         <!--    <span class="switch-handle"></span>-->
-                            
+
                         <!--</label>-->
                     </div>
+
                 </div>
             </div>
         </div>
