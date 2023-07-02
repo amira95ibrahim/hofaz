@@ -4,9 +4,9 @@
 
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ url('/home') }}">الرئيسية</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('admin.Kafarah.index') }}">اوجه الصدقات</a>
+        <li class="breadcrumb-item"><a href="{{ route('admin.Kafarah.index') }}">اوجه الكفارات</a>
         </li>
-        <li class="breadcrumb-item active">إضافة وجه صدقة جديد</li>
+        <li class="breadcrumb-item active">إضافة وجه كفارة جديد</li>
     </ol>
 
     <div class="container-fluid">

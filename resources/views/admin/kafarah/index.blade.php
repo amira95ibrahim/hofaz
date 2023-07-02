@@ -5,7 +5,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ url('/home') }}">الرئيسية</a>
         </li>
-        <li class="breadcrumb-item active">اوجه الكفارة</li>
+        <li class="breadcrumb-item active">اوجه الكفارات</li>
 
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu">
