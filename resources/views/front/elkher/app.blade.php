@@ -4,16 +4,14 @@
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/tabs.css') }}">
      <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset("asst/plugins/fontawesome-free/css/all.min.css")}}">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+     <!-- Ionicons -->
+     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+     <!-- Tempusdominus Bootstrap 4 -->
 
 
 
-    <style>
+<style>
   @font-face {
             font-family: GSSLight;
             src: url(../styles/GESSTwoLight.ttf);
@@ -256,7 +254,7 @@
 
     </style>
 @endpush
-@yield('css');
+@yield('css')
 
 @section('content')
     <!-- Start main-content -->
@@ -495,96 +493,82 @@
 
 
             <!-- BEGIN HEADER MENU -->
-            <div class="page-header-menu" style="background: #42454C !important;">
-                <div class="container" >
+            <div class="page-header-menu" style="background: #42454C !important;  width:100% ;  height: 3rem;">
+                <div class="container"  style="" >
                     <!-- BEGIN HEADER SEARCH BOX -->
 
                     <!-- END HEADER SEARCH BOX -->
                     <!-- BEGIN MEGA MENU -->
                     <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
                     <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
-                    <div class="hor-menu " >
-                        <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href="{{route('onlineService')}}" class="pplighter" style="font-size: 15px">الرئيسية</a>
-                            </li>
-                            <li class="menu-dropdown mega-menu-dropdown ">
-                                <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;" class="dropdown-toggle"><span class="pplighter">إحصاءات</span> <i class="fa fa-angle-down"></i>
-                                </a>
-                                <ul class="dropdown-menu" style="min-width: 510px">
-                                    <li>
-                                        <div class="mega-menu-content">
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <ul class="mega-menu-submenu">
-                                                        <li>
-                                                            <h3 class="pp">تبرعاتي</h3>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{route('elkhertabraat')}}" class="iconify ">
-                                                                <i class="icon-basket"></i><span class="FontEltany" style="font-size: 12px">تبرعاتي</span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{route('elkhermasert')}}" class="iconify ">
-                                                                <i class="icon-home"></i>
-                                                                <span class="FontEltany" style="font-size: 12px"> مسيرة الخير</span>   </a>
-                                                        </li>
+                    <div class="" style="position: relative ;">
+                        <div>
+                           <ul class="nav navbar-nav" style="position: absolute; top: 0px; right: 0; display: flex; justify-content: flex-end; list-style-type: none; margin: 0; padding: 0;">
+                               <li class="active" style=" margin-left: 0;">
+                                   <a href="{{route('onlineService')}}" class="pplighter" style="font-size: 15px">الرئيسية</a>
+                               </li>
 
-                                                    </ul>
-                                                </div>
+                               <li class="menu-dropdown classic-menu-dropdown ">
+                                    <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;" class="dropdown-toggle"><span class="pplighter">إحصاءات</span> <i class="fa fa-angle-down"></i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-left">
+                                        <li>
+                                            <a href="{{route('elkhertabraat')}}" class="iconify ">
+                                                <i class="icon-basket"></i><span class="" style="font-family: 'Segoe UI' !important; font-size: 12px;">تبرعاتي</span>
+                                            </a>
+                                        </li>
 
+                                        <li>
+                                            <a href="{{route('elkhermasert')}}" class="iconify ">
+                                                <i class="icon-home"></i>
+                                                <span class="" style="font-family: 'Segoe UI' !important; font-size: 12px;"> مسيرة الخير</span>
+                                            </a>
+                                        </li>
 
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-dropdown">
-                                <a href="{{route('elkhermashroat')}}" class="tooltips" data-container="body" data-placement="bottom" data-html="true"><span class="pplighter">مشروعاتي</span>
-                                </a>
+                                    </ul>
+                               </li>
+                               <li class="menu-dropdown">
+                                   <a href="{{route('elkhermashroat')}}" class="tooltips" data-container="body" data-placement="bottom" data-html="true"><span class="pplighter">مشروعاتي</span>
+                                   </a>
 
-                            </li>
-                            <li class="menu-dropdown">
-                                <a href="{{route('elkherkafalat')}}" class="tooltips" data-container="body" data-placement="bottom" data-html="true"><span class="pplighter">كفالاتي</span>
-                                </a>
+                               </li>
+                               <li class="menu-dropdown">
+                                   <a href="{{route('elkherkafalat')}}" class="tooltips" data-container="body" data-placement="bottom" data-html="true"><span class="pplighter">كفالاتي</span>
+                                   </a>
 
-                            </li>
-                            <li class="menu-dropdown">
-                                <a href="{{route('elkherarshef')}}" class="tooltips" data-container="body" data-placement="bottom" data-html="true"><span class="pplighter">تقاريري</span>
-                                </a>
+                               </li>
+                               <li class="menu-dropdown">
+                                   <a href="{{route('elkherarshef')}}" class="tooltips" data-container="body" data-placement="bottom" data-html="true"><span class="pplighter">تقاريري</span>
+                                   </a>
 
-                            </li>
+                               </li>
 
-                            <li class="menu-dropdown">
-                                <a href="../Pages/FAQ.aspx" class="tooltips" data-container="body" data-placement="bottom" data-html="true" ><span class="pplighter" style="font-size: 16px">أسئلة شائعة</span> </a>
-                            </li>
-                            <li class="menu-dropdown classic-menu-dropdown ">
-                                <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;"><span class="pplighter">تواصل </span><i class="fa fa-angle-down"></i>
-                                </a>
-                                <ul class="dropdown-menu pull-left">
+                               <li class="menu-dropdown">
+                                   <a href="#" class="tooltips" data-container="body" data-placement="bottom" data-html="true" ><span class="pplighter" style="font-size: 16px">أسئلة شائعة</span> </a>
+                               </li>
+                               <li class="menu-dropdown classic-menu-dropdown ">
+                                   <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;"><span class="pplighter">تواصل </span><i class="fa fa-angle-down"></i>
+                                   </a>
+                                   <ul class="dropdown-menu pull-left">
+                                       <li>
+                                           <a href="#" style="font-family: 'Segoe UI' !important; font-size: 12px;">قائمة الشكاوي
+                                           </a>
+                                       </li>
 
 
 
-                                    <li>
-                                        <a href="../Pages/MyIncidentList.aspx" style="font-family: 'Segoe UI' !important; font-size: 12px;">قائمة الشكاوي
-                                        </a></li>
-
-                                </ul>
-                            </li>
-                             <li class="menu-dropdown">
-                                <a href="../Pages/UpdateInfo.aspx" class="tooltips" data-container="body" data-placement="bottom" data-html="true" ><span class="pplighter">تعديل بياناتي </span> </a>
-                            </li>
+                                   </ul>
+                               </li>
+                                <li class="menu-dropdown">
+                                   <a href="#" class="tooltips" data-container="body" data-placement="bottom" data-html="true" ><span class="pplighter">تعديل بياناتي </span> </a>
+                                </li>
 
 
 
 
-                        </ul>
-
-
-
-
-                    </div>
+                           </ul>
+                        </div>
+                       </div>
                     <!-- END MEGA MENU -->
                 </div>
             </div>
@@ -604,4 +588,4 @@
     </div>
 @endsection
 
-@yield('js');
+@yield('js')
