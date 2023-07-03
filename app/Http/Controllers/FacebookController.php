@@ -23,26 +23,37 @@ class FacebookController extends Controller
         try {
             $user = Socialite::driver('facebook')->user();
 
-            $findUser = User::where('facebook_id', $user->id)->first();
+            $findUser = User::where('social_id', $user->id)->first();
 
             if ($findUser) {
-                Auth::login($findUser);
+
+                Auth::login($newUser);
+
+                return redirect()->intended('/');
+
             } else {
                 $newUser = User::create([
+
                     'name' => $user->name,
-                    'email' => $user->email,
-                    'facebook_id' => $user->id,
-                    'password' => Hash::make('Test123456')
+
+                    'social_id' => $user->id,
+
+                    'email' => null,
+
+                    'social_type' => 'facebook',
+
+                    'avatar' => $user->avatar,
+
+                    'password' => encrypt('my-facebook')
                 ]);
 
                 Auth::login($newUser);
-            }
 
-            return redirect()->intended('dashboard');
-        } catch (\Exception $e) {
-            return redirect()->route('login')->with('error', 'An error occurred during Facebook login');
+                return redirect()->intended('/');
+            }
+        } catch (Exception $e) {
+
+            return redirect()->back()->with('error', $e->getMessage());
         }
     }
-
-
 }
