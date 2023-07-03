@@ -170,9 +170,9 @@ class MyFatoorahController extends Controller {
 public function createPeriodicDonation(Request $request)
 {
     // dd($request->duration);
-    $request->validate([
-        'phone_number' => 'nullable|max:11'
-    ]);
+    //$request->validate([
+       // 'phone_number' => 'nullable|max:11'
+    //]);
 
     if (!empty($request->input('custom_amount'))) {
         $amount = $request->input('custom_amount');
@@ -201,7 +201,9 @@ public function createPeriodicDonation(Request $request)
 
             // Store the invoice details in the database
             $invoice = Donation::create([
+                'donor_id'  => Auth::id(),
                 'donation_id' => $donation->id,
+                'amount'    => $amount,
                 'invoice_url' => $data['invoiceURL'],
                 'payment_date' => $paymentDate,
                 // Add more fields specific to periodic invoices, like status, payment_id, etc.
@@ -213,8 +215,8 @@ public function createPeriodicDonation(Request $request)
         $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
         // Handle the exception, maybe log it or show an error message to the user
     }
-return $response;
-   // return redirect()->to($response['invoiceURL']);
+// return $response;
+    return redirect()->to($response['Data']['invoiceURL']);
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -237,7 +239,7 @@ return $response;
             'CallBackUrl'        => $callbackURL,
             'ErrorUrl'           => $callbackURL,
             'MobileCountryCode'  => '+965',
-            'CustomerMobile'     => $data['phone_number'],
+           // 'CustomerMobile'     => $data['phone_number'],
             'Language'           => 'en',
             'CustomerReference'  => $orderId,
             'SourceInfo'         => 'Hofaz ' . app()::VERSION . ' - MyFatoorah Package ' . MYFATOORAH_LARAVEL_PACKAGE_VERSION,
