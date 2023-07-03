@@ -192,15 +192,13 @@ class GiftController extends BaseController
     }
 
     public function showGiftCreatedPopup()
-{
-    $senderName = session('senderName');
-    $consignee = session('consignee');
-    $photoPath = session('photoPath');
-    $project_name = session('project_name');
-    $imageUrl = session('photoPath');
+    {
+        $senderName = session('senderName');
+        $consignee = session('consignee');
+        $photoPath = session('photoPath');
+        $project_name = session('project_name');
 
-    return view('front.emails.gift-created', compact('senderName', 'consignee', 'photoPath', 'project_name', 'imageUrl'));
-    // return view('front.emails.gift-created', compact('senderName', 'consignee', 'photoPath', 'project_name'));
-}
+        return view('front.emails.gift-created', compact('senderName', 'consignee', 'photoPath', 'project_name'));
+    }
 
  }

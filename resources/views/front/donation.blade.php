@@ -324,17 +324,14 @@
                                             <label><strong>@lang('donation.donation_type')</strong></label>
                                             <div class="radio mt-5">
                                                 <div id="debt-amount-slider">
-                                                    <input type="radio"  id="frequency" value="1" name="frequency"
-                                                        required checked="">
-                                                    <label for="1" data-frequency="@lang('donation.daily')"></label>
-                                                    <input type="radio"  id="frequency" value="2" name="frequency"
-                                                        required>
-                                                    <label for="2" data-frequency="@lang('donation.weekly')"></label>
-                                                    <input type="radio"  id="frequency" value="3" name="frequency"
-                                                        required>
-                                                    <label for="3" data-frequency="@lang('donation.monthly')"></label>
-                                                    {{--                                                    <input type="radio" name="debt-amount" id="4" value="4" required> --}}
-                                                    {{--                                                    <label for="4" data-debt-amount="@lang('donation.yearly')"></label> --}}
+                                                    <input type="radio" id="frequency1" value="Daily" name="frequency" required checked="">
+                                                    <label for="frequency1" data-frequency="Daily">@lang('donation.daily')</label>
+                                                    <input type="radio" id="frequency2" value="Weekly" name="frequency" required>
+                                                    <label for="frequency2" data-frequency="Weekly">@lang('donation.weekly')</label>
+                                                    <input type="radio" id="frequency3" value="Monthly" name="frequency" required>
+                                                    <label for="frequency3" data-frequency="Monthly">@lang('donation.monthly')</label>
+                                                    {{-- <input type="radio" name="debt-amount" id="4" value="4" required> --}}
+                                                    {{-- <label for="4" data-debt-amount="@lang('donation.yearly')"></label> --}}
                                                     <div id="debt-amount-pos"></div>
                                                 </div>
                                             </div>
@@ -347,19 +344,19 @@
                                         </div>
 
                                         <div class="radio-group">
-                                            <input type="radio" id="option-one" name="duration" value="six_months" checked>
+                                            <input type="radio" id="option-one" name="duration" value="6" checked>
                                             <label for="option-one">@lang('donation.six_months')</label>
 
-                                            <input type="radio" id="option-two" name="duration" value="one_year">
+                                            <input type="radio" id="option-two" name="duration" value="12">
                                             <label for="option-two">@lang('donation.year')</label>
 
-                                            <input type="radio" id="option-three" name="duration" value="two_years">
+                                            <input type="radio" id="option-three" name="duration" value="24">
                                             <label for="option-three">@lang('donation.two_years')</label>
 
-                                            <input type="radio" id="option-four" name="duration" value="continues">
+                                            <input type="radio" id="option-four" name="duration" value="0">
                                             <label for="option-four">@lang('donation.continues')</label>
                                         </div>
-                                        <input type="hidden" name="frequency" id="frequency" value="">
+                                        {{-- <input type="hidden" name="frequency" id="frequency" value=""> --}}
 
                                     </div>
 
@@ -399,13 +396,13 @@
                                             <div class="or mt-1 mb-10"> - @lang('donation.or') -</div>
                                             <div class="mt-1">
                                                 <div class="input-group">
-                                                    <input type="text" value="" name="amount" placeholder="@lang('donation.enter_amount')" class="form-control input-lg font-16" data-height="45px" style="height: 45px;">
+                                                    <input type="text" value="" name="custom_amount" placeholder="@lang('donation.enter_amount')" class="form-control input-lg font-16" data-height="45px" style="height: 45px;">
                                                     <span class="input-group-btn">
                                                         <button data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="button" style="height: 45px;">@lang('donation.KWD')</button>
                                                     </span>
                                                 </div>
                                             </div>
-                                        </form>
+
                         </div>
                     </div>
 
@@ -415,8 +412,9 @@
                                 data-loading-text="Please wait...">@lang('donation.donate_now')</button>
                         </div>
                     </div>
-                </div>
                 </form>
+                </div>
+
 
                 <!-- Paypal Onetime Form -->
                 {{-- <form id="popup_paypal_donate_form-onetime" class="hidden" action="https://www.paypal.com/cgi-bin/webscr"
@@ -684,12 +682,6 @@
             });
         });
     </script>
-    <script>
-        $(document).ready(function() {
-    $('input[name="frequency"]').change(function() {
-        var frequency = $('input[name="frequency"]:checked').data('frequency');
-        $('#frequency').val(frequency);
-    });
-});
-</script>
+
+
 @endpush

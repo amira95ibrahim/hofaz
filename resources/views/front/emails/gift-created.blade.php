@@ -48,7 +48,7 @@
 <div class="image-container">
     <img src="{{asset('images/card/'.$consignee . '.jpg')}}" alt="Image" width="450px">
     {{-- <img src="{{ $imageUrl }}" alt="Generated Image" width="450px"> --}}
-    <div class="text-overlay">{{ $imageUrl }}
+    <div class="text-overlay">
         <p class="text-sender">{{$senderName}}</p>
         <p class="text-project">{{$project_name}}</p>
         <p class="text-consignee">{{$consignee}}</p>

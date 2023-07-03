@@ -70,17 +70,19 @@
                                         </div>
                                         <div class="card-body text-center">
                                             <h4>{{ $gift->giftable->name }}</h4>
-                                            <form   id="gift-form" action="{{ route('generate') }}" method="POST" enctype="multipart/form-data">
+                                            <form id="gift-form" action="{{ route('generate') }}" method="POST"
+                                                enctype="multipart/form-data">
                                                 @csrf
-                                                <input type="hidden" name="project_name"  value="{{ $gift->giftable->name }}">
-                                            <input type="text" name="donate" class="form-control br-20"
-                                                value="{{ $gift->giftable->initial_amount }}">
-                                            {{--        <input type="text" name="donate" class="form-control br-20" value="10"> --}}
-                                            <button type="button" id="{{ $gift->id }}"
-                                                class="btn btn-default mt-1 btn-xl btn-theme-colored btn-flat mr-5 selectProject">@lang('gift.donate_your_gift')</button>
-                                            <button type="button" style="display: none"
-                                                class="btn btn-dark mt-1 btn-xl btn-theme-colored btn-flat mr-5" disabled><i
-                                                    class="fa fa-check"></i></button>
+                                                <input type="hidden" name="project_name"
+                                                    value="{{ $gift->giftable->name }}">
+                                                <input type="text" name="donate" class="form-control br-20"
+                                                    value="{{ $gift->giftable->initial_amount }}">
+                                                {{--        <input type="text" name="donate" class="form-control br-20" value="10"> --}}
+                                                <button type="button" id="{{ $gift->id }}"
+                                                    class="btn btn-default mt-1 btn-xl btn-theme-colored btn-flat mr-5 selectProject">@lang('gift.donate_your_gift')</button>
+                                                <button type="button" style="display: none"
+                                                    class="btn btn-dark mt-1 btn-xl btn-theme-colored btn-flat mr-5"
+                                                    disabled><i class="fa fa-check"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -93,31 +95,31 @@
 
         <section>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 text-center">
-                            <label>
-                                <input type="radio" name="card" value="card1">
-                                <img src="{{ asset('images/causes/card1.jpg') }}">
-                            </label>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <label>
-                                <input type="radio" name="card" value="card2">
-                                <img src="{{ asset('images/causes/card2.jpg') }}">
-                            </label>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <label>
-                                <input type="radio" name="card" value="card3">
-                                <img src="{{ asset('images/causes/card3.jpg') }}">
-                            </label>
-                        </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <label>
+                            <input type="radio" name="card" value="card1">
+                            <img src="{{ asset('images/causes/card1.jpg') }}">
+                        </label>
                     </div>
-                    @if ($errors->has('card'))
-                        <span class="text-danger">{{ $errors->first('card') }}</span>
-                    @endif
+                    <div class="col-md-4 text-center">
+                        <label>
+                            <input type="radio" name="card" value="card2">
+                            <img src="{{ asset('images/causes/card2.jpg') }}">
+                        </label>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <label>
+                            <input type="radio" name="card" value="card3">
+                            <img src="{{ asset('images/causes/card3.jpg') }}">
+                        </label>
+                    </div>
                 </div>
+                @if ($errors->has('card'))
+                    <span class="text-danger">{{ $errors->first('card') }}</span>
+                @endif
+            </div>
 
         </section>
 
@@ -229,68 +231,67 @@
             window.open('/gift-created-popup', 'Gift Created', 'width=450,height=650');
         }
 
-    // document.getElementById('gift-form').addEventListener('submit', async (event) => {
-    //     event.preventDefault(); // Prevent the default form submission
+        // document.getElementById('gift-form').addEventListener('submit', async (event) => {
+        //     event.preventDefault(); // Prevent the default form submission
 
-    //     const form = event.target;
-    //     const formData = new FormData(form);
+        //     const form = event.target;
+        //     const formData = new FormData(form);
 
-    //     try {
-    //         const response = await fetch('{{ route("generate") }}', {
-    //             method: 'POST',
-    //             body: formData,
-    //             headers: {
-    //                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
-    //             },
-    //         });
+        //     try {
+        //         const response = await fetch('{{ route('generate') }}', {
+        //             method: 'POST',
+        //             body: formData,
+        //             headers: {
+        //                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        //             },
+        //         });
 
-    //         if (response.ok) {
-    //             openGiftCreatedPopup();
-    //         } else {
-    //             // Handle any errors returned by the server
-    //             const data = await response.json();
-    //             console.error('Error:', data);
-    //         }
-    //     } catch (error) {
-    //         // Handle any network or fetch errors
-    //         console.error('Fetch Error:', error);
-    //     }
-    // });
+        //         if (response.ok) {
+        //             openGiftCreatedPopup();
+        //         } else {
+        //             // Handle any errors returned by the server
+        //             const data = await response.json();
+        //             console.error('Error:', data);
+        //         }
+        //     } catch (error) {
+        //         // Handle any network or fetch errors
+        //         console.error('Fetch Error:', error);
+        //     }
+        // });
 
-    document.getElementById('gift-form').addEventListener('submit', async (event) => {
-    event.preventDefault(); // Prevent the default form submission
+        document.getElementById('gift-form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent the default form submission
 
-    const form = event.target;
+            const form = event.target;
 
-    // Check if the form is valid
-    // if (!form.checkValidity()) {
-    //     form.reportValidity(); // Show validation error messages
-    //     return;
-    // }
+            //Check if the form is valid
+            if (!form.checkValidity()) {
+                form.reportValidity(); // Show validation error messages
+                return;
+            }
 
-    const formData = new FormData(form);
+            const formData = new FormData(form);
 
-    try {
-        const response = await fetch('{{ route("generate") }}', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            },
+            try {
+                const response = await fetch('{{ route('generate') }}', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                });
+
+                if (response.ok) {
+                    openGiftCreatedPopup();
+                } else {
+                    // Handle any errors returned by the server
+                    const data = await response.json();
+                    console.error('Error:', data);
+                }
+            } catch (error) {
+                // Handle any network or fetch errors
+                console.error('Fetch Error:', error);
+            }
         });
-
-        if (response.ok) {
-            openGiftCreatedPopup();
-        } else {
-            // Handle any errors returned by the server
-            const data = await response.json();
-            console.error('Error:', data);
-        }
-    } catch (error) {
-        // Handle any network or fetch errors
-        console.error('Fetch Error:', error);
-    }
-});
-</script>
-
+    </script>
 @endpush

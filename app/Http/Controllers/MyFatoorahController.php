@@ -103,7 +103,7 @@ class MyFatoorahController extends Controller {
         } catch (\Exception $e) {
             $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
         }
-        dd($response);
+       // dd($response);
         return redirect()->to($response['Data']['invoiceURL']);
     }
 
@@ -169,23 +169,19 @@ class MyFatoorahController extends Controller {
      */
 public function createPeriodicDonation(Request $request)
 {
-    // dd($request->input('frequency'));
+    // dd($request->duration);
     $request->validate([
         'phone_number' => 'nullable|max:11'
     ]);
-    $request = new \Illuminate\Http\Request();
-    $request->merge([
-        'name' => 'John Doe',
-        'email' => 'john@example.com',
-        'amount' => 100,
-        'frequency' => 'daily',
-        'duration' => 12,
-        'phone_number' => '1234567890',
-    ]);
 
+    if (!empty($request->input('custom_amount'))) {
+        $amount = $request->input('custom_amount');
+    } else {
+        $amount = $request->input('amount');
+    }
     $donation = Donation::create([
-        'donor_id'  => 0??Auth::id(),
-        'amount'    => $request->amount??1,
+        'donor_id'  => Auth::id(),
+        'amount'    => $amount,
         'payment_method' => 'visa',
         'status' =>'INITIATED',
         // Add more fields specific to periodic donations, like frequency, next_payment_date, etc.
@@ -194,14 +190,15 @@ public function createPeriodicDonation(Request $request)
     try {
         // Generate the list of payment dates based on the selected frequency and duration
         $paymentDates = $this->generatePaymentDates($request->frequency, $request->duration);
-        // $data=null;
+       // dd($paymentDates);
         // Create invoices for each payment date
         foreach ($paymentDates as $paymentDate) {
             $paymentMethodId = 0; // 0 for MyFatoorah invoice or 1 for Knet in test mode
 
             $curlData = $this->getPayLoadData_periodic($request->all(), $donation->id, $paymentDate);
-            $data     = $this->mfObj->getInvoiceURL($curlData, $paymentMethodId);
-   echo $data; echo '<br>';
+            $data     =$this->mfObj->getInvoiceURL($curlData, $paymentMethodId);
+
+
             // Store the invoice details in the database
             $invoice = Donation::create([
                 'donation_id' => $donation->id,
@@ -216,8 +213,8 @@ public function createPeriodicDonation(Request $request)
         $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
         // Handle the exception, maybe log it or show an error message to the user
     }
-// return 'hi';
-    return redirect()->to($response['Data']['invoiceURL']);
+return $response;
+   // return redirect()->to($response['invoiceURL']);
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -232,10 +229,11 @@ public function createPeriodicDonation(Request $request)
         $callbackURL = route('myfatoorah.callback_periodic');
 
         return [
-            'CustomerName'       => $data['name'],//Auth::user()->name,
+            "PaymentMethodId" => 20,
+            'CustomerName'       => Auth::user()->name,
             'InvoiceValue'       => $data['amount'],
             'DisplayCurrencyIso' => 'KWD',
-            'CustomerEmail'      =>  $data['email'],//Auth::user()->email,
+            'CustomerEmail'      =>  Auth::user()->email,
             'CallBackUrl'        => $callbackURL,
             'ErrorUrl'           => $callbackURL,
             'MobileCountryCode'  => '+965',
@@ -245,6 +243,13 @@ public function createPeriodicDonation(Request $request)
             'SourceInfo'         => 'Hofaz ' . app()::VERSION . ' - MyFatoorah Package ' . MYFATOORAH_LARAVEL_PACKAGE_VERSION,
             // Add the payment date to the payload data
             'PaymentDate'        => $paymentDate,
+
+            "RecurringModel"=> [
+                'Iteration'          => $data['frequency'] ,
+                'RecurringType'      =>$data['duration'], //Daily - Monthly -yearly -custom
+                "IntervalDays"       => 1,
+                "RetryCount"  =>  2,
+              ]
         ];
     }
 
@@ -272,8 +277,8 @@ public function createPeriodicDonation(Request $request)
                 $donation = Donation::find($invoice->donation_id);
                 $donation->status = 'CAPTURED';
                 $donation->save();
-
-                return redirect()->route('home')->with('success', 'Periodic donation completed successfully.');
+                return redirect()->route('home')->with('success', 'تم التبرع بنجاح. جزاك الله خيرا');
+                // return redirect()->route('home')->with('success', 'Periodic donation completed successfully.');
             } else if ($data->InvoiceStatus == 'Failed') {
                 $invoice->status = 'FAILED';
                 $invoice->payment_id = $paymentId;
@@ -283,8 +288,8 @@ public function createPeriodicDonation(Request $request)
                 $donation = Donation::find($invoice->donation_id);
                 $donation->status = 'FAILED';
                 $donation->save();
-
-                return redirect()->route('home')->with('error', 'Payment failed for the periodic donation.');
+                return redirect()->route('home')->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
+                // return redirect()->route('home')->with('error', 'Payment failed for the periodic donation.');
             } else {
                 $invoice->status = 'EXPIRED';
                 $invoice->payment_id = $paymentId;
@@ -294,11 +299,12 @@ public function createPeriodicDonation(Request $request)
                 $donation = Donation::find($invoice->donation_id);
                 $donation->status = 'DECLINED';
                 $donation->save();
-
-                return redirect()->route('home')->with('error', 'Payment expired for the periodic donation.');
+                return redirect()->route('home')->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
+                // return redirect()->route('home')->with('error', 'Payment expired for the periodic donation.');
             }
         } catch (\Exception $e) {
-            return redirect()->route('home')->with('error', 'An error occurred during payment for the periodic donation.');
+            return redirect()->route('home')->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
+            // return redirect()->route('home')->with('error', 'An error occurred during payment for the periodic donation.');
         }
     }
 
@@ -313,13 +319,13 @@ private function generatePaymentDates($frequency, $duration)
     // Generate the payment dates based on the selected frequency and duration
     for ($i = 0; $i < $duration; $i++) {
         switch ($frequency) {
-            case 'daily':
+            case 'Daily':
                 $paymentDates[] = $startDate->addDay($i)->format('Y-m-d');
                 break;
-            case 'weekly':
+            case 'Weekly':
                 $paymentDates[] = $startDate->addWeek($i)->format('Y-m-d');
                 break;
-            case 'monthly':
+            case 'Monthly':
                 $paymentDates[] = $startDate->addMonth($i)->format('Y-m-d');
                 break;
             // Add more cases for other frequencies like bi-weekly, bi-monthly, etc.

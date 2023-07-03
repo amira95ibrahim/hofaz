@@ -115,13 +115,13 @@
                         <label class="tab" for="radio-1" onclick="openTab(event, 'unknownTab')">فاعل خير</label>
                         @auth
                             <input type="radio" id="radio-2" name="donor_type" value="logged"/>
-                            <label class="tab" for="radio-2" onclick="openTab(event, 'loggedTab')">{{ \Illuminate\Support\Facades\Auth::user()->name }}</label>
+                            <label class="tab" style="width: 400px" for="radio-2" onclick="openTab(event, 'loggedTab')">{{ \Illuminate\Support\Facades\Auth::user()->name }}</label>
                         @else
                             <input type="radio" id="radio-2" name="donor_type" value="login"/>
                             <label class="tab" for="radio-2" onclick="openTab(event, 'signinTab')">تسجيل الدخول</label>
                             <input type="radio" id="radio-3" name="donor_type" value="signup"/>
                             <label class="tab" for="radio-3" onclick="openTab(event, 'registerTab')">انشاء حساب</label>
-                        @endauth
+                            @endauth
                         <span class="glider"></span>
                     </div>
                 </div>

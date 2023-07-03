@@ -30,6 +30,7 @@ class GiftRequest extends FormRequest
             'phone' => 'required|max:20|regex:/^[^<>]+$/',
             'card' => 'required|string|max:255',
             'donate'=>'required|number',
+            'card'=>'required',
         ];
     }
 
