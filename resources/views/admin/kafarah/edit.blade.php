@@ -3,7 +3,7 @@
 @section('content')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ url('/home') }}">الرئيسية</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('admin.sadaqat.index') }}">اوجه الصدقات</a>
+        <li class="breadcrumb-item"><a href="{{ route('admin.Kafarah.index') }}">اوجه الكفارات</a>
         </li>
         <li class="breadcrumb-item active">تعديل: {{ $sadaqah->name }}</li>
     </ol>
@@ -17,17 +17,17 @@
 
                     <div class="card">
 
-                        {!! Form::model($sadaqah, ['route' => ['admin.sadaqat.update', $sadaqah->id], 'method' => 'patch']) !!}
+                        {!! Form::model($sadaqah, ['route' => ['admin.Kafarah.update', $sadaqah->id], 'method' => 'patch']) !!}
 
                         <div class="card-block">
                             <div class="row">
-                                @include('admin.sadaqat.fields')
+                                @include('admin.Kafarah.fields')
                             </div>
                         </div>
 
                         <div class="card-footer">
                             {!! Form::submit('حفظ', ['class' => 'btn btn-primary']) !!}
-                            <a href="{{ route('admin.sadaqat.index') }}" class="btn btn-default">
+                            <a href="{{ route('admin.Kafarah.index') }}" class="btn btn-default">
                                 رجوع
                             </a>
                         </div>

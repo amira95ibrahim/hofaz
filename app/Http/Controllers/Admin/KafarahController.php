@@ -8,9 +8,11 @@ use App\Http\Requests\Admin\CreatekafarahRequest;
 use App\Http\Requests\Admin\UpdatekafarahRequest;
 use App\Models\SitePagesDetail;
 use App\Models\kafarah;
-use Flash;
+use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
 use Response;
+use App\Http\Controllers\Admin\AdminController;
+
 
 class KafarahController extends AppBaseController
 {
@@ -23,9 +25,9 @@ class KafarahController extends AppBaseController
      */
     public function index(kafarahDataTable $kafarahDataTable)
     {
-        
         return $kafarahDataTable->render('admin.kafarah.index');
     }
+
 
     /**
      * Show the form for creating a new kafarah.
@@ -44,34 +46,18 @@ class KafarahController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreatekafarahfRequest $request)
-    {
-        $input = $request->all();
+    public function store(CreatekafarahRequest $request)
+        {
+            $input = $request->all();
 
-        foreach ($request->country_id as $country){
-            $image = $request->file('image');
-            $path = 'kafarah/' . time() . rand() .  '.' . $image->extension();
-            $image->storeAs('public/', $path);
 
-            kafarah::create([
-                'name_en' => $request->name_en,
-                'name_ar' => $request->name_ar,
-                'description_en' => $request->description_en,
-                'description_ar' => $request->description_ar,
-                'cost' => $request->cost,
-                'paid' => $request->paid,
-                'initial_amount' => $request->initial_amount,
-                'show_remaining' => $request->show_remaining,
-                'country_id' => $country,
-                'image' => 'storage/' . $path,
-                'active' => $request->active,
-            ]);
+            $kafarah = kafarah::create($input);
+
+            Flash::success(__('messages.saved', ['model' => 'تم الاضافة بنجاح']));
+
+            return redirect(route('admin.Kafarah.index'));
         }
 
-        Flash::success(__('messages.saved', ['model' => __('models/kafarah.singular')]));
-
-        return redirect(route('admin.kafarah.index'));
-    }
 
     /**
      * Display the specified kafarah.
@@ -88,12 +74,11 @@ class KafarahController extends AppBaseController
         if (empty($kafarah)) {
             Flash::error(__('models/kafarah.singular').' '.__('messages.not_found'));
 
-            return redirect(route('admin.kafarah.index'));
+            return redirect(route('admin.Kafarah.index'));
         }
 
         return view('admin.kafarah.show')->with('kafarah', $kafarah);
     }
-
     /**
      * Show the form for editing the specified kafarah.
      *
@@ -109,11 +94,12 @@ class KafarahController extends AppBaseController
         if (empty($kafarah)) {
             Flash::error(__('messages.not_found', ['model' => __('models/kafarah.singular')]));
 
-            return redirect(route('admin.kafarah.index'));
+            return redirect(route('admin.Kafarah.index'));
         }
 
         return view('admin.kafarah.edit')->with('kafarah', $kafarah);
     }
+
 
     /**
      * Update the specified kafarah in storage.
@@ -131,25 +117,18 @@ class KafarahController extends AppBaseController
         if (empty($kafarah)) {
             Flash::error(__('messages.not_found', ['model' => __('models/kafarah.singular')]));
 
-            return redirect(route('admin.kafarah.index'));
+            return redirect(route('admin.Kafarah.index'));
         }
 
-        $input = $request->all();
-        if($request->hasFile('image')){
-            $image = $request->file('image');
-            $path = 'kafarah/' . time() . rand() .  '.' . $image->extension();
-            $image->storeAs('public/', $path);
-
-            $input['image'] = 'storage/' . $path;
-        }
-
-        $kafarah->fill($input);
+        $kafarah->fill($request->all());
         $kafarah->save();
 
         Flash::success(__('messages.updated', ['model' => __('models/kafarah.singular')]));
 
-        return redirect(route('admin.kafarah.index'));
+        return redirect(route('admin.Kafarah.index'));
     }
+
+
 
     /**
      * Remove the specified kafarah from storage.
@@ -168,14 +147,14 @@ class KafarahController extends AppBaseController
         if (empty($kafarah)) {
             Flash::error(__('messages.not_found', ['model' => __('models/kafarah.singular')]));
 
-            return redirect(route('admin.kafarah.index'));
+            return redirect(route('admin.Kafarah.index'));
         }
 
         $kafarah->delete();
 
         Flash::success(__('messages.deleted', ['model' => __('models/kafarah.singular')]));
 
-        return redirect(route('admin.kafarah.index'));
+        return redirect(route('admin.Kafarah.index'));
     }
 
     public function kafarahDetails(){
@@ -184,12 +163,24 @@ class KafarahController extends AppBaseController
         return view('admin.kafarah.page', compact('kafarahDetails'));
     }
 
+
+
     public function kafarahDetailsUpdate(Request $request){
         SitePagesDetail::kafarahPage()->update($request->only(['title_en', 'title_ar', 'details_en', 'details_ar']));
 
-        return redirect(route('admin.kafarahPage.edit'))
-            ->with('message', 'تم التعديل بنجاح');
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $path = 'kafarah/' . time() . rand() .  '.' . $image->extension();
+            $image->storeAs('public/', $path);
+
+            SitePagesDetail::kafarahPage()->update(['image' => 'storage/' . $path]);
+
+        }
+
+        return redirect(route('admin.KafarahPage.edit'))
+            ->with('message',  __('messages.updated', ['model' => __('models/kafarah.singular')]));
     }
+
 
     public function changeStatus(kafarah $kafarah){
 
@@ -198,14 +189,14 @@ class KafarahController extends AppBaseController
 
         Flash::success('تم تعديل الحالة بنجاح');
 
-        return redirect(route('admin.kafarah.index'));
+        return redirect(route('admin.Kafarah.index'));
     }
 
-    public function homepageUpdate(kafarah $kafarah){
+    // public function homepageUpdate(kafarah $kafarah){
 
-        $kafarah->homepage = !$kafarah->homepage;
-        $kafarah->save();
+    //     $kafarah->homepage = !$kafarah->homepage;
+    //     $kafarah->save();
 
-        return true;
-    }
+    //     return true;
+    // }
 }

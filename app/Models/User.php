@@ -12,7 +12,7 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable,  CanResetPassword;
+    use HasApiTokens , HasFactory , Notifiable;
 
     /**
      * Send the password reset notification.
@@ -33,7 +33,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'phone_number'
+        'phone_number',
+        'facebook_id'
     ];
 
     /**

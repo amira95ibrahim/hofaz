@@ -12,6 +12,12 @@ class Category extends Model
     protected $fillable = [
         'name_ar',
         'name_en',
+        'active',
     ];
+
+    public function scopeActive($query)
+    {
+        return $query->where('active', true);
+    }
 
 }

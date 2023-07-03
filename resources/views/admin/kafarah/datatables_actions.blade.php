@@ -1,9 +1,9 @@
-{!! Form::open(['route' => ['admin.sadaqat.status', $id], 'method' => 'post']) !!}
+{!! Form::open(['route' => ['admin.Kafarah.status', $id], 'method' => 'post']) !!}
 <div class='btn-group'>
-{{--    <!-- <a href="{{ route('admin.sadaqat.show', $id) }}" class='btn btn-outline-info btn-xs'>--}}
+{{--    <!-- <a href="{{ route('admin.Kafarah.show', $id) }}" class='btn btn-outline-info btn-xs'>--}}
 {{--        <i class="fa fa-eye"></i>--}}
 {{--    </a> -->--}}
-    <a href="{{ route('admin.sadaqat.edit', $id) }}" class='btn btn-outline-warning btn-xs'>
+    <a href="{{ route('admin.Kafarah.edit', $id) }}" class='btn btn-outline-warning btn-xs'>
         <i class="fa fa-edit"></i>
     </a>
     @if($active)
