@@ -7,7 +7,7 @@ use App\Models\Gift;
 use App\Models\SendGift;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Intervention\Image\Facades\Image;
+//use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\GiftCreatedNotification;
 
@@ -138,14 +138,14 @@ class GiftController extends BaseController
         }
 
         // Load the image using Intervention Image
-        $image = Image::make(public_path($photoPath));
+      //  $image = Image::make(public_path($photoPath));
 
         // Add text to the image
 
         // Save the modified image
         $imageName = $consignee . '.jpg';
         $imagePath = public_path('images/card/' . $imageName);
-        $image->save($imagePath);
+        //$image->save($imagePath);
 
         // Redirect to a new window to display the saved photo
         $savedPhotoUrl = asset('images/card/' . $imageName);
@@ -160,7 +160,7 @@ class GiftController extends BaseController
   // Save the modified image
   $imageName = $consignee . '.jpg';
   $imagePath = asset('images/card/' . $imageName);
-  $image->save($imagePath);
+ // $image->save($imagePath);
 
   // Store the generated image URL in a session
   $imageUrl = asset('images/card/' . $imageName);
