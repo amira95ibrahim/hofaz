@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://hofath.alexadigitals.com/'),
+    'url' => env('APP_URL', 'https://hofaz.alexadigitals.com/'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -238,7 +238,6 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
         'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
-        'Image' => Intervention\Image\Facades\Image::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
