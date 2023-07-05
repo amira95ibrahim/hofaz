@@ -45,7 +45,7 @@ use Illuminate\Support\Facades\Route;
 //     \Artisan::call('migrate', ['--force' => true]);
 // });
 // Auth::routes();
-Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
+Route::middleware('frontend.auth')->namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/', 'HomeController@index')->name('home');
     Route::post('/register', 'Auth\RegisterController@register')->name('register');
@@ -87,7 +87,7 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
     Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
-// ===================================== End Forget Password ===================================================================================
+    // ===================================== End Forget Password ===================================================================================
 
 
     Route::get('/sadaqa', 'SadaqahController@index')->name('sadaqa');
@@ -130,6 +130,16 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/news', 'NewsController@index')->name('news');
     Route::get('/news/{article}', 'NewsController@show')->name('news.details');
 
+
+    //elhesab elkhairy
+    Route::get('/online-service', [ElkherController::class, 'index'])->name('onlineService');
+    Route::get('/elkher_kafalat', [ElkherController::class, 'elkher_kafalat'])->name('elkherkafalat');
+    Route::get('/elkher_tabraat', [ElkherController::class, 'elkher_tabraat'])->name('elkhertabraat');
+    Route::get('/elkher_masert', [ElkherController::class, 'elkher_masert'])->name('elkhermasert');
+    Route::get('/elkher_arshef', [ElkherController::class, 'elkher_arshef'])->name('elkherarshef');
+    Route::get('/elkher_wakfyat', [ElkherController::class, 'elkher_wakfyat'])->name('elkherwakfyat');
+    Route::get('/elkher_mashroat', [ElkherController::class, 'elkher_mashroat'])->name('elkhermashroat');
+
     Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment');
     Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed')->middleware(('auth'));
     Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation')->middleware(('auth'));
@@ -142,21 +152,6 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
 Route::get('/iftar', function () {
     return view('front.iftar');
 })->name('iftar');
-
-
-//elhesab elkhairy
-Route::get('/online-service', [ElkherController::class, 'index'])->name('onlineService')->middleware('frontend.auth');
-Route::get('/elkher_kafalat', [ElkherController::class, 'elkher_kafalat'])->name('elkherkafalat')->middleware('frontend.auth');
-Route::get('/elkher_tabraat', [ElkherController::class, 'elkher_tabraat'])->name('elkhertabraat')->middleware('frontend.auth');
-Route::get('/elkher_masert', [ElkherController::class, 'elkher_masert'])->name('elkhermasert')->middleware('frontend.auth');
-Route::get('/elkher_arshef', [ElkherController::class, 'elkher_arshef'])->name('elkherarshef')->middleware('frontend.auth');
-Route::get('/elkher_wakfyat', [ElkherController::class, 'elkher_wakfyat'])->name('elkherwakfyat')->middleware('frontend.auth');
-Route::get('/elkher_mashroat', [ElkherController::class, 'elkher_mashroat'])->name('elkhermashroat')->middleware('frontend.auth');
-
-
-
-
-
 
 Route::get('/about-us', function () {
     return view('front.aboutUs');
@@ -190,11 +185,11 @@ Route::get('/teams', function () {
 
 Route::get('lang/{lang}', [LangController::class, 'update'])->name('updateLang');
 
-// Auth::routes();
-Route::get('/admin', [HomeController::class, 'index'])->name('admin.home');
+Auth::routes();
+// Route::get('/admin', [HomeController::class, 'index'])->name('admin.home');
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
-
-    // Route::get('/', [HomeController::class, 'index'])->name('home');
+    // Auth::routes();
+    Route::get('/', [HomeController::class, 'index'])->name('home');
     // Route::get('/', 'HomeController@index')->name('home');
     // COUNTRIES
     Route::resource('countries', CountryController::class)->except('show');
@@ -282,12 +277,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::post('categories/status/{category}', [CategoryController::class, 'changeStatus'])->name('categories.status');
 });
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::fallback(function () {
     return view('errors.404');
 });
 
-Auth
-    ::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

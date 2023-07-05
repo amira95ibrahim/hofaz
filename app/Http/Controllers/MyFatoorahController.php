@@ -103,7 +103,7 @@ class MyFatoorahController extends Controller {
         } catch (\Exception $e) {
             $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
         }
-       // dd($response);
+       return $response;
         return redirect()->to($response['Data']['invoiceURL']);
     }
 
@@ -215,7 +215,7 @@ public function createPeriodicDonation(Request $request)
         $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
         // Handle the exception, maybe log it or show an error message to the user
     }
-// return $response;
+ return $response;
     return redirect()->to($response['Data']['invoiceURL']);
 }
 
