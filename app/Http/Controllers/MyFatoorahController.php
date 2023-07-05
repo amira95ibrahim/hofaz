@@ -231,7 +231,7 @@ public function createPeriodicDonation(Request $request)
         $callbackURL = route('myfatoorah.callback_periodic');
 
         return [
-            "PaymentMethodId" => 20,
+            //"PaymentMethodId" => 20,
             'CustomerName'       => Auth::user()->name,
             'InvoiceValue'       => $data['amount'],
             'DisplayCurrencyIso' => 'KWD',

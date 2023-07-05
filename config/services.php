@@ -33,7 +33,8 @@ return [
     'facebook' => [
     'client_id' => '991340532308465',
     'client_secret' => 'aec36fa449f268c4d778c3db7b594b25',
-    'redirect' => 'http://localhost:8000/auth/facebook/callback',
+    // 'redirect' => 'http://localhost:8000/auth/facebook/callback',
+    'redirect'=>'https://hofaz.alexadigitals.com/auth/facebook/callback',
 ],
 
 ];

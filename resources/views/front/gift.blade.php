@@ -169,7 +169,7 @@
                             <input type="hidden" name="amount">
                             <input type="hidden" name="project_name" value="{{ $gift->giftable->name }}">
 
-                            <button type="submit" onclick="openGiftCreatedPopup();"
+                            <button type="submit"
                                 class="btn btn-dark mt-1 btn-xl btn-theme-colored btn-flat mr-5 w-100">@lang('gift.preview')</button>
                             </form>
                         </div>
@@ -227,9 +227,7 @@
         });
     </script>
     <script>
-        function openGiftCreatedPopup() {
-            window.open('/gift-created-popup', 'Gift Created', 'width=450,height=650');
-        }
+
 
         // document.getElementById('gift-form').addEventListener('submit', async (event) => {
         //     event.preventDefault(); // Prevent the default form submission
@@ -282,6 +280,7 @@
                 });
 
                 if (response.ok) {
+                    console.log('success');
                     openGiftCreatedPopup();
                 } else {
                     // Handle any errors returned by the server
@@ -293,5 +292,9 @@
                 console.error('Fetch Error:', error);
             }
         });
+        function openGiftCreatedPopup() {
+            window.open('/gift-created-popup', 'Gift Created', 'width=450,height=650');
+
+        }
     </script>
 @endpush

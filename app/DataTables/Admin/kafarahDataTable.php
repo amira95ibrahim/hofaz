@@ -27,7 +27,7 @@ class kafarahDataTable extends DataTable
 
     }
 
- 
+
     /**
      * Get query source of dataTable.
      *
@@ -36,7 +36,7 @@ class kafarahDataTable extends DataTable
      */
     public function query(kafarah $model)
     {
-        return $model->newQuery();
+        return $model->Query();
     }
 
     /**

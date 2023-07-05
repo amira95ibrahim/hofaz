@@ -130,31 +130,39 @@
                 // Get the field name
                 fieldName = $(this).attr('data-field');
                 // Get its current value
-                var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+                // var currentVal = parseInt($('input[name=' + fieldName + ']').val());
                 // If is not undefined
+                // console.log(currentVal);
+                // Get its current value
+                var inputValue = $('.product_price').val();
+                    // console.log("Input value:", inputValue);
+
+                 var currentVal = parseInt(inputValue);
+
                 if (!isNaN(currentVal)) {
                     // Increment
-                    $('input[name=' + fieldName + ']').val(currentVal + 1);
+                    // console.log("Parsed value:", currentVal);
+                   $('.product_price').val(currentVal + 1);
                 } else {
                     // Otherwise put a 0 there
-                    $('input[name=' + fieldName + ']').val(0);
+                   $('.product_price').val(0);
                 }
             });
             // This button will decrement the value till 0
-            $('[data-quantity="minus"]').click(function (e) {
+            $('[data-quantity="minus"]').click(function (e) {console.log('-');
                 // Stop acting like a button
                 e.preventDefault();
                 // Get the field name
                 fieldName = $(this).attr('data-field');
                 // Get its current value
-                var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+                var currentVal = parseInt($('.product_price').val());
                 // If it isn't undefined or its greater than 0
                 if (!isNaN(currentVal) && currentVal > 0) {
                     // Decrement one
-                    $('input[name=' + fieldName + ']').val(currentVal - 1);
+                   $('.product_price').val(currentVal - 1);
                 } else {
                     // Otherwise put a 0 there
-                    $('input[name=' + fieldName + ']').val(0);
+                   $('.product_price').val(0);
                 }
             });
             $(".share-btn").click(function (e) {

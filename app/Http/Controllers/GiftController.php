@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Mail;
 //use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\GiftCreatedNotification;
+use Illuminate\Support\Facades\Session;
+
 
 
 
@@ -110,6 +112,88 @@ class GiftController extends BaseController
     // }
 
 
+    // public function generate(GiftRequest $request)
+    // {
+    //     // Retrieve form inputs
+    //     $sender = $request->sender;
+    //     $consignee = $request->consignee;
+    //     $project_name = $request->project_name;
+    //     $email = $request->email;
+    //     $phone = $request->phone;
+    //     $card = $request->card;
+    //     dd($request->all());
+    //     $basename = basename($card); // Extracts the file name with extension ("card2.jpg")
+    //     $filename = pathinfo($basename, PATHINFO_FILENAME); // Extracts the file name without extension ("card2")
+
+    //     // Process the selected photo and generate the desired output
+    //     $photoPath = '';
+
+    //     if ($filename === 'card1') {
+    //         $photoPath = 'images/causes/card1.jpg';
+    //     } elseif ($filename === 'card2') {
+    //         $photoPath = 'images/causes/card2.jpg';
+    //     } elseif ($filename === 'card3') {
+    //         $photoPath = 'images/causes/card3.jpg';
+    //     } else {
+    //         // Handle invalid photo selection
+    //         // dd('Invalid photo selection');
+    //     }
+
+    //     // Load the image using Intervention Image
+    //     //  $image = Image::make(public_path($photoPath));
+
+    //     // Add text to the image
+
+    //     // Save the modified image
+    //     $imageName = $consignee . '.jpg';
+    //     $imagePath = public_path('images/card/' . $imageName);
+    //     //$image->save($imagePath);
+
+    //     // Redirect to a new window to display the saved photo
+    //     $savedPhotoUrl = asset('images/card/' . $imageName);
+
+    //     SendGift::create([
+    //         'sender' => $sender,
+    //         'consignee' => $consignee,
+    //         'email' => $email,
+    //         'phone' => $phone,
+    //         'card' => $imageName, // Save the image file name to the 'card' field
+    //     ]);
+    //     // Save the modified image
+    //     $imageName = $consignee . '.jpg';
+    //     $imagePath = asset('images/card/' . $imageName);
+    //     // $image->save($imagePath);
+
+    //     // Store the generated image URL in a session
+    //     $imageUrl = asset('images/card/' . $imageName);
+    //     session(['imageUrl' => $imageUrl]);
+    //     session(['savedPhotoUrl' => $savedPhotoUrl]);
+
+    //     $emailData = [
+    //         'photoUrl' => session('savedPhotoUrl'),
+    //     ];
+
+    //     $giftData = [
+    //         'sender' => $sender,
+    //         'consignee' => $consignee,
+    //         'email' => $email,
+    //         'phone' => $phone,
+    //         'project_name' => $project_name,
+    //     ];
+
+    //     Notification::route('mail', $email)->notify(new GiftCreatedNotification($giftData, $photoPath));
+    //     session([
+    //         'senderName' => $sender,
+    //         'consignee' => $consignee,
+    //         'photoPath' => $photoPath,
+    //         'project_name' => $project_name,
+    //     ]);
+
+    //     // Redirect to a new window to display the saved photo
+    //     return redirect()->back();
+    // }
+
+
     public function generate(GiftRequest $request)
     {
         // Retrieve form inputs
@@ -119,6 +203,7 @@ class GiftController extends BaseController
         $email = $request->email;
         $phone = $request->phone;
         $card = $request->card;
+        $basename = basename($card);
 
         $basename = basename($card); // Extracts the file name with extension ("card2.jpg")
         $filename = pathinfo($basename, PATHINFO_FILENAME); // Extracts the file name without extension ("card2")
@@ -134,18 +219,11 @@ class GiftController extends BaseController
             $photoPath = 'images/causes/card3.jpg';
         } else {
             // Handle invalid photo selection
-            // dd('Invalid photo selection');
         }
-
-        // Load the image using Intervention Image
-      //  $image = Image::make(public_path($photoPath));
-
-        // Add text to the image
 
         // Save the modified image
         $imageName = $consignee . '.jpg';
-        $imagePath = public_path('images/card/' . $imageName);
-        //$image->save($imagePath);
+
 
         // Redirect to a new window to display the saved photo
         $savedPhotoUrl = asset('images/card/' . $imageName);
@@ -157,18 +235,16 @@ class GiftController extends BaseController
             'phone' => $phone,
             'card' => $imageName, // Save the image file name to the 'card' field
         ]);
-  // Save the modified image
-  $imageName = $consignee . '.jpg';
-  $imagePath = asset('images/card/' . $imageName);
- // $image->save($imagePath);
 
-  // Store the generated image URL in a session
-  $imageUrl = asset('images/card/' . $imageName);
-  session(['imageUrl' => $imageUrl]);
-        session(['savedPhotoUrl' => $savedPhotoUrl]);
+        //session(['savedPhotoUrl' => $savedPhotoUrl]);
+        Session::put('savedPhotoUrl', $savedPhotoUrl);
 
+        Session::put('senderName', $sender);
+        Session::put('consignee', $consignee);
+        Session::put('photoPath', $photoPath);
+        Session::put('project_name', $project_name);
         $emailData = [
-            'photoUrl' => session('savedPhotoUrl'),
+            'photoUrl' => Session::get('savedPhotoUrl'),
         ];
 
         $giftData = [
@@ -180,25 +256,18 @@ class GiftController extends BaseController
         ];
 
         Notification::route('mail', $email)->notify(new GiftCreatedNotification($giftData, $photoPath));
-        session([
-            'senderName' => $sender,
-            'consignee' => $consignee,
-            'photoPath' => $photoPath,
-            'project_name' =>$project_name,
-        ]);
 
+        //dd(session()->all());
         // Redirect to a new window to display the saved photo
-        return redirect()->back();
+      // return redirect()->back();
     }
-
     public function showGiftCreatedPopup()
     {
-        $senderName = session('senderName');
-        $consignee = session('consignee');
-        $photoPath = session('photoPath');
-        $project_name = session('project_name');
+        $senderName = Session::get('senderName');
+        $consignee = Session::get('consignee');
+        $photoPath = Session::get('phowtoPath');
+        $project_name = Session::get('project_name');
 
         return view('front.emails.gift-created', compact('senderName', 'consignee', 'photoPath', 'project_name'));
     }
-
- }
+}
