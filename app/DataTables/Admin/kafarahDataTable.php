@@ -36,7 +36,7 @@ class kafarahDataTable extends DataTable
      */
     public function query(kafarah $model)
     {
-        return $model->Query();
+        return $model->newQuery();
     }
 
     /**

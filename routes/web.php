@@ -131,10 +131,9 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/news/{article}', 'NewsController@show')->name('news.details');
 
     Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment');
-    Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed')->middleware(('frontend.auth'));
-    Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation');//->middleware(('frontend.auth'));
-    // Add this to your routes/web.php file
-Route::post('myfatoorah/callback/periodic', 'MyFatoorahController@callback_periodic')->name('myfatoorah.callback_periodic');
+    Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed')->middleware(('auth'));
+    Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation')->middleware(('auth'));
+    Route::post('myfatoorah/callback/periodic', 'MyFatoorahController@callback_periodic')->name('myfatoorah.callback_periodic');
 });
 
 
