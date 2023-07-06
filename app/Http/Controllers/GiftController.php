@@ -196,6 +196,7 @@ class GiftController extends BaseController
 
     public function generate(GiftRequest $request)
     {
+        dd('hi');
         // Retrieve form inputs
         $sender = $request->sender;
         $consignee = $request->consignee;
@@ -259,7 +260,10 @@ class GiftController extends BaseController
 
         //dd(session()->all());
         // Redirect to a new window to display the saved photo
-      // return redirect()->back();
+    //   return redirect()->back();
+
+
+    return view('front.emails.gift-created', compact('sender', 'consignee', 'photoPath', 'project_name'));
     }
     public function showGiftCreatedPopup()
     {

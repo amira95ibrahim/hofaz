@@ -45,7 +45,7 @@ use Illuminate\Support\Facades\Route;
 //     \Artisan::call('migrate', ['--force' => true]);
 // });
 // Auth::routes();
-Route::middleware('frontend.auth')->namespace('App\Http\Controllers')->group(function () {
+Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/', 'HomeController@index')->name('home');
     Route::post('/register', 'Auth\RegisterController@register')->name('register');

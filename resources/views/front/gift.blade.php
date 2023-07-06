@@ -169,7 +169,7 @@
                             <input type="hidden" name="amount">
                             <input type="hidden" name="project_name" value="{{ $gift->giftable->name }}">
 
-                            <button type="submit"
+                            <button type="submit" onclick="openGiftCreatedPopup();"
                                 class="btn btn-dark mt-1 btn-xl btn-theme-colored btn-flat mr-5 w-100">@lang('gift.preview')</button>
                             </form>
                         </div>
@@ -228,46 +228,11 @@
     </script>
     <script>
 
-
-        // document.getElementById('gift-form').addEventListener('submit', async (event) => {
-        //     event.preventDefault(); // Prevent the default form submission
-
-        //     const form = event.target;
-        //     const formData = new FormData(form);
-
-        //     try {
-        //         const response = await fetch('{{ route('generate') }}', {
-        //             method: 'POST',
-        //             body: formData,
-        //             headers: {
-        //                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
-        //             },
-        //         });
-
-        //         if (response.ok) {
-        //             openGiftCreatedPopup();
-        //         } else {
-        //             // Handle any errors returned by the server
-        //             const data = await response.json();
-        //             console.error('Error:', data);
-        //         }
-        //     } catch (error) {
-        //         // Handle any network or fetch errors
-        //         console.error('Fetch Error:', error);
-        //     }
-        // });
-
+ 
         document.getElementById('gift-form').addEventListener('submit', async (event) => {
             event.preventDefault(); // Prevent the default form submission
 
             const form = event.target;
-
-            //Check if the form is valid
-            if (!form.checkValidity()) {
-                form.reportValidity(); // Show validation error messages
-                return;
-            }
-
             const formData = new FormData(form);
 
             try {
@@ -280,7 +245,6 @@
                 });
 
                 if (response.ok) {
-                    console.log('success');
                     openGiftCreatedPopup();
                 } else {
                     // Handle any errors returned by the server
@@ -292,9 +256,11 @@
                 console.error('Fetch Error:', error);
             }
         });
-        function openGiftCreatedPopup() {
-            window.open('/gift-created-popup', 'Gift Created', 'width=450,height=650');
-
+         function openGiftCreatedPopup() {
+             window.open('/gift-created-popup', 'Gift Created', 'width=450,height=650');
         }
+
+
+
     </script>
 @endpush
