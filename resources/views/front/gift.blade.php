@@ -228,7 +228,7 @@
     </script>
     <script>
 
- 
+
         document.getElementById('gift-form').addEventListener('submit', async (event) => {
             event.preventDefault(); // Prevent the default form submission
 

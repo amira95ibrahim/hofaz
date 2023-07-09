@@ -196,7 +196,7 @@ class GiftController extends BaseController
 
     public function generate(GiftRequest $request)
     {
-        dd('hi');
+        //dd('hi');
         // Retrieve form inputs
         $sender = $request->sender;
         $consignee = $request->consignee;
@@ -239,7 +239,6 @@ class GiftController extends BaseController
 
         //session(['savedPhotoUrl' => $savedPhotoUrl]);
         Session::put('savedPhotoUrl', $savedPhotoUrl);
-
         Session::put('senderName', $sender);
         Session::put('consignee', $consignee);
         Session::put('photoPath', $photoPath);
@@ -265,7 +264,7 @@ class GiftController extends BaseController
 
     return view('front.emails.gift-created', compact('sender', 'consignee', 'photoPath', 'project_name'));
     }
-    public function showGiftCreatedPopup()
+    public function showGiftCreatedPopup555()
     {
         $senderName = Session::get('senderName');
         $consignee = Session::get('consignee');
