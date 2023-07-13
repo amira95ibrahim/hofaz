@@ -5,6 +5,7 @@
         .single-news-list {
             overflow: hidden;
             float: right;
+            margin-bottom: 32px !important;
         }
 
         .single-news-list .wrap {
@@ -51,7 +52,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 single-news-list mb-10">
-                        <div class="p-3 wrap">
+                        <div class="p-2 wrap">
                             <a href="#"><img src="https://hofath.org/dist/MANAGERS_PNG/photo5.png" alt="تجربة"
                                              srcset=""></a>
                             <h3><a href="#">المحامى / عبدالعزيز سيد عبدالله الرفاعى</a></h3>
@@ -63,7 +64,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 single-news-list mb-10">
-                        <div class="p-3 wrap">
+                        <div class="p-2 wrap">
                             <a href="#"><img src="https://hofath.org/dist/MANAGERS_PNG/photo2.png" alt="تجربة"
                                              srcset=""></a>
                             <h3><a href="#">المهندس / أحمد عبدالمحسن عبدالله المرشد</a></h3>
@@ -75,8 +76,8 @@
                         </div>
                     </div>
                     <div class="col-md-4 single-news-list mb-10">
-                        <div class="p-3 wrap">
-                            <a href="#"><img src="https://hofath.org/dist/MANAGERS_PNG/photo3.png" alt="تجربة"
+                        <div class="p-2 wrap">
+                            <a href="#"><img src="https://hofath.org/dist/MANAGERS_PNG/photo2.png" alt="تجربة"
                                              srcset=""></a>
                             <h3><a href="#">السيد / أسـامه راشـد محمد على</a></h3>
                             <p>أمين السـر </p>
@@ -87,7 +88,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 single-news-list mb-10">
-                        <div class="p-3 wrap">
+                        <div class="p-2 wrap">
                             <a href="#"><img src="https://hofath.org/dist/MANAGERS_PNG/photo4.png" alt="تجربة"
                                              srcset=""></a>
                             <h3><a href="#">السيد / عادل محمد خلف الدريبـان</a></h3>
@@ -99,7 +100,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 single-news-list mb-10">
-                        <div class="p-3 wrap">
+                        <div class="p-2 wrap">
                             <a href="#"><img src="https://hofath.org/dist/MANAGERS_PNG/photo1.png" alt="تجربة"
                                              srcset=""></a>
                             <h3><a href="#">الدكتور / عبدالله محمد عبدالله العلي</a></h3>
@@ -112,7 +113,7 @@
                     </div>
 
                     <div class="col-md-4 single-news-list mb-10">
-                        <div class="p-3 wrap">
+                        <div class="p-2 wrap">
                             <a href="#"><img src="https://hofath.org/dist/MANAGERS_PNG/photo6.png" alt="تجربة"
                                              srcset=""></a>
                             <h3><a href="#">عميد متقاعد / حسن يوسف حسن اليوسف</a></h3>
@@ -124,7 +125,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 single-news-list mb-10">
-                        <div class="p-3 wrap">
+                        <div class="p-2 wrap">
                             <a href="#"><img src="https://hofath.org/dist/MANAGERS_PNG/photo7.png" alt="تجربة"
                                              srcset=""></a>
                             <h3><a href="#">المهندس / محمود إسحق محمود حسن</a></h3>

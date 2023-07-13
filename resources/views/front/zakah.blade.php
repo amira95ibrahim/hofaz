@@ -49,7 +49,7 @@
                                                     </button>
                                                 </div>
                                                 <input class="input-group-field form-control product_price" type="number"
-                                                       name="amount" value="0">
+                                                       name="amount" value="10">
                                                 <input type="hidden" class="product_name">
                                                 <div class="input-group-button button-minus">
                                                     <button type="button" class="btn custom-btn-success"
@@ -67,8 +67,7 @@
                                 </div>
                                 <div class="btn-group mr-40" role="group" aria-label="Basic example">
                                     <div class="share-button sharer float-left">
-                                        <button type="button" class="btn border-0 share-btn custom-btn-success"><i
-                                                    class="ri-share-fill btn-icon"></i></button>
+                                        <button type="button" class="btn border-0 share-btn custom-btn-success"> <i class="fa fa-regular fa-share"></i></button>
                                         <div class="social top center networks-5 ">
                                             <!-- Facebook Share Button -->
                                             <a class="fbtn share facebook"
@@ -94,7 +93,7 @@
                                     </div>
 
                                     <button type="button" class="btn custom-btn-success mr-5 quick-donation"><i
-                                                class="ri-coins-line btn-icon"></i> @lang('zakah.quick_donation')
+                                          class="ri-coins-line btn-icon"></i> @lang('zakah.quick_donation')
                                     </button>
                                     <button type="button" class="btn custom-btn-success mr-5 addToCart" data-identifier=""><i
                                                 class="ri-shopping-cart-line btn-icon"></i> @lang('zakah.add_to_cart')

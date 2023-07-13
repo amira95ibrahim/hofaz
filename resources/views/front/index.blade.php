@@ -91,7 +91,7 @@
                                                         </button>
                                                     </div>
                                                     <input class="input-group-field form-control product_price" type="number"
-                                                           name="quantity" value="0">
+                                                           name="quantity" value="10">
                                                     <input type="hidden" class="product_name">
                                                     <div class="input-group-button button-minus">
                                                         <button type="button" class="btn custom-btn-success"
@@ -108,7 +108,7 @@
                                             <button type="button" class="hidden addToCart" data-identifier="">
                                             </button>
                                             <button type="button"
-                                                    class="btn btn-flat btn-dark btn-theme-colored mt-10 pl-30 pr-30 quick-donation">@lang('index.donate_now')</button>
+                                                    class="btn btn-flat btn-dark btn-theme-colored mt-10 pl-30 pr-30 quick-donation"  >@lang('index.donate_now')</button>
                                         </div>
                                     </div>
                                 </div>

@@ -169,6 +169,7 @@
   display: flex;
   justify-content: start;
     width: 100%;
+    margin-right: 0!important;
 }
 
 .plans .plan input[type="radio"] {
@@ -180,7 +181,7 @@
 .plans .plan {
   cursor: pointer;
   width: auto;
-  margin-right: 20px;
+  /* margin-right: 20px; */
     width: 50%;
 }
 

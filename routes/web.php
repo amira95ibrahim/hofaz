@@ -123,31 +123,30 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::post('remove', 'CartController@removeCart')->name('cart.remove');
     Route::post('clear', 'CartController@clearAllCart')->name('cart.clear');
 
-    Route::get('/payment', 'PaymentController@index')->name('payment');
-
     Route::get('/publications', 'PublicationsController@index')->name('publications');
 
     Route::get('/news', 'NewsController@index')->name('news');
     Route::get('/news/{article}', 'NewsController@show')->name('news.details');
 
-
     //elhesab elkhairy
-    Route::get('/online-service', [ElkherController::class, 'index'])->name('onlineService');
-    Route::get('/elkher_kafalat', [ElkherController::class, 'elkher_kafalat'])->name('elkherkafalat');
-    Route::get('/elkher_tabraat', [ElkherController::class, 'elkher_tabraat'])->name('elkhertabraat');
-    Route::get('/elkher_masert', [ElkherController::class, 'elkher_masert'])->name('elkhermasert');
-    Route::get('/elkher_arshef', [ElkherController::class, 'elkher_arshef'])->name('elkherarshef');
-    Route::get('/elkher_wakfyat', [ElkherController::class, 'elkher_wakfyat'])->name('elkherwakfyat');
-    Route::get('/elkher_mashroat', [ElkherController::class, 'elkher_mashroat'])->name('elkhermashroat');
+    Route::get('/online-service', [ElkherController::class, 'index'])->name('onlineService')->middleware(('frontend.auth'));;
+    Route::get('/elkher_kafalat', [ElkherController::class, 'elkher_kafalat'])->name('elkherkafalat')->middleware(('frontend.auth'));;
+    Route::get('/elkher_tabraat', [ElkherController::class, 'elkher_tabraat'])->name('elkhertabraat')->middleware(('frontend.auth'));;
+    Route::get('/elkher_masert', [ElkherController::class, 'elkher_masert'])->name('elkhermasert')->middleware(('frontend.auth'));;
+    Route::get('/elkher_arshef', [ElkherController::class, 'elkher_arshef'])->name('elkherarshef')->middleware(('frontend.auth'));;
+    Route::get('/elkher_wakfyat', [ElkherController::class, 'elkher_wakfyat'])->name('elkherwakfyat')->middleware(('frontend.auth'));;
+    Route::get('/elkher_mashroat', [ElkherController::class, 'elkher_mashroat'])->name('elkhermashroat')->middleware(('frontend.auth'));;
 
     Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment');
-    Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed')->middleware(('auth'));
-    Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation')->middleware(('auth'));
+    Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed')->middleware(('frontend.auth'));
+    Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation')->middleware(('frontend.auth'));
     Route::post('myfatoorah/callback/periodic', 'MyFatoorahController@callback_periodic')->name('myfatoorah.callback_periodic');
 });
 
 
-
+Route::namespace('App\Http\Controllers')->group(function () {
+Route::get('/payment', 'PaymentController@index')->name('payment');
+});
 
 Route::get('/iftar', function () {
     return view('front.iftar');

@@ -204,7 +204,7 @@
                                 </form>
 
                                 <a href="javascript:void(0);" onclick="donateNow()"
-                                   class="btn btn-fill-block">@lang('relief.donate_now')</a>
+                                  class="btn btn-fill-block">@lang('relief.donate_now')</a>
                                 <a href="javascript:void(0);"
                                    class="btn btn-border-block mt-1 addToCart"
                                    data-identifier="{{ 'project_' . $project->id }}">

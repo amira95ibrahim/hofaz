@@ -146,7 +146,7 @@
                                 </div>
 
                                 <button type="button" class="btn custom-btn-success mr-5" onclick="donateNow('{{ $model . '_' . $project->id }}')"><i
-                                        class="ri-coins-line btn-icon"></i> @lang('relief.donate_now')
+                                   class="ri-coins-line btn-icon"></i> @lang('relief.donate_now')
                                 </button>
                                 <button type="button" class="btn custom-btn-success mr-5 addToCart" id="{{ $model . '_' . $project->id }}"
                                         data-identifier="{{ $model . '_' . $project->id }}"><i

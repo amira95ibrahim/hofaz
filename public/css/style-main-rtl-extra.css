@@ -77,6 +77,7 @@ html[dir="rtl"] #flickr-feed img {
 }
 html[dir="rtl"] .menuzord-menu {
   float: right;
+  
 }
 html[dir="rtl"] .menuzord-menu.menuzord-right {
   float: left;

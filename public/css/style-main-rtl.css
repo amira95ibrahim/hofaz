@@ -1149,12 +1149,14 @@ section > .container-fluid {
     color: #333333;
     font-size: 18px;
     font-weight: 600;
+    color: #002D62;
 }
 
 .menuzord-top-menu > li > a {
     color: #333333;
     font-size: 13px;
     font-weight: 600;
+    color: #002D62;
 }
 .menuzord .menuzord-menu > li.active > a i,
 .menuzord .menuzord-menu > li:hover > a i,

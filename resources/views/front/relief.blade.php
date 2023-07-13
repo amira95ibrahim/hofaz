@@ -263,7 +263,7 @@
                                                     </form>
 
                                                     <a href="javascript:void(0);" onclick="donateNow('{{ 'relief_' . $relief->id }}')"
-                                                       class="btn btn-fill-block">@lang('relief.donate_now')</a>
+                                                            class="btn btn-fill-block">@lang('relief.donate_now')</a>
                                                     <a href="javascript:void(0);"
                                                        class="btn btn-border-block mt-1 addToCart" id="{{ 'relief_' . $relief->id }}"
                                                        data-identifier="{{ 'relief_' . $relief->id }}"> @lang('relief.add_to_basket')

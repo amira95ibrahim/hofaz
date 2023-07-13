@@ -112,7 +112,7 @@
                                                         </button>
                                                     </div>
                                                     <input class="input-group-field form-control" type="number"
-                                                           name="quantity" value="0">
+                                                           name="quantity" value="1">
                                                     <div class="input-group-button button-minus">
                                                         <button type="button" class="btn custom-btn-success"
                                                                 data-quantity="minus" data-field="quantity">
@@ -142,9 +142,9 @@
                                             <textarea class="form-control" rows="5"
                                                       placeholder="@lang('iftar.your_comments_here')"></textarea>
                                         </div>
-                                        <div class="col-sm-12">
+                                        {{-- <div class="col-sm-12">
                                             <div class="d-flex align-items-center justify-content-center">
-                                                <div class="col-md-6">
+                                                <div class="col-md-10 col-sm-3">
                                                     <label class="mt-2">@lang('iftar.payment_method')</label>
                                                     <div class="plans">
                                                         <div style="clear: both;"></div>
@@ -163,13 +163,27 @@
                                                                      alt=""/>
                                                             </div>
                                                         </label>
+                                                        <label class="plan complete-plan" for="google_pay">
+                                                            <input type="radio" id="google_pay" name="plan"/>
+                                                            <div class="plan-content">
+                                                                <img loading="lazy" src="{{ asset('images/Gpay.png') }}"
+                                                                     alt=""/>
+                                                            </div>
+                                                        </label>
+                                                        <label class="plan complete-plan" for="apple_pay">
+                                                            <input type="radio" id="apple_pay" name="plan"/>
+                                                            <div class="plan-content">
+                                                                <img loading="lazy" src="{{ asset('images/apple_pay2.png') }}"
+                                                                     alt=""/>
+                                                            </div>
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-md-12 text-center mt-10">
                                             <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
-                                            <a href="{{ route('signIn') }}" type="submit"
+                                            <a href="{{ route('payment') }}" type="submit"
                                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
                                         </div>
 
@@ -193,7 +207,7 @@
                                                         </button>
                                                     </div>
                                                     <input class="input-group-field form-control" type="number"
-                                                           name="quantity" value="0">
+                                                           name="quantity" value="1">
                                                     <div class="input-group-button button-minus">
                                                         <button type="button" class="btn custom-btn-success"
                                                                 data-quantity="minus" data-field="quantity">
@@ -223,7 +237,7 @@
                                             <textarea class="form-control" rows="5"
                                                       placeholder="@lang('iftar.your_comments_here')"></textarea>
                                         </div>
-                                        <div class="col-sm-12">
+                                        {{-- <div class="col-sm-12">
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <div class="col-md-6">
                                                     <label class="mt-2">@lang('iftar.payment_method')</label>
@@ -247,10 +261,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-md-12 text-center mt-10">
                                             <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
-                                            <a href="{{ route('signIn') }}" type="submit"
+                                            <a href="{{ route('payment') }}" type="submit"
                                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
                                         </div>
 
@@ -274,7 +288,7 @@
                                                         </button>
                                                     </div>
                                                     <input class="input-group-field form-control" type="number"
-                                                           name="quantity" value="0">
+                                                           name="quantity" value="1">
                                                     <div class="input-group-button button-minus">
                                                         <button type="button" class="btn custom-btn-success"
                                                                 data-quantity="minus" data-field="quantity">
@@ -304,7 +318,7 @@
                                             <textarea class="form-control" rows="5"
                                                       placeholder="@lang('iftar.your_comments_here')"></textarea>
                                         </div>
-                                        <div class="col-sm-12">
+                                        {{-- <div class="col-sm-12">
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <div class="col-md-6">
                                                     <label class="mt-2">@lang('iftar.payment_method')</label>
@@ -328,10 +342,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-md-12 text-center mt-10">
                                             <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
-                                            <a href="{{ route('signIn') }}" type="submit"
+                                            <a href="{{ route('payment') }}" type="submit"
                                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
                                         </div>
 
@@ -355,7 +369,7 @@
                                                         </button>
                                                     </div>
                                                     <input class="input-group-field form-control" type="number"
-                                                           name="quantity" value="0">
+                                                           name="quantity" value="1">
                                                     <div class="input-group-button button-minus">
                                                         <button type="button" class="btn custom-btn-success"
                                                                 data-quantity="minus" data-field="quantity">
@@ -385,7 +399,7 @@
                                             <textarea class="form-control" rows="5"
                                                       placeholder="@lang('iftar.your_comments_here')"></textarea>
                                         </div>
-                                        <div class="col-sm-12">
+                                        {{-- <div class="col-sm-12">
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <div class="col-md-6">
                                                     <label class="mt-2">@lang('iftar.payment_method')</label>
@@ -409,10 +423,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-md-12 text-center mt-10">
                                             <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
-                                            <a href="{{ route('signIn') }}" type="submit"
+                                            <a href="{{ route('payment') }}" type="submit"
                                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
                                         </div>
                                     </form>
@@ -430,7 +444,7 @@
 
 
 @push('scripts')
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         $('.tab-list').click(function () {
 
             var tabID = $(this).attr('data-tab');
@@ -478,5 +492,64 @@
                 }
             });
         });
-    </script>
+    </script> --}}
+
+<script type="text/javascript">
+    // Define tab values
+    var tabValues = {
+      1: 1,
+      2: 7.5,
+      3: 15,
+      4: 30
+    };
+
+    function updateAmount() {
+      var activeTab = $('.tab-link.active').parent().data('tab');
+      var quantity = parseInt($('input[name="quantity"]').val());
+      $('input[name="amount"]').val(tabValues[activeTab] * quantity);
+    }
+
+    $('.tab-list').click(function () {
+      var tabID = $(this).attr('data-tab');
+
+      $('.tab-link').removeClass('active');
+      $(this).find('div').addClass('active');
+      $('#tab-' + tabID).addClass('active').siblings().removeClass('active');
+
+      updateAmount(); // Update the amount based on selected tab
+    });
+
+    jQuery(document).ready(function () {
+      // Set the initial amount based on the active tab
+      updateAmount();
+
+      // This button will increment the value
+      $('[data-quantity="plus"]').click(function (e) {
+        e.preventDefault();
+        fieldName = $(this).attr('data-field');
+        var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+        if (!isNaN(currentVal)) {
+          $('input[name=' + fieldName + ']').val(currentVal + 1);
+        } else {
+          $('input[name=' + fieldName + ']').val(0);
+        }
+
+        updateAmount(); // Update the amount based on the incremented quantity
+      });
+
+      // This button will decrement the value till 0
+      $('[data-quantity="minus"]').click(function (e) {
+        e.preventDefault();
+        fieldName = $(this).attr('data-field');
+        var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+        if (!isNaN(currentVal) && currentVal > 0) {
+          $('input[name=' + fieldName + ']').val(currentVal - 1);
+        } else {
+          $('input[name=' + fieldName + ']').val(0);
+        }
+
+        updateAmount(); // Update the amount based on the decremented quantity
+      });
+    });
+  </script>
 @endpush
