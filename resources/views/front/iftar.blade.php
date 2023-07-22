@@ -10,12 +10,10 @@
 @endpush
 
 @section('content')
-
     <!-- Start main-content -->
     <div class="main-content">
         <!-- Section: inner-header -->
-        <section class="inner-header divider layer-overlay overlay-dark-8"
-                 data-bg-img="{{ asset('images/bg/bg2.webp') }}">
+        <section class="inner-header divider layer-overlay overlay-dark-8" data-bg-img="{{ asset('images/bg/bg2.webp') }}">
             <div class="container pt-40 pb-40">
                 <!-- Section Content -->
                 <div class="section-content">
@@ -49,9 +47,9 @@
                                         </div>
                                         <p>
                                             <span class="sad2"><span id="Label3"
-                                                                     style="font-family:GSSLight;font-weight:bold;">@lang('iftar.basket')</span></span><br>
+                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.basket')</span></span><br>
                                             <span class="ssad2"><span id="Label26"
-                                                                      style="font-family:GSSLight;font-weight:bold;">@lang('iftar.stack')</span></span>
+                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.stack')</span></span>
                                         </p>
                                     </li>
 
@@ -62,9 +60,9 @@
                                         </div>
                                         <p>
                                             <span class="sad2"><span id="Label3"
-                                                                     style="font-family:GSSLight;font-weight:bold;">@lang('iftar.for')</span></span><br>
+                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.for')</span></span><br>
                                             <span class="ssad2"><span id="Label26"
-                                                                      style="font-family:GSSLight;font-weight:bold;">@lang('iftar.week')</span></span>
+                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.week')</span></span>
                                         </p>
                                     </li>
                                     <li class="tab-list" data-tab="3">
@@ -74,9 +72,9 @@
                                         </div>
                                         <p>
                                             <span class="sad2"><span id="Label3"
-                                                                     style="font-family:GSSLight;font-weight:bold;">@lang('iftar.for')</span></span><br>
+                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.for')</span></span><br>
                                             <span class="ssad2"><span id="Label26"
-                                                                      style="font-family:GSSLight;font-weight:bold;">@lang('iftar.half_month')</span></span>
+                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.half_month')</span></span>
                                         </p>
                                     </li>
                                     <li class="tab-list" data-tab="4">
@@ -86,9 +84,9 @@
                                         </div>
                                         <p>
                                             <span class="sad2"><span id="Label3"
-                                                                     style="font-family:GSSLight;font-weight:bold;">@lang('iftar.for')</span></span><br>
+                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.for')</span></span><br>
                                             <span class="ssad2"><span id="Label26"
-                                                                      style="font-family:GSSLight;font-weight:bold;">@lang('iftar.month')</span></span>
+                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.month')</span></span>
                                         </p>
                                     </li>
                                 </ul>
@@ -98,7 +96,8 @@
                                 <div id="tab-1" class="tab-content active clearfix">
                                     <div class="one-circle">
                                         <div class="text-center"><span class="big-text">1</span> <br>
-                                            <p>@lang('iftar.dinar')</p></div>
+                                            <p>@lang('iftar.dinar')</p>
+                                        </div>
                                     </div>
                                     <form action="" method="POST">
                                         <div class="col-sm-4">
@@ -107,15 +106,15 @@
                                                 <div class="input-group plus-minus-input mb-15">
                                                     <div class="input-group-button button-plus">
                                                         <button type="button" class="btn custom-btn-success"
-                                                                data-quantity="plus" data-field="quantity">
+                                                            data-quantity="plus" data-field="quantity">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
                                                     <input class="input-group-field form-control" type="number"
-                                                           name="quantity" value="1">
+                                                        name="quantity" value="1">
                                                     <div class="input-group-button button-minus">
                                                         <button type="button" class="btn custom-btn-success"
-                                                                data-quantity="minus" data-field="quantity">
+                                                            data-quantity="minus" data-field="quantity">
                                                             <i class="fa fa-minus" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
@@ -125,8 +124,8 @@
                                         <div class="col-sm-4">
                                             <label>@lang('iftar.country')</label>
                                             <select class="form-control">
-                                                <option selected="" disabled=""
-                                                        name="country">@lang('iftar.select_country')</option>
+                                                <option selected="" disabled="" name="country">@lang('iftar.select_country')
+                                                </option>
                                                 <option>@lang('iftar.india')</option>
                                                 <option>@lang('iftar.saudi_arabia')</option>
                                                 <option>@lang('iftar.USA')</option>
@@ -139,8 +138,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <label>@lang('iftar.comments')</label>
-                                            <textarea class="form-control" rows="5"
-                                                      placeholder="@lang('iftar.your_comments_here')"></textarea>
+                                            <textarea class="form-control" rows="5" placeholder="@lang('iftar.your_comments_here')"></textarea>
                                         </div>
                                         {{-- <div class="col-sm-12">
                                             <div class="d-flex align-items-center justify-content-center">
@@ -183,8 +181,17 @@
                                         </div> --}}
                                         <div class="col-md-12 text-center mt-10">
                                             <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
-                                            <a href="{{ route('payment') }}" type="submit"
-                                               class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+                                            <a href="{{ route('payment') }}" type="submit" id="pay"
+                                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+
+                                            {{-- <button type="button" class="btn custom-btn-success mr-5 quick-donation"><i
+                                                    class="ri-coins-line btn-icon"></i> @lang('sadaqa.quick_donation')
+                                            </button>
+                                            <button type="button" class="btn custom-btn-success mr-5 addToCart"
+                                                data-identifier=""><i class="ri-shopping-cart-line btn-icon"></i>
+                                                @lang('sadaqa.add_to_cart')
+                                            </button> --}}
+
                                         </div>
 
                                     </form>
@@ -193,7 +200,8 @@
                                 <div id="tab-2" class="tab-content clearfix">
                                     <div class="one-circle">
                                         <div class="text-center"><span class="big-text">7.5 </span> <br>
-                                            <p>@lang('iftar.dinar')</p></div>
+                                            <p>@lang('iftar.dinar')</p>
+                                        </div>
                                     </div>
                                     <form action="" method="POST">
                                         <div class="col-sm-4">
@@ -202,15 +210,15 @@
                                                 <div class="input-group plus-minus-input mb-15">
                                                     <div class="input-group-button button-plus">
                                                         <button type="button" class="btn custom-btn-success"
-                                                                data-quantity="plus" data-field="quantity">
+                                                            data-quantity="plus" data-field="quantity">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
                                                     <input class="input-group-field form-control" type="number"
-                                                           name="quantity" value="1">
+                                                        name="quantity" value="1">
                                                     <div class="input-group-button button-minus">
                                                         <button type="button" class="btn custom-btn-success"
-                                                                data-quantity="minus" data-field="quantity">
+                                                            data-quantity="minus" data-field="quantity">
                                                             <i class="fa fa-minus" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
@@ -220,8 +228,8 @@
                                         <div class="col-sm-4">
                                             <label>@lang('iftar.country')</label>
                                             <select class="form-control">
-                                                <option selected="" disabled=""
-                                                        name="country">@lang('iftar.select_country')</option>
+                                                <option selected="" disabled="" name="country">@lang('iftar.select_country')
+                                                </option>
                                                 <option>@lang('iftar.india')</option>
                                                 <option>@lang('iftar.saudi_arabia')</option>
                                                 <option>@lang('iftar.USA')</option>
@@ -234,8 +242,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <label>@lang('iftar.comments')</label>
-                                            <textarea class="form-control" rows="5"
-                                                      placeholder="@lang('iftar.your_comments_here')"></textarea>
+                                            <textarea class="form-control" rows="5" placeholder="@lang('iftar.your_comments_here')"></textarea>
                                         </div>
                                         {{-- <div class="col-sm-12">
                                             <div class="d-flex align-items-center justify-content-center">
@@ -264,8 +271,16 @@
                                         </div> --}}
                                         <div class="col-md-12 text-center mt-10">
                                             <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
-                                            <a href="{{ route('payment') }}" type="submit"
-                                               class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+                                            <a href="{{ route('payment') }}" type="submit" id="pay"
+                                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+                                            {{-- <button type="button" class="btn custom-btn-success mr-5 quick-donation"><i
+                                                    class="ri-coins-line btn-icon"></i> @lang('sadaqa.quick_donation')
+                                            </button>
+                                            <button type="button" class="btn custom-btn-success mr-5 addToCart"
+                                                data-identifier=""><i class="ri-shopping-cart-line btn-icon"></i>
+                                                @lang('sadaqa.add_to_cart')
+                                            </button> --}}
+
                                         </div>
 
                                     </form>
@@ -274,7 +289,8 @@
                                 <div id="tab-3" class="tab-content clearfix">
                                     <div class="one-circle">
                                         <div class="text-center"><span class="big-text">15</span> <br>
-                                            <p>@lang('iftar.dinar')</p></div>
+                                            <p>@lang('iftar.dinar')</p>
+                                        </div>
                                     </div>
                                     <form action="" method="POST">
                                         <div class="col-sm-4">
@@ -283,15 +299,15 @@
                                                 <div class="input-group plus-minus-input mb-15">
                                                     <div class="input-group-button button-plus">
                                                         <button type="button" class="btn custom-btn-success"
-                                                                data-quantity="plus" data-field="quantity">
+                                                            data-quantity="plus" data-field="quantity">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
                                                     <input class="input-group-field form-control" type="number"
-                                                           name="quantity" value="1">
+                                                        name="quantity" value="1">
                                                     <div class="input-group-button button-minus">
                                                         <button type="button" class="btn custom-btn-success"
-                                                                data-quantity="minus" data-field="quantity">
+                                                            data-quantity="minus" data-field="quantity">
                                                             <i class="fa fa-minus" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
@@ -301,8 +317,8 @@
                                         <div class="col-sm-4">
                                             <label>@lang('iftar.country')</label>
                                             <select class="form-control">
-                                                <option selected="" disabled=""
-                                                        name="country">@lang('iftar.select_country')</option>
+                                                <option selected="" disabled="" name="country">@lang('iftar.select_country')
+                                                </option>
                                                 <option>@lang('iftar.india')</option>
                                                 <option>@lang('iftar.saudi_arabia')</option>
                                                 <option>@lang('iftar.USA')</option>
@@ -315,8 +331,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <label>@lang('iftar.comments')</label>
-                                            <textarea class="form-control" rows="5"
-                                                      placeholder="@lang('iftar.your_comments_here')"></textarea>
+                                            <textarea class="form-control" rows="5" placeholder="@lang('iftar.your_comments_here')"></textarea>
                                         </div>
                                         {{-- <div class="col-sm-12">
                                             <div class="d-flex align-items-center justify-content-center">
@@ -345,8 +360,16 @@
                                         </div> --}}
                                         <div class="col-md-12 text-center mt-10">
                                             <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
-                                            <a href="{{ route('payment') }}" type="submit"
-                                               class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+                                            <a href="{{ route('payment') }}" type="submit" id="pay"
+                                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+                                            {{-- <button type="button" class="btn custom-btn-success mr-5 quick-donation"><i
+                                                    class="ri-coins-line btn-icon"></i> @lang('sadaqa.quick_donation')
+                                            </button>
+                                            <button type="button" class="btn custom-btn-success mr-5 addToCart"
+                                                data-identifier=""><i class="ri-shopping-cart-line btn-icon"></i>
+                                                @lang('sadaqa.add_to_cart')
+                                            </button> --}}
+
                                         </div>
 
                                     </form>
@@ -355,7 +378,8 @@
                                 <div id="tab-4" class="tab-content clearfix">
                                     <div class="one-circle">
                                         <div class="text-center"><span class="big-text">30</span> <br>
-                                            <p>@lang('iftar.dinar')</p></div>
+                                            <p>@lang('iftar.dinar')</p>
+                                        </div>
                                     </div>
                                     <form action="" method="POST">
                                         <div class="col-sm-4">
@@ -364,15 +388,15 @@
                                                 <div class="input-group plus-minus-input mb-15">
                                                     <div class="input-group-button button-plus">
                                                         <button type="button" class="btn custom-btn-success"
-                                                                data-quantity="plus" data-field="quantity">
+                                                            data-quantity="plus" data-field="quantity">
                                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
                                                     <input class="input-group-field form-control" type="number"
-                                                           name="quantity" value="1">
+                                                        name="quantity" value="1">
                                                     <div class="input-group-button button-minus">
                                                         <button type="button" class="btn custom-btn-success"
-                                                                data-quantity="minus" data-field="quantity">
+                                                            data-quantity="minus" data-field="quantity">
                                                             <i class="fa fa-minus" aria-hidden="true"></i>
                                                         </button>
                                                     </div>
@@ -382,8 +406,8 @@
                                         <div class="col-sm-4">
                                             <label>@lang('iftar.country')</label>
                                             <select class="form-control">
-                                                <option selected="" disabled=""
-                                                        name="country">@lang('iftar.select_country')</option>
+                                                <option selected="" disabled="" name="country">@lang('iftar.select_country')
+                                                </option>
                                                 <option>@lang('iftar.india')</option>
                                                 <option>@lang('iftar.saudi_arabia')</option>
                                                 <option>@lang('iftar.USA')</option>
@@ -396,8 +420,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <label>@lang('iftar.comments')</label>
-                                            <textarea class="form-control" rows="5"
-                                                      placeholder="@lang('iftar.your_comments_here')"></textarea>
+                                            <textarea class="form-control" rows="5" placeholder="@lang('iftar.your_comments_here')"></textarea>
                                         </div>
                                         {{-- <div class="col-sm-12">
                                             <div class="d-flex align-items-center justify-content-center">
@@ -426,8 +449,16 @@
                                         </div> --}}
                                         <div class="col-md-12 text-center mt-10">
                                             <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
-                                            <a href="{{ route('payment') }}" type="submit"
-                                               class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+                                            <a href="{{ route('payment') }}" type="submit" id="pay"
+                                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+                                            {{-- <button type="button" class="btn custom-btn-success mr-5 quick-donation"><i
+                                                    class="ri-coins-line btn-icon"></i> @lang('sadaqa.quick_donation')
+                                            </button>
+                                            <button type="button" class="btn custom-btn-success mr-5 addToCart"
+                                                data-identifier=""><i class="ri-shopping-cart-line btn-icon"></i>
+                                                @lang('sadaqa.add_to_cart')
+                                            </button> --}}
+
                                         </div>
                                     </form>
                                 </div>
@@ -439,7 +470,6 @@
         </section>
     </div>
     <!-- end main-content -->
-
 @endsection
 
 
@@ -494,62 +524,83 @@
         });
     </script> --}}
 
-<script type="text/javascript">
-    // Define tab values
-    var tabValues = {
-      1: 1,
-      2: 7.5,
-      3: 15,
-      4: 30
-    };
+    <script type="text/javascript">
+        // Define tab values
+        var tabValues = {
+            1: 1,
+            2: 7.5,
+            3: 15,
+            4: 30
+        };
 
-    function updateAmount() {
-      var activeTab = $('.tab-link.active').parent().data('tab');
-      var quantity = parseInt($('input[name="quantity"]').val());
-      $('input[name="amount"]').val(tabValues[activeTab] * quantity);
-    }
-
-    $('.tab-list').click(function () {
-      var tabID = $(this).attr('data-tab');
-
-      $('.tab-link').removeClass('active');
-      $(this).find('div').addClass('active');
-      $('#tab-' + tabID).addClass('active').siblings().removeClass('active');
-
-      updateAmount(); // Update the amount based on selected tab
-    });
-
-    jQuery(document).ready(function () {
-      // Set the initial amount based on the active tab
-      updateAmount();
-
-      // This button will increment the value
-      $('[data-quantity="plus"]').click(function (e) {
-        e.preventDefault();
-        fieldName = $(this).attr('data-field');
-        var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-        if (!isNaN(currentVal)) {
-          $('input[name=' + fieldName + ']').val(currentVal + 1);
-        } else {
-          $('input[name=' + fieldName + ']').val(0);
+        function updateAmount() {
+            var activeTab = $('.tab-link.active').parent().data('tab');
+            var quantity = parseInt($('input[name="quantity"]').val());
+            $('input[name="amount"]').val(tabValues[activeTab] * quantity);
         }
 
-        updateAmount(); // Update the amount based on the incremented quantity
-      });
+        $('.tab-list').click(function() {
+            var tabID = $(this).attr('data-tab');
 
-      // This button will decrement the value till 0
-      $('[data-quantity="minus"]').click(function (e) {
-        e.preventDefault();
-        fieldName = $(this).attr('data-field');
-        var currentVal = parseInt($('input[name=' + fieldName + ']').val());
-        if (!isNaN(currentVal) && currentVal > 0) {
-          $('input[name=' + fieldName + ']').val(currentVal - 1);
-        } else {
-          $('input[name=' + fieldName + ']').val(0);
-        }
+            $('.tab-link').removeClass('active');
+            $(this).find('div').addClass('active');
+            $('#tab-' + tabID).addClass('active').siblings().removeClass('active');
 
-        updateAmount(); // Update the amount based on the decremented quantity
-      });
-    });
-  </script>
+            updateAmount(); // Update the amount based on selected tab
+        });
+
+        jQuery(document).ready(function() {
+            // Set the initial amount based on the active tab
+            updateAmount();
+
+            // This button will increment the value
+            $('[data-quantity="plus"]').click(function(e) {
+                e.preventDefault();
+                fieldName = $(this).attr('data-field');
+                var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+                if (!isNaN(currentVal)) {
+                    $('input[name=' + fieldName + ']').val(currentVal + 1);
+                } else {
+                    $('input[name=' + fieldName + ']').val(0);
+                }
+
+                updateAmount(); // Update the amount based on the incremented quantity
+            });
+
+            // This button will decrement the value till 0
+            $('[data-quantity="minus"]').click(function(e) {
+                e.preventDefault();
+                fieldName = $(this).attr('data-field');
+                var currentVal = parseInt($('input[name=' + fieldName + ']').val());
+                if (!isNaN(currentVal) && currentVal > 0) {
+                    $('input[name=' + fieldName + ']').val(currentVal - 1);
+                } else {
+                    $('input[name=' + fieldName + ']').val(0);
+                }
+
+                updateAmount(); // Update the amount based on the decremented quantity
+            });
+        });
+    </script>
+    <script>
+        $('.btnFullwidth').click(function() {
+
+            let price = $('input[name="amount"]').val();
+            let model = 'iftar';
+            let model_id = 0;
+             console.log(price);
+            if (price > 0) {
+                sessionStorage.setItem('model', model);
+                sessionStorage.setItem('model_id', model_id);
+                sessionStorage.setItem('amount', price);
+
+            }
+            else {
+                iziToast.error({
+                    title: '{{ __('common.add_amount_first') }}',
+                    position: 'topCenter'
+                });
+            }
+            });
+    </script>
 @endpush

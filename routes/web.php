@@ -92,6 +92,8 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/sadaqa', 'SadaqahController@index')->name('sadaqa');
     Route::get('/zakah', 'ZakahController@index')->name('zakah');
+    Route::get('/kafarahv', 'KafarahController@index')->name('kafarahv');
+
 
     Route::get('/kafalat', 'KafalahController@index')->name('kafalat');
     Route::get('/sponsor-detail/{kafala}', 'KafalahController@show')->name('sponsorDetail');
@@ -138,6 +140,7 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/elkher_mashroat', [ElkherController::class, 'elkher_mashroat'])->name('elkhermashroat')->middleware(('frontend.auth'));;
 
     Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment');
+    Route::get('getPaymentMethods', 'MyFatoorahController@getPaymentMethods')->name('getPaymentMethods');
     Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed')->middleware(('frontend.auth'));
     Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation')->middleware(('frontend.auth'));
     Route::post('myfatoorah/callback/periodic', 'MyFatoorahController@callback_periodic')->name('myfatoorah.callback_periodic');
@@ -146,6 +149,8 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
 
 Route::namespace('App\Http\Controllers')->group(function () {
 Route::get('/payment', 'PaymentController@index')->name('payment');
+Route::get('/paymentfromcart', 'PaymentController@paymentfromcart')->name('paymentfromcart');
+
 });
 
 Route::get('/iftar', function () {

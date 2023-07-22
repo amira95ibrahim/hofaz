@@ -30,8 +30,10 @@ class MyFatoorahController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
+         //dd($request->all());
         $payment_data = [];
         $payment_data['amount'] = $request->amount;
+        $payment_data['payment_method'] =0;
         if ($request->donor_type == 'logged') {
             $payment_data['name']           = Auth::user()->name;
             $payment_data['email']          = Auth::user()->email;
@@ -79,6 +81,24 @@ class MyFatoorahController extends Controller {
             $request->validate([
                 'phone_number' => 'nullable|max:11'
             ]);
+            switch ($request->plan) {
+                case 1:
+                    $payment_data['payment_method'] = 'knet';
+                    break;
+                case 2:
+                    $payment_data['payment_method'] = 'visa';
+                    break;
+                case 11:
+                    $payment_data['payment_method'] = 'apple-pay';
+                    break;
+                case 32:
+                    $payment_data['payment_method'] = 'google-pay';
+                    break;
+                default:
+                    // If the plan is not one of the specified values, set the payment method to a default value
+                    $payment_data['payment_method'] = 'visa';
+                    break;
+            }
             $payment_data['name']           = 'فاعل خير';
             $payment_data['email']          = 'example@gmail.com';
             $payment_data['phone_number']   = $request->phone_number;
@@ -89,21 +109,25 @@ class MyFatoorahController extends Controller {
         $donation = Donation::create([
             'donor_id'  => $payment_data['user_id'],
             'amount'    => $payment_data['amount'],
-            'payment_method' => 'visa',
+            'payment_method' =>  $payment_data['payment_method'],
             'status' =>'INITIATED'
         ]);
 
+
         try {
-            $paymentMethodId = 0; // 0 for MyFatoorah invoice or 1 for Knet in test mode
+            $paymentMethodId = $request->plan; // 0 for MyFatoorah invoice or 1 for Knet in test mode
 
             $curlData = $this->getPayLoadData($payment_data, $donation->id);
+
+
             $data     = $this->mfObj->getInvoiceURL($curlData, $paymentMethodId);
 
+            //dd($curlData,$data);
             $response = ['IsSuccess' => 'true', 'Message' => 'Invoice created successfully.', 'Data' => $data];
         } catch (\Exception $e) {
             $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
         }
-       return $response;
+      //return $response;
         return redirect()->to($response['Data']['invoiceURL']);
     }
 
@@ -114,7 +138,7 @@ class MyFatoorahController extends Controller {
             'CustomerName'       => $data['name'],
             'InvoiceValue'       => $data['amount'],
             'DisplayCurrencyIso' => 'KWD',
-            'CustomerEmail'      => Auth::user()->email??'',
+            'CustomerEmail'      => Auth::user()->email??'example@gmail.com',
             'CallBackUrl'        => $callbackURL,
             'ErrorUrl'           => $callbackURL,
             'MobileCountryCode'  => '+965',
@@ -193,7 +217,7 @@ public function createPeriodicDonation(Request $request)
        // dd($paymentDates);
         // Create invoices for each payment date
         foreach ($paymentDates as $paymentDate) {
-            $paymentMethodId = 0; // 0 for MyFatoorah invoice or 1 for Knet in test mode
+            $paymentMethodId = $request->plan; // 0 for MyFatoorah invoice or 1 for Knet in test mode
 
             $curlData = $this->getPayLoadData_periodic($request->all(), $donation->id, $paymentDate);
             $data     =$this->mfObj->getInvoiceURL($curlData, $paymentMethodId);
@@ -215,7 +239,7 @@ public function createPeriodicDonation(Request $request)
         $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
         // Handle the exception, maybe log it or show an error message to the user
     }
- return $response;
+ //return $response;
     return redirect()->to($response['Data']['invoiceURL']);
 }
 
@@ -231,7 +255,7 @@ public function createPeriodicDonation(Request $request)
         $callbackURL = route('myfatoorah.callback_periodic');
 
         return [
-            //"PaymentMethodId" => 20,
+            "PaymentMethodId" => 20,
             'CustomerName'       => Auth::user()->name,
             'InvoiceValue'       => $data['amount'],
             'DisplayCurrencyIso' => 'KWD',
@@ -245,12 +269,11 @@ public function createPeriodicDonation(Request $request)
             'SourceInfo'         => 'Hofaz ' . app()::VERSION . ' - MyFatoorah Package ' . MYFATOORAH_LARAVEL_PACKAGE_VERSION,
             // Add the payment date to the payload data
             'PaymentDate'        => $paymentDate,
-
             "RecurringModel"=> [
                 'Iteration'          => $data['frequency'] ,
                 'RecurringType'      =>$data['duration'], //Daily - Monthly -yearly -custom
                 "IntervalDays"       => 1,
-                "RetryCount"  =>  2,
+                // "RetryCount"  =>  2,
               ]
         ];
     }

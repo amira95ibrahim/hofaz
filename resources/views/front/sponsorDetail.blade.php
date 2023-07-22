@@ -53,7 +53,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <form action="{{route('PeriodicDonation')}}" method="POST">
+                            <form action="{{route('donation')}}" method="GET">
                                 <div class="row vertical-align-middle">
                                     <div class="col-sm-8 ml-100">
                                         <div class="form-group">

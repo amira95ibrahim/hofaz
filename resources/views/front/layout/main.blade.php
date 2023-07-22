@@ -159,6 +159,38 @@
     <script src="{{ asset('js/jquery-plugin-collection.js') }}"></script>
     <script src="{{ asset('js/revolution-slider/js/jquery.themepunch.tools.min.js') }}"></script>
     <script src="{{ asset('js/revolution-slider/js/jquery.themepunch.revolution.min.js') }}"></script>
+    <style>
+        .btn-toggle {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 34px;
+    border: 1px solid #ddd;
+    border-radius: 17px;
+    background: #f8f9fa;
+    overflow: hidden;
+    text-align: center;
+}
+.btn-group {
+    display: flex;
+    width: 200%; /* Twice the width of the .btn-toggle div */
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+.btn-toggle-switch {
+    width: 50%; /* Half the width of the .btn-group div */
+    height: 100%;
+    border: none;
+    background: none;
+    color: #333;
+    font-size: 12px;
+    line-height: 34px;
+}
+.btn-toggle-switch.active {
+    color: #fff;
+    background: #F26522;
+}
+        </style>
 </head>
 
 <body>
@@ -248,9 +280,10 @@
                                             aria-expanded="false" v-pre>
                                             <i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}
                                         </a>
-                                        <div class="dropdown-menu dropdown @if (app()->getLocale() == 'ar') text-right @endif"
-                                            aria-labelledby="navbarDropdown">
+                                        <div class="dropdown-menu dropdown  @if (app()->getLocale() == 'ar') text-right @endif"
+                                            aria-labelledby="navbarDropdown" style="border-radius:20px">
                                             <a class="dropdown-item" href=" {{ route('logout') }} "
+                                                style="padding: 45px"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                                 @lang('nav.Logout')
                                             </a>
@@ -292,6 +325,17 @@
                                     class="text-white pipe ml-7">| </span> </li>
                             <li class="py-2"><a class="text-white"
                                     href="{{ route('contactUs') }}">@lang('nav.call_us')</a></li>
+                            <li class="py-2">
+
+                                <div class="btn-toggle">
+                                    {{-- <input type="checkbox" class="custom-control-input hidden" id="translate"> --}}
+                                    <div class="btn-group switch-group">
+                                        <button class="btn btn-xs btn-default" id="en">EN</button>
+                                        <button class="btn btn-xs btn-primary active" id="ar">AR</button>
+                                    </div>
+                                </div>
+
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -304,14 +348,15 @@
                                 href="{{ route('home') }}">
                                 <img src="{{ asset('images/logo-wide.png') }}" alt="">
                             </a>
-                            <ul class="menuzord-menu pull-{{ $float }}">
+                            <ul class="menuzord-menu ">
                                 @foreach ($navSections as $navSection)
                                     <li class="{{ Route::currentRouteName() == $navSection->model ? 'active' : '' }}">
                                         <a href="{{ route($navSection->model) }}"
-                                            {{ $navSection->model == 'onlineService' ? 'target=_blank' : '' }}>{{ $navSection->name }}</a>
+                                            {{ $navSection->model == 'onlineService' ? 'target=_blank' : '' }}>
+                                            {{ $navSection->{'name_' . app()->getLocale()} }}</a>
                                     </li>
                                 @endforeach
-                                <li class="mr-90"><button data-height="45px"
+                                <li class="mr-60"><button data-height="45px"
                                         class="m-0 btn btn-colored btn-theme-colored btn-xs font-14" id="search"
                                         type="submit"><i class="fa fa-search"></i></button></li>
                             </ul>
@@ -329,7 +374,7 @@
                             autocomplete="off">
                         <label for="search"><i class="fa fa-search"></i></label>
                     </div>
-                    <button class="icon-search" type="submit">ابحث</button>
+                    <button class="icon-search" type="submit">بحث</button>
                 </form>
             </div>
         </div>
@@ -367,8 +412,8 @@
                                                     aria-hidden="true"></i>@lang('footer.privacy_policy')</a></li>
                                         <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.sitemap')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
-                                                    aria-hidden="true"></i>@lang('footer.they_said')</a></li>
+                                        {{-- <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                                    aria-hidden="true"></i>@lang('footer.they_said')</a></li> --}}
                                         <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.news')</a></li>
                                         <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
@@ -379,9 +424,10 @@
                                     <ul>
                                         <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.your_guide')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
-                                                    aria-hidden="true"></i>@lang('footer.aqeeqah_sacrifices')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                        {{-- <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                                    aria-hidden="true"></i>@lang('footer.aqeeqah_sacrifices')</a></li> --}}
+                                        <li><a href="{{ route('kafarahv') }}"><i
+                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.penances')</a></li>
                                         <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.building_mosques')</a></li>
@@ -491,8 +537,7 @@
             val = parseInt($counter.text());
             $counter.fadeTo("slow", 0.1);
             let identifier = $(this).attr('data-identifier'); //console.log(identifier);
-            let name = $('#product_' + identifier + '_name')
-                .val(); //console.log($('#product_' + identifier + '_name'));
+            let name = $('#product_' + identifier + '_name').val();
             let price = $('#product_' + identifier + '_amount').val();
             let image = $('#product_' + identifier + '_image').val();
             const modelArray = identifier.split("_");
@@ -535,25 +580,35 @@
         });
 
         function donateNow(id) {
-            let identifier = $(this).closest('form').find('.addToCart').attr('data-identifier');
-    let price = $(this).closest('form').find('input[name="amount"]').val();
-    const modelArray = identifier.split("_");
-    let model = modelArray[0];
-    let model_id = modelArray[1];
+            var $counter, val;
+            $counter = $('.notification-counter');
+            val = parseInt($counter.text());
+            // let identifier = $(this).closest('form').find('.addToCart').attr('data-identifier');
+            let identifier = $('.addToCart').attr('data-identifier');
+            console.log(identifier);
+            // let price = $(this).closest('form').find('input[name="amount"]').val();
+            let name = $('#product_' + identifier + '_name').val();
+            let price = $('#product_' + identifier + '_amount').val();
+            let image = $('#product_' + identifier + '_image').val();
+            const modelArray = identifier.split("_");
+            let model = modelArray[0];
+            let model_id = modelArray[1];
+            console.log(price);
+            if (price > 0) {
+                sessionStorage.setItem('model', model);
+                sessionStorage.setItem('model_id', model_id);
+                sessionStorage.setItem('amount', price);
+                // console.log(sessionStorage.getItem('amount'));
+                let baseUrl = window.location.protocol + "//" + window.location.host;
 
-    if (price > 0) {
-        sessionStorage.setItem('model', model);
-        sessionStorage.setItem('model_id', model_id);
-        sessionStorage.setItem('amount', price);
-
-        let paymentURL = 'http://127.0.0.1:8000/payment';
-        window.location.href = paymentURL;
-    } else {
-        iziToast.error({
-            title: '{{ __('common.add_amount_first') }}',
-            position: 'topCenter'
-        });
-    }
+                let paymentURL = baseUrl + '/payment';
+                window.location.href = paymentURL;
+            } else {
+                iziToast.error({
+                    title: '{{ __('common.add_amount_first') }}',
+                    position: 'topCenter'
+                });
+            }
         }
 
         // function donateNowold(id) {
@@ -620,6 +675,44 @@
                 scope: 'email'
             });
         }
+        // $('.btn-toggle').click(function() {
+        //     $(this).find('.btn').toggleClass('active');
+        //     $(this).find('.btn').toggleClass('btn-default');
+
+        // });
+        $(document).ready(function() {
+            $('#en').on('click', function() {
+               // $(this).addClass('active');
+               // $('#ar').removeClass('active');
+                // add code to switch to English language
+                var language = 'en';
+                var url = '{{ route('updateLang', ['lang' => ':language']) }}'.replace(':language',
+                    language);
+                $.get(url, function(response) {
+                    $('body').html(response);
+                });
+            });
+
+            $('#ar').on('click', function() {
+               // $(this).addClass('active');
+               // $('#en').removeClass('active');
+                // add code to switch to Arabic language
+                var language = 'ar';
+                var url = '{{ route('updateLang', ['lang' => ':language']) }}'.replace(':language',
+                    language);
+                $.get(url, function(response) {
+                    $('body').html(response);
+                });
+            });
+        });
+    </script>
+<script>
+    $('.btn-toggle-switch').click(function() {
+    var $btnGroup = $(this).parent();
+    $btnGroup.find('.btn-toggle-switch.active').removeClass('active');
+    $(this).addClass('active');
+    $btnGroup.css('transform', $(this).is(':first-child') ? 'translateX(0)' : 'translateX(-50%)');
+});
     </script>
     @stack('scripts')
 </body>

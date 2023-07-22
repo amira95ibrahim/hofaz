@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Http\Requests;
@@ -25,7 +26,7 @@ class UpdateSadaqahRequest extends FormRequest
     public function rules()
     {
         $rules = Sadaqah::$rules;
-        
+
         return $rules;
     }
 }

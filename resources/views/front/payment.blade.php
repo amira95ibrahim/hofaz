@@ -110,24 +110,34 @@
         <section>
             <form action="{{ route('make-payment') }}" method="POST">
                 @csrf
-                <input type="hidden" value="{{ number_format(Cart::getTotal()) }}" name="amount">
-                <div id="tabs-container">
-                    <div class="tabs">
-                        <input type="radio" id="radio-1" name="donor_type" value="unknown" checked />
-                        <label class="tab" for="radio-1" onclick="openTab(event, 'unknownTab')">فاعل خير</label>
+                <input type="hidden" id="amount" value="{{
+                    number_format(session()->has('amount') ? session('amount') : Cart::getTotal())
+                  }}" name="amount">
+
                         @auth
+                        <div id="tabs-container">
+                            <div class="tabs">
+                                <input type="radio" id="radio-1" name="donor_type" value="unknown" checked />
+                                <label class="tab" for="radio-1" onclick="openTab(event, 'unknownTab')">فاعل خير</label>
                             <input type="radio" id="radio-2" name="donor_type" value="logged" />
-                            <label class="tab" style="width: 400px" for="radio-2"
+                            <label class="tab"  for="radio-2"
                                 onclick="openTab(event, 'loggedTab')">{{ \Illuminate\Support\Facades\Auth::user()->name }}</label>
+                                <span class="glider1"></span>
+                            </div></div>
                         @else
+                        <div id="tabs-container">
+                            <div class="tabs">
+                                <input type="radio" id="radio-1" name="donor_type" value="unknown" checked />
+                                <label class="tab" for="radio-1" onclick="openTab(event, 'unknownTab')">فاعل خير</label>
                             <input type="radio" id="radio-2" name="donor_type" value="login" />
                             <label class="tab" for="radio-2" onclick="openTab(event, 'signinTab')">تسجيل الدخول</label>
                             <input type="radio" id="radio-3" name="donor_type" value="signup" />
                             <label class="tab" for="radio-3" onclick="openTab(event, 'registerTab')">انشاء حساب</label>
+                            <span class="glider"></span>
+                        </div></div>
                         @endauth
-                        <span class="glider"></span>
-                    </div>
-                </div>
+
+
 
                 <div class="container pt-70 pb-70">
                     <div class="row">
@@ -161,7 +171,9 @@
 
                                                 مبلغ التبرع:
                                                 <span
-                                                    class="text-theme-colored font-weight-700">{{ number_format(Cart::getTotal()) }}
+                                                    class="text-theme-colored font-weight-700 amount">{{
+                                                        number_format(session()->has('amount') ? session('amount') : Cart::getTotal())
+                                                      }}
                                                     د.ك</span>
                                             </h3>
                                         </div>
@@ -182,7 +194,7 @@
                                                 </div>
                                             </div>
                                         </div> --}}
-                                        <div class="col-sm-12">
+                                        {{-- <div class="col-sm-12">
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <div class="col-md-10">
                                                     <label class="mt-2">@lang('iftar.payment_method')</label>
@@ -222,6 +234,41 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div> --}}
+                                        <div class="col-sm-12">
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <div class="col-md-10">
+                                                    <label class="mt-2">@lang('iftar.payment_method')</label>
+                                                    <div class="plans">
+                                                        <div style="clear: both;"></div>
+                                                        <label class="plan basic-plan" for="visa-master">
+                                                            <input checked type="radio" name="plan" id="visa-master" value="2" />
+                                                            <div class="plan-content">
+                                                                <img loading="lazy" src="{{ asset('images/Visa-Master.png') }}" alt="" />
+                                                            </div>
+                                                        </label>
+
+                                                        <label class="plan complete-plan" for="knet">
+                                                            <input type="radio" name="plan" id="knet" value="1" />
+                                                            <div class="plan-content">
+                                                                <img loading="lazy" src="{{ asset('images/knet.png') }}" alt="" />
+                                                            </div>
+                                                        </label>
+                                                        <label class="plan complete-plan" for="gpay">
+                                                            <input type="radio" name="plan" id="gpay" value="32" />
+                                                            <div class="plan-content">
+                                                                <img loading="lazy" src="{{ asset('images/Gpay.png') }}" alt="" />
+                                                            </div>
+                                                        </label>
+                                                        <label class="plan complete-plan" for="apple-pay">
+                                                            <input type="radio" name="plan" id="apple-pay" value="11" />
+                                                            <div class="plan-content">
+                                                                <img loading="lazy" src="{{ asset('images/apple_pay2.png') }}" alt="" />
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-md-12 text-center mt-10">
                                             <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
@@ -238,7 +285,9 @@
                                                 <h3 class="font-weight-bold text-black-333 pr-0">
                                                     مبلغ التبرع:
                                                     <span
-                                                        class="text-theme-colored font-weight-700">{{ number_format(Cart::getTotal()) }}
+                                                        class="text-theme-colored font-weight-700 amount">     {{
+                                                            number_format(session()->has('amount') ? session('amount') : Cart::getTotal())
+                                                          }}
                                                         د.ك</span>
                                                 </h3>
                                             </div>
@@ -260,7 +309,7 @@
                                                     </div>
                                                 </div>
                                             </div> --}}
-                                            <div class="col-sm-12">
+                                            {{-- <div class="col-sm-12">
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <div class="col-md-10">
                                                         <label class="mt-2">@lang('iftar.payment_method')</label>
@@ -301,6 +350,41 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div> --}}
+                                            <div class="col-sm-12">
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <div class="col-md-10">
+                                                        <label class="mt-2">@lang('iftar.payment_method')</label>
+                                                        <div class="plans">
+                                                            <div style="clear: both;"></div>
+                                                            <label class="plan basic-plan" for="visa-master">
+                                                                <input checked type="radio" name="plan" id="visa-master" value="2" />
+                                                                <div class="plan-content">
+                                                                    <img loading="lazy" src="{{ asset('images/Visa-Master.png') }}" alt="" />
+                                                                </div>
+                                                            </label>
+
+                                                            <label class="plan complete-plan" for="knet">
+                                                                <input type="radio" name="plan" id="knet" value="1" />
+                                                                <div class="plan-content">
+                                                                    <img loading="lazy" src="{{ asset('images/knet.png') }}" alt="" />
+                                                                </div>
+                                                            </label>
+                                                            <label class="plan complete-plan" for="gpay">
+                                                                <input type="radio" name="plan" id="gpay" value="32" />
+                                                                <div class="plan-content">
+                                                                    <img loading="lazy" src="{{ asset('images/Gpay.png') }}" alt="" />
+                                                                </div>
+                                                            </label>
+                                                            <label class="plan complete-plan" for="apple-pay">
+                                                                <input type="radio" name="plan" id="apple-pay" value="11" />
+                                                                <div class="plan-content">
+                                                                    <img loading="lazy" src="{{ asset('images/apple_pay2.png') }}" alt="" />
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col-md-12 text-center mt-10">
                                                 <!-- <button type="submit" class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5">Donate Now</button> -->
@@ -325,7 +409,9 @@
                                                 <h3 class="font-weight-bold text-black-333 pr-0">
                                                     مبلغ التبرع:
                                                     <span
-                                                        class="text-theme-colored font-weight-700">{{ number_format(Cart::getTotal()) }}
+                                                        class="text-theme-colored font-weight-700 amount">{{
+                                                            number_format(session()->has('amount') ? session('amount') : Cart::getTotal())
+                                                          }}
                                                         د.ك</span>
                                                 </h3>
                                             </div>
@@ -425,28 +511,14 @@
                                                 <h3 class="font-weight-bold text-black-333 pr-0">
                                                     مبلغ التبرع:
                                                     <span
-                                                        class="text-theme-colored font-weight-700">{{ number_format(Cart::getTotal()) }}
+                                                        class="text-theme-colored font-weight-700 amount">{{
+                                                            number_format(session()->has('amount') ? session('amount') : Cart::getTotal())
+                                                          }}
                                                         د.ك</span>
                                                 </h3>
                                             </div>
+
                                             {{-- <div class="col-sm-12">
-                                                <div class="d-flex align-items-center justify-content-center">
-                                                    <div class="col-md-6">
-                                                        <label class="mt-2">@lang('iftar.payment_method')</label>
-                                                        <div class="plans">
-                                                            <div style="clear: both;"></div>
-                                                            <label class="plan basic-plan" for="basic">
-                                                                <input checked type="radio" name="plan" id="basic"/>
-                                                                <div class="plan-content">
-                                                                    <img loading="lazy" src="{{ asset('images/myfatoorah.jpeg') }}"
-                                                                         alt=""/>
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
-                                            <div class="col-sm-12">
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <div class="col-md-10">
                                                         <label class="mt-2">@lang('iftar.payment_method')</label>
@@ -463,7 +535,7 @@
                                                             </label>
 
                                                             <label class="plan complete-plan" for="complete">
-                                                                <input type="radio" id="complete" name="plan" />
+                                                                <input type="radio" id="complete" name="plan"  />
                                                                 <div class="plan-content">
                                                                     <img loading="lazy" src="{{ asset('images/knet.png') }}"
                                                                         alt="" />
@@ -482,6 +554,41 @@
                                                                     <img loading="lazy"
                                                                         src="{{ asset('images/apple_pay2.png') }}"
                                                                         alt="" />
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> --}}
+                                            <div class="col-sm-12">
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <div class="col-md-10">
+                                                        <label class="mt-2">@lang('iftar.payment_method')</label>
+                                                        <div class="plans">
+                                                            <div style="clear: both;"></div>
+                                                            <label class="plan basic-plan" for="visa-master">
+                                                                <input checked type="radio" name="plan" id="visa-master" value="2" />
+                                                                <div class="plan-content">
+                                                                    <img loading="lazy" src="{{ asset('images/Visa-Master.png') }}" alt="" />
+                                                                </div>
+                                                            </label>
+
+                                                            <label class="plan complete-plan" for="knet">
+                                                                <input type="radio" name="plan" id="knet" value="1" />
+                                                                <div class="plan-content">
+                                                                    <img loading="lazy" src="{{ asset('images/knet.png') }}" alt="" />
+                                                                </div>
+                                                            </label>
+                                                            <label class="plan complete-plan" for="gpay">
+                                                                <input type="radio" name="plan" id="gpay" value="32" />
+                                                                <div class="plan-content">
+                                                                    <img loading="lazy" src="{{ asset('images/Gpay.png') }}" alt="" />
+                                                                </div>
+                                                            </label>
+                                                            <label class="plan complete-plan" for="apple-pay">
+                                                                <input type="radio" name="plan" id="apple-pay" value="11" />
+                                                                <div class="plan-content">
+                                                                    <img loading="lazy" src="{{ asset('images/apple_pay2.png') }}" alt="" />
                                                                 </div>
                                                             </label>
                                                         </div>
@@ -566,7 +673,8 @@
             let model = sessionStorage.getItem('model');
             let model_id = sessionStorage.getItem('model_id');
             let amount = sessionStorage.getItem('amount');
-            $('input[name=' + fieldName + ']').val(amount);
+            $('#amount').val(amount);
+            $('.amount').html(amount+'د.ك');
             // Use the retrieved data to process the donation
         });
     </script>

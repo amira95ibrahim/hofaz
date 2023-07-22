@@ -88,12 +88,12 @@
                       {{--  <span class="hidden-md-down">{{ Auth::user()->name }}</span>--}}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <div class="dropdown-header text-xs-center">
+                        <div class="dropdown-header text-xs-center" style=" border-radius: 20px;">
                           {{--  <small>عضو منذ {{ Auth::user()->created_at->format('M. Y') }}</small>--}}
                         </div>
                             {{--<a class="dropdown-item" href="#"><i class="fa fa-user"></i> @lang('auth.profile')</a>--}}
                             {{--<div class="divider"></div>--}}
-                        <a href="#" class="dropdown-item"
+                        <a href="#" class="dropdown-item" style="padding: 25px"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class="fa fa-lock"></i>
                             تسجيل خروج

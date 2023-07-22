@@ -22,5 +22,6 @@ return [
     'teams' => 'Teams',
     'hofath_news' => 'Hofath News',
     'news' => 'News',
-
+    'Kafarah'=>'Kafarah',
+   
 ];

@@ -39,6 +39,10 @@ class SitePagesDetail extends Model
         return $query->where('model', 'sadaqah');
     }
 
+    public function scopeKafarahPage(Builder $query): Builder
+    {
+        return $query->where('model', 'kafarah');
+    }
     public function scopeZakahPage(Builder $query): Builder
     {
         return $query->where('model', 'zakah');

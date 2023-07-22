@@ -101,6 +101,8 @@
             transition: 0.25s ease-out;
         }
 
+      
+
         @media (max-width: 700px) {
             #tabs-container .tabs {
                 transform: scale(0.6);

@@ -502,7 +502,7 @@
             <div class="subtotal cf">
                 <ul>
                     <li class="totalRow final"><span class="label">الاجمالي</span><span id="cartTotal" data-price="{{ Cart::getTotal() }}">{{ number_format(Cart::getTotal()) }}</span> <span class="value">@lang('waqf.KWD')</span></li>
-                    <li class="totalRow"><a href="{{ route('payment') }}" class="btn continue">اتمام التبرع</a></li>
+                    <li class="totalRow"><a href="{{ route('paymentfromcart') }}" class="btn continue">اتمام التبرع</a></li>
                 </ul>
             </div>
         </div>

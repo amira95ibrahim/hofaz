@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="p-30 bg-grey br-20 clearfix">
                         <div class="col-md-6">
-                            <form action="{{route('PeriodicDonation')}}" method="POST">
+                            <form action="{{route('donation')}}" method="GET">
                                 <select class="form-control mb-15 br-20 product_data">
                                     @foreach($zakat as $zakah)
                                         <option value="{{ $zakah->id }}" id="name_{{ $zakah->id }}">{{ $zakah->name }}</option>

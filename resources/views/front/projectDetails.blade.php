@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="or mt-1"> - @lang('relief.or') -</div>
 
-                                <form class="mt-1">
+                                <form class="mt-1">hi
                                     <div class="input-group">
                                         <input type="number" value="{{ $project->initial_amount }}" name="amount"
                                                placeholder="@lang('relief.enter_amount')"
