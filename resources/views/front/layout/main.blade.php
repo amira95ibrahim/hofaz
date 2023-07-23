@@ -353,9 +353,9 @@
                             <ul class="menuzord-menu ">
                                 @foreach ($navSections as $navSection)
                                     <li class="{{ Route::currentRouteName() == $navSection->model ? 'active' : '' }}">
-                                        <a href="{{ route($navSection->model) }}"
+                                       <a href="{{ route($navSection->model) }}"
                                             {{ $navSection->model == 'onlineService' ? 'target=_blank' : '' }}>
-                                            {{ $navSection->{'name_' . app()->getLocale()} }}</a>
+                                            {{ $navSection->{'name_' . app()->getLocale()} }}  </a>
                                     </li>
                                 @endforeach
                                 <li class="mr-60"><button data-height="45px"
