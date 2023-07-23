@@ -140,6 +140,8 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/elkher_mashroat', [ElkherController::class, 'elkher_mashroat'])->name('elkhermashroat')->middleware(('frontend.auth'));;
 
     Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment');
+    Route::post('initiate', 'MyFatoorahController@initiate')->name('initiate');
+
     Route::get('getPaymentMethods', 'MyFatoorahController@getPaymentMethods')->name('getPaymentMethods');
     Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed')->middleware(('frontend.auth'));
     Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation')->middleware(('frontend.auth'));

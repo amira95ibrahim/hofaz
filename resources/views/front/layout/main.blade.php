@@ -163,11 +163,12 @@
         .btn-toggle {
     display: inline-block;
     position: relative;
-    width: 100px;
-    height: 34px;
-    border: 1px solid #ddd;
+    width:90px;
+    height: 22px;
+    //border: 1px solid white;
+    border-radius:99px
     border-radius: 17px;
-    background: #f8f9fa;
+   // background:black;
     overflow: hidden;
     text-align: center;
 }
@@ -185,6 +186,7 @@
     color: #333;
     font-size: 12px;
     line-height: 34px;
+    padding:0;
 }
 .btn-toggle-switch.active {
     color: #fff;
@@ -325,7 +327,7 @@
                                     class="text-white pipe ml-7">| </span> </li>
                             <li class="py-2"><a class="text-white"
                                     href="{{ route('contactUs') }}">@lang('nav.call_us')</a></li>
-                            <li class="py-2">
+                            <li style="padding-top: 0.4rem!important;padding-bottom: 0.3rem!important;">
 
                                 <div class="btn-toggle">
                                     {{-- <input type="checkbox" class="custom-control-input hidden" id="translate"> --}}

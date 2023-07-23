@@ -30,6 +30,8 @@ class MyFatoorahController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
+
+
          //dd($request->all());
         $payment_data = [];
         $payment_data['amount'] = $request->amount;
@@ -358,6 +360,33 @@ private function generatePaymentDates($frequency, $duration)
     }
 
     return $paymentDates;
+}
+
+private function createPaymentData(Request $request)
+{
+    $payment_data = [];
+    $payment_data['amount'] = $request->amount;
+   // $payment_data['payment_method'] = 0;
+
+    // Add the remaining if-else conditions and code to populate the $payment_data array based on the request parameters
+
+    return $payment_data;
+}
+public function initiate(Request $request){
+    
+    $payment_data = $this->createPaymentData($request);
+    try {
+        $data = $this->mfObj->InitiatePayment();
+        $paymentMethodIds = $data['Data']['paymentMethodIds'];
+
+        // Now you can use the $paymentMethodIds array to know the available payment method IDs for your account
+
+        $response = ['IsSuccess' => 'true', 'Message' => 'Payment methods retrieved successfully.', 'Data' => $paymentMethodIds];
+    } catch (\Exception $e) {
+        $response = ['IsSuccess' => 'false', 'Message' => $e->getMessage()];
+    }
+
+    return $response;
 }
 
 }

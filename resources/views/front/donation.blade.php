@@ -286,7 +286,7 @@
                                                 <img class="img-circle" alt="" src="{{ asset($item->image) }}">
                                             </div>
                                             <div class="patient-details text-right pull-right mr-20 mt-10">
-                                                <h5 class="author text-theme-colored">{{ $item->name }}</h5>
+                                                <h5 class="author text-theme-colored ">{{ $item->name }}</h5>
                                                 <h6 class="title">{{ $item->job }}</h6>
                                             </div>
                                         </div>
@@ -295,8 +295,8 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <h3 class="mt-0 line-bottom">@lang('donation.make_donation')<span class="font-weight-300">
-                                    @lang('donation.now')!</span>
+                            <h3 class="mt-0 line-bottom">@lang('donation.make_donation')
+                                    @lang('donation.now')
                             </h3>
 
                             <!-- ===== START: Paypal Both Onetime/Recurring Form ===== -->

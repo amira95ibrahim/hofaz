@@ -172,7 +172,7 @@
                                 <a class="btn btn-dark btn-lg btn-block no-border mt-15 mb-15" href="{{route('auth.facebook')}}" data-bg-color="#3b5998">
                                     @lang('signIn.login_with_facebook')
                                 </a>
-                                 <a class="btn btn-dark btn-lg btn-block no-border" href="#" data-bg-color="#00acee"> @lang('signIn.login_with_twitter')</a>
+                                 {{-- <a class="btn btn-dark btn-lg btn-block no-border" href="#" data-bg-color="#00acee"> @lang('signIn.login_with_twitter')</a> --}}
                             </div>
                         </form>
 
