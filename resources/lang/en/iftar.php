@@ -22,6 +22,7 @@ return [
     'for' => 'For',
     'week' => 'A Week',
     'half_month' => 'Half A Month',
-    'month' => 'A Month'
+    'month' => 'A Month',
+    'day'=>'Day'
 
 ];

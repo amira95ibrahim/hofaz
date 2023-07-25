@@ -333,7 +333,7 @@
                                     {{-- <input type="checkbox" class="custom-control-input hidden" id="translate"> --}}
                                     <div class="btn-group switch-group">
                                         <button class="btn btn-xs btn-default" id="en">EN</button>
-                                        <button class="btn btn-xs btn-primary active" id="ar">AR</button>
+                                        <button class="btn btn-xs btn-primary active" id="arabic">AR</button>
                                     </div>
                                 </div>
 
@@ -353,7 +353,7 @@
                             <ul class="menuzord-menu ">
                                 @foreach ($navSections as $navSection)
                                     <li class="{{ Route::currentRouteName() == $navSection->model ? 'active' : '' }}">
-                                       <a href="{{ route($navSection->model) }}"
+                                       <a href="{{ route($navSection->model) }}" style="color:#002D62; "
                                             {{ $navSection->model == 'onlineService' ? 'target=_blank' : '' }}>
                                             {{ $navSection->{'name_' . app()->getLocale()} }}  </a>
                                     </li>
@@ -685,7 +685,7 @@
         $(document).ready(function() {
             $('#en').on('click', function() {
                // $(this).addClass('active');
-               // $('#ar').removeClass('active');
+               // $('#arabic').removeClass('active');
                 // add code to switch to English language
                 var language = 'en';
                 var url = '{{ route('updateLang', ['lang' => ':language']) }}'.replace(':language',
@@ -695,7 +695,7 @@
                 });
             });
 
-            $('#ar').on('click', function() {
+            $('#arabic').on('click', function() {
                // $(this).addClass('active');
                // $('#en').removeClass('active');
                 // add code to switch to Arabic language

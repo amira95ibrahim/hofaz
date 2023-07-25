@@ -74,8 +74,8 @@
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 <input type="hidden" name="project_name"
-                                                    value="{{ $gift->giftable->name }}">
-                                                <input type="text" name="donate" class="form-control br-20"
+                                                    value="{{ $gift->giftable->name }}" class="required">
+                                                <input type="text" name="donate" class="form-control br-20 required"
                                                     value="{{ $gift->giftable->initial_amount }}">
                                                 {{--        <input type="text" name="donate" class="form-control br-20" value="10"> --}}
                                                 <button type="button" id="{{ $gift->id }}"
@@ -99,19 +99,19 @@
                 <div class="row">
                     <div class="col-md-4 text-center">
                         <label>
-                            <input type="radio" name="card" value="card1">
+                            <input type="radio" name="card" value="card1" required>
                             <img src="{{ asset('images/causes/card1.jpg') }}">
                         </label>
                     </div>
                     <div class="col-md-4 text-center">
                         <label>
-                            <input type="radio" name="card" value="card2">
+                            <input type="radio" name="card" value="card2" required>
                             <img src="{{ asset('images/causes/card2.jpg') }}">
                         </label>
                     </div>
                     <div class="col-md-4 text-center">
                         <label>
-                            <input type="radio" name="card" value="card3">
+                            <input type="radio" name="card" value="card3" required>
                             <img src="{{ asset('images/causes/card3.jpg') }}">
                         </label>
                     </div>
@@ -169,8 +169,11 @@
                             <input type="hidden" name="amount">
                             <input type="hidden" name="project_name" value="{{ $gift->giftable->name }}">
 
-                            <button type="submit" onclick="openGiftCreatedPopup();"
-                                class="btn btn-dark mt-1 btn-xl btn-theme-colored btn-flat mr-5 w-100">@lang('gift.preview')</button>
+                            {{-- <button  type="submit"
+                                class="btn btn-dark mt-1 btn-xl btn-theme-colored btn-flat mr-5 w-100">@lang('gift.preview')</button> --}}
+                                <a href="{{ route('payment') }}" type="submit" id="pay"
+                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
+
                             </form>
                         </div>
                     </div>
@@ -228,10 +231,10 @@
     </script>
     <script>
 
-
+          // function openGiftCreatedPopup() {
         document.getElementById('gift-form').addEventListener('submit', async (event) => {
             event.preventDefault(); // Prevent the default form submission
-
+            console.log('hi');
             const form = event.target;
             const formData = new FormData(form);
 
@@ -245,7 +248,9 @@
                 });
 
                 if (response.ok) {
-                    openGiftCreatedPopup();
+                    // openGiftCreatedPopup();
+             window.open('/gift-created-popup', 'Gift Created', 'width=450,height=650');
+
                 } else {
                     // Handle any errors returned by the server
                     const data = await response.json();
@@ -256,9 +261,8 @@
                 console.error('Fetch Error:', error);
             }
         });
-         function openGiftCreatedPopup() {
-             window.open('/gift-created-popup', 'Gift Created', 'width=450,height=650');
-        }
+
+       // }
 
 
 

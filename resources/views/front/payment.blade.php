@@ -261,7 +261,7 @@
                                                             </div>
                                                         </label>
                                                         <label class="plan complete-plan" for="apple-pay">
-                                                            <input type="radio" name="plan" id="apple-pay" value="11" />
+                                                            <input type="radio" name="plan" id="apple-pay" value="24" />
                                                             <div class="plan-content">
                                                                 <img loading="lazy" src="{{ asset('images/apple_pay2.png') }}" alt="" />
                                                             </div>
@@ -377,7 +377,7 @@
                                                                 </div>
                                                             </label>
                                                             <label class="plan complete-plan" for="apple-pay">
-                                                                <input type="radio" name="plan" id="apple-pay" value="11" />
+                                                                <input type="radio" name="plan" id="apple-pay" value="24" />
                                                                 <div class="plan-content">
                                                                     <img loading="lazy" src="{{ asset('images/apple_pay2.png') }}" alt="" />
                                                                 </div>
@@ -456,14 +456,14 @@
                                                                 </div>
                                                             </label>
                                                             <label class="plan complete-plan" for="complete">
-                                                                <input type="radio" id="complete" name="plan" />
+                                                                <input type="radio" id="complete" name="plan" value="32" />
                                                                 <div class="plan-content">
                                                                     <img loading="lazy" src="{{ asset('images/Gpay.png') }}"
                                                                         alt="" />
                                                                 </div>
                                                             </label>
                                                             <label class="plan complete-plan" for="complete">
-                                                                <input type="radio" id="complete" name="plan" />
+                                                                <input type="radio" id="complete" name="plan" value="24" />
                                                                 <div class="plan-content">
                                                                     <img loading="lazy"
                                                                         src="{{ asset('images/apple_pay2.png') }}"
@@ -586,7 +586,7 @@
                                                                 </div>
                                                             </label>
                                                             <label class="plan complete-plan" for="apple-pay">
-                                                                <input type="radio" name="plan" id="apple-pay" value="11" />
+                                                                <input type="radio" name="plan" id="apple-pay" value="24" />
                                                                 <div class="plan-content">
                                                                     <img loading="lazy" src="{{ asset('images/apple_pay2.png') }}" alt="" />
                                                                 </div>

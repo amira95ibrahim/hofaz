@@ -47,9 +47,9 @@
                                         </div>
                                         <p>
                                             <span class="sad2"><span id="Label3"
-                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.basket')</span></span><br>
+                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.for')</span></span><br>
                                             <span class="ssad2"><span id="Label26"
-                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.stack')</span></span>
+                                                    style="font-family:GSSLight;font-weight:bold;">@lang('iftar.day')</span></span>
                                         </p>
                                     </li>
 

@@ -20,6 +20,6 @@ return [
     'directors' => 'Directors',
     'input_search_string' => 'input search string and hit enter',
     'Dashboard' => 'Dashboard',
-    'logout'=>'logout'
+    'Logout'=>'Logout'
 
 ];

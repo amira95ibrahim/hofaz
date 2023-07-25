@@ -28,8 +28,8 @@ class GiftRequest extends FormRequest
             'consignee' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|max:20|regex:/^[^<>]+$/',
-            'card' => 'required|string|max:255',
-            // 'donate'=>'required|number',
+            // 'card' => 'required|string|max:255',
+            'donate'=>'required|numeric',
             'card'=>'required',
         ];
     }

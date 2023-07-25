@@ -196,7 +196,6 @@ class GiftController extends BaseController
 
     public function generate(GiftRequest $request)
     {
-        //dd('hi');
         // Retrieve form inputs
         $sender = $request->sender;
         $consignee = $request->consignee;
@@ -224,7 +223,6 @@ class GiftController extends BaseController
 
         // Save the modified image
         $imageName = $consignee . '.jpg';
-
 
         // Redirect to a new window to display the saved photo
         $savedPhotoUrl = asset('images/card/' . $imageName);
@@ -255,7 +253,7 @@ class GiftController extends BaseController
             'project_name' => $project_name,
         ];
 
-        Notification::route('mail', $email)->notify(new GiftCreatedNotification($giftData, $photoPath));
+        //Notification::route('mail', $email)->notify(new GiftCreatedNotification($giftData, $photoPath));
 
         //dd(session()->all());
         // Redirect to a new window to display the saved photo
@@ -264,7 +262,7 @@ class GiftController extends BaseController
 
     return view('front.emails.gift-created', compact('sender', 'consignee', 'photoPath', 'project_name'));
     }
-    public function showGiftCreatedPopup555()
+    public function showGiftCreatedPopup5555()
     {
         $senderName = Session::get('senderName');
         $consignee = Session::get('consignee');

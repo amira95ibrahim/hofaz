@@ -253,7 +253,7 @@
                                                             </div>
                                                         </label>
                                                         <label class="plan complete-plan" for="apple-pay">
-                                                            <input type="radio" name="plan" id="apple-pay" value="11" />
+                                                            <input type="radio" name="plan" id="apple-pay" value="25" />
                                                             <div class="plan-content">
                                                                 <img loading="lazy" src="{{ asset('images/apple_pay2.png') }}" alt="" />
                                                             </div>
@@ -369,7 +369,7 @@
                                                                 </div>
                                                             </label>
                                                             <label class="plan complete-plan" for="apple-pay">
-                                                                <input type="radio" name="plan" id="apple-pay" value="11" />
+                                                                <input type="radio" name="plan" id="apple-pay" value="25" />
                                                                 <div class="plan-content">
                                                                     <img loading="lazy" src="{{ asset('images/apple_pay2.png') }}" alt="" />
                                                                 </div>
@@ -578,7 +578,7 @@
                                                                 </div>
                                                             </label>
                                                             <label class="plan complete-plan" for="apple-pay">
-                                                                <input type="radio" name="plan" id="apple-pay" value="11" />
+                                                                <input type="radio" name="plan" id="apple-pay" value="25" />
                                                                 <div class="plan-content">
                                                                     <img loading="lazy" src="{{ asset('images/apple_pay2.png') }}" alt="" />
                                                                 </div>

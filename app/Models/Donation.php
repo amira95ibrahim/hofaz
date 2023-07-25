@@ -18,4 +18,8 @@ class Donation extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function marketer()
+    {
+        return $this->belongsTo(Marketer::class);
+    }
 }
