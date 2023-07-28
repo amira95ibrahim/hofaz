@@ -60,9 +60,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h3>@lang('gift.choose_gift')</h3>
-
                         <div class="owl-carousel">
                             @foreach ($gifts as $gift)
+
+
                                 <div class="item">
                                     <div class="card">
                                         <div class="card-header">
@@ -70,11 +71,11 @@
                                         </div>
                                         <div class="card-body text-center">
                                             <h4>{{ $gift->giftable->name }}</h4>
-                                            <form id="gift-form" action="{{ route('generate') }}" method="POST"
+                                            <form id="gift-form" action="{{ route('payment') }}" method="POST"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 <input type="hidden" name="project_name"
-                                                    value="{{ $gift->giftable->name }}" class="required">
+                                                    value="{{ $gift->giftable->name_ar }}" class="required">
                                                 <input type="text" name="donate" class="form-control br-20 required"
                                                     value="{{ $gift->giftable->initial_amount }}">
                                                 {{--        <input type="text" name="donate" class="form-control br-20" value="10"> --}}
@@ -97,6 +98,8 @@
 
             <div class="container">
                 <div class="row">
+                    <input type="hidden" name="selectedCard" id="selectedCard">
+
                     <div class="col-md-4 text-center">
                         <label>
                             <input type="radio" name="card" value="card1" required>
@@ -167,14 +170,16 @@
 
                             <input type="hidden" name="gift">
                             <input type="hidden" name="amount">
-                            <input type="hidden" name="project_name" value="{{ $gift->giftable->name }}">
+                            <input type="hidden" name="project_name" value="{{ $gift->giftable->name_ar }}">
+<div class="flex">
 
-                            {{-- <button  type="submit"
-                                class="btn btn-dark mt-1 btn-xl btn-theme-colored btn-flat mr-5 w-100">@lang('gift.preview')</button> --}}
-                                <a href="{{ route('payment') }}" type="submit" id="pay"
-                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('iftar.donate_now')</a>
-
-                            </form>
+                               <a href="{{ route('payment') }}"  id="pay" style="margin-right: 25px"
+                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 btnFullwidth">@lang('gift.donate_now')</a>
+                                <button  type="submit"
+                                class="btn btn-dark  btn-xl btn-theme-colored btn-flat mr-5 preview">@lang('gift.preview')</button>
+                                {{-- <a href="#" type="submit" id="preview" onclick="openGiftCreatedPopup()"
+                                class="btn btn-dark btn-xl btn-theme-colored btn-flat mr-5 ">@lang('gift.preview')</a> --}}
+</div>  </form>
                         </div>
                     </div>
                 </div>
@@ -221,50 +226,160 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // var savedPhotoUrl = '{{ session('savedPhotoUrl') }}';
-            // if (savedPhotoUrl) {
-            //     var newWindow = window.open(savedPhotoUrl, '_blank');
-            //     newWindow.focus();
-            // }
-        });
+      document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('gift-form').addEventListener('submit', async (event) => {
+        // ...rest of your code...
+        console.log('hi');
+    });
+});
     </script>
     <script>
 
-          // function openGiftCreatedPopup() {
-        document.getElementById('gift-form').addEventListener('submit', async (event) => {
-            event.preventDefault(); // Prevent the default form submission
-            console.log('hi');
-            const form = event.target;
-            const formData = new FormData(form);
+        //    function openGiftCreatedPopup() {
+        // document.getElementById('gift-form').addEventListener('submit', async (event) => {
+        //     event.preventDefault(); // Prevent the default form submission
+        //     console.log('hi');
+        //     const form = event.target;
+        //     const formData = new FormData(form);
 
-            try {
-                const response = await fetch('{{ route('generate') }}', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                    },
-                });
+        //     try {
+        //         const response = await fetch('{{ route('generate') }}', {
+        //             method: 'POST',
+        //             body: formData,
+        //             headers: {
+        //                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        //             },
+        //         });
 
-                if (response.ok) {
-                    // openGiftCreatedPopup();
-             window.open('/gift-created-popup', 'Gift Created', 'width=450,height=650');
+        //         if (response.ok) {
+        //             // openGiftCreatedPopup();
+        //      window.open('/gift-created-popup', 'Gift Created', 'width=450,height=650');
 
-                } else {
-                    // Handle any errors returned by the server
-                    const data = await response.json();
-                    console.error('Error:', data);
-                }
-            } catch (error) {
-                // Handle any network or fetch errors
-                console.error('Fetch Error:', error);
-            }
+        //         } else {
+        //             // Handle any errors returned by the server
+        //             const data = await response.json();
+        //             console.error('Error:', data);
+        //         }
+        //     } catch (error) {
+        //         // Handle any network or fetch errors
+        //         console.error('Fetch Error:', error);
+        //     }
+        // });
+
+        // }
+
+
+
+    </script>
+    <script>
+        const radioButtons = document.querySelectorAll('input[name="card"]');
+        const selectedCardInput = document.getElementById('selectedCard');
+
+        radioButtons.forEach((radioButton) => {
+          radioButton.addEventListener('change', () => {
+            selectedCardInput.value = radioButton.value;
+          });
+        });
+      </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectCardButtons = document.querySelectorAll('.select-card-btn');
+
+        selectCardButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Reset all buttons and show the "Donate Your Gift" button
+                selectCardButtons.forEach(btn => btn.style.display = 'block');
+                button.style.display = 'none';
+
+                // Disable all "Donate Your Gift" buttons and enable the selected button
+                selectCardButtons.forEach(btn => btn.disabled = false);
+                button.disabled = true;
+
+                // Get the selected card data and submit the form
+                const cardData = {
+                    project_name: button.parentElement.querySelector('input[name="project_name"]').value,
+                    donate: button.parentElement.querySelector('input[name="donate"]').value
+                    // Add more data fields if needed
+                };
+
+                // Create a hidden input field to store the card data and append it to the form
+                const cardDataInput = document.createElement('input');
+                cardDataInput.type = 'hidden';
+                cardDataInput.name = 'selected_card_data';
+                cardDataInput.value = JSON.stringify(cardData);
+                button.parentElement.appendChild(cardDataInput);
+
+                // Submit the form
+                // button.parentElement.submit();
+            });
+        });
+    });
+</script>
+
+    <script>
+        $(document).ready(function(){
+        $('.preview').click(function() {
+
+            let sender = $('input[name="sender"]').val();
+            let reciever = $('input[name="consignee"]').val();
+            let phone = $('input[name="phone"]').val();
+            let email = $('input[name="email"]').val();
+            let project_name = $('input[name="project_name"]').val();
+            let card = selectedCardInput.value;
+
+            let price = $('input[name="amount"]').val();
+            let model = 'gift';
+            let model_id = 8;
+
+
+              console.log(project_name);
+            if (price > 0) {
+                sessionStorage.setItem('model', model);
+                sessionStorage.setItem('model_id', model_id);
+                sessionStorage.setItem('amount', price);
+                sessionStorage.setItem('sender', sender);
+                sessionStorage.setItem('reciever', reciever);
+                sessionStorage.setItem('phone', phone);
+                sessionStorage.setItem('card', card);
+                sessionStorage.setItem('email', email);
+                sessionStorage.setItem('project_name', project_name);
+
+
+                $.ajax({
+          url: '/gift/generate', // Replace this with your backend endpoint
+          method: 'POST', // Use the appropriate HTTP method (POST, GET, etc.)
+          data: {
+            _token: '{{ csrf_token() }}', // Include the CSRF token if needed
+            sender: sender,
+            reciever: reciever,
+            phone: phone,
+            email: email,
+            card: card,
+            project_name:project_name,
+            // Add any other data you want to send to the server
+          },
+          success: function(response) {
+            // Handle the response from the server if needed
+            console.log('Data sent successfully:', response);
+            window.open('/gift-created-popup', 'Gift Created', 'width=450,height=550');
+
+          },
+          error: function(error) {
+            // Handle any errors that occurred during the AJAX request
+            console.error('Error sending data:', error);
+          }
         });
 
-       // }
 
 
-
+            }
+            else {
+                iziToast.error({
+                    title: '{{ __('common.add_amount_first') }}',
+                    position: 'topCenter'
+                });
+            }
+            });
+        })
     </script>
 @endpush

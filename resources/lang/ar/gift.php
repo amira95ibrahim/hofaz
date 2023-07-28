@@ -15,5 +15,6 @@ return[
     'enter_consignee_name' => 'أدخل اسم المرسل إليه',
     'enter_email_address' => 'أدخل عنوان البريد الالكتروني',
     'enter_phone_number' => 'أدخل رقم الهاتف',
+    'donate_now'=>'تبرع بهديتك'
 
 ];

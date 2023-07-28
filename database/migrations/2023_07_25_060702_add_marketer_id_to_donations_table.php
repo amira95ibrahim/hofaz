@@ -15,6 +15,7 @@ class AddMarketerIdToDonationsTable extends Migration
     {
         Schema::table('donations', function (Blueprint $table) {
            // $table->foreignId('marketer_id')->after('donor_id')->constrained()->onDelete('cascade');
+           $table->foreignId('marketer_id')->nullable()->after('donor_id')->constrained();
         });
     }
 

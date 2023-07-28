@@ -161,38 +161,42 @@
     <script src="{{ asset('js/revolution-slider/js/jquery.themepunch.revolution.min.js') }}"></script>
     <style>
         .btn-toggle {
-    display: inline-block;
-    position: relative;
-    width:90px;
-    height: 22px;
-    //border: 1px solid white;
-    border-radius:99px
-    border-radius: 17px;
-   // background:black;
-    overflow: hidden;
-    text-align: center;
-}
-.btn-group {
-    display: flex;
-    width: 200%; /* Twice the width of the .btn-toggle div */
-    height: 100%;
-    transition: transform 0.3s ease-in-out;
-}
-.btn-toggle-switch {
-    width: 50%; /* Half the width of the .btn-group div */
-    height: 100%;
-    border: none;
-    background: none;
-    color: #333;
-    font-size: 12px;
-    line-height: 34px;
-    padding:0;
-}
-.btn-toggle-switch.active {
-    color: #fff;
-    background: #F26522;
-}
-        </style>
+            display: inline-block;
+            position: relative;
+            width: 90px;
+            height: 22px;
+            //border: 1px solid white;
+            border-radius: 99px border-radius: 17px;
+            // background:black;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .btn-group {
+            display: flex;
+            width: 200%;
+            /* Twice the width of the .btn-toggle div */
+            height: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .btn-toggle-switch {
+            width: 50%;
+            /* Half the width of the .btn-group div */
+            height: 100%;
+            border: none;
+            background: none;
+            color: #333;
+            font-size: 12px;
+            line-height: 34px;
+            padding: 0;
+        }
+
+        .btn-toggle-switch.active {
+            color: #fff;
+            background: #F26522;
+        }
+    </style>
 </head>
 
 <body>
@@ -317,6 +321,7 @@
                                     <span class="notification-counter">{{ Cart::getContent()->count() }}</span>
                                 </a>
                             </li>
+
                         </ul>
 
                     </div>
@@ -342,6 +347,21 @@
                     </div>
                 </div>
             </div>
+            @if (session('success'))
+
+                                    <div class="alert alert-success">
+
+                                     {{ session('success') }}
+
+                                    </div>
+                                    @elseif (session('error'))
+                                    <div class="alert alert-danger">
+
+                                        {{ session('error') }}
+
+                                       </div>
+
+                            @endif
             <div class="header-nav">
                 <div class="bg-white header-nav-wrapper">
                     <div class="container menu-container">
@@ -353,9 +373,9 @@
                             <ul class="menuzord-menu ">
                                 @foreach ($navSections as $navSection)
                                     <li class="{{ Route::currentRouteName() == $navSection->model ? 'active' : '' }}">
-                                       <a href="{{ route($navSection->model) }}" style="color:#002D62; "
+                                        <a href="{{ route($navSection->model) }}" style="color:#002D62; "
                                             {{ $navSection->model == 'onlineService' ? 'target=_blank' : '' }}>
-                                            {{ $navSection->{'name_' . app()->getLocale()} }}  </a>
+                                            {{ $navSection->{'name_' . app()->getLocale()} }} </a>
                                     </li>
                                 @endforeach
                                 <li class="mr-60"><button data-height="45px"
@@ -410,38 +430,47 @@
                                         <li><a href="{{ route('donation') }}"><i
                                                     class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.donation_methods')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                        <li><a href="{{ route('aboutUs') }}"><i
+                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.privacy_policy')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
-                                                    aria-hidden="true"></i>@lang('footer.sitemap')</a></li>
+                                        {{-- <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                                    aria-hidden="true"></i>@lang('footer.sitemap')</a></li> --}}
                                         {{-- <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.they_said')</a></li> --}}
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                        <li><a href="{{ route('contactUs') }}"><i
+                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.news')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                        <li><a href="{{ route('aboutUs') }}"><i
+                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.donation_policies')</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
-                                                    aria-hidden="true"></i>@lang('footer.your_guide')</a></li>
+                                        {{-- <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5" --}}
+                                        {{-- aria-hidden="true"></i>@lang('footer.your_guide')</a></li> --}}
                                         {{-- <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.aqeeqah_sacrifices')</a></li> --}}
                                         <li><a href="{{ route('kafarahv') }}"><i
                                                     class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.penances')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                        <li><a href="{{ route('projects') }}"><i
+                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.building_mosques')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                        <li><a href="{{ route('projects') }}"><i
+                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.water_projects')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                        <li><a href="{{ route('projects') }}"><i
+                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.educational_projects')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                        <li><a href="{{ route('projects') }}"><i
+                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.development_projects')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                        <li><a href="{{ route('projects') }}"><i
+                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.medical_projects')</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                        <li><a href="{{ route('projects') }}"><i
+                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.halal_earning_projects')</a></li>
                                     </ul>
                                 </div>
@@ -684,8 +713,8 @@
         // });
         $(document).ready(function() {
             $('#en').on('click', function() {
-               // $(this).addClass('active');
-               // $('#arabic').removeClass('active');
+                // $(this).addClass('active');
+                // $('#arabic').removeClass('active');
                 // add code to switch to English language
                 var language = 'en';
                 var url = '{{ route('updateLang', ['lang' => ':language']) }}'.replace(':language',
@@ -696,8 +725,8 @@
             });
 
             $('#arabic').on('click', function() {
-               // $(this).addClass('active');
-               // $('#en').removeClass('active');
+                // $(this).addClass('active');
+                // $('#en').removeClass('active');
                 // add code to switch to Arabic language
                 var language = 'ar';
                 var url = '{{ route('updateLang', ['lang' => ':language']) }}'.replace(':language',
@@ -708,14 +737,25 @@
             });
         });
     </script>
-<script>
-    $('.btn-toggle-switch').click(function() {
-    var $btnGroup = $(this).parent();
-    $btnGroup.find('.btn-toggle-switch.active').removeClass('active');
-    $(this).addClass('active');
-    $btnGroup.css('transform', $(this).is(':first-child') ? 'translateX(0)' : 'translateX(-50%)');
-});
+    <script>
+        $('.btn-toggle-switch').click(function() {
+            var $btnGroup = $(this).parent();
+            $btnGroup.find('.btn-toggle-switch.active').removeClass('active');
+            $(this).addClass('active');
+            $btnGroup.css('transform', $(this).is(':first-child') ? 'translateX(0)' : 'translateX(-50%)');
+        });
     </script>
+    <script>
+        // const cloudinary = require('cloudinary').v2;
+
+        // cloudinary.config({
+        //     cloud_name: 'YOUR_CLOUD_NAME',
+        //     api_key: '',
+        //     api_secret: 'YOUR_API_SECRET'
+        // });
+    </script>
+
+
     @stack('scripts')
 </body>
 

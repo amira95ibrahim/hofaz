@@ -14,6 +14,7 @@ class Marketer extends Model
         'name_en',
         'number',
         'status',
+        
     ];
 
     public function projects()
@@ -24,5 +25,9 @@ class Marketer extends Model
     public function donations()
     {
         return $this->hasMany(Donation::class);
+    }
+    public function scopeActive($query)
+    {
+        return $query->where('status', true);
     }
 }

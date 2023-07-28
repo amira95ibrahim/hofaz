@@ -15,6 +15,7 @@ return[
     'enter_consignee_name' => 'Enter The Consignee\'s name',
     'enter_email_address' => 'Enter Email Address',
     'enter_phone_number' => 'Enter Phone Number',
+    'donate_now'=>'donate your gift',
 
 
 ];

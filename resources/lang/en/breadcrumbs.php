@@ -23,5 +23,8 @@ return [
     'hofath_news' => 'Hofath News',
     'news' => 'News',
     'Kafarah'=>'Kafarah',
-   
+    'amount'=>'amount',
+    'kwd'=>' ',
+    'unknown'=>'unknown',
+
 ];

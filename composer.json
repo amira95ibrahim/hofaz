@@ -5,7 +5,8 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^8.1",
+        "ar-php/ar-php": "^1.0",
         "darryldecode/cart": "^4.2",
         "doctrine/dbal": "~2.3",
         "fruitcake/laravel-cors": "^2.0",
@@ -20,6 +21,8 @@
         "laravelcollective/html": "^6.2",
         "maatwebsite/excel": "^3.1",
         "myfatoorah/laravel-package": "^2.1",
+        "twilio/sdk": "^7.7",
+        "spondonit/ar-php": "dev-master" ,
         "yajra/laravel-datatables-buttons": "4.*",
         "yajra/laravel-datatables-oracle": "^9.0"
     },

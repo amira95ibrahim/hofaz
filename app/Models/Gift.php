@@ -75,11 +75,11 @@ class Gift extends Model
     {
         return $this->hasMany(\App\Models\GiftCard::class, 'gift_id');
     }
-
-    public function giftable()
+public function giftable()
     {
         return $this->morphTo(__FUNCTION__, 'model', 'model_id');
     }
+
 
     /**
      * @param $query

@@ -1,10 +1,12 @@
 <?php
-
+// use App\Twilio\Rest\Client;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\SadaqahController;
 use App\Http\Controllers\Admin\ZakahController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\MarketersController;
+use App\Http\Controllers\Admin\ReportsController;
 use App\Http\Controllers\Admin\GiftController;
 use App\Http\Controllers\Admin\KafalaTypeController;
 use App\Http\Controllers\Admin\KafalaFieldsController;
@@ -34,7 +36,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
+
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
@@ -142,17 +144,17 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::post('make-payment', 'MyFatoorahController@index')->name('make-payment');
     Route::post('initiate', 'MyFatoorahController@initiate')->name('initiate');
 
+
     Route::get('getPaymentMethods', 'MyFatoorahController@getPaymentMethods')->name('getPaymentMethods');
-    Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed')->middleware(('frontend.auth'));
+    Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed');//->middleware(('frontend.auth'));
     Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation')->middleware(('frontend.auth'));
     Route::post('myfatoorah/callback/periodic', 'MyFatoorahController@callback_periodic')->name('myfatoorah.callback_periodic');
 });
 
 
 Route::namespace('App\Http\Controllers')->group(function () {
-Route::get('/payment', 'PaymentController@index')->name('payment');
-Route::get('/paymentfromcart', 'PaymentController@paymentfromcart')->name('paymentfromcart');
-
+    Route::get('/payment', 'PaymentController@index')->name('payment');
+    Route::get('/paymentfromcart', 'PaymentController@paymentfromcart')->name('paymentfromcart');
 });
 
 Route::get('/iftar', function () {
@@ -218,7 +220,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::post('projects/homepage/{project}', [ProjectController::class, 'homepageUpdate'])->name('projects.homepage');
     Route::get('projects-page', [ProjectController::class, 'projectsDetails'])->name('projectsPage.edit');
     Route::patch('projects-page', [ProjectController::class, 'projectsDetailsUpdate'])->name('projectsPage.update');
-
+    //Repote
+    Route::resource('admin/reports', ReportsController::class);
+    //Marketers
+    Route::resource('admin/marketers', MarketersController::class);
+    Route::post('marketers/status/{marketer}', [MarketersController::class, 'changeStatus'])->name('marketer.status');
     // GIFT
     Route::resource('gifts', GiftController::class)->only(['create', 'store']);
 
@@ -291,3 +297,24 @@ Route::fallback(function () {
 
 
 
+Route::get('/send-message', function () {
+    $accountSid = 'AC995a83c77a83f7555c7ef81fecb05daa';
+    $authToken = 'dee07cd8e23c6a2a133769770ed8a49d';
+    $twilioNumber = 'whatsapp:+12568576201';
+    $recipientNumber = 'whatsapp:+201558041433';
+
+    // $client = new Client($accountSid, $authToken);
+    $client = new \Twilio\Rest\Client($accountSid, $authToken);
+    $message = $client->messages->create(
+        $recipientNumber,
+        [
+            'from' => $twilioNumber,
+            'body' => 'Hello, this is a message from my app!'
+        ]
+    );
+
+    return response()->json([
+        'message' => 'Message sent',
+        'sid' => $message->sid
+    ]);
+});

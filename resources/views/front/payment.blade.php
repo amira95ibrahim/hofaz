@@ -169,12 +169,12 @@
                                         <div class="col-sm-12 text-center mt-20">
                                             <h3 class="font-weight-bold text-black-333 pr-0">
 
-                                                مبلغ التبرع:
+                                               @lang('breadcrumbs.amount')  :
                                                 <span
                                                     class="text-theme-colored font-weight-700 amount">{{
                                                         number_format(session()->has('amount') ? session('amount') : Cart::getTotal())
                                                       }}
-                                                    د.ك</span>
+                                             @lang('breadcrumbs.kwd')</span>
                                             </h3>
                                         </div>
                                         {{-- <div class="col-sm-12">
@@ -283,74 +283,15 @@
                                         <div id="loggedTab" class="tab-content clearfix" style="display: none">
                                             <div class="col-sm-12 text-center mt-20">
                                                 <h3 class="font-weight-bold text-black-333 pr-0">
-                                                    مبلغ التبرع:
+                                                    @lang('breadcrumbs.amount'):
                                                     <span
                                                         class="text-theme-colored font-weight-700 amount">     {{
                                                             number_format(session()->has('amount') ? session('amount') : Cart::getTotal())
                                                           }}
-                                                        د.ك</span>
+                                                       @lang('breadcrumbs.kwd')</span>
                                                 </h3>
                                             </div>
-                                            {{-- <div class="col-sm-12">
-                                                <div class="d-flex align-items-center justify-content-center">
-                                                    <div class="col-md-6">
-                                                        <label class="mt-2">@lang('iftar.payment_method')</label>
-                                                        <div class="plans">
-                                                            <div style="clear: both;"></div>
-                                                            <label class="plan basic-plan" for="basic">
-                                                                <input checked type="radio" name="plan" id="basic"/>
-                                                                <div class="plan-content">
-                                                                    <img loading="lazy" src="{{ asset('images/myfatoorah.jpeg') }}"
-                                                                         alt=""/>
-                                                                </div>
-                                                            </label>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
-                                            {{-- <div class="col-sm-12">
-                                                <div class="d-flex align-items-center justify-content-center">
-                                                    <div class="col-md-10">
-                                                        <label class="mt-2">@lang('iftar.payment_method')</label>
-                                                        <div class="plans">
-                                                            <div style="clear: both;"></div>
-                                                            <label class="plan basic-plan" for="basic">
-                                                                <input checked type="radio" name="plan"
-                                                                    id="basic" />
-                                                                <div class="plan-content">
-                                                                    <img loading="lazy"
-                                                                        src="{{ asset('images/Visa-Master.png') }}"
-                                                                        alt="" />
-                                                                </div>
-                                                            </label>
-
-                                                            <label class="plan complete-plan" for="complete">
-                                                                <input type="radio" id="complete" name="plan" />
-                                                                <div class="plan-content">
-                                                                    <img loading="lazy" src="{{ asset('images/knet.png') }}"
-                                                                        alt="" />
-                                                                </div>
-                                                            </label>
-                                                            <label class="plan complete-plan" for="complete">
-                                                                <input type="radio" id="complete" name="plan" />
-                                                                <div class="plan-content">
-                                                                    <img loading="lazy" src="{{ asset('images/Gpay.png') }}"
-                                                                        alt="" />
-                                                                </div>
-                                                            </label>
-                                                            <label class="plan complete-plan" for="complete">
-                                                                <input type="radio" id="complete" name="plan" />
-                                                                <div class="plan-content">
-                                                                    <img loading="lazy"
-                                                                        src="{{ asset('images/apple_pay2.png') }}"
-                                                                        alt="" />
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
+                                           
                                             <div class="col-sm-12">
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <div class="col-md-10">
@@ -407,31 +348,15 @@
                                             </div>
                                             <div class="col-sm-12 text-center mt-20">
                                                 <h3 class="font-weight-bold text-black-333 pr-0">
-                                                    مبلغ التبرع:
+                                                    @lang('breadcrumbs.amount'):
                                                     <span
                                                         class="text-theme-colored font-weight-700 amount">{{
                                                             number_format(session()->has('amount') ? session('amount') : Cart::getTotal())
                                                           }}
-                                                        د.ك</span>
+                                                    @lang('breadcrumbs.kwd')</span>
                                                 </h3>
                                             </div>
-                                            {{-- <div class="col-sm-12">
-                                                <div class="d-flex align-items-center justify-content-center">
-                                                    <div class="col-md-6">
-                                                        <label class="mt-2">@lang('iftar.payment_method')</label>
-                                                        <div class="plans">
-                                                            <div style="clear: both;"></div>
-                                                            <label class="plan basic-plan" for="basic">
-                                                                <input checked type="radio" name="plan" id="basic"/>
-                                                                <div class="plan-content">
-                                                                    <img loading="lazy" src="{{ asset('images/myfatoorah.jpeg') }}"
-                                                                         alt=""/>
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
+
                                             <div class="col-sm-12">
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <div class="col-md-10">
@@ -509,57 +434,16 @@
                                             </div>
                                             <div class="col-sm-12 text-center mt-20">
                                                 <h3 class="font-weight-bold text-black-333 pr-0">
-                                                    مبلغ التبرع:
+                                                    @lang('breadcrumbs.amount'):
                                                     <span
                                                         class="text-theme-colored font-weight-700 amount">{{
                                                             number_format(session()->has('amount') ? session('amount') : Cart::getTotal())
                                                           }}
-                                                        د.ك</span>
+                                                        @lang('breadcrumbs.kwd')</span>
                                                 </h3>
                                             </div>
 
-                                            {{-- <div class="col-sm-12">
-                                                <div class="d-flex align-items-center justify-content-center">
-                                                    <div class="col-md-10">
-                                                        <label class="mt-2">@lang('iftar.payment_method')</label>
-                                                        <div class="plans">
-                                                            <div style="clear: both;"></div>
-                                                            <label class="plan basic-plan" for="basic">
-                                                                <input checked type="radio" name="plan"
-                                                                    id="basic" />
-                                                                <div class="plan-content">
-                                                                    <img loading="lazy"
-                                                                        src="{{ asset('images/Visa-Master.png') }}"
-                                                                        alt="" />
-                                                                </div>
-                                                            </label>
 
-                                                            <label class="plan complete-plan" for="complete">
-                                                                <input type="radio" id="complete" name="plan"  />
-                                                                <div class="plan-content">
-                                                                    <img loading="lazy" src="{{ asset('images/knet.png') }}"
-                                                                        alt="" />
-                                                                </div>
-                                                            </label>
-                                                            <label class="plan complete-plan" for="complete">
-                                                                <input type="radio" id="complete" name="plan" />
-                                                                <div class="plan-content">
-                                                                    <img loading="lazy" src="{{ asset('images/Gpay.png') }}"
-                                                                        alt="" />
-                                                                </div>
-                                                            </label>
-                                                            <label class="plan complete-plan" for="complete">
-                                                                <input type="radio" id="complete" name="plan" />
-                                                                <div class="plan-content">
-                                                                    <img loading="lazy"
-                                                                        src="{{ asset('images/apple_pay2.png') }}"
-                                                                        alt="" />
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
                                             <div class="col-sm-12">
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <div class="col-md-10">
@@ -676,6 +560,7 @@
             $('#amount').val(amount);
             $('.amount').html(amount+'د.ك');
             // Use the retrieved data to process the donation
+            console.log(model_id);  console.log(model);
         });
     </script>
 @endpush

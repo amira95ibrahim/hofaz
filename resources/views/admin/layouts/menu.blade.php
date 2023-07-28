@@ -1,14 +1,12 @@
 <li class="header">القائمة الرئيسية</li>
 <li class='active'>
-    <a class="nav-link {{ Request::is('admin/home*') ? 'active' : '' }}"
-        href="{{ route('admin.home') }}">
+    <a class="nav-link {{ Request::is('admin/home*') ? 'active' : '' }}" href="{{ route('admin.home') }}">
         <i class="fa fa-dashboard"></i> <span>الرئيسية</span>
     </a>
 </li>
 
 <li class="">
-    <a class="nav-link {{ Request::is('admin/countries*') ? 'active' : '' }}"
-        href="{{ route('admin.countries.index') }}">
+    <a class="nav-link {{ Request::is('admin/countries*') ? 'active' : '' }}" href="{{ route('admin.countries.index') }}">
         <i class="fa fa-globe"></i> <span>الدول</span>
     </a>
 </li>
@@ -16,7 +14,7 @@
 
 <li class='treeview '>
     <a href="#">
-    <i class="fa fa-smile-o" aria-hidden="true"></i>  <span>صدقة</span>
+        <i class="fa fa-smile-o" aria-hidden="true"></i> <span>صدقة</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
         </span>
@@ -29,11 +27,11 @@
             </a>
         </li>
         <li>
-         <a class="nav-link {{ Request::is('admin/sadaqat*') ? 'active' : '' }}"
-            href="{{ route('admin.sadaqahPage.edit') }}">
+            <a class="nav-link {{ Request::is('admin/sadaqat*') ? 'active' : '' }}"
+                href="{{ route('admin.sadaqahPage.edit') }}">
 
-            <i class="fa fa-edit" aria-hidden="true"></i> وصف الصدقة
-        </a>
+                <i class="fa fa-edit" aria-hidden="true"></i> وصف الصدقة
+            </a>
 
         </li>
     </ul>
@@ -45,7 +43,7 @@
 
 <li class='treeview '>
     <a href="#">
-    <i class="fa fa-smile-o" aria-hidden="true"></i>  <span>الاقسام</span>
+        <i class="fa fa-smile-o" aria-hidden="true"></i> <span>الاقسام</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
         </span>
@@ -54,11 +52,11 @@
         <li>
             <a class="nav-link {{ Request::is('admin/categories*') ? 'active' : '' }}"
                 href="{{ route('admin.categories.index') }}">
-                <i class="fa fa-list"></i>  الاقسام</a>
+                <i class="fa fa-list"></i> الاقسام</a>
             </a>
         </li>
         <li>
-         {{-- <a class="nav-link {{ Request::is('admin/sadaqat*') ? 'active' : '' }}"
+            {{-- <a class="nav-link {{ Request::is('admin/sadaqat*') ? 'active' : '' }}"
             href="{{ route('admin.sadaqahPage.edit') }}">
 
             <i class="fa fa-edit" aria-hidden="true"></i> وصف الصدقة
@@ -74,7 +72,7 @@
 
 <li class='treeview '>
     <a class="nav-link nav-dropdown-toggle" href="#">
-        <i class="fa fa-money"></i>  <span>ذكاة</span>
+        <i class="fa fa-money"></i> <span>ذكاة</span>
         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i> </span>
     </a>
     <ul class="treeview-menu">
@@ -98,21 +96,21 @@
 <!---------------------- kafala -------------------->
 <li class='treeview '>
     <a class="nav-link nav-dropdown-toggle" href="#">
-        <i class="fa fa-user"></i>  <span>كفالة</span>
+        <i class="fa fa-user"></i> <span>كفالة</span>
         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i> </span>
     </a>
     <ul class="treeview-menu">
-    <li class="nav-item">
+        <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.kafalat.index') }}">
-            <i class="fa fa-user"></i> كفالة</a>
+                <i class="fa fa-user"></i> كفالة</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.kafalaTypes.index') }}">
-            <i class="fa fa-users" aria-hidden="true"></i> انواع الكفالة</a>
+                <i class="fa fa-users" aria-hidden="true"></i> انواع الكفالة</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.kafalaFields.index') }}">
-            <i class="fa fa-sticky-note-o" aria-hidden="true"></i> حقول الكفالة</a>
+                <i class="fa fa-sticky-note-o" aria-hidden="true"></i> حقول الكفالة</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.kafalahPage.edit') }}">
@@ -127,17 +125,60 @@
 <li class='treeview '>
     <a href="{{ route('admin.projects.index') }}">
         <i class="fa fa-th"></i>
-                <span>المشاريع</span>
-                <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-                </span>
+        <span>المشاريع</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
     </a>
     <ul class="treeview-menu">
         <li>
             <a href="{{ route('admin.projects.index') }}">
-            <i class="fa fa-circle-o"></i>عرض المشاريع
-            </a></li>
+                <i class="fa fa-circle-o"></i>عرض المشاريع
+            </a>
+        </li>
         <li> <a href="{{ route('admin.projectsPage.edit') }}"><i class="fa fa-circle-o"></i>وصف المشاريع</a></li>
+    </ul>
+
+</li>
+<!---------------------- 'Reports' -------------------->
+
+
+<li class='treeview '>
+    <a href="{{ route('admin.reports.index') }}">
+        <i class="fa fa-th"></i>
+        <span>تقارير المشاريع</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+    </a>
+    <ul class="treeview-menu">
+        <li>
+            <a href="{{ route('admin.reports.index') }}">
+                <i class="fa fa-circle-o"></i> تقارير المشاريع
+            </a>
+        </li>
+
+    </ul>
+
+</li>
+<!---------------------- 'Marketers' -------------------->
+
+
+<li class='treeview '>
+    <a href="{{ route('admin.marketers.index') }}">
+        <i class="fa fa-th"></i>
+        <span>المندوبين</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+    </a>
+    <ul class="treeview-menu">
+        <li>
+            <a href="{{ route('admin.marketers.index') }}">
+                <i class="fa fa-circle-o"></i>عرض المندوبين
+            </a>
+        </li>
+
     </ul>
 
 </li>
@@ -146,7 +187,7 @@
 
 <li class='treeview '>
     <a class="nav-link nav-dropdown-toggle" href="#">
-    <i class="fa fa-wrench"></i>  <span>وقف</span>
+        <i class="fa fa-wrench"></i> <span>وقف</span>
         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i> </span>
     </a>
     <ul class="treeview-menu">
@@ -168,18 +209,18 @@
 
 <li class='treeview '>
     <a class="nav-link nav-dropdown-toggle" href="#">
-    <i class="fa fa-smile-o" aria-hidden="true"></i>  <span>كفارة</span>
+        <i class="fa fa-smile-o" aria-hidden="true"></i> <span>كفارة</span>
         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i> </span>
     </a>
     <ul class="treeview-menu">
         <li>
 
-        <a class="nav-link {{ Request::is('admin/kafarah*') ? 'active' : '' }}"
+            <a class="nav-link {{ Request::is('admin/kafarah*') ? 'active' : '' }}"
                 href="{{ route('admin.kafarah.index') }}">
 
-                <i class="fa fa-list"></i>  اوجه الكفارة</a>
+                <i class="fa fa-list"></i> اوجه الكفارة</a>
         </li>
-          <li>
+        <li>
 
 
         </li>
@@ -191,7 +232,7 @@
 
 <li class="treeview">
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-wrench"></i> <span>إغاثة</span>
-    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i> </span>
+        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i> </span>
     </a>
     <ul class="treeview-menu">
         <li class="nav-item">
@@ -209,28 +250,27 @@
 <!------------------------- gifts ---------------------------->
 
 <li class="nav-item">
-    <a class="nav-link {{ Request::is('admin/gifts*') ? 'active' : '' }}"
-       href="{{ route('admin.gifts.create') }}">
+    <a class="nav-link {{ Request::is('admin/gifts*') ? 'active' : '' }}" href="{{ route('admin.gifts.create') }}">
         <i class="fa fa-gift"></i>
         <span>هدية</span>
 
     </a>
 </li>
 
-{{--<li class="nav-item">--}}
-{{--    <a class="nav-link {{ Request::is('admin/kafalaFields*') ? 'active' : '' }}"--}}
-{{--        href="{{ route('admin.kafalaFields.index') }}">--}}
-{{--        <i class="icon-user-follow"></i>--}}
-{{--        @lang('models/kafalaFields.plural')--}}
-{{--    </a>--}}
-{{--</li>--}}
-{{--<li class="nav-item">--}}
-{{--    <a class="nav-link {{ Request::is('admin/kafalat*') ? 'active' : '' }}"--}}
-{{--        href="{{ route('admin.kafalat.index') }}">--}}
-{{--        <i class="icon-user-follow"></i>--}}
-{{--        @lang('models/kafalat.plural')--}}
-{{--    </a>--}}
-{{--</li>--}}
+{{-- <li class="nav-item"> --}}
+{{--    <a class="nav-link {{ Request::is('admin/kafalaFields*') ? 'active' : '' }}" --}}
+{{--        href="{{ route('admin.kafalaFields.index') }}"> --}}
+{{--        <i class="icon-user-follow"></i> --}}
+{{--        @lang('models/kafalaFields.plural') --}}
+{{--    </a> --}}
+{{-- </li> --}}
+{{-- <li class="nav-item"> --}}
+{{--    <a class="nav-link {{ Request::is('admin/kafalat*') ? 'active' : '' }}" --}}
+{{--        href="{{ route('admin.kafalat.index') }}"> --}}
+{{--        <i class="icon-user-follow"></i> --}}
+{{--        @lang('models/kafalat.plural') --}}
+{{--    </a> --}}
+{{-- </li> --}}
 <!------------------------- relief ---------------------------->
 
 
@@ -244,8 +284,7 @@
 </li>
 
 <li class="nav-item">
-    <a class="nav-link {{ Request::is('admin/news*') ? 'active' : '' }}"
-        href="{{ route('admin.news.index') }}">
+    <a class="nav-link {{ Request::is('admin/news*') ? 'active' : '' }}" href="{{ route('admin.news.index') }}">
         <i class="fa fa-edit"></i>
         <span>الاخبار </span>
     </a>
@@ -255,7 +294,7 @@
     <a class="nav-link {{ Request::is('admin/achievements*') ? 'active' : '' }}"
         href="{{ route('admin.achievements.index') }}">
         <i class="fa fa-calendar"></i>
-       <span> انجازات حفاظ </span>
+        <span> انجازات حفاظ </span>
     </a>
 </li>
 
@@ -288,7 +327,7 @@
 <li class="header">الموقع</li>
 <li class="">
     <a class="nav-link {{ Request::is('admin/settings*') ? 'active' : '' }}"
-        href="{{ route('admin.settings.edit' , 1) }}">
+        href="{{ route('admin.settings.edit', 1) }}">
         <i class="fa fa-circle-o text-yellow"></i> <span>الاعدادات</span>
     </a>
 </li>
@@ -301,7 +340,3 @@
     </a>
 </li>
 <!-------------------------------------------->
-
-
-
-

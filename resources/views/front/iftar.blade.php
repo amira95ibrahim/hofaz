@@ -587,7 +587,7 @@
 
             let price = $('input[name="amount"]').val();
             let model = 'iftar';
-            let model_id = 0;
+            let model_id = 1;
              console.log(price);
             if (price > 0) {
                 sessionStorage.setItem('model', model);
