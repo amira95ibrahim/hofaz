@@ -80,8 +80,8 @@
                                                     value="{{ $gift->giftable->initial_amount }}">
                                                 {{--        <input type="text" name="donate" class="form-control br-20" value="10"> --}}
                                                 <button type="button" id="{{ $gift->id }}"
-                                                    class="btn btn-default mt-1 btn-xl btn-theme-colored btn-flat mr-5 selectProject">@lang('gift.donate_your_gift')</button>
-                                                <button type="button" style="display: none"
+                                                    class="btn btn-default mt-1 btn-xl btn-theme-colored btn-flat mr-5 selectProject"
+                                                    data-project-name="{{ $gift->giftable->name_ar }}">@lang('gift.donate_your_gift')</button>  <button type="button" style="display: none"
                                                     class="btn btn-dark mt-1 btn-xl btn-theme-colored btn-flat mr-5"
                                                     disabled><i class="fa fa-check"></i></button>
                                         </div>
@@ -282,38 +282,17 @@
         });
       </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const selectCardButtons = document.querySelectorAll('.select-card-btn');
+$(document).ready(function() {
+  // Add an event listener to the gift card buttons
+  $('.selectProject').click(function() {
+    // Get the name of the selected project from the data attribute
+    let projectName = $(this).data('project-name');
+    // Update the value of the project_name input field
+    $('input[name="project_name"]').val(projectName);
+  });
 
-        selectCardButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Reset all buttons and show the "Donate Your Gift" button
-                selectCardButtons.forEach(btn => btn.style.display = 'block');
-                button.style.display = 'none';
-
-                // Disable all "Donate Your Gift" buttons and enable the selected button
-                selectCardButtons.forEach(btn => btn.disabled = false);
-                button.disabled = true;
-
-                // Get the selected card data and submit the form
-                const cardData = {
-                    project_name: button.parentElement.querySelector('input[name="project_name"]').value,
-                    donate: button.parentElement.querySelector('input[name="donate"]').value
-                    // Add more data fields if needed
-                };
-
-                // Create a hidden input field to store the card data and append it to the form
-                const cardDataInput = document.createElement('input');
-                cardDataInput.type = 'hidden';
-                cardDataInput.name = 'selected_card_data';
-                cardDataInput.value = JSON.stringify(cardData);
-                button.parentElement.appendChild(cardDataInput);
-
-                // Submit the form
-                // button.parentElement.submit();
-            });
-        });
-    });
+  // Rest of your code...
+});
 </script>
 
     <script>

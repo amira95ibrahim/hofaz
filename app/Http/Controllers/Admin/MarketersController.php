@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 use App\DataTables\Admin\MarketersDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\Marketer;
 use Illuminate\Http\Request;
+use App\Models\Project;
 use Flash;
 
 class MarketersController extends Controller
@@ -35,7 +37,9 @@ class MarketersController extends Controller
      */
     public function create()
     {
-        //
+
+        $projects = Project::Active()->select('id', 'name_' . app()->getLocale())->get();
+        return view('admin.marketers.create', compact('projects'));
     }
 
     /**
@@ -46,7 +50,25 @@ class MarketersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+       // dd($input);
+        // foreach ($request->country_id as $country){
+        //     $image = $request->file('image');
+        //     $path = 'projects/' . time() . rand() .  '.' . $image->extension();
+        //     $image->storeAs('public/', $path);
+
+            Marketer::create([
+                'name_en' => $request->name_en,
+                'name_ar' => $request->name_ar,
+                'number'=>$request->initial_amount,
+                'status' => $request->active,
+                // 'category_id' => $request->category_id,
+            ]);
+        // }
+
+        Flash::success("تم أضافة مندوب جديد");
+
+        return redirect(route('admin.marketers.index'));
     }
 
     /**
@@ -68,7 +90,18 @@ class MarketersController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $marketer = Marketer::find($id);
+
+         $projects = Project::Active()->select('id', 'name_' . app()->getLocale())->get();
+
+        if (empty($marketer)) {
+            Flash::error(__('messages.not_found', ['model' => __('models/marketer.singular')]));
+
+            return redirect(route('admin.marketers.index'));
+        }
+
+        return view('admin.marketers.edit')->with('marketer', $marketer)->with('projects', $projects);
     }
 
     /**
@@ -80,7 +113,24 @@ class MarketersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $marketer = Marketer::find($id);
+
+        if (empty($marketer)) {
+            Flash::error(__('messages.not_found', ['model' => __('models/marketers.singular')]));
+
+            return redirect(route('admin.marketers.index'));
+        }
+
+        $input = $request->all();
+
+
+        $marketer->fill($input);
+        $marketer->save();
+
+
+        Flash::success(__('messages.updated', ['model' => __('models/marketers.singular')]));
+
+        return redirect(route('admin.marketers.index'));
     }
 
     /**
@@ -91,6 +141,18 @@ class MarketersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $marketer = Marketer::find($id);
+
+        if (empty($marketer)) {
+            Flash::error(__('messages.not_found', ['model' => __('models/marketer.singular')]));
+
+            return redirect(route('admin.marketers.index'));
+        }
+
+        $marketer->delete();
+
+        Flash::success(__('messages.deleted', ['model' => __('models/marketers.singular')]));
+
+        return redirect(route('admin.marketers.index'));
     }
 }

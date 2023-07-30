@@ -225,6 +225,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     //Marketers
     Route::resource('admin/marketers', MarketersController::class);
     Route::post('marketers/status/{marketer}', [MarketersController::class, 'changeStatus'])->name('marketer.status');
+    Route::get('marketer-edit/{marketer}', [MarketersController::class, 'edit'])->name('marketer.edit');
+    Route::delete('marketer-delete/{marketer}', [MarketersController::class, 'destroy'])->name('delete');
+
+
     // GIFT
     Route::resource('gifts', GiftController::class)->only(['create', 'store']);
 

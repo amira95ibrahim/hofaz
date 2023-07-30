@@ -19,15 +19,15 @@ class MarketersDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable()
-        ->addColumn('action', 'admin.projects.datatables_actions')
+        return $dataTable
+        ->addColumn('action', 'admin.marketers.datatables_actions')
             ->editColumn('status', function ($q) {
                 return ($q->status) ? '<span class="tag tag-success">نشط </span>' : '<span class="tag tag-warning">غير نشط </span>';
             })
             ->rawColumns(['action', 'status', 'homepage'])
-            ->editColumn('country_id', function ($q) {
-                return $q->country->name;
-            })
+            // ->editColumn('country_id', function ($q) {
+            //     return $q->country->name;
+            // })
             ->editColumn('cost', function ($q) {
                 return number_format($q->cost) . ' د.ك';
             })
@@ -103,8 +103,13 @@ class MarketersDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id' => new Column(['title' => " id", 'data' => 'id']),
-            'name_ar' => new Column(['title' => "الاسم ", 'data' => 'name_ar']),
+            'id' => new Column(['title' => " الرقم", 'data' => 'id']),
+            'name_ar' => new Column(['title' => "  الاسم ", 'data' => 'name_ar']),
+            'name_en' => new Column(['title' => " الاسم ", 'data' => 'name_en']),
+
+            'created_at' => new Column(['title' => " تاريخ التسجيل", 'data' => 'created_at']),
+            'phone' => new Column(['title' => "التليفون ", 'data' => 'number']),
+            'status' => new Column(['title' => "التفعيل ", 'data' => 'status']),
 
         ];
     }
