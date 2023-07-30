@@ -78,10 +78,8 @@
 
                                     </select>
                                 </div>
-                                <div class="col-md-6"></div>
-                                <div class="col-md-4"></div>
 
-                                <div class="col-md-2 mr-4 text-left">
+                                <div class="col-md-2  text-left">
                                     <br>
                                     <button class="btn btn-primary" type="submit">بحث</button>
                                 </div>

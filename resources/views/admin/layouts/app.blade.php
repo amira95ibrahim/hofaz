@@ -38,9 +38,9 @@
     {{-- <link rel="stylesheet" --}}
         {{-- href="https://hofath.org/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"> --}}
     <!-- Daterange picker -->
-    {{-- <link rel="stylesheet" href="https://hofath.org/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+     <link rel="stylesheet" href="https://hofath.org/bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <link rel="stylesheet"
-        href="https://hofath.org/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"> --}}
+        href="https://hofath.org/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <script src="/bower_components/ckeditor/ckeditor.js"></script>
     {{-- <link rel="stylesheet" href="/bower_components/select2/dist/css/select2.min.css"> --}}
@@ -72,6 +72,7 @@
         .select2-results__option,
         .select2-selection__rendered {
             text-align: right !important;
+            /* padding: 2px; */
         }
     </style>
     @stack('page_css')

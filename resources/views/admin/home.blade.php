@@ -22,7 +22,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua boxx">
             <div class="inner text-right">
-                <h3>310715</h3>
+                <h3>{{count($Donations)}}</h3>
                 <p >@lang('dashboard.number_of_sucessful_donations')</p>
             </div>
             <div class="icon text-left">
@@ -37,7 +37,7 @@
           <!-- small box -->
           <div class="small-box bg-green boxx">
             <div class="inner text-right">
-                <h3>320</h3>
+                <h3>{{count($Projects)-count($Ended_Projects)}}</h3>
                 <p>  @lang('dashboard.number_of_projects')</p>
             </div>
             <div class="icon text-left">
@@ -51,7 +51,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow boxx">
             <div class="inner text-right">
-               <h3> 26563   </h3>
+               <h3> {{count($Donations)}}   </h3>
                <p>@lang('dashboard.doners')</p>
             </div>
             <div class="icon text-left">
@@ -65,7 +65,7 @@
           <!-- small box -->
           <div class="small-box bg-red boxx">
             <div class="inner text-right">
-               <h3> 545 </h3>
+               <h3> {{count($Ended_Projects)}} </h3>
                <p> @lang('dashboard.Ended_projects')</p>
             </div>
             <div class="icon text-left">
@@ -137,9 +137,23 @@
                             </td>
                         </tr>
 
+
+                        @foreach($Donations as $key => $donation)
+                        <tr>
+                          <td><a href="donates/getpayinfo/chg_LV02H0720230707Mc2q1706163">{{$donation->id}}</a></td>
+                          <td>{{$donation->model}}</td>
+                          <td><span class="label bg-red">{{$donation->status}}</span></td>
+                          <td>
+                            <div class="sparkbar" data-color="#00a65a" data-height="20">{{$donation->amount}} د.ك.</div>
+                          </td>
+                        </tr>
+                      @endforeach
 	                  </tbody>
 	                </table>
 	              </div>
+                  <div class="box-footer clearfix">
+                    {{ $Donations->links() }}
+                  </div>
 	              <!-- /.table-responsive -->
 	            </div>
 	            <!-- /.box-body -->
