@@ -175,19 +175,20 @@
             });
             selectSadaqah($('.product_data').val());
             $('.product_data').on('change', function () {
-                console.log($(this).val());
+                // console.log($(this).val());
                 selectSadaqah($(this).val());
             });
 
             function selectSadaqah(val) {
-                console.log(val);
                 let id = val;
-                $('.addToCart').attr('data-identifier', 'kafarah' + id).attr('id', 'kafarah_' + id);
-                $('.quick-donation').attr('onclick', 'donateNow("kafarah_' + id + '")');
-                $('.product_price').attr('id', 'product_kafarah_' + id + '_amount');
+                // console.log('kafarah_' + id );
+
+                $('.addToCart').attr('data-identifier', 'kafarah' + id).attr('id', 'kafarah' + id);
+                $('.quick-donation').attr('onclick', 'donateNow("kafarah' + id + '")');
+                $('.product_price').attr('id', 'product_kafarah' + id + '_amount');
                // console.log('name');
                 console.log($('#name_' + val).html());
-                $('.product_name').attr('id', 'product_kafarah_' + id + '_name').val($('#name_' + val).html());
+                $('.product_name').attr('id', 'product_kafarah' + id + '_name').val($('#name_' + val).html());
             }
         });
     </script>

@@ -567,13 +567,13 @@
             $counter = $('.notification-counter');
             val = parseInt($counter.text());
             $counter.fadeTo("slow", 0.1);
-            let identifier = $(this).attr('data-identifier'); //console.log(identifier);
+            let identifier = $(this).attr('data-identifier'); console.log($('#product_' + identifier + '_name').val());
             let name = $('#product_' + identifier + '_name').val();
             let price = $('#product_' + identifier + '_amount').val();
             let image = $('#product_' + identifier + '_image').val();
             const modelArray = identifier.split("_");
             let model = modelArray[0];
-            let model_id = modelArray[1];
+            let model_id = modelArray[1]; console.log(price);
             if (price > 0) {
                 val++;
                 $.ajax({
