@@ -181,7 +181,9 @@
                 console.log(val);
                 let id = val;
                 $('.addToCart').attr('data-identifier', 'sadaqah_' + id).attr('id', 'sadaqah_' + id);
-                $('.quick-donation').attr('onclick', 'donateNow("sadaqah_' + id + '")');
+                // $('.quick-donation').attr('onclick', 'donateNow('sadaqah_' + id, 'sadaqah', id));
+                $('.quick-donation').attr('onclick', "donateNow('sadaqah_" + id + "', 'sadaqah', " + id + ")");
+
                 $('.product_price').attr('id', 'product_sadaqah_' + id + '_amount');
                 console.log('name');
                 console.log($('#name_' + val).html());

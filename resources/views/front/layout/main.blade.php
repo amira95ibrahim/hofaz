@@ -348,20 +348,18 @@
                 </div>
             </div>
             @if (session('success'))
+                <div class="alert alert-success">
 
-                                    <div class="alert alert-success">
+                    {{ session('success') }}
 
-                                     {{ session('success') }}
+                </div>
+            @elseif (session('error'))
+                <div class="alert alert-danger">
 
-                                    </div>
-                                    @elseif (session('error'))
-                                    <div class="alert alert-danger">
+                    {{ session('error') }}
 
-                                        {{ session('error') }}
-
-                                       </div>
-
-                            @endif
+                </div>
+            @endif
             <div class="header-nav">
                 <div class="bg-white header-nav-wrapper">
                     <div class="container menu-container">
@@ -567,13 +565,14 @@
             $counter = $('.notification-counter');
             val = parseInt($counter.text());
             $counter.fadeTo("slow", 0.1);
-            let identifier = $(this).attr('data-identifier'); console.log($('#product_' + identifier + '_name').val());
+            let identifier = $(this).attr('data-identifier');
+            console.log($('#product_' + identifier + '_name').val());
             let name = $('#product_' + identifier + '_name').val();
             let price = $('#product_' + identifier + '_amount').val();
             let image = $('#product_' + identifier + '_image').val();
             const modelArray = identifier.split("_");
             let model = modelArray[0];
-            let model_id = modelArray[1]; console.log(price);
+            let model_id = modelArray[1];
             if (price > 0) {
                 val++;
                 $.ajax({
@@ -610,29 +609,31 @@
 
         });
 
-        function donateNow(id) {
+        function donateNow(id, model, model_id, userId) {
             var $counter, val;
             $counter = $('.notification-counter');
             val = parseInt($counter.text());
-            // let identifier = $(this).closest('form').find('.addToCart').attr('data-identifier');
+
             let identifier = $('.addToCart').attr('data-identifier');
             console.log(identifier);
-            // let price = $(this).closest('form').find('input[name="amount"]').val();
+
             let name = $('#product_' + identifier + '_name').val();
             let price = $('#product_' + identifier + '_amount').val();
             let image = $('#product_' + identifier + '_image').val();
             const modelArray = identifier.split("_");
-            let model = modelArray[0];
-            let model_id = modelArray[1];
-            console.log(price);
+            let modelName = modelArray[0];
+            // let model_id = modelArray[1];
+
             if (price > 0) {
-                sessionStorage.setItem('model', model);
+                sessionStorage.setItem('model', modelName);
                 sessionStorage.setItem('model_id', model_id);
                 sessionStorage.setItem('amount', price);
-                // console.log(sessionStorage.getItem('amount'));
+                sessionStorage.setItem('userId', userId); // Store the userId in sessionStorage
+
                 let baseUrl = window.location.protocol + "//" + window.location.host;
 
-                let paymentURL = baseUrl + '/payment';
+                // Append the model, model_id, and userId as query parameters to the payment URL
+                let paymentURL = baseUrl + '/payment?model=' + modelName + '&model_id=' + model_id + '&u=' + userId;
                 window.location.href = paymentURL;
             } else {
                 iziToast.error({
@@ -642,18 +643,7 @@
             }
         }
 
-        // function donateNowold(id) {
-        //     let amount = $('#product_' + id + '_amount').val();
-        //     if (amount > 0) {
-        //         let paymentURL = 'http://127.0.0.1:8000/payment?amount=' + amount;
-        //         window.location.href = paymentURL;
-        //     } else {
-        //         iziToast.error({
-        //             title: '{{ __('common.add_amount_first') }}',
-        //             position: 'topCenter'
-        //         });
-        //     }
-        // }
+
         $(function() {
             $('body').on('keydown', '#searchForm', function(e) {
                 if (e.which === 32 && e.target.selectionStart === 0) {
@@ -744,15 +734,6 @@
             $(this).addClass('active');
             $btnGroup.css('transform', $(this).is(':first-child') ? 'translateX(0)' : 'translateX(-50%)');
         });
-    </script>
-    <script>
-        // const cloudinary = require('cloudinary').v2;
-
-        // cloudinary.config({
-        //     cloud_name: 'YOUR_CLOUD_NAME',
-        //     api_key: '',
-        //     api_secret: 'YOUR_API_SECRET'
-        // });
     </script>
 
 

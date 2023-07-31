@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "cloudinary": "^1.39.0",
+        "datatables.net-buttons-bs4": "^2.4.1",
         "twilio": "^4.14.0"
     }
 }

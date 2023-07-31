@@ -65,7 +65,12 @@
     <!-- jQuery UI 1.11.4 -->
     <script src="https://hofath.org/bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script src="https://hofath.org/bower_components/select2/dist/js/select2.full.min.js"></script>
-
+    
+    <link rel="stylesheet" href="//cdn.datatables.net/buttons/1.7.1/css/buttons.bootstrap4.min.css">
+    <script src="//cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.7.1/js/buttons.bootstrap4.min.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+    <script src="//cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
 
     @stack('third_party_stylesheets')
     <style>

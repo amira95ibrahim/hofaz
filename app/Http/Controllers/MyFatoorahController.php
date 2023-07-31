@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use MyFatoorah\Library\PaymentMyfatoorahApiV2;
+// use Illuminate\Support\Facades\Notification;
+// use App\Notifications\GiftCreatedNotification;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\GiftCreatedMail;
 
 class MyFatoorahController extends Controller
 {
@@ -34,16 +39,34 @@ class MyFatoorahController extends Controller
     public function index(Request $request)
     {
 
-        // if (session('model') == 8) {
-        //     // Call the route that sends a WhatsApp message to the user
+        // Set default values for model_id and u if they are not provided or set to "undefined"
+        $modelId = $request->query('model_id', 0); // Set default value to 0 if not provided
+        $u = $request->query('u', 0); // Set default value to 0 if not provided
+        //  dd($u,$modelId);
+        // Make sure the model_id and u are numeric values (if that's expected)
+        $modelId = is_numeric($modelId) ? intval($modelId) : 0;
+        $u = is_numeric($u) ? intval($u) : 0;
 
-        //     // $this.send_whatsapp_message();
-        //     return redirect()->back()->with('success', 'تم ارسال هديتك بنجاح. جزاك الله خيرا');
-        // }
-        //   dd($request->all());
+        // Retrieve the marketer_id, model, and notes from the query parameters
         $payment_data = [];
-        $payment_data['marketer_id']=$request->marketer_id ?? 0;
+        $payment_data['marketer_id'] = $request->marketer_id ?? 0;
         $payment_data['amount'] = $request->amount;
+        $payment_data['model'] = $request->model;
+        $payment_data['notes'] = $request->notes;
+        $payment_data['model_id'] = $modelId; // Use the updated model_id
+        $payment_data['u'] = $u; // Use the updated u value
+
+        $request->query('userId');
+
+        //dd($model, $model_id, session('model') == 'gift');
+
+        // $payment_data = [];
+        // $payment_data['marketer_id'] = $request->marketer_id ?? 0;
+        // $payment_data['amount'] = $request->amount;
+        // $payment_data['model'] = $request->model;
+        // $payment_data['notes'] = $request->notes;
+        // $payment_data['model_id'] = $request->model_id;
+
         $payment_data['payment_method'] = 0;
         if ($request->donor_type == 'logged') {
             $payment_data['name']           = Auth::user()->name;
@@ -118,7 +141,9 @@ class MyFatoorahController extends Controller
             'amount'    => $payment_data['amount'],
             'payment_method' =>  $payment_data['payment_method'],
             'status' => 'INITIATED',
-            'marketer_id'=>$payment_data['marketer_id']
+            'marketer_id' => $payment_data['marketer_id'],
+            'model' => $payment_data['model'],
+            'model_id' => $payment_data['model_id'],
         ]);
 
 
@@ -176,20 +201,46 @@ class MyFatoorahController extends Controller
                 $donation->notes = 'Invoice is paid.';
                 $donation->payment_status = 'CAPTURED';
                 $donation->save();
-                return redirect()->route('home')->with('success', 'تم التبرع بنجاح. جزاك الله خيرا');
+                if (session('model') == 'gift') {
+                    // $this.send_whatsapp_message();
+
+                    $emailData = [
+                        'sender' => 'Amira', //$sender,
+                        'consignee' => 'leen', //$consignee,
+                        'email' => 'amira95ibrahim@gmail.com', //$email,
+                        'phone' => '01015414979', // $phone,
+                    ];
+
+                    $email = 'amira95ibrahim@gmail.com';
+
+                    try {
+                        // Send the email using Mail::send()
+                        // Mail::send(new GiftCreatedMail($emailData), function ($message) use ($email) {
+                        //     $message->to($email)->subject('Gift Created');
+                        // });
+                        Mail::to($email)->send(new GiftCreatedMail($emailData));
+                        // Email sent successfully
+                        Session::put('model', '');
+                        return redirect()->back()->with('success', 'تم ارسال هديتك بنجاح. جزاك الله خيرا');
+                    } catch (\Exception $e) {
+                        // Email sending failed
+                        return redirect()->back()->with('error', 'حدث خطأ اثناء ارسالايميل  بهديتك');
+                    }
+                }
+                return redirect()->back()->with('success', 'تم التبرع بنجاح. جزاك الله خيرا');
             } else if ($data->InvoiceStatus == 'Failed') {
                 $donation->notes = 'Invoice is not paid due to ' . $data->InvoiceError;
                 $donation->payment_status = 'FAILED';
                 $donation->save();
-                return redirect()->route('home')->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
+                return redirect()->back()->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
             } else {
                 $donation->notes = 'Invoice is expired.';
                 $donation->payment_status = 'DECLINED';
                 $donation->save();
-                return redirect()->route('home')->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
+                return redirect()->back()->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
             }
         } catch (\Exception $e) {
-            return redirect()->route('home')->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
+            return redirect()->back()->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
         }
     }
     //------------------------------------------------------------------------------------------------------
@@ -204,7 +255,7 @@ class MyFatoorahController extends Controller
         //$request->validate([
         // 'phone_number' => 'nullable|max:11'
         //]);
-       $marketer_id=$request->marketer_id;
+        $marketer_id = $request->marketer_id;
         if (!empty($request->input('custom_amount'))) {
             $amount = $request->input('custom_amount');
         } else {
@@ -215,7 +266,7 @@ class MyFatoorahController extends Controller
             'amount'    => $amount,
             'payment_method' => 'visa',
             'status' => 'INITIATED',
-            'marketer_id'=>$marketer_id
+            'marketer_id' => $marketer_id
             // Add more fields specific to periodic donations, like frequency, next_payment_date, etc.
         ]);
 
@@ -238,7 +289,7 @@ class MyFatoorahController extends Controller
                     'amount'    => $amount,
                     'invoice_url' => $data['invoiceURL'],
                     'payment_date' => $paymentDate,
-                    'marketer_id'=>$marketer_id
+                    'marketer_id' => $marketer_id
                     // Add more fields specific to periodic invoices, like status, payment_id, etc.
                 ]);
             }
@@ -289,8 +340,8 @@ class MyFatoorahController extends Controller
 
 
     //-----------------------------------------------------------------------------------------------------------------------------------------
-    public function send_whatsapp_message(){
-
+    public function send_whatsapp_message()
+    {
     }
     /**
      * Get MyFatoorah payment information
@@ -307,12 +358,12 @@ class MyFatoorahController extends Controller
             if ($data->InvoiceStatus == 'Paid') {
 
                 // Check if 'model' in session is 'gift'
-                if (session('model') == 'gift') {
-                    // Call the route that sends a WhatsApp message to the user
+                // if (session('model') == 'gift') {
+                //     // Call the route that sends a WhatsApp message to the user
 
-                    // $this.send_whatsapp_message();
-                    return redirect()->back()->with('success', 'تم ارسال هديتك بنجاح. جزاك الله خيرا');
-                }
+                //     // $this.send_whatsapp_message();
+                //     return redirect()->back()->with('success', 'تم ارسال هديتك بنجاح. جزاك الله خيرا');
+                // }
                 $invoice->status = 'PAID';
                 $invoice->payment_id = $paymentId;
                 $invoice->save();
@@ -378,5 +429,4 @@ class MyFatoorahController extends Controller
 
         return $paymentDates;
     }
-
 }

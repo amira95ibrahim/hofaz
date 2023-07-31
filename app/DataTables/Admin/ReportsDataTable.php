@@ -77,7 +77,10 @@ class ReportsDataTable extends DataTable
                     [
                         'extend' => 'export',
                         'className' => 'btn btn-default btn-sm no-corner',
-                        'text' => '<i class="fa fa-download"></i> تنزيل'
+                        'text' => '<i class="fa fa-download"></i> تنزيل',
+                        'buttons' => [
+                            'csv', 'excel', 'pdf', 'print'
+                        ]
                     ],
                     [
                         'extend' => 'print',

@@ -177,64 +177,7 @@
                                              @lang('breadcrumbs.kwd')</span>
                                             </h3>
                                         </div>
-                                        {{-- <div class="col-sm-12">
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <div class="col-md-6">
-                                                    <label class="mt-2">@lang('iftar.payment_method')</label>
-                                                    <div class="plans">
-                                                        <div style="clear: both;"></div>
-                                                        <label class="plan basic-plan" for="basic">
-                                                            <input checked type="radio" name="plan" id="basic"/>
-                                                            <div class="plan-content">
-                                                                <img loading="lazy" src="{{ asset('images/myfatoorah.jpeg') }}"
-                                                                     alt=""/>
-                                                            </div>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> --}}
-                                        {{-- <div class="col-sm-12">
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <div class="col-md-10">
-                                                    <label class="mt-2">@lang('iftar.payment_method')</label>
-                                                    <div class="plans">
-                                                        <div style="clear: both;"></div>
-                                                        <label class="plan basic-plan" for="basic">
-                                                            <input checked type="radio" name="plan" id="basic" />
-                                                            <div class="plan-content">
-                                                                <img loading="lazy"
-                                                                    src="{{ asset('images/Visa-Master.png') }}"
-                                                                    alt="" />
-                                                            </div>
-                                                        </label>
 
-                                                        <label class="plan complete-plan" for="complete">
-                                                            <input type="radio" id="complete" name="plan" />
-                                                            <div class="plan-content">
-                                                                <img loading="lazy" src="{{ asset('images/knet.png') }}"
-                                                                    alt="" />
-                                                            </div>
-                                                        </label>
-                                                        <label class="plan complete-plan" for="complete">
-                                                            <input type="radio" id="complete" name="plan" />
-                                                            <div class="plan-content">
-                                                                <img loading="lazy" src="{{ asset('images/Gpay.png') }}"
-                                                                    alt="" />
-                                                            </div>
-                                                        </label>
-                                                        <label class="plan complete-plan" for="complete">
-                                                            <input type="radio" id="complete" name="plan" />
-                                                            <div class="plan-content">
-                                                                <img loading="lazy"
-                                                                    src="{{ asset('images/apple_pay2.png') }}"
-                                                                    alt="" />
-                                                            </div>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> --}}
                                         <div class="col-sm-12">
                                             <div class="d-flex align-items-center justify-content-center">
                                                 <div class="col-md-10">
@@ -291,7 +234,7 @@
                                                        @lang('breadcrumbs.kwd')</span>
                                                 </h3>
                                             </div>
-                                           
+
                                             <div class="col-sm-12">
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <div class="col-md-10">
@@ -493,7 +436,6 @@
                     </div>
                 </div>
             </form>
-
         </section>
     </div>
     <!-- end main-content -->

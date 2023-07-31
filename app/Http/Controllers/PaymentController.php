@@ -9,7 +9,7 @@ class PaymentController extends BaseController {
 
     public function index(Request $request){
         $sessions = session()->all();
-      // dd($sessions);
+       dd($sessions);
 
         // Use the retrieved data to process the donation
         return view('front.payment');
