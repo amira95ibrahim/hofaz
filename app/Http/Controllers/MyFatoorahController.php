@@ -132,6 +132,7 @@ class MyFatoorahController extends Controller
             'model_id' => $payment_data['model_id'],
         ]);
 
+        // dd($donation);
 
         try {
             $paymentMethodId = $request->plan; // 0 for MyFatoorah invoice or 1 for Knet in test mode

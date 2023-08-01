@@ -11,7 +11,7 @@ class Donation extends Model
 
     protected $table = 'donations';
 
-    protected $fillable = ['donor_id', 'amount', 'status'];
+    protected $fillable = ['donor_id', 'amount', 'status','model','model_id','notes','marketer_id'];
 
 
     public function donor(): \Illuminate\Database\Eloquent\Relations\BelongsTo
