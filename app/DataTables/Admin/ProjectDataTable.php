@@ -107,7 +107,25 @@ class ProjectDataTable extends DataTable
             'paid' => new Column(['title' => "المحصل من المشروع", 'data' => 'paid']),
             'active' => new Column(['title' => "الحالة", 'data' => 'active']),
             'homepage' => new Column(['title' => 'الصفحة الرئيسية', 'data' => 'homepage']),
-            'marketer_id' => new Column(['title' => ' المسوق', 'data' => 'marketer_id']),
+            // 'marketer_name' => new Column([
+            //     'title' => 'المسوق',
+            //     'data' => 'marketer.name_ar', // This assumes the relationship is correctly set up.
+            //     'defaultContent' => ' ', // If marketer is not assigned, display an empty cell.
+            // ]),
+            // 'marketer_name' => new Column([
+            //     'title' => 'المسوق',
+            //     'data' => 'marketers',
+            //     'render' => 'function (data, type, row, meta) {
+            //         if (data && data.length > 0) {
+            //             var marketerNames = data.map(function (marketer) {
+            //                 return marketer.name_ar;
+            //             });
+            //             return marketerNames.join(", ");
+            //         } else {
+            //             return " ";
+            //         }
+            //     }'
+            // ]),
             'id' => new Column(['title' => "رابط المشروع", 'data' => 'id', 'render' => 'function (data, type, row, meta) {
                 return "<a href=\"https://hofaz.alexadigitals.com/project/" + data + "\">رابط المشروع</a>";
             }']),

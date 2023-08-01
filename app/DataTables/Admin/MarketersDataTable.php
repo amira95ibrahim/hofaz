@@ -104,7 +104,7 @@ class MarketersDataTable extends DataTable
     {
         return [
             'id' => new Column(['title' => " الرقم", 'data' => 'id']),
-            'name_ar' => new Column(['title' => "  الاسم ", 'data' => 'name_ar']),
+            'name_ar' => new Column(['title' => "  الاسم  بالعربي", 'data' => 'name_ar']),
             'name_en' => new Column(['title' => " الاسم ", 'data' => 'name_en']),
 
             'created_at' => new Column(['title' => " تاريخ التسجيل", 'data' => 'created_at']),

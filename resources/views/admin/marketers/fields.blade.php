@@ -33,14 +33,17 @@
                         </label>
                     </div>
 
-                    <div class="form-group col-sm-12">
+                    <div class="form-group">
                         <label for="exampleFormControlSelect1">اختر المشروع</label>
-                        <select name="project_id" class="form-control" id="exampleFormControlSelect1">
+                        <select  class="form-control" id="project_ids" name="project_ids[]">
                             @foreach ($projects as $project)
-                                <option value="{{ $project->id }}" {{isset($project) && $project->id == $project->id ? 'selected' : ''}}>{{ $project->{'name_'.app()->getLocale()} }}</option>
+                                <option value="{{ $project->id }}" {{ isset($project) && $project->id == $project->id ? 'selected' : '' }}>
+                                    {{ $project->{'name_'.app()->getLocale()} }}
+                                </option>
                             @endforeach
                         </select>
-                      </div>
+                    </div>
+
                       <form>
                         <!-- Other form fields for creating the marketer -->
                         {{-- <div class="form-group">

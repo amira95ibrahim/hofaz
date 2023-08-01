@@ -116,6 +116,10 @@ class Project extends Model
     {
         return $this->belongsToMany(Marketer::class);
     }
+    // public function marketer()
+    // {
+    //     return $this->belongsTo(Marketer::class);
+    // }
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

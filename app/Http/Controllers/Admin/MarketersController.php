@@ -64,8 +64,8 @@ class MarketersController extends Controller
         ]);
 
         // Associate the related projects
-        if ($request->has('project_id')) {
-            $projectIds = $request->input('project_id');
+        if ($request->has('project_ids')) {
+            $projectIds = $request->input('project_ids');
             $marketer->projects()->attach($projectIds);
         }
 
@@ -130,8 +130,8 @@ class MarketersController extends Controller
     $marketer->save();
 
     // Associate the related projects
-    if ($request->has('project_id')) {
-        $projectIds = $request->input('project_id');
+    if ($request->has('project_ids')) {
+        $projectIds = $request->input('project_ids');
         $marketer->projects()->sync($projectIds);
     } else {
         // If no projects are selected, detach all existing relationships

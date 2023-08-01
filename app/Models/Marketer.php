@@ -14,7 +14,7 @@ class Marketer extends Model
         'name_en',
         'number',
         'status',
-        'project_ids'
+        'project_id'
 
     ];
 

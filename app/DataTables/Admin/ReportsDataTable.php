@@ -3,6 +3,7 @@
 namespace App\DataTables\Admin;
 
 use App\Models\Donation;
+use App\Models\Project;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
@@ -48,10 +49,14 @@ class ReportsDataTable extends DataTable
      * @param \App\Models\Marketer $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(Donation $model)
-    {
-        return  $model->newQuery();
-    }
+
+     public function query(Donation $model)
+     {
+         // Start with the base query
+       return  $query = $model->newQuery();
+
+
+     }
 
     /**
      * Optional method if you want to use html builder.
@@ -63,34 +68,15 @@ class ReportsDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->minifiedAjax()
-            // ->addAction(['width' => '150px', 'printable' => false, 'title' => "العملية"])
             ->parameters([
                 'dom'       => 'Bfrtip',
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                     [
-                        'extend' => 'create',
+                        'extend' => 'excel',
                         'className' => 'btn btn-default btn-sm no-corner',
-                        'text' => '<i class="fa fa-plus"></i> إنشاء'
-                    ],
-                    [
-                        'extend' => 'export',
-                        'className' => 'btn btn-default btn-sm no-corner',
-                        'text' => '<i class="fa fa-download"></i> تنزيل',
-                        'buttons' => [
-                             'excel',
-                        ]
-                    ],
-                    [
-                        'extend' => 'print',
-                        'className' => 'btn btn-default btn-sm no-corner',
-                        'text' => '<i class="fa fa-print"></i> طباعة'
-                    ],
-                    [
-                        'extend' => 'reload',
-                        'className' => 'btn btn-default btn-sm no-corner',
-                        'text' => '<i class="fa fa-refresh"></i> تحديث الجدول'
+                        'text' => '<i class="fa fa-download"></i> export Excel',
                     ],
                 ],
                 'language' => [
@@ -98,6 +84,7 @@ class ReportsDataTable extends DataTable
                 ],
             ]);
     }
+
 
     /**
      * Get columns.

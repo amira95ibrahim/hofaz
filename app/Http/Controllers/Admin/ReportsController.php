@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Marketer;
 use App\Models\Project;
+use App\Models\Donation;
+
 
 class ReportsController extends Controller
 {
@@ -22,44 +24,44 @@ class ReportsController extends Controller
     // }
 
 
-public function index(Request $request,ReportsDataTable $reportsDataTable )
-{
+    public function index(Request $request, ReportsDataTable $reportsDataTable)
+    {
+        $query = Donation::query();
+        $marketers = Marketer::pluck('name_ar', 'id');
+        $projects = Project::pluck('name_ar', 'id');
 
-    $marketers = Marketer::pluck('name_ar', 'id');
-    $projects = Project::pluck('name_ar', 'id');
+        // Retrieve the filter values from the request
+        $paymentMethod = $request->input('payment_method');
+        $marketer = $request->input('marketer');
+        $project = $request->input('project');
+        $status = $request->input('status');
+        $createdAt = $request->input('created_at');
 
-    $paymentMethod = $request->input('payment_method');
-    $marketer = $request->input('marketer');
-    $project = $request->input('project');
-    $status = $request->input('status');
-    $createdAt = $request->input('created_at');
+        // Apply the filters to the query
+        if ($paymentMethod) {
+            $query->where('payment_method', $paymentMethod);
+        }
+        if ($marketer) {
+            $query->whereHas('marketer', function ($q) use ($marketer) {
+                $q->where('id', $marketer);
+            });
+        }
+        if ($project) {
+            $query->where('project_id', $project);
+        }
+        if ($status) {
+            $query->where('status', $status);
+        }
+        if ($createdAt) {
+            $query->whereDate('created_at', $createdAt);
+        }
 
-    $dataTable = $reportsDataTable->render('admin.reports.index');
+        // Retrieve the filtered data
+        $filteredData = $query->get();
 
-    // Filter the query based on the selected values
-    if ($paymentMethod) {
-        $dataTable->where('payment_method', $paymentMethod);
+        return $reportsDataTable->render('admin.reports.index', compact('filteredData', 'marketers', 'projects'));
     }
-    if ($marketer) {
-        $dataTable->where('marketer_id', $marketer);
-    }
-    if($project) {
-        $dataTable->where('project_id', $project);
-    }
-    if ($status) {
-        $dataTable->where('status', $status);
-    }
-    if ($createdAt) {
-        $dataTable->whereDate('created_at', $createdAt);
-    }
 
-    // $dataTable = $dataTable->make(true);
-
-    // return view('admin.marketers.index', compact('options', 'dataTable'));
-    // return $reportsDataTable->render('admin.reports.index');
-    return $reportsDataTable->render('admin.reports.index', compact('marketers', 'projects'));
-
-}
     // public function changeStatus(MarketersDataTable $MarketersDataTable){
 
     //     $MarketersDataTable->active = !$MarketersDataTable->active;
