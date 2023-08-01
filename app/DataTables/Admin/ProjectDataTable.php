@@ -27,6 +27,12 @@ class ProjectDataTable extends DataTable
             ->editColumn('country_id', function($q) {
                 return $q->country->name;
             })
+            // ->editColumn('id', function($q) {
+            //     // Use the dot operator for string concatenation
+            //     return '<a href="https://hofaz.alexadigitals.com/project/'.$q->id.'">رابط المشروع</a>';
+            // })
+
+
             ->editColumn('cost', function($q) {
                 return number_format($q->cost) . ' د.ك';
             })
@@ -126,15 +132,17 @@ class ProjectDataTable extends DataTable
             //         }
             //     }'
             // ]),
-            'id' => new Column(['title' => "رابط المشروع", 'data' => 'id', 'render' => 'function (data, type, row, meta) {
-                return "<a href=\"https://hofaz.alexadigitals.com/project/" + data + "\">رابط المشروع</a>";
-            }']),
+            // 'id' => new Column([
+            //     'title' => "رابط المشروع",
+            //     'data' => 'id',
+
+            // ]),
         ];
     }
 
 
 
-
+//"<a href=\"https://hofaz.alexadigitals.com/project/" + data + "\">رابط المشروع</a>";
 
     /**
      * Get filename for export.

@@ -1,8 +1,10 @@
 {!! Form::open(['route' => ['admin.projects.status', $id], 'method' => 'post']) !!}
-<div class='btn-group'>
-{{--    <!-- <a href="{{ route('admin.projects.show', $id) }}" class='btn btn-outline-info btn-xs'>--}}
-{{--        <i class="fa fa-eye"></i>--}}
-{{--    </a> -->--}}
+<div class='btn-group'style=" width:200px">
+
+    <a href="{{ route('project.show', $id) }}" class='btn btn-outline-info btn-xs'>
+       <i class="fa fa-share"></i>  رابط المشروع
+   </a>
+
     <a href="{{ route('admin.projects.edit', $id) }}" class='btn btn-outline-warning btn-xs'>
         <i class="fa fa-edit"></i>
     </a>
