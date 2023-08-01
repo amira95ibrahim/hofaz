@@ -377,8 +377,12 @@
             });
 
             function selectProject(val) {
+                let userId =0;
+
                 $('.addToCart').attr('data-identifier', val).attr('id', val);
-                $('.quick-donation').attr('onclick', 'donateNow("' + val + '")');
+                // $('.quick-donation').attr('onclick', 'donateNow("' + val + '")');
+                $('.quick-donation').attr('onclick', "donateNow('product_" + val + "', 'product', " + val + ", " + userId + ")");
+
                 $('.product_price').attr('id', 'product_' + val + '_amount');
                 $('.product_name').attr('id', 'product_' + val + '_name').val($('#name_' + val).html());
             }

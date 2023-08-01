@@ -179,11 +179,11 @@
 
             function selectSadaqah(val) {
                 console.log(val);
-                let id = val;
-                $('.addToCart').attr('data-identifier', 'sadaqah_' + id).attr('id', 'sadaqah_' + id);
-                // $('.quick-donation').attr('onclick', 'donateNow('sadaqah_' + id, 'sadaqah', id));
-                $('.quick-donation').attr('onclick', "donateNow('sadaqah_" + id + "', 'sadaqah', " + id + ")");
+                let id = val;let userId =0;
 
+                $('.addToCart').attr('data-identifier', 'sadaqah_' + id).attr('id', 'sadaqah_' + id);
+
+                $('.quick-donation').attr('onclick', "donateNow('sadaqah_" + id + "', 'sadaqah', " + id + ", " + userId + ")");
                 $('.product_price').attr('id', 'product_sadaqah_' + id + '_amount');
                 console.log('name');
                 console.log($('#name_' + val).html());

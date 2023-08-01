@@ -113,7 +113,10 @@
                 <input type="hidden" id="amount" value="{{
                     number_format(session()->has('amount') ? session('amount') : Cart::getTotal())
                   }}" name="amount">
-
+                    {{-- <input type="hidden" id="amount" value="{{ number_format(session()->has('amount') ? session('amount') : Cart::getTotal()) }}" name="amount"> --}}
+                    <input type="hidden" name="model" value="{{ $model }}">
+                    <input type="hidden" name="model_id" value="{{ $model_id }}">
+                    <input type="hidden" name="userId" value="{{ $userId ?? 0 }}">
                         @auth
                         <div id="tabs-container">
                             <div class="tabs">

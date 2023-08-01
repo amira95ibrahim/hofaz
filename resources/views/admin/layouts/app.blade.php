@@ -9,46 +9,44 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     <!--  Date picker package -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+   {{--}} <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> --}}
 
 
     <link rel="stylesheet" href="{{ asset('backend/css/dashboard.css') }}">
 
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="https://hofath.org/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://hofath.org/bower_components/font-awesome/css/font-awesome.min.css">
+     <link rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}">
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
+
     <!-- Icons -->
     <link href="{{ asset('backend/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/css/_icons.scss') }}" rel="stylesheet">
 
     <link href="{{ asset('images/favicon.png') }}" rel="shortcut icon" type="image/png">
     <!-- Theme style -->
-    <link rel="stylesheet" href="https://hofath.org/dist/css/hoffath.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="https://hofath.org/dist/css/skins/_all-skins-rtl.min.css">
+    <link rel="stylesheet" href="{{ asset('dist/css/hoffath.css') }}">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="{{ asset('dist/css/skins/_all-skins-rtl.min.css') }}">
     <!-- Morris chart -->
-    <link rel="stylesheet" href="https://hofath.org/dist/css/custom.css">
-    <link rel="stylesheet" href="https://hofath.org/dist/css/jquery.toast.min.css">
-    <link rel="stylesheet" href="https://hofath.org/dist/bootstrap/css/fileinput.css">
+    <link rel="stylesheet" href="{{ asset('dist/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/jquery.toast.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/bootstrap/css/fileinput.css') }}">
     <!-- Date Picker -->
-    {{-- <link rel="stylesheet" --}}
-        {{-- href="https://hofath.org/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"> --}}
+     <link rel="stylesheet"
+        href="{{ asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
     <!-- Daterange picker -->
-     <link rel="stylesheet" href="https://hofath.org/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-    <link rel="stylesheet"
-        href="https://hofath.org/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
     <!-- bootstrap wysihtml5 - text editor -->
-    <script src="/bower_components/ckeditor/ckeditor.js"></script>
-    {{-- <link rel="stylesheet" href="/bower_components/select2/dist/css/select2.min.css"> --}}
+    <script src="{{ asset('bower_components/ckeditor/ckeditor.js') }}"></script>
 
-    <link rel="shortcut icon" href="https://hofath.org/">
-   <!--   Select2 package -->
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    {{-- <link rel="shortcut icon" href="https://hofath.org/" type="image/x-icon"> --}}
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -61,16 +59,12 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
     <!-- jQuery 3 -->
-    <script src="https://hofath.org/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="https://hofath.org/bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <script src="https://hofath.org/bower_components/select2/dist/js/select2.full.min.js"></script>
-    
-    <link rel="stylesheet" href="//cdn.datatables.net/buttons/1.7.1/css/buttons.bootstrap4.min.css">
-    <script src="//cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.7.1/js/buttons.bootstrap4.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+    <script src="{{ asset('bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
+    <!--   Select2 package -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
     @stack('third_party_stylesheets')
     <style>
@@ -152,28 +146,28 @@
 
 
     <!-- Bootstrap 3.3.7 -->
-    <script src="https://hofath.org/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <!-- Morris.js charts -->
-    <script src="https://hofath.org/bower_components/raphael/raphael.min.js"></script>
+    <script src="{{asset('bower_components/raphael/raphael.min.js')}}"></script>
 
     <!-- Sparkline -->
-    <script src="https://hofath.org/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <script src="{{asset('bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
     <!-- jvectormap -->
     <!-- jQuery Knob Chart -->
-    <script src="https://hofath.org/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+    <script src="{{asset('bower_components/jquery-knob/dist/jquery.knob.min.js')}}"></script>
     <!-- daterangepicker -->
-    <script src="https://hofath.org/bower_components/moment/min/moment.min.js"></script>
-    <script src="https://hofath.org/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="{{asset('bower_components/moment/min/moment.min.js')}}"></script>
+    <script src="{{asset('bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
     <!-- datepicker -->
-    <script src="https://hofath.org/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="{{asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
     <!-- Slimscroll -->
-    <script src="https://hofath.org/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="{{asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
     <!-- FastClick -->
-    <script src="https://hofath.org/bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="{{asset('bower_components/fastclick/lib/fastclick.js')}}"></script>
     <!-- AdminLTE App -->
-    <script src="https://hofath.org/dist/js/adminlte.min.js"></script>
+    <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
 
-    <script src="https://hofath.org/dist/js/jquery.toast.min.js"></script>
+    <script src="{{asset('dist/js/jquery.toast.min.js')}}"></script>
 
     @stack('third_party_scripts')
 
@@ -210,24 +204,36 @@
             $('.select2').select2();
         });
     </script>
-    <script>
-        $(document).ready(function() {
-            // Initialize datepicker on start_date and end_date fields
-
-            $('#start_date, #end_date').datepicker();
-            // $('#start_date, #end_date').datepicker({
-            //     dateFormat: 'yy-mm-dd', // Set the date format
-            //     changeMonth: true, // Allow changing the month
-            //     changeYear: true, // Allow changing the year
-            //     yearRange: 'c-10:c+10', // Set the range of years to be displayed
-            // });
-
-            // // Set the default start and end dates
-            // var today = new Date();
-            // $('#start_date').datepicker('setDate', today);
-            // $('#end_date').datepicker('setDate', today);
+   <script>
+    $(document).ready(function() {
+        // Initialize datepicker on start_date and end_date fields
+        $('#start_date, #end_date').datepicker({
+            format: 'yyyy-mm-dd', // Set the date format
+            autoclose: true, // Close the datepicker when a date is selected
+            todayHighlight: true, // Highlight today's date
+            clearBtn: true, // Show a clear button to clear the selected date
+            orientation: "auto", // Adjust the orientation automatically
+            endDate: '+10y', // Set the maximum selectable date to 10 years from now
+            startDate: '-10y', // Set the minimum selectable date to 10 years ago
         });
-    </script>
+
+        // Set the default start and end dates
+        var today = new Date();
+        $('#start_date').datepicker('setDate', today);
+        $('#end_date').datepicker('setDate', today);
+
+        // Update the placeholder with the selected date
+        $('#start_date, #end_date').on('changeDate', function() {
+            var selectedDate = $(this).datepicker('getFormattedDate');
+            $(this).attr('placeholder', selectedDate);
+        });
+    });
+</script>
+
+
+
+
+
 </body>
 
 </html>

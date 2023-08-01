@@ -175,9 +175,13 @@
             });
 
             function selectZakah(val) {
-                let id = val;
+                // let id = val;
+                let id = val;let userId =0;
+
                 $('.addToCart').attr('data-identifier', 'zakah_' + id).attr('id', 'zakah_' + id);
-                $('.quick-donation').attr('onclick', 'donateNow("zakah_' + id + '")');
+                // $('.quick-donation').attr('onclick', 'donateNow("zakah_' + id + '")');
+                $('.quick-donation').attr('onclick', "donateNow('zakah_" + id + "', 'zakah', " + id + ", " + userId + ")");
+
                 $('.product_price').attr('id', 'product_zakah_' + id + '_amount');
                 $('.product_name').attr('id', 'product_zakah_' + id + '_name').val($('#name_' + val).html());
             }

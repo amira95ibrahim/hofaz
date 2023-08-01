@@ -8,7 +8,7 @@
     <meta name="keywords" content="Alexa Digital" />
     <meta name="author" content="Alexa Digital" />
     <meta name="csrf-token" content="{{ @csrf_token() }}" />
-    <title>Alexa Digital</title>
+    <title>حفاظ </title>
     {{--    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -609,13 +609,31 @@
 
         });
 
-        function donateNow(id, model, model_id, userId) {
+    function getUserIdFromURL() {
+        // Get the current URL
+        var url = window.location.href;
+
+        // Use a regular expression to extract the 'userId' from the URL
+        // Here, we assume that 'userId' is represented as 'u' in the query parameters
+        var regex = /[?&]u=(\d+)/;
+        var match = url.match(regex);
+
+        // Check if the match is found and return the 'userId' value
+        if (match) {
+            return parseInt(match[1]);
+        } else {
+            // Return a default value or handle the case where 'userId' is not found in the URL
+            return 0; // Default value (you can change this to suit your requirements)
+        }
+    }
+
+        function donateNow(identifier, model, model_id, userId) {
             var $counter, val;
             $counter = $('.notification-counter');
             val = parseInt($counter.text());
 
-            let identifier = $('.addToCart').attr('data-identifier');
-            console.log(identifier);
+            // let identifier = $('.addToCart').attr('data-identifier');
+            // console.log(identifier);
 
             let name = $('#product_' + identifier + '_name').val();
             let price = $('#product_' + identifier + '_amount').val();

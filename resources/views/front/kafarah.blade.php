@@ -180,11 +180,15 @@
             });
 
             function selectSadaqah(val) {
-                let id = val;
+
+                let id = val;let userId =0;
+
                 // console.log('kafarah_' + id );
 
                 $('.addToCart').attr('data-identifier', 'kafarah' + id).attr('id', 'kafarah' + id);
-                $('.quick-donation').attr('onclick', 'donateNow("kafarah' + id + '")');
+                // $('.quick-donation').attr('onclick', 'donateNow("kafarah' + id + '")');
+                $('.quick-donation').attr('onclick', "donateNow('kafarah" + id + "', 'kafarah', " + id + ", " + userId + ")");
+
                 $('.product_price').attr('id', 'product_kafarah' + id + '_amount');
                // console.log('name');
                 console.log($('#name_' + val).html());

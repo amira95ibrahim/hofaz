@@ -38,34 +38,20 @@ class MyFatoorahController extends Controller
      */
     public function index(Request $request)
     {
-
-        // Set default values for model_id and u if they are not provided or set to "undefined"
-        $modelId = $request->query('model_id', 0); // Set default value to 0 if not provided
-        $u = $request->query('u', 0); // Set default value to 0 if not provided
-        //  dd($u,$modelId);
-        // Make sure the model_id and u are numeric values (if that's expected)
-        $modelId = is_numeric($modelId) ? intval($modelId) : 0;
-        $u = is_numeric($u) ? intval($u) : 0;
-
-        // Retrieve the marketer_id, model, and notes from the query parameters
+        $model = $request->input('model');
+        $model_id = $request->input('model_id');
+        $marketer_id = $request->input('userId');
+       // Retrieve the marketer_id, model, and notes from the query parameters
         $payment_data = [];
         $payment_data['marketer_id'] = $request->marketer_id ?? 0;
         $payment_data['amount'] = $request->amount;
-        $payment_data['model'] = $request->model;
+        $payment_data['model'] = $model;
         $payment_data['notes'] = $request->notes;
-        $payment_data['model_id'] = $modelId; // Use the updated model_id
-        $payment_data['u'] = $u; // Use the updated u value
+        $payment_data['model_id'] = $model_id; // Use the updated model_id
+        $payment_data['marketer_id'] = $marketer_id; // Use the updated u value
+        // $request->query('userId');
 
-        $request->query('userId');
-
-        //dd($model, $model_id, session('model') == 'gift');
-
-        // $payment_data = [];
-        // $payment_data['marketer_id'] = $request->marketer_id ?? 0;
-        // $payment_data['amount'] = $request->amount;
-        // $payment_data['model'] = $request->model;
-        // $payment_data['notes'] = $request->notes;
-        // $payment_data['model_id'] = $request->model_id;
+        // dd($model, $model_id,$payment_data);
 
         $payment_data['payment_method'] = 0;
         if ($request->donor_type == 'logged') {
@@ -103,7 +89,7 @@ class MyFatoorahController extends Controller
             ]);
             if (Auth::attempt([$user->email, $user->password])) {
                 $payment_data['name']           = $user->name;
-                $payment_data['email']          = $user->phone_number;
+                $payment_data['email']          = $user->email;
                 $payment_data['phone_number']   = $user->phone_numebr;
                 $payment_data['user_id']        = $user->id;
             }

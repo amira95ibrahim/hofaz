@@ -261,7 +261,8 @@
                                                         </div>
                                                     </form>
 
-                                                    <a href="javascript:void(0);" onclick="donateNow('{{ 'waqf_' . $item->id }}')"
+                                                    <a href="javascript:void(0);"
+                                                        onclick="donateNow('{{ 'waqf_'  . $item->id }}', 'waqf', {{$item->id}}, getUserIdFromURL())"
                                                           class="btn btn-fill-block">@lang('waqf.donate_now')</a>
                                                     <a href="javascript:void(0);"
                                                        class="btn btn-border-block mt-1 addToCart" id="{{ 'waqf_' . $item->id }}"

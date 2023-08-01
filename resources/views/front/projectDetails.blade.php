@@ -104,12 +104,14 @@
                                 </div>
                                 <div class="or mt-1"> - @lang('relief.or') -</div>
 
-                                <form class="mt-1">hi
+                                <form class="mt-1">
                                     <div class="input-group">
+                                        {{-- @dd('product_' . $model . '_' . $project->name . '_amount'); --}}
                                         <input type="number" value="{{ $project->initial_amount }}" name="amount"
                                             placeholder="@lang('relief.enter_amount')" class="form-control input-lg font-16"
                                             data-height="45px" style="height: 45px;"
                                             id="{{ 'product_' . $model . '_' . $project->id . '_amount' }}">
+                                            <input type="hidden" >
                                         <input type="hidden"
                                             id="{{ 'product_' . $model . '_' . $project->id . '_image' }}"
                                             value="{{ $project->image }}">
@@ -160,10 +162,11 @@
                                 {{-- <button type="button" class="btn custom-btn-success mr-5" onclick="donateNow('{{ $model . '_' . $project->id }}')"><i
                                    class="ri-coins-line btn-icon"></i> @lang('relief.donate_now')
                                 </button> --}}
+
                                 <button type="button" class="btn custom-btn-success mr-5"
-                                    onclick="donateNow('{{ $model . '_' . $project->id }}', 'project', {{$project->id}}, 10)">
-                                    <i class="ri-coins-line btn-icon"></i> @lang('sadaqa.quick_donation')
-                                </button>
+    onclick="donateNow('{{ $model . '_' . $project->id }}', 'project', {{$project->id}}, getUserIdFromURL())">
+    <i class="ri-coins-line btn-icon"></i> @lang('sadaqa.quick_donation')
+</button>
 
                                 <button type="button" class="btn custom-btn-success mr-5 addToCart"
                                     id="{{ $model . '_' . $project->id }}"

@@ -101,15 +101,22 @@ class ProjectDataTable extends DataTable
     protected function getColumns()
     {
         return [
-//            'name_en' => new Column(['title' => "الاسم بالانجليزية", 'data' => 'name_en']),
             'name_ar' => new Column(['title' => "الاسم بالعربية", 'data' => 'name_ar']),
             'country_id' => new Column(['title' => "الدولة", 'data' => 'country_id']),
             'cost' => new Column(['title' => "قيمة المشروع", 'data' => 'cost']),
             'paid' => new Column(['title' => "المحصل من المشروع", 'data' => 'paid']),
             'active' => new Column(['title' => "الحالة", 'data' => 'active']),
             'homepage' => new Column(['title' => 'الصفحة الرئيسية', 'data' => 'homepage']),
+            'marketer_id' => new Column(['title' => ' المسوق', 'data' => 'marketer_id']),
+            'id' => new Column(['title' => "رابط المشروع", 'data' => 'id', 'render' => 'function (data, type, row, meta) {
+                return "<a href=\"https://hofaz.alexadigitals.com/project/" + data + "\">رابط المشروع</a>";
+            }']),
         ];
     }
+
+
+
+
 
     /**
      * Get filename for export.

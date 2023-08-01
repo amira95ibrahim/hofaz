@@ -3,9 +3,9 @@
  {{-- <a href="{{ route('admin.marketer.delete', $id) }}" class='btn btn-outline-info btn-xs'> --}}
        {{-- <i class="fa fa-trash"></i> --}}
    {{-- </a> --}}
-    <a href="{{ route('admin.reports.edit', $id) }}" class='btn btn-outline-warning btn-xs'>
+    {{-- <a href="{{ route('admin.reports.edit', $id) }}" class='btn btn-outline-warning btn-xs'>
         <i class="fa fa-edit"></i>
-    </a>
+    </a> --}}
     {{-- @if($active)
         {!! Form::button('<i class="fa fa-close"></i> إيقاف ', [
             'type' => 'submit',

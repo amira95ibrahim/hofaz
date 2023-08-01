@@ -117,8 +117,8 @@
                                         </div>
                                     </div>
 
-                                    <button type="button" class="btn custom-btn-success mr-5" onclick="donateNow('{{ 'kafalah_' . $kafala->id }}')"><i
-                                      class="ri-coins-line btn-icon"></i> @lang('sadaqa.quick_donation')
+                                    <button type="button" class="btn custom-btn-success mr-5"  onclick="donateNow('{{ 'kafalah_'  . $kafalah->id }}', 'kafalah', {{$kafalah->id}}, getUserIdFromURL())" ><i
+                                        class="ri-coins-line btn-icon"></i> @lang('sadaqa.quick_donation')
                                     </button>
 
                                     <button type="button" class="btn custom-btn-success mr-5 addToCart" id="{{ 'kafalah_' . $kafala->id }}"

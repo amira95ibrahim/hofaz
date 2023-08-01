@@ -258,7 +258,8 @@
                                                         </span>
                                                         </div>
                                                     </form>
-                                                    <a href="javascript:void(0);" onclick="donateNow('{{ 'project_' . $project->id }}')"
+                                                    <a href="javascript:void(0); "
+                                                onclick="donateNow('{{ 'project_'  . $project->id }}', 'project', {{$project->id}}, getUserIdFromURL())"
                                                        class="btn btn-fill-block">@lang('relief.donate_now')</a>
                                                     <a href="javascript:void(0);"
                                                        class="btn btn-border-block mt-1 addToCart" id="{{ 'project_' . $project->id }}"
