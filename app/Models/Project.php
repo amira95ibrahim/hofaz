@@ -112,7 +112,10 @@ class Project extends Model
     {
         return $this->belongsTo(Country::class);
     }
-
+    public function marketers()
+    {
+        return $this->belongsToMany(Marketer::class);
+    }
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

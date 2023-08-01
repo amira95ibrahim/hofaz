@@ -41,6 +41,20 @@
                             @endforeach
                         </select>
                       </div>
+                      <form>
+                        <!-- Other form fields for creating the marketer -->
+                        {{-- <div class="form-group">
+                            <label for="project_ids">المشاريع المرتبطة:</label>
+                            <select multiple class="form-control" id="project_ids" name="project_ids[]">
+                                @foreach($projects as $project)
+                                    <option value="{{ $project->id }}">{{ $project->{'name_'.app()->getLocale()} }}</option>
+                                @endforeach
+                            </select>
+                        </div> --}}
+
+                        {{-- <button type="submit" class="btn btn-primary">إنشاء</button> --}}
+                    {{-- </form> --}}
+
                 </div>
             </div>
         </div>
