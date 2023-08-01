@@ -222,6 +222,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::patch('projects-page', [ProjectController::class, 'projectsDetailsUpdate'])->name('projectsPage.update');
     //Repote
     Route::resource('admin/reports', ReportsController::class);
+    Route::get('reports', [ReportsController::class, 'index'])->name('reports');
+
     //Marketers
     Route::resource('admin/marketers', MarketersController::class);
     Route::post('marketers/status/{marketer}', [MarketersController::class, 'changeStatus'])->name('marketer.status');

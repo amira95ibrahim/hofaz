@@ -35,11 +35,13 @@ class ReportsController extends Controller
         $marketer = $request->input('marketer');
         $project = $request->input('project');
         $status = $request->input('status');
-        $createdAt = $request->input('created_at');
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
 
         // Apply the filters to the query
         if ($paymentMethod) {
-            $query->where('payment_method', $paymentMethod);
+        //   dd($paymentMethod,$marketer,$project,$status);
+          $query->where('payment_method', $paymentMethod);
         }
         if ($marketer) {
             $query->whereHas('marketer', function ($q) use ($marketer) {
@@ -52,9 +54,25 @@ class ReportsController extends Controller
         if ($status) {
             $query->where('status', $status);
         }
-        if ($createdAt) {
-            $query->whereDate('created_at', $createdAt);
+        if ($startDate && $endDate) {
+            $query->whereBetween('created_at', [$startDate, $endDate]);
+        } elseif ($startDate) {
+            $query->where('created_at', '>=', $startDate);
+        } elseif ($endDate) {
+            $query->where('created_at', '<=', $endDate);
         }
+
+
+            // Print the generated SQL query for troubleshooting
+    $sql = $query->toSql();
+     // Get the parameter bindings
+     $bindings = $query->getBindings();
+
+     // Replace placeholders with actual values in the SQL query
+     $fullSql = vsprintf(str_replace(['%', '?'], ['%%', "'%s'"], $sql), $bindings);
+
+     //dd($fullSql); // Print the SQL query with actual values for troubleshooting
+
 
         // Retrieve the filtered data
         $filteredData = $query->get();

@@ -25,6 +25,7 @@
                 <div class="clearfix"></div>
                 <div class="col-lg-12">
                     <div class="card">
+                        <form id="searchForm" class="row">
                         <div class="card-block">
                             <div class="row">
                                 <div class="col-md-2">
@@ -83,7 +84,7 @@
                                     <br>
                                     <button class="btn btn-primary" type="submit">بحث</button>
                                 </div>
-                            </div>
+                            </div></form>
                             <br><br>
                             @include('admin.marketers.table')
                             <nav>
@@ -98,3 +99,104 @@
         </div>
     </div>
 @endsection
+<script>
+    // $(document).ready(function() {
+    //     var dataTable = $('#dataTable').DataTable({
+    //         // Add your existing DataTable options here
+    //         // ...
+    //     });
+
+    //     // Handle form submission on button click
+    //     $('#searchForm button[type="submit"]').on('click', function(event) {
+    //         event.preventDefault();
+    //         dataTable.ajax.reload();
+    //     });
+
+    //     // Handle form submission on select change (optional)
+    //     $('#searchForm select').on('change', function() {
+    //         dataTable.ajax.reload();
+    //     });
+
+    //     // Initialize Select2 for select elements
+    //     $('.select2').select2();
+
+    //     // Datepicker setup for start_date and end_date (if applicable)
+    //     // Example: $('#start_date').datepicker({ ... });
+
+    //     // DataTable server-side processing setup
+    //     dataTable = $('#dataTable').DataTable({
+    //         serverSide: true,
+    //         processing: true,
+    //         ajax: {
+    //             url: "{{ route('admin.reports') }}", // Replace with your actual data endpoint
+    //             type: "GET",
+    //             data: function (d) {
+    //                 d.start_date = $('#start_date').val();
+    //                 d.end_date = $('#end_date').val();
+    //                 d.payment_method = $('select[name="payment_method"]').val();
+    //                 d.marketer = $('select[name="marketer"]').val();
+    //                 d.project = $('select[name="project"]').val();
+    //                 d.status = $('select[name="status"]').val();
+    //             }
+    //         },
+    //         columns: [
+    //             // Define your DataTable columns here, matching the keys in the JSON response
+    //             // Example: { data: 'model_id', name: 'model_id' },
+    //             // ...
+    //         ],
+    //         // Add your existing DataTable options here
+    //         // ...
+    //     });
+    // });
+</script>
+
+
+@push('page_scripts')
+{{-- <script>
+    $(document).ready(function() {
+        // DataTable server-side processing setup
+        var dataTable = $('#dataTable').DataTable({
+            serverSide: true,
+            processing: true,
+            ajax: {
+                url: "{{ route('admin.reports') }}", // Replace with your actual data endpoint
+                type: "GET",
+                data: function(d) {
+                    // Get the form values and pass them to the server
+                    d.start_date = $('#start_date').val();
+                    d.end_date = $('#end_date').val();
+                    d.payment_method = $('select[name="payment_method"]').val();
+                    d.marketer = $('select[name="marketer"]').val();
+                    d.project = $('select[name="project"]').val();
+                    d.status = $('select[name="status"]').val();
+                }
+            },
+            columns: [
+                // Define your DataTable columns here, matching the keys in the JSON response
+                // For example:
+                { data: 'id', name: 'id' },
+                { data: 'project', name: 'project' },
+                { data: 'donor_id', name: 'donor_id' },
+                { data: 'payment_method', name: 'payment_method' },
+                { data: 'status', name: 'status' },
+                { data: 'amount', name: 'amount' },
+                { data: 'created_at', name: 'created_at' },
+                { data: 'marketer_id', name: 'marketer_id' },
+            ],
+            // Add your existing DataTable options here (e.g., order, language, etc.)
+            // ...
+        });
+
+        // Handle form submission on button click
+        $('#searchForm button[type="submit"]').on('click', function(event) {
+            event.preventDefault();
+            dataTable.ajax.reload();
+        });
+
+        // Handle form submission on select change (optional)
+        $('#searchForm select').on('change', function() {
+            dataTable.ajax.reload();
+        });
+    });
+</script> --}}
+@endpush
