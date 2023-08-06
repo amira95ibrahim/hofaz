@@ -13,6 +13,7 @@ use MyFatoorah\Library\PaymentMyfatoorahApiV2;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\GiftCreatedMail;
+use App\Models\periodicDonation;
 
 class MyFatoorahController extends Controller
 {
@@ -242,18 +243,20 @@ class MyFatoorahController extends Controller
         //$request->validate([
         // 'phone_number' => 'nullable|max:11'
         //]);
-        $marketer_id = $request->marketer_id;
+        $marketer_id = $request->marketer_id ??0;
         if (!empty($request->input('custom_amount'))) {
             $amount = $request->input('custom_amount');
         } else {
             $amount = $request->input('amount');
         }
-        $donation = Donation::create([
+        $donation = periodicDonation::create([
             'donor_id'  => Auth::id(),
             'amount'    => $amount,
             'payment_method' => 'visa',
             'status' => 'INITIATED',
-            'marketer_id' => $marketer_id
+            'marketer_id' => $marketer_id,
+            'frequency'=>$request->frequency,
+            'duration'=>$request->duration,
             // Add more fields specific to periodic donations, like frequency, next_payment_date, etc.
         ]);
 
@@ -263,21 +266,24 @@ class MyFatoorahController extends Controller
             // dd($paymentDates);
             // Create invoices for each payment date
             foreach ($paymentDates as $paymentDate) {
-                $paymentMethodId = $request->plan; // 0 for MyFatoorah invoice or 1 for Knet in test mode
+                $paymentMethodId = 2; // 0 for MyFatoorah invoice or 1 for Knet in test mode
 
                 $curlData = $this->getPayLoadData_periodic($request->all(), $donation->id, $paymentDate);
                 $data     = $this->mfObj->getInvoiceURL($curlData, $paymentMethodId);
 
-
+                // dd($data);
                 // Store the invoice details in the database
-                $invoice = Donation::create([
+                $invoice = periodicDonation::create([
                     'donor_id'  => Auth::id(),
                     'donation_id' => $donation->id,
                     'amount'    => $amount,
                     'invoice_url' => $data['invoiceURL'],
                     'payment_date' => $paymentDate,
-                    'marketer_id' => $marketer_id
-                    // Add more fields specific to periodic invoices, like status, payment_id, etc.
+                    'marketer_id' => $marketer_id,
+                    'frequency'=>$request->frequency,
+                    'duration'=>$request->duration,
+                    'RecurringId'=>$data['RecurringId'],
+                    'status' =>'CAPTURED'
                 ]);
             }
 
@@ -302,11 +308,11 @@ class MyFatoorahController extends Controller
         $callbackURL = route('myfatoorah.callback_periodic');
 
         return [
-            "PaymentMethodId" => 20,
-            'CustomerName'       => Auth::user()->name,
+            "PaymentMethodId" => 2,
+            'CustomerName'       => 'test',//Auth::user()->name,
             'InvoiceValue'       => $data['amount'],
             'DisplayCurrencyIso' => 'KWD',
-            'CustomerEmail'      =>  Auth::user()->email,
+            'CustomerEmail'      => 'test@dd.com',// Auth::user()->email,
             'CallBackUrl'        => $callbackURL,
             'ErrorUrl'           => $callbackURL,
             'MobileCountryCode'  => '+965',
@@ -338,25 +344,18 @@ class MyFatoorahController extends Controller
     public function callback_periodic()
     {
         try {
-            $paymentId = request('paymentId');
+            $paymentId =2;// request('paymentId');
             $data      = $this->mfObj->getPaymentStatus($paymentId, 'PaymentId');
             $invoice = Donation::where('payment_id', $paymentId)->first();
 
             if ($data->InvoiceStatus == 'Paid') {
 
-                // Check if 'model' in session is 'gift'
-                // if (session('model') == 'gift') {
-                //     // Call the route that sends a WhatsApp message to the user
-
-                //     // $this.send_whatsapp_message();
-                //     return redirect()->back()->with('success', 'تم ارسال هديتك بنجاح. جزاك الله خيرا');
-                // }
                 $invoice->status = 'PAID';
                 $invoice->payment_id = $paymentId;
                 $invoice->save();
 
                 // Update the status of the corresponding donation
-                $donation = Donation::find($invoice->donation_id);
+                $donation = periodicDonation::find($invoice->donation_id);
                 $donation->status = 'CAPTURED';
                 $donation->save();
                 return redirect()->back()->with('success', 'تم التبرع بنجاح. جزاك الله خيرا');
@@ -367,7 +366,7 @@ class MyFatoorahController extends Controller
                 $invoice->save();
 
                 // Update the status of the corresponding donation
-                $donation = Donation::find($invoice->donation_id);
+                $donation = periodicDonation::find($invoice->donation_id);
                 $donation->status = 'FAILED';
                 $donation->save();
                 return redirect()->back()->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');
@@ -378,7 +377,7 @@ class MyFatoorahController extends Controller
                 $invoice->save();
 
                 // Update the status of the corresponding donation
-                $donation = Donation::find($invoice->donation_id);
+                $donation = periodicDonation::find($invoice->donation_id);
                 $donation->status = 'DECLINED';
                 $donation->save();
                 return redirect()->back()->with('error', 'حدث خطأ فى الدفع, يرجى المحاولة مرة اخرى');

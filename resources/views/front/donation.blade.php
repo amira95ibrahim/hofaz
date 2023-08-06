@@ -389,14 +389,16 @@
                                                     <label class="btn btn-default" for="a75">30 @lang('donation.KWD')</label>
                                                 </div>
                                                 <div class="button">
-                                                    <input type="radio" id="a100" name="amount" value="50">
+                                                    <input type="radio" id="a100" name="amount" value="50"
+                                                    onclick="updateAmount('50')"/>
+                                                    >
                                                     <label class="btn btn-default" for="a100">50 @lang('donation.KWD')</label>
                                                 </div>
                                             </div>
                                             <div class="or mt-1 mb-10"> - @lang('donation.or') -</div>
                                             <div class="mt-1">
                                                 <div class="input-group">
-                                                    <input type="text" value="" name="custom_amount" placeholder="@lang('donation.enter_amount')" class="form-control input-lg font-16" data-height="45px" style="height: 45px;">
+                                                    <input type="text" value="" id="custom_amount" name="custom_amount" placeholder="@lang('donation.enter_amount')" class="form-control input-lg font-16" data-height="45px" style="height: 45px;">
                                                     <span class="input-group-btn">
                                                         <button data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="button" style="height: 45px;">@lang('donation.KWD')</button>
                                                     </span>
@@ -681,6 +683,9 @@
                 ]
             });
         });
+        function updateAmount( amount){
+            $('#custom_amount').val(amount);
+        }
     </script>
 
 
