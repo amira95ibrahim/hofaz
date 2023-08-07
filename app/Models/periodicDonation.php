@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class periodicDonation extends Model
 {
     use HasFactory;
-     protected $table = 'periodic_donation';
+     protected $table = 'periodoc_donation';
 
     protected $fillable = ['donor_id', 'amount', 'status','model','model_id','notes','marketer_id','frequency','duration','RecurringId'];
 

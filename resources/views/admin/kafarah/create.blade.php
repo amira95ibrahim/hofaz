@@ -19,7 +19,7 @@
 
                         <div class="card-block">
                             <div class="row">
-                                @include('admin.Kafarah.fields')
+                                @include('admin.kafarah.fields')
                             </div>
                         </div>
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\Admin;
 
-use App\Models\Kafarah;
+use App\Models\kafarah;
 use Illuminate\Foundation\Http\FormRequest;
 
 

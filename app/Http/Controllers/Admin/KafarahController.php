@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\Admin\kafarahDataTable;
 use App\Http\Controllers\AppBaseController;
-use App\Http\Requests\Admin\CreatekafarahRequest;
-use App\Http\Requests\Admin\UpdatekafarahRequest;
+use App\Http\Requests\Admin\CreateKafarahRequest;
+use App\Http\Requests\Admin\UpdateKafarahRequest;
 use App\Models\SitePagesDetail;
 use App\Models\kafarah;
 use Laracasts\Flash\Flash;
@@ -46,10 +46,9 @@ class KafarahController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreatekafarahRequest $request)
+    public function store(CreateKafarahRequest $request)
         {
             $input = $request->all();
-
 
             $kafarah = kafarah::create($input);
 
@@ -116,7 +115,6 @@ class KafarahController extends AppBaseController
 
         if (empty($kafarah)) {
             Flash::error(__('messages.not_found', ['model' => __('models/kafarah.singular')]));
-
             return redirect(route('admin.Kafarah.index'));
         }
 
@@ -140,13 +138,12 @@ class KafarahController extends AppBaseController
      * @return Response
      */
     public function destroy($id)
-    {
+    { return 'hi';
         /** @var kafarah $kafarah */
         $kafarah = kafarah::find($id);
-
+        dd($kafarah);
         if (empty($kafarah)) {
             Flash::error(__('messages.not_found', ['model' => __('models/kafarah.singular')]));
-
             return redirect(route('admin.Kafarah.index'));
         }
 
@@ -156,6 +153,7 @@ class KafarahController extends AppBaseController
 
         return redirect(route('admin.Kafarah.index'));
     }
+
 
     public function kafarahDetails(){
         $kafarahDetails = SitePagesDetail::kafarahPage()->first();
@@ -182,7 +180,8 @@ class KafarahController extends AppBaseController
     }
 
 
-    public function changeStatus(kafarah $kafarah){
+    public function changeStatus( $id){
+        $kafarah = kafarah::find($id);
 
         $kafarah->active = !$kafarah->active;
         $kafarah->save();

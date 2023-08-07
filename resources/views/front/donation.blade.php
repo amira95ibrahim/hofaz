@@ -377,15 +377,15 @@
                                             <h5>@lang('donation.choose_donation_amount')</h5>
                                             <div class="select-amount">
                                                 <div class="button">
-                                                    <input type="radio" id="a25" name="amount" value="10">
+                                                    <input type="radio" id="a25" name="amount" value="10"   onclick="updateAmount('10')">
                                                     <label class="btn btn-default" for="a25">10 @lang('donation.KWD')</label>
                                                 </div>
                                                 <div class="button">
-                                                    <input type="radio" id="a50" name="amount" value="20">
+                                                    <input type="radio" id="a50" name="amount" value="20"   onclick="updateAmount('20')">
                                                     <label class="btn btn-default" for="a50">20 @lang('donation.KWD')</label>
                                                 </div>
                                                 <div class="button">
-                                                    <input type="radio" id="a75" name="amount" value="30">
+                                                    <input type="radio" id="a75" name="amount" value="30"   onclick="updateAmount('30')">
                                                     <label class="btn btn-default" for="a75">30 @lang('donation.KWD')</label>
                                                 </div>
                                                 <div class="button">
@@ -398,7 +398,7 @@
                                             <div class="or mt-1 mb-10"> - @lang('donation.or') -</div>
                                             <div class="mt-1">
                                                 <div class="input-group">
-                                                    <input type="text" value="" id="custom_amount" name="custom_amount" placeholder="@lang('donation.enter_amount')" class="form-control input-lg font-16" data-height="45px" style="height: 45px;">
+                                                    <input type="text" value="" id="custom_amount" name="custom_amount" placeholder="@lang('donation.enter_amount')" class="form-control input-lg font-16" data-height="45px" style="height: 45px;" value="10">
                                                     <span class="input-group-btn">
                                                         <button data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="button" style="height: 45px;">@lang('donation.KWD')</button>
                                                     </span>
@@ -423,12 +423,10 @@
                     method="post">
                     <input type="hidden" name="cmd" value="_donations">
                     <input type="hidden" name="business" value="accounts@thememascot.com">
-
                     <input type="hidden" name="item_name" value="Educate Children">
                     <!-- updated dynamically -->
                     <input type="hidden" name="currency_code" value="USD"> <!-- updated dynamically -->
                     <input type="hidden" name="amount" value="20"> <!-- updated dynamically -->
-
                     <input type="hidden" name="no_shipping" value="1">
                     <input type="hidden" name="cn" value="Comments...">
                     <input type="hidden" name="tax" value="0">
@@ -439,20 +437,16 @@
                     <input type="hidden" name="notify_url" value="http://www.yoursite.com/notifypayment.php">
                     <input type="submit" name="submit">
                 </form> --}}
-
                 <!-- Paypal Recurring Form -->
                 {{-- <form id="popup_paypal_donate_form-recurring" class="hidden"
                     action="https://www.paypal.com/cgi-bin/webscr" method="post">
                     <input type="hidden" name="cmd" value="_xclick-subscriptions">
                     <input type="hidden" name="business" value="accounts@thememascot.com">
-
                     <input type="hidden" name="item_name" value="Educate Children">
                     <!-- updated dynamically -->
                     <input type="hidden" name="currency_code" value="USD"> <!-- updated dynamically -->
                     <input type="hidden" name="a3" value="20"> <!-- updated dynamically -->
                     <input type="hidden" name="t3" value="D"> <!-- updated dynamically -->
-
-
                     <input type="hidden" name="p3" value="1">
                     <input type="hidden" name="rm" value="2">
                     <input type="hidden" name="src" value="1">
@@ -685,6 +679,7 @@
         });
         function updateAmount( amount){
             $('#custom_amount').val(amount);
+            console.log(amount);
         }
     </script>
 

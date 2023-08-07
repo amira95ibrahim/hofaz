@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kafarah;
+use App\Models\kafarah;
 use App\Models\SitePagesDetail;
 
 class KafarahController extends BaseController
