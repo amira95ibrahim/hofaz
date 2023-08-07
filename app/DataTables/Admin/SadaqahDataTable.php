@@ -59,9 +59,9 @@ class SadaqahDataTable extends DataTable
                        'text' => '<i class="fa fa-plus"></i> إنشاء'
                     ],
                     [
-                       'extend' => 'export',
-                       'className' => 'btn btn-default btn-sm no-corner',
-                       'text' => '<i class="fa fa-download"></i> تنزيل'
+                        'extend' => 'excel',
+                        'className' => 'btn btn-default btn-sm no-corner',
+                        'text' => '<i class="fa fa-download"></i> تنزيل ',
                     ],
                     [
                        'extend' => 'print',

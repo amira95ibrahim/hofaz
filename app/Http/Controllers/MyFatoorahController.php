@@ -254,6 +254,9 @@ class MyFatoorahController extends Controller
             'amount'    => $amount,
             'payment_method' => 'visa',
             'status' => 'INITIATED',
+            'model'=>'',
+            'model_id'=>0,
+            'Recurring_id'=>0,
             'marketer_id' => $marketer_id,
             'frequency'=>$request->frequency,
             'duration'=>$request->duration,
@@ -282,7 +285,7 @@ class MyFatoorahController extends Controller
                     'marketer_id' => $marketer_id,
                     'frequency'=>$request->frequency,
                     'duration'=>$request->duration,
-                    'RecurringId'=>$data['RecurringId'],
+                    'Recurring_id'=>$data['RecurringId']??0,
                     'status' =>'CAPTURED'
                 ]);
             }

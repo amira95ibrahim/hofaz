@@ -53,9 +53,9 @@ class AchievementDataTable extends DataTable
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
                     [
-                        'extend' => 'export',
+                        'extend' => 'excel',
                         'className' => 'btn btn-default btn-sm no-corner',
-                        'text' => '<i class="fa fa-download"></i> تنزيل'
+                        'text' => '<i class="fa fa-download"></i> تنزيل ',
                     ],
                     [
                         'extend' => 'print',

@@ -59,9 +59,9 @@ class ZakahDataTable extends DataTable
                         'text' => '<i class="fa fa-plus"></i> إنشاء'
                     ],
                     [
-                        'extend' => 'export',
+                        'extend' => 'excel',
                         'className' => 'btn btn-default btn-sm no-corner',
-                        'text' => '<i class="fa fa-download"></i> تنزيل'
+                        'text' => '<i class="fa fa-download"></i> تنزيل ',
                     ],
                     [
                         'extend' => 'print',

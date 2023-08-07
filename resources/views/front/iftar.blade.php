@@ -123,9 +123,8 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <label>@lang('iftar.country')</label>
-                                            <select class="form-control">
-                                                <option selected="" disabled="" name="country">@lang('iftar.select_country')
-                                                </option>
+                                            <select class="form-control" id="select_country" required>
+                                                <option selected disabled value="">@lang('iftar.select_country')</option>
                                                 <option>@lang('iftar.india')</option>
                                                 <option>@lang('iftar.saudi_arabia')</option>
                                                 <option>@lang('iftar.USA')</option>
@@ -227,9 +226,8 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <label>@lang('iftar.country')</label>
-                                            <select class="form-control">
-                                                <option selected="" disabled="" name="country">@lang('iftar.select_country')
-                                                </option>
+                                            <select class="form-control" id="select_country" required>
+                                                <option selected disabled value="">@lang('iftar.select_country')</option>
                                                 <option>@lang('iftar.india')</option>
                                                 <option>@lang('iftar.saudi_arabia')</option>
                                                 <option>@lang('iftar.USA')</option>
@@ -316,9 +314,8 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <label>@lang('iftar.country')</label>
-                                            <select class="form-control">
-                                                <option selected="" disabled="" name="country">@lang('iftar.select_country')
-                                                </option>
+                                            <select class="form-control" id="select_country" required>
+                                                <option selected disabled value="">@lang('iftar.select_country')</option>
                                                 <option>@lang('iftar.india')</option>
                                                 <option>@lang('iftar.saudi_arabia')</option>
                                                 <option>@lang('iftar.USA')</option>
@@ -405,9 +402,8 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <label>@lang('iftar.country')</label>
-                                            <select class="form-control">
-                                                <option selected="" disabled="" name="country">@lang('iftar.select_country')
-                                                </option>
+                                            <select class="form-control" id="select_country" required>
+                                                <option selected disabled value="">@lang('iftar.select_country')</option>
                                                 <option>@lang('iftar.india')</option>
                                                 <option>@lang('iftar.saudi_arabia')</option>
                                                 <option>@lang('iftar.USA')</option>
@@ -583,24 +579,23 @@
         });
     </script>
     <script>
-        $('.btnFullwidth').click(function() {
+$('.btnFullwidth').click(function() {
+    let price = $('input[name="amount"]').val();
+    let model = 'iftar';
+    let model_id = 1;
+    let selectedCountry = $('#select_country').val(); // Get the selected country
 
-            let price = $('input[name="amount"]').val();
-            let model = 'iftar';
-            let model_id = 1;
-             console.log(price);
-            if (price > 0) {
-                sessionStorage.setItem('model', model);
-                sessionStorage.setItem('model_id', model_id);
-                sessionStorage.setItem('amount', price);
-
-            }
-            else {
-                iziToast.error({
-                    title: '{{ __('common.add_amount_first') }}',
-                    position: 'topCenter'
-                });
-            }
-            });
-    </script>
+    if (price > 0 && selectedCountry !== "") {
+        sessionStorage.setItem('model', model);
+        sessionStorage.setItem('model_id', model_id);
+        sessionStorage.setItem('amount', price);
+        sessionStorage.setItem('country', selectedCountry); // Store the selected country in sessionStorage
+    } else {
+        iziToast.error({
+            title: '{{ __('common.add_amount_first') }}',
+            position: 'topCenter'
+        });
+    }
+});
+</script>
 @endpush

@@ -20,7 +20,7 @@ class NavSectionDataTable extends DataTable
         $dataTable = new EloquentDataTable($query);
 
         return $dataTable->addColumn('action', 'admin.nav_sections.datatables_actions')
-            ->editColumn('active', function ($q){
+            ->editColumn('active', function ($q) {
                 return ($q->active) ? '<span class="tag tag-success">نشط </span>' : '<span class="tag tag-danger">غير نشط </span>';
             })
             ->rawColumns(['action', 'active']);
@@ -53,15 +53,15 @@ class NavSectionDataTable extends DataTable
                 'stateSave' => true,
                 'order'     => [[0, 'desc']],
                 'buttons'   => [
-//                    [
-//                       'extend' => 'create',
-//                       'className' => 'btn btn-default btn-sm no-corner',
-//                       'text' => '<i class="fa fa-plus"></i> ' .__('auth.app.create').''
-//                    ],
+                    //                    [
+                    //                       'extend' => 'create',
+                    //                       'className' => 'btn btn-default btn-sm no-corner',
+                    //                       'text' => '<i class="fa fa-plus"></i> ' .__('auth.app.create').''
+                    //                    ],
                     [
-                        'extend' => 'export',
+                        'extend' => 'excel',
                         'className' => 'btn btn-default btn-sm no-corner',
-                        'text' => '<i class="fa fa-download"></i> تنزيل'
+                        'text' => '<i class="fa fa-download"></i> تنزيل ',
                     ],
                     [
                         'extend' => 'print',
@@ -74,9 +74,9 @@ class NavSectionDataTable extends DataTable
                         'text' => '<i class="fa fa-refresh"></i> تحديث الجدول'
                     ],
                 ],
-                 'language' => [
-                   'url' => url('//cdn.datatables.net/plug-ins/1.10.12/i18n/English.json'),
-                 ],
+                'language' => [
+                    'url' => url('//cdn.datatables.net/plug-ins/1.10.12/i18n/English.json'),
+                ],
             ]);
     }
 

@@ -43,18 +43,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('migrate', function (){
-//     \Artisan::call('migrate', ['--force' => true]);
-// });
-// Auth::routes();
 Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/', 'HomeController@index')->name('home');
-    Route::post('/register', 'Auth\RegisterController@register')->name('register');
-    Route::post('/login', 'Auth\LoginController@signIn')->name('login');
+    // Route::post('/register', 'Auth\RegisterController@register')->name('register');
+    // Route::post('/login', 'Auth\LoginController@signIn')->name('login');
 
-    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-    Route::post('/logout', 'Auth\LoginController@logout')->name('logout.post');
+    // Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+    // Route::post('/logout', 'Auth\LoginController@logout')->name('logout.post');
 
 
     // ============================ login with facebook =================================================================
@@ -74,8 +70,6 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
 
 
     // ============================== End login with facebook ================================================================
-
-
     // Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
     // Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 
@@ -128,7 +122,6 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::post('clear', 'CartController@clearAllCart')->name('cart.clear');
 
     Route::get('/publications', 'PublicationsController@index')->name('publications');
-
     Route::get('/news', 'NewsController@index')->name('news');
     Route::get('/news/{article}', 'NewsController@show')->name('news.details');
 
@@ -146,11 +139,10 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
 
 
     Route::get('getPaymentMethods', 'MyFatoorahController@getPaymentMethods')->name('getPaymentMethods');
-    Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed');//->middleware(('frontend.auth'));
+    Route::post('make-payment-signed', 'MyFatoorahController@index')->name('make-payment-signed'); //->middleware(('frontend.auth'));
     Route::post('PeriodicDonation', 'MyFatoorahController@createPeriodicDonation')->name('PeriodicDonation')->middleware(('frontend.auth'));
     Route::post('myfatoorah/callback/periodic', 'MyFatoorahController@callback_periodic')->name('myfatoorah.callback_periodic');
 });
-
 
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/payment', 'PaymentController@index')->name('payment');
@@ -189,31 +181,24 @@ Route::get('/teams', function () {
     return view('front.teams');
 })->name('teams');
 
-
-
 Route::get('lang/{lang}', [LangController::class, 'update'])->name('updateLang');
 
-Auth::routes();
-// Route::get('/admin', [HomeController::class, 'index'])->name('admin.home');
+ Auth::routes();
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // Auth::routes();
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    // Route::get('/', 'HomeController@index')->name('home');
     // COUNTRIES
     Route::resource('countries', CountryController::class)->except('show');
-
     // SADAQAH
     Route::resource('sadaqat', SadaqahController::class)->except(['show', 'destroy']);
     Route::post('sadaqat/status/{sadaqah}', [SadaqahController::class, 'changeStatus'])->name('sadaqat.status');
     Route::get('sadaqah-page', [SadaqahController::class, 'sadaqahDetails'])->name('sadaqahPage.edit');
     Route::patch('sadaqah-page', [SadaqahController::class, 'sadaqahDetailsUpdate'])->name('sadaqahPage.update');
-
     // ZAKAH
     Route::resource('zakat', ZakahController::class)->except(['show', 'destroy']);
     Route::post('zakat/status/{zakah}', [ZakahController::class, 'changeStatus'])->name('zakat.status');
     Route::get('zakah-page', [ZakahController::class, 'zakahDetails'])->name('zakahPage.edit');
     Route::patch('zakah-page', [ZakahController::class, 'zakahDetailsUpdate'])->name('zakahPage.update');
-
     // PROJECT
     Route::resource('projects', ProjectController::class)->except(['show', 'destroy']);
     Route::post('projects/status/{project}', [ProjectController::class, 'changeStatus'])->name('projects.status');
@@ -223,17 +208,13 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     //Repote
     Route::resource('admin/reports', ReportsController::class);
     Route::get('reports', [ReportsController::class, 'index'])->name('reports');
-
     //Marketers
     Route::resource('admin/marketers', MarketersController::class);
     Route::post('marketers/status/{marketer}', [MarketersController::class, 'changeStatus'])->name('marketer.status');
     Route::get('marketer-edit/{marketer}', [MarketersController::class, 'edit'])->name('marketer.edit');
     Route::delete('marketer-delete/{marketer}', [MarketersController::class, 'destroy'])->name('delete');
-
-
     // GIFT
     Route::resource('gifts', GiftController::class)->only(['create', 'store']);
-
     // KAFALAH
     Route::resource('kafalaTypes', KafalaTypeController::class)->except('show');
     Route::resource('kafalaFields', KafalaFieldsController::class)->except('show');
@@ -242,67 +223,52 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('kafalah-page', [KafalaController::class, 'kafalahDetails'])->name('kafalahPage.edit');
     Route::patch('kafalah-page', [KafalaController::class, 'kafalahDetailsUpdate'])->name('kafalahPage.update');
     Route::get('kafala-type/fields/{type}', [KafalaTypeController::class, 'getTypeFields'])->name('kafalaType.fields');
-
     // WAQF
     Route::resource('waqf', WaqfController::class)->except(['show', 'destroy']);
     Route::get('waqf-page', [WaqfController::class, 'waqfDetails'])->name('waqfPage.edit');
     Route::patch('waqf-page', [WaqfController::class, 'waqfDetailsUpdate'])->name('waqfPage.update');
     Route::post('waqf/status/{waqf}', [WaqfController::class, 'changeStatus'])->name('waqf.status');
     Route::post('waqf/homepage/{waqf}', [WaqfController::class, 'homepageUpdate'])->name('waqf.homepage');
-
     //Kafarah
-    Route::resource('Kafarah', KafarahController::class)->except(['show', 'destroy']);
+    Route::resource('Kafarah', KafarahController::class)->except(['show']);
     Route::get('Kafarah-page', [KafarahController::class, 'KafarahDetails'])->name('KafarahPage.edit');
     Route::patch('Kafarah-page', [KafarahController::class, 'KafarahDetailsUpdate'])->name('KafarahPage.update');
     Route::post('Kafarah/status/{Kafarah}', [KafarahController::class, 'changeStatus'])->name('Kafarah.status');
+    Route::delete('Kafarah/destroy/{Kafarah}', [KafarahController::class, 'destroy'])->name('Kafarah.destroy');
     Route::post('Kafarah/homepage/{Kafarah}', [KafarahController::class, 'homepageUpdate'])->name('Kafarah.homepage');
-
     // RELIEF
     Route::resource('reliefs', ReliefController::class)->except(['show', 'destroy']);
     Route::get('relief-page', [ReliefController::class, 'reliefsDetails'])->name('reliefsPage.edit');
     Route::patch('relief-page', [ReliefController::class, 'reliefsDetailsUpdate'])->name('reliefsPage.update');
     Route::post('reliefs/status/{relief}', [ReliefController::class, 'changeStatus'])->name('reliefs.status');
     Route::post('reliefs/homepage/{relief}', [ReliefController::class, 'homepageUpdate'])->name('reliefs.homepage');
-
     //NAV SECTIONS
     Route::resource('navSections', NavSectionController::class)->only(['index', 'edit', 'update']);
     Route::post('navSections/status/{NavSection}', [NavSectionController::class, 'changeStatus'])->name('navSections.status');
-
     // PUBLICATIONS
     Route::resource('publications', PublicationController::class);
     Route::post('publications/homepage/{publication}', [PublicationController::class, 'homepageUpdate'])->name('publications.homepage');
-
     // NEWS
     Route::resource('news', NewsController::class);
     Route::post('news/homepage/{news}', [NewsController::class, 'homepageUpdate'])->name('news.homepage');
-
     // ACHIEVEMENTS
     Route::resource('achievements', AchievementController::class)->only(['index', 'edit', 'update', 'show']);
-
     // TESTIMONIALS
     Route::resource('testimonials', TestimonialController::class);
-
     // SUBSCRIBERS
     Route::resource('subscribers', SubscriberController::class);
-
     // SETTINGS
     Route::resource('settings', SettingController::class)->only('edit', 'update');
-
     Route::resource('homepageSliders', HomepageSliderController::class)->except('show');
     Route::post('homepageSliders/status/{homepageSlider}', [HomepageSliderController::class, 'changeStatus'])->name('homepageSliders.status');
-
     Route::resource('categories', CategoryController::class)->except('show');
     Route::post('categories/status/{category}', [CategoryController::class, 'changeStatus'])->name('categories.status');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::fallback(function () {
     return view('errors.404');
 });
-
-
-
 Route::get('/send-message', function () {
     $accountSid = 'AC995a83c77a83f7555c7ef81fecb05daa';
     $authToken = 'dee07cd8e23c6a2a133769770ed8a49d';
