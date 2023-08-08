@@ -21,10 +21,12 @@ class MarketersController extends Controller
         return $MarketersDataTable->render('admin.marketers.index');
 
     }
-    public function changeStatus(MarketersDataTable $MarketersDataTable){
+    public function changeStatus( $id){
 
-        $MarketersDataTable->active = !$MarketersDataTable->active;
-        $MarketersDataTable->save();
+        $marketer = Marketer::find($id);
+
+        $marketer->active = !$marketer->active;
+        $marketer->save();
 
         Flash::success('تم تعديل الحالة بنجاح');
 
@@ -125,9 +127,9 @@ class MarketersController extends Controller
     }
 
     $input = $request->all();
-
     $marketer->fill($input);
     $marketer->save();
+    // dd($input);
 
     // Associate the related projects
     if ($request->has('project_ids')) {

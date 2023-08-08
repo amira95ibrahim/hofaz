@@ -37,7 +37,33 @@
     </ul>
 
 </li>
+<!---------------------- iftar -------------------->
 
+<li class='treeview '>
+    <a href="#">
+        <i class="fa fa-smile-o" aria-hidden="true"></i> <span>افطار</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+    </a>
+    <ul class="treeview-menu">
+        <li>
+            <a class="nav-link {{ Request::is('admin/iftar*') ? 'active' : '' }}"
+                href="{{ route('admin.iftar.index') }}">
+                <i class="fa fa-list"></i>  أفطار</a>
+            </a>
+        </li>
+        <li>
+            {{-- <a class="nav-link {{ Request::is('admin/sadaqat*') ? 'active' : '' }}"
+                href="{{ route('admin.sadaqahPage.edit') }}">
+
+                <i class="fa fa-edit" aria-hidden="true"></i> وصف الصدقة
+            </a> --}}
+
+        </li>
+    </ul>
+
+</li>
 
 <!---------------------- categories -------------------->
 

@@ -190,8 +190,8 @@ class WaqfController extends AppBaseController
             ->with('message', 'تم التعديل بنجاح');
     }
 
-    public function changeStatus(Waqf $waqf){
-
+    public function changeStatus($id){
+        $waqf = Waqf::find($id);
         $waqf->active = !$waqf->active;
         $waqf->save();
 
@@ -200,8 +200,9 @@ class WaqfController extends AppBaseController
         return redirect(route('admin.waqf.index'));
     }
 
-    public function homepageUpdate(Waqf $waqf){
-
+    public function homepageUpdate( $id){
+        $waqf = Waqf::find($id);
+        dd($waqf->homepage);
         $waqf->homepage = !$waqf->homepage;
         $waqf->save();
 

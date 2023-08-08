@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\SadaqahController;
+use App\Http\Controllers\Admin\IftarController;
 use App\Http\Controllers\Admin\ZakahController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\MarketersController;
@@ -107,6 +108,8 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/projects', 'ProjectController@index')->name('projects');
     Route::get('/project/{project}', 'ProjectController@show')->name('project.show');
+    Route::get('/projectCategory/{catid}', 'ProjectController@projectCategory')->name('project.category');
+
 
     Route::get('/gift', 'GiftController@index')->name('gift');
     Route::post('/gift/generate', 'GiftController@generate')->name('generate');
@@ -194,6 +197,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::post('sadaqat/status/{sadaqah}', [SadaqahController::class, 'changeStatus'])->name('sadaqat.status');
     Route::get('sadaqah-page', [SadaqahController::class, 'sadaqahDetails'])->name('sadaqahPage.edit');
     Route::patch('sadaqah-page', [SadaqahController::class, 'sadaqahDetailsUpdate'])->name('sadaqahPage.update');
+    // iftar
+    Route::resource('iftar', IftarController::class)->except(['show', 'destroy']);
+    Route::post('iftar/status/{sadaqah}', [IftarController::class, 'changeStatus'])->name('iftar.status');
+    Route::get('iftar-page', [IftarController::class, 'iftarDetails'])->name('iftarPage.edit');
+    Route::patch('iftar-page', [IftarController::class, 'iftarDetailsUpdate'])->name('iftarPage.update');
     // ZAKAH
     Route::resource('zakat', ZakahController::class)->except(['show', 'destroy']);
     Route::post('zakat/status/{zakah}', [ZakahController::class, 'changeStatus'])->name('zakat.status');

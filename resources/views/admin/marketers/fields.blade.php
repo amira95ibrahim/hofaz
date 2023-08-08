@@ -1,10 +1,7 @@
-
-
     <div class="col-sm-12">
         <div class="card card-warning">
             <div class="card-header">
                 <h4>بيانات المندوب</h4>
-
             </div>
             <div class="card-block collapse in" id="collapseExample2">
                 <div class="row">
@@ -15,9 +12,9 @@
                     </div>
                     <!-- Initial Amount Field -->
                     <div class="form-group col-sm-12">
-                        {!! Form::label('phone', '  تليفون:') !!}
+                        {!! Form::label('number', '  تليفون:') !!}
                         <div class="input-group">
-                            {!! Form::number('phone', null, ['class' => 'form-control']) !!}
+                            {!! Form::number('number', null, ['class' => 'form-control']) !!}
                         </div>
                     </div>
 

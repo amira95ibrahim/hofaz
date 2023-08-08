@@ -46,6 +46,13 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+
+        'admin' => [
+            // Other middleware...
+            'auth:admin', // Use the 'admin' guard for admin routes.
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        ],
     ];
 
     /**
@@ -67,5 +74,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'frontend.auth' => \App\Http\Middleware\FrontendAuthMiddleware::class,
+        'admin.auth' => \App\Http\Middleware\AdminAuthMiddleware::class,
     ];
 }

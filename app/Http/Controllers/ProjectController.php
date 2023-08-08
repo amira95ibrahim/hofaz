@@ -17,7 +17,7 @@ class ProjectController extends BaseController{
             $projects = $projects->where('country_id', $request->country);
 
         $projects = $projects->get();
-
+         
         $projectsCountries = Country::whereHas('projects')->active()->get();
         $projectsPageDetails = SitePagesDetail::projectsPage()->first();
         return view('front.projects', compact('projects', 'projectsPageDetails', 'projectsCountries'));
@@ -29,4 +29,28 @@ class ProjectController extends BaseController{
         }
         abort(404);
     }
+
+
+    public function projectCategory(Request $request, $catid)
+{
+    $projects = Project::active();
+
+    if (!empty($request->country)) {
+        $projects = $projects->where('country_id', $request->country);
+    }
+
+    // Add the condition to filter projects by category_id
+    $projects = $projects->where('category_id', $catid);
+
+    $projects = $projects->get();
+
+    $projectsCountries = Country::whereHas('projects')->active()->get();
+    $projectsPageDetails = SitePagesDetail::projectsPage()->first();
+    return view('front.projects', compact('projects', 'projectsPageDetails', 'projectsCountries'));
+}
+
+
+
+
+
 }

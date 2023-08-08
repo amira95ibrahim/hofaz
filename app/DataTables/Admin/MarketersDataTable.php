@@ -21,13 +21,10 @@ class MarketersDataTable extends DataTable
 
         return $dataTable
         ->addColumn('action', 'admin.marketers.datatables_actions')
-            ->editColumn('status', function ($q) {
-                return ($q->status) ? '<span class="tag tag-success">نشط </span>' : '<span class="tag tag-warning">غير نشط </span>';
+            ->editColumn('active', function ($q) {
+                return ($q->active) ? "<span class='tag tag-success' >نشط </span>" : '<span class="tag tag-warning">غير نشط </span>';
             })
-            ->rawColumns(['action', 'status', 'homepage'])
-            // ->editColumn('country_id', function ($q) {
-            //     return $q->country->name;
-            // })
+            ->rawColumns(['action', 'active', 'homepage'])
             ->editColumn('cost', function ($q) {
                 return number_format($q->cost) . ' د.ك';
             })
@@ -109,7 +106,7 @@ class MarketersDataTable extends DataTable
 
             'created_at' => new Column(['title' => " تاريخ التسجيل", 'data' => 'created_at']),
             'phone' => new Column(['title' => "التليفون ", 'data' => 'number']),
-            'status' => new Column(['title' => "التفعيل ", 'data' => 'status']),
+            'active' => new Column(['title' => "التفعيل ", 'data' => 'active']),
 
         ];
     }

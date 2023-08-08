@@ -1,4 +1,4 @@
-{{-- {!! Form::open(['route' => ['admin.marketer.status', $id], 'method' => 'post']) !!} --}}
+{!! Form::open(['route' => ['admin.marketer.status', $id], 'method' => 'post']) !!}
 <div class='btn-group'>
  {{-- <a href="{{ route('admin.marketer.delete', $id) }}" class='btn btn-outline-info btn-xs'> --}}
        {{-- <i class="fa fa-trash"></i> --}}
@@ -6,7 +6,7 @@
     <a href="{{ route('admin.marketer.edit', $id) }}" class='btn btn-outline-warning btn-xs'>
         <i class="fa fa-edit"></i>
     </a>
-    {{-- @if($active)
+    @if($active)
         {!! Form::button('<i class="fa fa-close"></i> إيقاف ', [
             'type' => 'submit',
             'class' => 'btn btn-outline-danger btn-xs',
@@ -20,9 +20,9 @@
             'onclick' => 'return confirm("هل انت متاكد؟")',
             'style' => 'margin-right:5px'
         ]) !!}
-    @endif --}}
+    @endif
 </div>
-{{-- {!! Form::close() !!} --}}
+{!! Form::close() !!}
 
 <script>
     // $('.homepage').on('change', function(event) {

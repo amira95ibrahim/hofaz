@@ -60,7 +60,7 @@ class Achievement extends Model
         'name_ar' => 'required|string|max:255',
         'name_en' => 'required|string|max:255',
         'number' => 'required|integer',
-        'image' => 'required|file',
+        'image' => 'file',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
     ];

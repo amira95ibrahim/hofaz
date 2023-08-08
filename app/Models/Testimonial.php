@@ -78,7 +78,7 @@ class Testimonial extends Model
         'job_en' => 'nullable|string|max:255',
         'testimonial_ar' => 'required|string',
         'testimonial_en' => 'nullable|string',
-        'image' => 'required|file',
+        'image' => 'file',
         'active' => 'required|boolean',
         'deleted_at' => 'nullable',
         'created_at' => 'nullable',

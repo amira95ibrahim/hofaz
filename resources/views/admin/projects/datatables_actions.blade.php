@@ -1,13 +1,12 @@
 {!! Form::open(['route' => ['admin.projects.status', $id], 'method' => 'post']) !!}
 <div class='btn-group'style=" width:200px">
 
+
     <a href="{{ route('project.show', $id) }}" class='btn btn-outline-info btn-xs'>
        <i class="fa fa-share"></i>  رابط المشروع
    </a>
 
-    <a href="{{ route('admin.projects.edit', $id) }}" class='btn btn-outline-warning btn-xs'>
-        <i class="fa fa-edit"></i>
-    </a>
+
     @if($active)
         {!! Form::button('<i class="fa fa-close"></i> إيقاف ', [
             'type' => 'submit',
@@ -23,6 +22,9 @@
             'style' => 'margin-right:5px'
         ]) !!}
     @endif
+    <a href="{{ route('admin.projects.edit', $id) }}" class='btn btn-outline-warning btn-xs'>
+        <i class="fa fa-edit"></i>
+    </a>
 </div>
 {!! Form::close() !!}
 

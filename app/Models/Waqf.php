@@ -97,7 +97,7 @@ class Waqf extends Model
         'initial_amount' => 'required|numeric',
         'show_remaining' => 'required|boolean',
         'active' => 'required|boolean',
-        'homepage' => 'required|boolean',
+        'homepage' => 'boolean',
         'image' => 'nullable|file',
         'deleted_at' => 'nullable',
         'created_at' => 'nullable',
