@@ -5,12 +5,12 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ url('/home') }}">@lang('dashboard.home')</a>
         </li>
-        <li class="breadcrumb-item active">@lang('models/kafarah.singular')</li>
+        <li class="breadcrumb-item active">@lang('models/iftar.singular')</li>
 
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu">
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                <a class="btn btn-secondary" href="{{ route('admin.Kafarah.index') }}">
+                <a class="btn btn-secondary" href="{{ route('admin.iftar.index') }}">
                     <i class="icon-arrow-left-circle"></i> &nbsp;@lang('crud.back')
                 </a>
             </div>
@@ -24,7 +24,7 @@
                     <div class="card">
                         <div class="card-block">
                             <div class="row">
-                                @include('admin.Kafarah.show_fields')
+                                @include('admin.iftar.show_fields')
                             </div>
                         </div>
                     </div>

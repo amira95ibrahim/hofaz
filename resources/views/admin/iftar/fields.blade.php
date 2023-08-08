@@ -1,10 +1,10 @@
-<!-- Name En Field -->
+<!-- amount Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('amount', ' سعر السهم:') !!}
     {!! Form::text('amount', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}
 </div>
 
-<!-- Name Ar Field -->
+<!-- duration Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('duration', ' المده:') !!}
     {!! Form::text('duration', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}

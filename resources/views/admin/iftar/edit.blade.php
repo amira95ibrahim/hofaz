@@ -17,7 +17,7 @@
 
                     <div class="card">
 
-                        {!! Form::model($iftar, ['route' => ['admin.Kafarah.update', $iftar->id], 'method' => 'patch']) !!}
+                        {!! Form::model($iftar, ['route' => ['admin.iftar.update', $iftar->id], 'method' => 'patch']) !!}
 
                         <div class="card-block">
                             <div class="row">

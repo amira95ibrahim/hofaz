@@ -32,6 +32,8 @@ use App\Http\Controllers\ElkherController;
 use App\Http\Controllers\FacebookController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IftarfrontController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -90,7 +92,7 @@ Route::middleware('web')->namespace('App\Http\Controllers')->group(function () {
     Route::get('/sadaqa', 'SadaqahController@index')->name('sadaqa');
     Route::get('/zakah', 'ZakahController@index')->name('zakah');
     Route::get('/kafarahv', 'KafarahController@index')->name('kafarahv');
-
+    Route::get('/iftar', 'IftarfrontController@index')->name('iftar');
 
     Route::get('/kafalat', 'KafalahController@index')->name('kafalat');
     Route::get('/sponsor-detail/{kafala}', 'KafalahController@show')->name('sponsorDetail');
@@ -152,9 +154,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/paymentfromcart', 'PaymentController@paymentfromcart')->name('paymentfromcart');
 });
 
-Route::get('/iftar', function () {
-    return view('front.iftar');
-})->name('iftar');
+
 
 Route::get('/about-us', function () {
     return view('front.aboutUs');
@@ -193,22 +193,22 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // COUNTRIES
     Route::resource('countries', CountryController::class)->except('show');
     // SADAQAH
-    Route::resource('sadaqat', SadaqahController::class)->except(['show', 'destroy']);
+    Route::resource('sadaqat', SadaqahController::class)->except(['show']);
     Route::post('sadaqat/status/{sadaqah}', [SadaqahController::class, 'changeStatus'])->name('sadaqat.status');
     Route::get('sadaqah-page', [SadaqahController::class, 'sadaqahDetails'])->name('sadaqahPage.edit');
     Route::patch('sadaqah-page', [SadaqahController::class, 'sadaqahDetailsUpdate'])->name('sadaqahPage.update');
     // iftar
-    Route::resource('iftar', IftarController::class)->except(['show', 'destroy']);
+    Route::resource('iftar', IftarController::class)->except(['show']);
     Route::post('iftar/status/{sadaqah}', [IftarController::class, 'changeStatus'])->name('iftar.status');
     Route::get('iftar-page', [IftarController::class, 'iftarDetails'])->name('iftarPage.edit');
     Route::patch('iftar-page', [IftarController::class, 'iftarDetailsUpdate'])->name('iftarPage.update');
     // ZAKAH
-    Route::resource('zakat', ZakahController::class)->except(['show', 'destroy']);
+    Route::resource('zakat', ZakahController::class)->except(['show']);
     Route::post('zakat/status/{zakah}', [ZakahController::class, 'changeStatus'])->name('zakat.status');
     Route::get('zakah-page', [ZakahController::class, 'zakahDetails'])->name('zakahPage.edit');
     Route::patch('zakah-page', [ZakahController::class, 'zakahDetailsUpdate'])->name('zakahPage.update');
     // PROJECT
-    Route::resource('projects', ProjectController::class)->except(['show', 'destroy']);
+    Route::resource('projects', ProjectController::class)->except(['show']);
     Route::post('projects/status/{project}', [ProjectController::class, 'changeStatus'])->name('projects.status');
     Route::post('projects/homepage/{project}', [ProjectController::class, 'homepageUpdate'])->name('projects.homepage');
     Route::get('projects-page', [ProjectController::class, 'projectsDetails'])->name('projectsPage.edit');
@@ -226,13 +226,13 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // KAFALAH
     Route::resource('kafalaTypes', KafalaTypeController::class)->except('show');
     Route::resource('kafalaFields', KafalaFieldsController::class)->except('show');
-    Route::resource('kafalat', KafalaController::class)->except(['show', 'destroy']);
+    Route::resource('kafalat', KafalaController::class)->except(['show']);
     Route::post('kafalat/status/{kafala}', [KafalaController::class, 'changeStatus'])->name('kafalat.status');
     Route::get('kafalah-page', [KafalaController::class, 'kafalahDetails'])->name('kafalahPage.edit');
     Route::patch('kafalah-page', [KafalaController::class, 'kafalahDetailsUpdate'])->name('kafalahPage.update');
     Route::get('kafala-type/fields/{type}', [KafalaTypeController::class, 'getTypeFields'])->name('kafalaType.fields');
     // WAQF
-    Route::resource('waqf', WaqfController::class)->except(['show', 'destroy']);
+    Route::resource('waqf', WaqfController::class)->except(['show']);
     Route::get('waqf-page', [WaqfController::class, 'waqfDetails'])->name('waqfPage.edit');
     Route::patch('waqf-page', [WaqfController::class, 'waqfDetailsUpdate'])->name('waqfPage.update');
     Route::post('waqf/status/{waqf}', [WaqfController::class, 'changeStatus'])->name('waqf.status');
@@ -242,10 +242,10 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('Kafarah-page', [KafarahController::class, 'KafarahDetails'])->name('KafarahPage.edit');
     Route::patch('Kafarah-page', [KafarahController::class, 'KafarahDetailsUpdate'])->name('KafarahPage.update');
     Route::post('Kafarah/status/{Kafarah}', [KafarahController::class, 'changeStatus'])->name('Kafarah.status');
-    Route::delete('Kafarah/destroy/{Kafarah}', [KafarahController::class, 'destroy'])->name('Kafarah.destroy');
+    // Route::delete('Kafarah/destroy/{Kafarah}', [KafarahController::class, 'destroy'])->name('Kafarah.destroy');
     Route::post('Kafarah/homepage/{Kafarah}', [KafarahController::class, 'homepageUpdate'])->name('Kafarah.homepage');
     // RELIEF
-    Route::resource('reliefs', ReliefController::class)->except(['show', 'destroy']);
+    Route::resource('reliefs', ReliefController::class)->except(['show']);
     Route::get('relief-page', [ReliefController::class, 'reliefsDetails'])->name('reliefsPage.edit');
     Route::patch('relief-page', [ReliefController::class, 'reliefsDetailsUpdate'])->name('reliefsPage.update');
     Route::post('reliefs/status/{relief}', [ReliefController::class, 'changeStatus'])->name('reliefs.status');

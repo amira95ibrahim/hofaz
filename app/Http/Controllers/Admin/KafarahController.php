@@ -138,7 +138,7 @@ class KafarahController extends AppBaseController
      * @return Response
      */
     public function destroy($id)
-    { return 'hi';
+    { 
         /** @var kafarah $kafarah */
         $kafarah = kafarah::find($id);
         dd($kafarah);

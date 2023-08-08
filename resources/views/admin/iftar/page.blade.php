@@ -21,32 +21,22 @@
 
                     <div class="card">
 
-                        {!! Form::model($kafarahDetails, ['route' => ['admin.kafarahPage.update', $kafarahDetails->id], 'method' => 'patch', 'enctype' => 'multipart/form-data']) !!}
+                        {!! Form::model($kafarahDetails, ['route' => ['admin.iftar.update', $kafarahDetails->id], 'method' => 'patch', 'enctype' => 'multipart/form-data']) !!}
 
                         <div class="card-block">
                             <div class="row">
-                                <!-- Name En Field -->
+
+
+                                <!-- duration  Field -->
                                 <div class="form-group col-sm-6">
-                                    {!! Form::label('title_en', 'العنوان بالانجليزية:') !!}
-                                    {!! Form::text('title_en', null, ['class' => 'form-control', 'required']) !!}
+                                    {!! Form::label('duration', ' المدة:') !!}
+                                    {!! Form::textarea('duration', null, ['class' => 'form-control textarea', 'required']) !!}
                                 </div>
 
-                                <!-- Name Ar Field -->
+                                <!-- amount  Field -->
                                 <div class="form-group col-sm-6">
-                                    {!! Form::label('title_ar', 'العنوان بالعربية:') !!}
-                                    {!! Form::text('title_ar', null, ['class' => 'form-control', 'required']) !!}
-                                </div>
-
-                                <!-- Name En Field -->
-                                <div class="form-group col-sm-6">
-                                    {!! Form::label('details_en', 'التفاصيل بالانجليزية:') !!}
-                                    {!! Form::textarea('details_en', null, ['class' => 'form-control textarea', 'required']) !!}
-                                </div>
-
-                                <!-- Name Ar Field -->
-                                <div class="form-group col-sm-6">
-                                    {!! Form::label('details_ar', 'التفاصيل بالعربية:') !!}
-                                    {!! Form::textarea('details_ar', null, ['class' => 'form-control textarea', 'required']) !!}
+                                    {!! Form::label('amount', 'سعر السهم :') !!}
+                                    {!! Form::textarea('amount', null, ['class' => 'form-control textarea', 'required']) !!}
                                 </div>
 
                                 <div class="form-group col-sm-6">

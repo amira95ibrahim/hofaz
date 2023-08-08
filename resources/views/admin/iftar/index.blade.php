@@ -10,7 +10,7 @@
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu">
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                <a class="btn btn-secondary" href="{{route('admin.Kafarah.create')}}">
+                <a class="btn btn-secondary" href="{{route('admin.iftar.create')}}">
                     <i class="icon-plus"></i> إضافة سهم افطار جديد
                 </a>
             </div>

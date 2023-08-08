@@ -115,6 +115,6 @@ class CategoryDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Admin\Category_' . date('YmdHis');
+        return 'Category_' . date('YmdHis');
     }
 }

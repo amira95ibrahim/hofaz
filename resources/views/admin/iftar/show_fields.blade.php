@@ -1,18 +1,18 @@
-<!-- Name En Field -->
+<!-- amount Field -->
 <div class="col-sm-12">
     {!! Form::label('amount', __('models/iftar.fields.amount').':') !!}
-    <p>{{ $sadaqah->amount }}</p>
+    <p>{{ $iftar->amount }}</p>
 </div>
 
-<!-- Name Ar Field -->
+<!-- duration Field -->
 <div class="col-sm-12">
     {!! Form::label('duration', __('models/iftar.fields.duration').':') !!}
-    <p>{{ $sadaqah->duration }}</p>
+    <p>{{ $iftar->duration }}</p>
 </div>
 
 <!-- Active Field -->
-<div class="col-sm-12">
+{{-- <div class="col-sm-12">
     {!! Form::label('active', __('models/kafarah.fields.active').':') !!}
     <p>{{ $sadaqah->active }}</p>
-</div>
+</div> --}}
 
