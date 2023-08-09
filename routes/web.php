@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\SadaqahController;
 use App\Http\Controllers\Admin\IftarController;
 use App\Http\Controllers\Admin\ZakahController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\PeriodicDonationController;
+
 use App\Http\Controllers\Admin\MarketersController;
 use App\Http\Controllers\Admin\ReportsController;
 use App\Http\Controllers\Admin\GiftController;
@@ -213,6 +215,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::post('projects/homepage/{project}', [ProjectController::class, 'homepageUpdate'])->name('projects.homepage');
     Route::get('projects-page', [ProjectController::class, 'projectsDetails'])->name('projectsPage.edit');
     Route::patch('projects-page', [ProjectController::class, 'projectsDetailsUpdate'])->name('projectsPage.update');
+     // periodicDonation
+     Route::resource('periodicDonation', PeriodicDonationController::class)->except(['show']);
+    //  Route::post('periodicDonation/status/{id}', [PeriodicDonationController::class, 'changeStatus'])->name('periodicDonation.status');
+    //  Route::get('zakah-page', [PeriodicDonationController::class, 'zakahDetails'])->name('zakahPage.edit');
+    //  Route::patch('zakah-page', [PeriodicDonationController::class, 'zakahDetailsUpdate'])->name('zakahPage.update');
     //Repote
     Route::resource('admin/reports', ReportsController::class);
     Route::get('reports', [ReportsController::class, 'index'])->name('reports');

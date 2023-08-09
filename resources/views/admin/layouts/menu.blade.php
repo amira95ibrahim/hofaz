@@ -209,6 +209,27 @@
 
 </li>
 
+<!---------------------- 'Periodic Donation' -------------------->
+
+
+<li class='treeview '>
+    <a href="{{ route('admin.periodicDonation.index') }}">
+        <i class="fa fa-th"></i>
+        <span>التبرعات الدوريه</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+    </a>
+    <ul class="treeview-menu">
+        <li>
+            <a href="{{ route('admin.periodicDonation.index') }}">
+                <i class="fa fa-circle-o"></i>عرض التبرعات الدوريه
+            </a>
+        </li>
+
+    </ul>
+
+</li>
 <!------------------------- waqf ---------------------------->
 
 <li class='treeview '>
