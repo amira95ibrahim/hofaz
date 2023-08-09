@@ -452,24 +452,12 @@
                                         <li><a href="{{ route('kafarahv') }}"><i
                                                     class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.penances')</a></li>
-                                        <li><a href="{{ route('project.category', ['catid' => 1]) }}"><i
-                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
-                                                    aria-hidden="true"></i>@lang('footer.building_mosques')</a></li>
-                                        <li><a href="{{ route('project.category', ['catid' => 2]) }}"><i
-                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
-                                                    aria-hidden="true"></i>@lang('footer.water_projects')</a></li>
-                                        <li><a href="{{ route('project.category', ['catid' => 3]) }}"><i
-                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
-                                                    aria-hidden="true"></i>@lang('footer.educational_projects')</a></li>
-                                        <li><a href="{{ route('project.category', ['catid' => 4]) }}"><i
-                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
-                                                    aria-hidden="true"></i>@lang('footer.development_projects')</a></li>
-                                        <li><a href="{{ route('project.category', ['catid' => 5]) }}"><i
-                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
-                                                    aria-hidden="true"></i>@lang('footer.medical_projects')</a></li>
-                                        <li><a href="{{ route('project.category', ['catid' => 6]) }}"><i
-                                                    class="fa fa-angle-{{ $reverseFloat }} ml-5"
-                                                    aria-hidden="true"></i>@lang('footer.halal_earning_projects')</a></li>
+                                                    @foreach ($categories as $category)
+                                                    <li><a href="{{ route('project.category', ['catid' => $category->id]) }}"><i
+                                                                class="fa fa-angle-{{ $reverseFloat }} ml-5"
+                                                                aria-hidden="true"></i>{{ $category->{'name_'.app()->getLocale()} }}</a></li>
+
+                                                @endforeach
                                     </ul>
                                 </div>
                             </div>

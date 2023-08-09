@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Achievement;
+use App\Models\Category;
 use App\Models\HomepageSlider;
 use App\Models\News;
 use App\Models\Project;
@@ -18,7 +19,8 @@ class HomeController extends BaseController{
         $news = News::active()->homepage()->limit(3)->get();
         $achievements = Achievement::get();
         $sliders = HomepageSlider::active()->get();
-
-        return view('front.index', compact('publications', 'news', 'achievements', 'sliders'));
+        // $categories=Category::active()->get();
+        $categories = Category::active()->take(7)->get();
+        return view('front.index', compact('publications', 'news', 'achievements', 'sliders','categories'));
     }
 }
