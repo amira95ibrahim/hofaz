@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Donation;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,42 +29,51 @@ class ElkherController extends Controller
         ->where('model_id', 4)
         ->sum('amount');
 
-        return view('front.elkher.index' , compact('kfalatys','tabratys','wakfyats','mashroatys'));
+        $categories = Category::active()->take(7)->get();
+
+
+        return view('front.elkher.index' , compact('kfalatys','tabratys','wakfyats','mashroatys','categories'));
 
     }
 
     public function elkher_kafalat (){
+        $categories = Category::active()->take(7)->get();
 
-         return view('front.elkher.kafalat' );
+         return view('front.elkher.kafalat',compact('categories') );
         //  return view('front.elkher.kafalat' , compact('kfalatys'));
     }
 
     public function elkher_tabraat (){
+        $categories = Category::active()->take(7)->get();
 
         // return view('front.elkher.tabraat' , compact('tabratys'));
-        return view('front.elkher.tabraat' );
+        return view('front.elkher.tabraat',compact('categories') );
     }
 
     public function elkher_masert (){
+        $categories = Category::active()->take(7)->get();
 
         // return view('front.elkher.masert_elkher' , compact('maserts'));
-        return view('front.elkher.masert_elkher');
+        return view('front.elkher.masert_elkher',compact('categories'));
     }
 
     public function elkher_arshef (){
+        $categories = Category::active()->take(7)->get();
 
         // return view('front.elkher.arshef_takarer' , compact('takarers'));
-        return view('front.elkher.arshef_takarer');
+        return view('front.elkher.arshef_takarer',compact('categories'));
     }
 
     public function elkher_wakfyat(){
+        $categories = Category::active()->take(7)->get();
 
         // return view('front.elkher.wakfyat' , compact('wakfyats'));
-        return view('front.elkher.wakfyat' );
+        return view('front.elkher.wakfyat',compact('categories') );
     }
     public function elkher_mashroat (){
+        $categories = Category::active()->take(7)->get();
 
         //  return view('front.elkher.mashroat' , compact('mashroats'));
-        return view('front.elkher.mashroat' );
+        return view('front.elkher.mashroat',compact('categories') );
     }
 }

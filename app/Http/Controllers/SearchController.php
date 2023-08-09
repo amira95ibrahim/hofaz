@@ -8,6 +8,8 @@ use App\Models\News;
 use App\Models\Project;
 use App\Models\Relief;
 use App\Models\Waqf;
+use App\Models\Category;
+
 
 class SearchController extends BaseController {
 
@@ -54,8 +56,9 @@ class SearchController extends BaseController {
                     ->orWhereRaw("MATCH(description_en) AGAINST('\"$query_words\"' IN NATURAL LANGUAGE MODE)")
                     ->orWhereRaw("MATCH(description_ar) AGAINST('\"$query_words\"' IN NATURAL LANGUAGE MODE)");
             })->get();
+            $categories = Category::active()->take(7)->get();
 
-        return view('front.search', compact('projects', 'waqf', 'reliefs', 'kafala', 'news'))->render();
+        return view('front.search', compact('projects', 'waqf', 'reliefs', 'kafala', 'news','categories'))->render();
     }
 
     protected function preparedQuery($query){

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Category;
 
 use Illuminate\Http\Request;
 
@@ -25,14 +26,17 @@ class PaymentController extends BaseController {
         $model_id = $request->query('model_id');
         $userId = $request->query('u');
         $country=$request->query('country');
+        $categories = Category::active()->take(7)->get();
 
-        return view('front.payment', compact('model', 'model_id', 'userId','country'));
+        return view('front.payment', compact('model', 'model_id', 'userId','country','categories'));
     }
 
 
 
     public function paymentfromcart(){
-        return view('front.payment_cart');
+    $categories = Category::active()->take(7)->get();
+
+        return view('front.payment_cart',compact('categories'));
 
     }
 

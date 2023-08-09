@@ -6,6 +6,8 @@ use App\Models\Country;
 use App\Models\Relief;
 use App\Models\SitePagesDetail;
 use Illuminate\Http\Request;
+use App\Models\Category;
+
 
 class ReliefController extends BaseController{
 
@@ -20,12 +22,17 @@ class ReliefController extends BaseController{
 
         $reliefsCountries = Country::whereHas('reliefs')->active()->get();
         $reliefsPageDetails = SitePagesDetail::reliefPage()->first();
-        return view('front.relief', compact('reliefs', 'reliefsPageDetails', 'reliefsCountries'));
+        $categories = Category::active()->take(7)->get();
+
+        return view('front.relief', compact('reliefs', 'reliefsPageDetails', 'reliefsCountries','categories'));
     }
 
     public function show(Relief $relief){
+
         if($relief->active){
-            return view('front.projectDetails')->with('project', $relief)->with('model', 'relief');
+            $categories = Category::active()->take(7)->get();
+
+            return view('front.projectDetails')->with('project', $relief)->with('model', 'relief')->with('categories', $categories);
         }
         abort(404);
     }

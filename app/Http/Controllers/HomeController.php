@@ -21,6 +21,7 @@ class HomeController extends BaseController{
         $sliders = HomepageSlider::active()->get();
         // $categories=Category::active()->get();
         $categories = Category::active()->take(7)->get();
+        // dd($categories);
         return view('front.index', compact('publications', 'news', 'achievements', 'sliders','categories'));
     }
 }

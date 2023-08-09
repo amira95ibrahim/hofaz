@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\IftarController;
 use App\Http\Controllers\Admin\ZakahController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\PeriodicDonationController;
+use App\Models\Category;
 
 use App\Http\Controllers\Admin\MarketersController;
 use App\Http\Controllers\Admin\ReportsController;
@@ -159,31 +160,45 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
 
 Route::get('/about-us', function () {
-    return view('front.aboutUs');
+    $categories = Category::active()->take(7)->get();
+
+    return view('front.aboutUs',compact('categories'));
 })->name('aboutUs');
 
 Route::get('/contact-us', function () {
-    return view('front.contactUs');
+    $categories = Category::active()->take(7)->get();
+
+    return view('front.contactUs',compact('categories'));
 })->name('contactUs');
 
 Route::get('/sign-in', function () {
-    return view('front.signIn');
+    $categories = Category::active()->take(7)->get();
+
+    return view('front.signIn',compact('categories'));
 })->name('signIn');
 
 Route::get('/donation-methods', function () {
-    return view('front.donationMethods');
+    $categories = Category::active()->take(7)->get();
+
+    return view('front.donationMethods',compact('categories'));
 })->name('donationMethods');
 
 Route::get('/project-details', function () {
-    return view('front.details');
+    $categories = Category::active()->take(7)->get();
+
+    return view('front.details',compact('categories'));
 })->name('projectDetails');
 
 Route::get('/directors', function () {
-    return view('front.directors');
+    $categories = Category::active()->take(7)->get();
+
+    return view('front.directors',compact('categories'));
 })->name('directors');
 
 Route::get('/teams', function () {
-    return view('front.teams');
+    $categories = Category::active()->take(7)->get();
+
+    return view('front.teams',compact('categories'));
 })->name('teams');
 
 Route::get('lang/{lang}', [LangController::class, 'update'])->name('updateLang');

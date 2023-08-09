@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Models\Category;
+
 
 class CartController extends BaseController
 {
@@ -12,7 +14,9 @@ class CartController extends BaseController
     {
         $cartItems = Cart::getContent();
 //         dd($cartItems);
-        return view('front.cart', compact('cartItems'));
+       $categories = Category::active()->take(7)->get();
+
+        return view('front.cart', compact('cartItems','categories'));
     }
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Country;
 use App\Models\Kafala;
 use App\Models\KafalaType;
+use App\Models\Category;
 use App\Models\SitePagesDetail;
 use App\Models\Zakah;
 use Illuminate\Database\Eloquent\Builder;
@@ -45,10 +46,15 @@ class KafalahController extends BaseController
 
         $kafalahCountries = Country::whereHas('kafalat')->active()->get();
 
-        return view('front.kafalat', compact('kafalat', 'kafalahTypes', 'kafalahCountries', 'kafalahPageDetails'));
+        $categories = Category::active()->take(7)->get();
+
+
+        return view('front.kafalat', compact('kafalat', 'kafalahTypes', 'kafalahCountries', 'kafalahPageDetails','categories'));
     }
 
     public function show(Kafala $kafala){
-        return view('front.sponsorDetail', compact('kafala'));
+        $categories = Category::active()->take(7)->get();
+
+        return view('front.sponsorDetail', compact('kafala','categories'));
     }
 }

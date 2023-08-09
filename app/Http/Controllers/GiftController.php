@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\GiftRequest;
 use App\Models\Gift;
+use App\Models\Category;
 use App\Models\SendGift;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -22,7 +23,8 @@ class GiftController extends BaseController
     {
         $gifts = Gift::active()->with('giftable')->get();
       //  dd($gifts[3]->giftable->initial_amount);
-        return view('front.gift', compact('gifts'));
+        $categories = Category::active()->take(7)->get();
+        return view('front.gift', compact('gifts','categories'));
     }
 
     // public function generate(GiftRequest $request)

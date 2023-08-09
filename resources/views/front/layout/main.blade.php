@@ -435,7 +435,7 @@
                                                     aria-hidden="true"></i>@lang('footer.sitemap')</a></li> --}}
                                         {{-- <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.they_said')</a></li> --}}
-                                        <li><a href="{{ route('contactUs') }}"><i
+                                        <li><a href="{{ route('news') }}"><i
                                                     class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.news')</a></li>
                                         <li><a href="{{ route('aboutUs') }}"><i
@@ -449,9 +449,9 @@
                                         {{-- aria-hidden="true"></i>@lang('footer.your_guide')</a></li> --}}
                                         {{-- <li><a href="#"><i class="fa fa-angle-{{ $reverseFloat }} ml-5"
                                                     aria-hidden="true"></i>@lang('footer.aqeeqah_sacrifices')</a></li> --}}
-                                        <li><a href="{{ route('kafarahv') }}"><i
+                                        {{-- <li><a href="{{ route('kafarahv') }}"><i
                                                     class="fa fa-angle-{{ $reverseFloat }} ml-5"
-                                                    aria-hidden="true"></i>@lang('footer.penances')</a></li>
+                                                    aria-hidden="true"></i>@lang('footer.penances')</a></li> --}}
                                                     @foreach ($categories as $category)
                                                     <li><a href="{{ route('project.category', ['catid' => $category->id]) }}"><i
                                                                 class="fa fa-angle-{{ $reverseFloat }} ml-5"
