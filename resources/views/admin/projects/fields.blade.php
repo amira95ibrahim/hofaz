@@ -145,7 +145,12 @@
                     <!-- Country Id Field -->
                     <div class="form-group col-sm-12">
                         {!! Form::label('country_id', 'الدولة:') !!}
-                        @include('admin.countries.activeList', ['selectedCountry' => (isset($project)) ? $project->country_id : null, 'disable_multiselect' => (isset($project))])
+                        {{-- @include('admin.countries.activeList', ['selectedCountry' => (isset($project)) ? $project->country_id : null, 'disable_multiselect' => (isset($project))]) --}}
+                        <select name="country_id" class="form-control" id="exampleFormControlSelect1">
+                            @foreach ($countries as $country)
+                                <option value="{{ $country->id }}" {{isset($project) && $project->country_id == $country->id ? 'selected' : ''}}>{{ $country->{'name_'.app()->getLocale()} }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <!-- Active Field -->

@@ -7,6 +7,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\Admin\CreateProjectRequest;
 use App\Http\Requests\Admin\UpdateProjectRequest;
 use App\Models\Category;
+use App\Models\Country;
 use App\Models\Project;
 use App\Models\SitePagesDetail;
 use Flash;
@@ -36,7 +37,9 @@ class ProjectController extends AppBaseController
     public function create()
     {
         $categories = Category::Active()->select('id', 'name_' . app()->getLocale())->get();
-        return view('admin.projects.create', compact('categories'));
+        $countries = Country::Active()->select('id', 'name_' . app()->getLocale())->get();
+        //dd($countries);
+        return view('admin.projects.create', compact('categories','countries'));
     }
 
     /**
@@ -50,7 +53,7 @@ class ProjectController extends AppBaseController
     {
         $input = $request->all();
 
-        foreach ($request->country_id as $country){
+        // foreach ($request->country_id as $country){
             $image = $request->file('image');
             $path = 'projects/' . time() . rand() .  '.' . $image->extension();
             $image->storeAs('public/', $path);
@@ -64,12 +67,12 @@ class ProjectController extends AppBaseController
                 'paid' => $request->paid,
                 'initial_amount' => $request->initial_amount,
                 'show_remaining' => $request->show_remaining,
-                'country_id' => $country,
+                'country_id' =>$request->country_id,
                 'image' => 'storage/' . $path,
                 'active' => $request->active,
                 'category_id' => $request->category_id,
             ]);
-        }
+        // }
 
         Flash::success(__('messages.saved', ['model' => __('models/projects.singular')]));
 
@@ -110,6 +113,7 @@ class ProjectController extends AppBaseController
         $project = Project::find($id);
 
          $categories = Category::Active()->select('id', 'name_' . app()->getLocale())->get();
+         $countries = Country::Active()->select('id', 'name_' . app()->getLocale())->get();
 
         if (empty($project)) {
             Flash::error(__('messages.not_found', ['model' => __('models/projects.singular')]));
@@ -117,7 +121,7 @@ class ProjectController extends AppBaseController
             return redirect(route('admin.projects.index'));
         }
 
-        return view('admin.projects.edit')->with('project', $project)->with('categories', $categories);
+        return view('admin.projects.edit')->with('project', $project)->with('categories', $categories)->with('countries', $countries);
     }
 
     /**

@@ -24,6 +24,23 @@ class CreateProjectRequest extends FormRequest
      */
     public function rules()
     {
-        return Project::$rules;
+        return $rules = [
+            'country_id' => 'required',
+            'name_en' => 'required|string|max:255',
+            'name_ar' => 'required|string|max:255',
+            'description_en' => 'nullable|string|max:255',
+            'description_ar' => 'nullable|string|max:255',
+            'cost' => 'required|numeric',
+            'paid' => 'required|numeric',
+            'initial_amount' => 'required|numeric',
+            'show_remaining' => 'required|boolean',
+            'active' => 'required|boolean',
+            'homepage' => 'required|boolean',
+            'image' => 'required|nullable|file|max:255',
+            'deleted_at' => 'nullable',
+            'created_at' => 'nullable',
+            'updated_at' => 'nullable',
+            'category_id' => 'required|exists:categories,id|integer',
+        ];
     }
 }
